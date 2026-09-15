@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Information - Smart Timetable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="lecturer academic info.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+                <h2>Smart Timetable</h2>
+                <span>Lecturer Portal</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="lecturer dashboard.html" class="menu-item">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html" class="menu-item">
+                <i class="fa-solid fa-book"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html" class="menu-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html" class="menu-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html" class="menu-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html" class="menu-item active">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" class="menu-item login-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <h1>Academic Information</h1>
+
+                <p>
+                    View your academic and teaching information
+                </p>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount">0</span>
+                </button>
+
+
+                <div class="header-account">
+
+                    <div class="header-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong id="headerLecturerName">
+                            Lecturer
+                        </strong>
+
+                        <span id="headerDepartment">
+                            Department
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Intro -->
+        <section class="page-intro">
+
+            <div>
+
+                <h2>Academic Overview</h2>
+
+                <p>
+                    Your academic qualifications, courses and teaching records.
+                </p>
+
+            </div>
+
+            <div class="academic-status">
+
+                <span class="status-dot"></span>
+
+                <span>Academic Profile Active</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Academic Summary -->
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <div>
+                    <span>Assigned Courses</span>
+                    <strong id="courseCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <div>
+                    <span>Students Taught</span>
+                    <strong id="studentCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+
+                <div>
+                    <span>Classes</span>
+                    <strong id="classCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <div>
+                    <span>Department</span>
+                    <strong id="departmentShort">
+                        —
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Academic Profile -->
+        <section class="content-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Academic Profile</h2>
+
+                    <p>
+                        Your educational and professional academic information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="information-grid">
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-user-tie"></i>
+                        Lecturer Name
+                    </span>
+
+                    <strong id="academicName">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-id-card"></i>
+                        Staff ID
+                    </span>
+
+                    <strong id="staffId">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-building"></i>
+                        Department
+                    </span>
+
+                    <strong id="department">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-building-columns"></i>
+                        Faculty
+                    </span>
+
+                    <strong id="faculty">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Highest Qualification
+                    </span>
+
+                    <strong id="qualification">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-microscope"></i>
+                        Specialization
+                    </span>
+
+                    <strong id="specialization">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Academic Position
+                    </span>
+
+                    <strong id="position">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <span class="information-label">
+                        <i class="fa-solid fa-clock"></i>
+                        Years of Experience
+                    </span>
+
+                    <strong id="experience">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Teaching Information -->
+        <section class="content-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Teaching Information</h2>
+
+                    <p>
+                        Courses currently assigned to you
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="academic-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>S/N</th>
+                            <th>Course Code</th>
+                            <th>Course Title</th>
+                            <th>Level</th>
+                            <th>Units</th>
+                            <th>Semester</th>
+                            <th>Students</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="coursesTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div
+                class="empty-state"
+                id="coursesEmptyState"
+            >
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+                <h3>No Academic Courses Found</h3>
+
+                <p>
+                    Your assigned courses will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Academic Session -->
+        <section class="content-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Academic Session</h2>
+
+                    <p>
+                        Current academic session information
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="session-grid">
+
+                <div class="session-item">
+
+                    <div class="session-icon">
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Academic Session</span>
+
+                        <strong id="academicSession">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <div class="session-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Current Semester</span>
+
+                        <strong id="currentSemester">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="session-item">
+
+                    <div class="session-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Employment Type</span>
+
+                        <strong id="employmentType">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Academic Notice -->
+        <section class="notice-card">
+
+            <div class="notice-icon">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+            </div>
+
+            <div>
+
+                <h3>Academic Information</h3>
+
+                <p>
+                    Keep your academic profile and teaching information
+                    accurate. If any information is incorrect, contact the
+                    appropriate administrator for an update.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="page-footer">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ==========================================
+// Lecturer Academic Information
+// lecturer-academic-info.js
+// ==========================================
+
+const headerLecturerName = document.getElementById("headerLecturerName");
+const headerDepartment = document.getElementById("headerDepartment");
+const notificationButton = document.getElementById("notificationButton");
+const notificationCount = document.getElementById("notificationCount");
+const currentYear = document.getElementById("currentYear");
+
+const departmentShort = document.getElementById("departmentShort");
+
+const academicName = document.getElementById("academicName");
+const staffId = document.getElementById("staffId");
+const department = document.getElementById("department");
+const faculty = document.getElementById("faculty");
+const qualification = document.getElementById("qualification");
+const specialization = document.getElementById("specialization");
+const position = document.getElementById("position");
+const experience = document.getElementById("experience");
+
+const courseCount = document.getElementById("courseCount");
+const studentCount = document.getElementById("studentCount");
+const classCount = document.getElementById("classCount");
+
+const coursesTableBody = document.getElementById("coursesTableBody");
+const coursesEmptyState = document.getElementById("coursesEmptyState");
+
+const academicSession = document.getElementById("academicSession");
+const currentSemester = document.getElementById("currentSemester");
+const employmentType = document.getElementById("employmentType");
+
+
+// ==========================================
+// Local Storage Helper
+// ==========================================
+
+function getData(key, defaultValue = []) {
+    try {
+        const data = localStorage.getItem(key);
+
+        if (!data) {
+            return defaultValue;
+        }
+
+        return JSON.parse(data);
+    } catch (error) {
+        console.error(`Error reading ${key}:`, error);
+        return defaultValue;
+    }
+}
+
+
+// ==========================================
+// Text Helpers
+// ==========================================
+
+function getValue(object, keys, fallback = "") {
+    if (!object || typeof object !== "object") {
+        return fallback;
+    }
+
+    for (const key of keys) {
+        if (
+            object[key] !== undefined &&
+            object[key] !== null &&
+            String(object[key]).trim() !== ""
+        ) {
+            return object[key];
+        }
+    }
+
+    return fallback;
+}
+
+
+function normalize(value) {
+    return String(value || "")
+        .trim()
+        .toLowerCase();
+}
+
+
+function escapeHTML(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+// ==========================================
+// Lecturer Information
+// ==========================================
+
+function getLecturer() {
+    const lecturerData = getData("lecturerData", null);
+
+    if (lecturerData && typeof lecturerData === "object") {
+        return lecturerData;
+    }
+
+    const loggedInLecturer = getData("loggedInLecturer", null);
+
+    if (loggedInLecturer && typeof loggedInLecturer === "object") {
+        return loggedInLecturer;
+    }
+
+    return {
+        name: "Lecturer",
+        department: "Department",
+        faculty: "Faculty"
+    };
+}
+
+
+const lecturer = getLecturer();
+
+
+// ==========================================
+// Lecturer Fields
+// ==========================================
+
+const lecturerName = getValue(
+    lecturer,
+    ["name", "fullName", "lecturerName"],
+    "Lecturer"
+);
+
+const lecturerStaffId = getValue(
+    lecturer,
+    ["staffId", "staffID", "lecturerId", "lecturerID", "id"],
+    "Not Assigned"
+);
+
+const lecturerDepartment = getValue(
+    lecturer,
+    ["department", "dept"],
+    "Not Assigned"
+);
+
+const lecturerFaculty = getValue(
+    lecturer,
+    ["faculty"],
+    "Not Assigned"
+);
+
+const lecturerQualification = getValue(
+    lecturer,
+    [
+        "qualification",
+        "highestQualification",
+        "academicQualification"
+    ],
+    "Not Provided"
+);
+
+const lecturerSpecialization = getValue(
+    lecturer,
+    [
+        "specialization",
+        "specialisation",
+        "areaOfSpecialization"
+    ],
+    "Not Provided"
+);
+
+const lecturerPosition = getValue(
+    lecturer,
+    [
+        "position",
+        "academicPosition",
+        "rank"
+    ],
+    "Lecturer"
+);
+
+const lecturerExperience = getValue(
+    lecturer,
+    [
+        "experience",
+        "yearsOfExperience"
+    ],
+    "Not Provided"
+);
+
+const lecturerEmploymentType = getValue(
+    lecturer,
+    [
+        "employmentType",
+        "employmentStatus"
+    ],
+    "Full Time"
+);
+
+const lecturerSession = getValue(
+    lecturer,
+    [
+        "session",
+        "academicSession",
+        "currentSession"
+    ],
+    "2025/2026"
+);
+
+const lecturerSemester = getValue(
+    lecturer,
+    [
+        "semester",
+        "currentSemester",
+        "term"
+    ],
+    "First Semester"
+);
+
+
+// ==========================================
+// Load Main Data
+// ==========================================
+
+const courses = getData("courses", []);
+const students = getData("students", []);
+
+let timetable = getData("timetableData", []);
+
+if (!Array.isArray(timetable) || timetable.length === 0) {
+    timetable = getData("timetable", []);
+}
+
+let notifications = getData("lecturerNotifications", []);
+
+if (!Array.isArray(notifications)) {
+    notifications = [];
+}
+
+
+// ==========================================
+// Lecturer Matching
+// ==========================================
+
+function matchesLecturer(item) {
+    const itemLecturerId = getValue(
+        item,
+        [
+            "lecturerId",
+            "lecturerID",
+            "staffId",
+            "staffID",
+            "teacherId",
+            "teacherID"
+        ],
+        ""
+    );
+
+    const itemLecturerName = getValue(
+        item,
+        [
+            "lecturer",
+            "lecturerName",
+            "teacher",
+            "teacherName",
+            "instructor",
+            "instructorName"
+        ],
+        ""
+    );
+
+    if (
+        itemLecturerId &&
+        normalize(itemLecturerId) === normalize(lecturerStaffId)
+    ) {
+        return true;
+    }
+
+    if (
+        itemLecturerName &&
+        normalize(itemLecturerName) === normalize(lecturerName)
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
+
+// ==========================================
+// Course Helpers
+// ==========================================
+
+function getCourseCode(course) {
+    return getValue(
+        course,
+        [
+            "courseCode",
+            "code",
+            "course_code"
+        ],
+        ""
+    );
+}
+
+
+function getCourseTitle(course) {
+    return getValue(
+        course,
+        [
+            "courseTitle",
+            "title",
+            "name",
+            "courseName"
+        ],
+        "Untitled Course"
+    );
+}
+
+
+function getCourseDepartment(course) {
+    return getValue(
+        course,
+        [
+            "department",
+            "dept"
+        ],
+        lecturerDepartment
+    );
+}
+
+
+function getCourseLevel(course) {
+    return getValue(
+        course,
+        [
+            "level",
+            "classLevel",
+            "studentLevel"
+        ],
+        "All Levels"
+    );
+}
+
+
+function getCourseUnits(course) {
+    return getValue(
+        course,
+        [
+            "units",
+            "unit",
+            "creditUnit",
+            "creditUnits"
+        ],
+        0
+    );
+}
+
+
+function getCourseSemester(course) {
+    return getValue(
+        course,
+        [
+            "semester",
+            "term"
+        ],
+        lecturerSemester
+    );
+}
+
+
+// ==========================================
+// Find Lecturer Courses
+// ==========================================
+
+function getLecturerCourses() {
+    const lecturerCourses = courses.filter(course => {
+        if (matchesLecturer(course)) {
+            return true;
+        }
+
+        const courseLecturerIds = getValue(
+            course,
+            ["lecturerIds", "assignedLecturers"],
+            []
+        );
+
+        if (Array.isArray(courseLecturerIds)) {
+            return courseLecturerIds.some(id =>
+                normalize(id) === normalize(lecturerStaffId) ||
+                normalize(id) === normalize(lecturerName)
+            );
+        }
+
+        return false;
+    });
+
+    if (lecturerCourses.length > 0) {
+        return lecturerCourses;
+    }
+
+    // Fallback: use department courses if lecturer assignment
+    // has not yet been saved in the course record.
+    const departmentCourses = courses.filter(course => {
+        return normalize(getCourseDepartment(course)) ===
+            normalize(lecturerDepartment);
+    });
+
+    return departmentCourses;
+}
+
+
+const lecturerCourses = getLecturerCourses();
+
+
+// ==========================================
+// Course Code List
+// ==========================================
+
+function getLecturerCourseCodes() {
+    return lecturerCourses
+        .map(course => getCourseCode(course))
+        .filter(Boolean)
+        .map(code => normalize(code));
+}
+
+
+const lecturerCourseCodes = getLecturerCourseCodes();
+
+
+// ==========================================
+// Student Course Matching
+// ==========================================
+
+function getStudentCourses(student) {
+    const registeredCourses = getValue(
+        student,
+        [
+            "courses",
+            "registeredCourses",
+            "courseRegistration",
+            "registeredCourseCodes",
+            "courseCodes"
+        ],
+        []
+    );
+
+    if (Array.isArray(registeredCourses)) {
+        return registeredCourses;
+    }
+
+    if (typeof registeredCourses === "string") {
+        return registeredCourses
+            .split(",")
+            .map(item => item.trim())
+            .filter(Boolean);
+    }
+
+    return [];
+}
+
+
+function studentBelongsToLecturer(student) {
+    const studentCourses = getStudentCourses(student);
+
+    return studentCourses.some(studentCourse => {
+        const code = typeof studentCourse === "object"
+            ? getValue(
+                studentCourse,
+                ["courseCode", "code", "course_code"],
+                ""
+            )
+            : studentCourse;
+
+        return lecturerCourseCodes.includes(normalize(code));
+    });
+}
+
+
+function getLecturerStudents() {
+    return students.filter(student =>
+        studentBelongsToLecturer(student)
+    );
+}
+
+
+// ==========================================
+// Timetable Matching
+// ==========================================
+
+function matchesLecturerClass(item) {
+    if (matchesLecturer(item)) {
+        return true;
+    }
+
+    const timetableCourseCode = getValue(
+        item,
+        [
+            "courseCode",
+            "course_code",
+            "code"
+        ],
+        ""
+    );
+
+    if (
+        timetableCourseCode &&
+        lecturerCourseCodes.includes(normalize(timetableCourseCode))
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
+
+function getLecturerClasses() {
+    return timetable.filter(item =>
+        matchesLecturerClass(item)
+    );
+}
+
+
+const lecturerClasses = getLecturerClasses();
+
+
+// ==========================================
+// Render Lecturer Information
+// ==========================================
+
+function renderLecturerInformation() {
+    headerLecturerName.textContent = lecturerName;
+    headerDepartment.textContent = lecturerDepartment;
+
+    academicName.textContent = lecturerName;
+    staffId.textContent = lecturerStaffId;
+    department.textContent = lecturerDepartment;
+    faculty.textContent = lecturerFaculty;
+    qualification.textContent = lecturerQualification;
+    specialization.textContent = lecturerSpecialization;
+    position.textContent = lecturerPosition;
+    experience.textContent = lecturerExperience;
+
+    academicSession.textContent = lecturerSession;
+    currentSemester.textContent = lecturerSemester;
+    employmentType.textContent = lecturerEmploymentType;
+
+    departmentShort.textContent =
+        String(lecturerDepartment).length > 25
+            ? String(lecturerDepartment).substring(0, 25) + "..."
+            : lecturerDepartment;
+}
+
+
+// ==========================================
+// Count Students
+// ==========================================
+
+function getCourseStudentCount(course) {
+    const courseCode = normalize(getCourseCode(course));
+
+    if (!courseCode) {
+        return 0;
+    }
+
+    return students.filter(student => {
+        return getStudentCourses(student).some(studentCourse => {
+            const code = typeof studentCourse === "object"
+                ? getValue(
+                    studentCourse,
+                    ["courseCode", "code", "course_code"],
+                    ""
+                )
+                : studentCourse;
+
+            return normalize(code) === courseCode;
+        });
+    }).length;
+}
+
+
+// ==========================================
+// Render Courses
+// ==========================================
+
+function renderCourses() {
+    coursesTableBody.innerHTML = "";
+
+    if (lecturerCourses.length === 0) {
+        coursesEmptyState.classList.remove("hidden");
+        return;
+    }
+
+    coursesEmptyState.classList.add("hidden");
+
+    lecturerCourses.forEach((course, index) => {
+        const code = getCourseCode(course);
+        const title = getCourseTitle(course);
+        const level = getCourseLevel(course);
+        const units = getCourseUnits(course);
+        const semester = getCourseSemester(course);
+        const departmentName = getCourseDepartment(course);
+
+        let studentsCount = getCourseStudentCount(course);
+
+        if (studentsCount === 0) {
+            studentsCount = Number(
+                getValue(
+                    course,
+                    [
+                        "studentCount",
+                        "studentsCount",
+                        "enrolledStudents"
+                    ],
+                    0
+                )
+            ) || 0;
+        }
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>
+                <strong>${escapeHTML(code || "N/A")}</strong>
+            </td>
+            <td>
+                <strong>${escapeHTML(title)}</strong>
+                <small>${escapeHTML(departmentName)}</small>
+            </td>
+            <td>${escapeHTML(level)}</td>
+            <td>${escapeHTML(units)}</td>
+            <td>${escapeHTML(semester)}</td>
+            <td>${studentsCount}</td>
+        `;
+
+        coursesTableBody.appendChild(row);
+    });
+}
+
+
+// ==========================================
+// Render Summary
+// ==========================================
+
+function renderSummary() {
+    const lecturerStudentList = getLecturerStudents();
+
+    let totalStudents = lecturerStudentList.length;
+
+    if (totalStudents === 0) {
+        totalStudents = lecturerCourses.reduce((total, course) => {
+            const count = Number(
+                getValue(
+                    course,
+                    [
+                        "studentCount",
+                        "studentsCount",
+                        "enrolledStudents"
+                    ],
+                    0
+                )
+            ) || 0;
+
+            return total + count;
+        }, 0);
+    }
+
+    courseCount.textContent = lecturerCourses.length;
+    studentCount.textContent = totalStudents;
+    classCount.textContent = lecturerClasses.length;
+}
+
+
+// ==========================================
+// Notifications
+// ==========================================
+
+function renderNotifications() {
+    const unreadNotifications = notifications.filter(notification => {
+        return (
+            notification.read === false ||
+            notification.isRead === false ||
+            notification.status === "unread"
+        );
+    });
+
+    if (unreadNotifications.length > 0) {
+        notificationCount.textContent = unreadNotifications.length;
+        notificationCount.classList.remove("hidden");
+    } else {
+        notificationCount.textContent = "";
+        notificationCount.classList.add("hidden");
+    }
+}
+
+
+if (notificationButton) {
+    notificationButton.addEventListener("click", () => {
+        window.location.href = "lecturer-notifications.html";
+    });
+}
+
+
+// ==========================================
+// Refresh Page
+// ==========================================
+
+function refreshAcademicInformation() {
+    location.reload();
+}
+
+
+// ==========================================
+// Current Year
+// ==========================================
+
+currentYear.textContent = new Date().getFullYear();
+
+
+// ==========================================
+// Initialize Page
+// ==========================================
+
+renderLecturerInformation();
+renderCourses();
+renderSummary();
+renderNotifications();
+    </script>
+
+</body>
+</html>

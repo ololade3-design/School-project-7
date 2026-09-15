@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Courses - Smart Timetable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="my courses.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+                <h2>Smart Timetable</h2>
+                <span>Lecturer Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="lecturer dashboard.html" class="menu-item">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html" class="menu-item active">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html" class="menu-item">
+                <i class="fa-solid fa-users"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html" class="menu-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html" class="menu-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html" class="menu-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" class="menu-item login-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="header-title">
+                <h1>My Courses</h1>
+                <p>View and manage the courses assigned to you</p>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification-button" id="notificationButton">
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount">0</span>
+                </button>
+
+                <div class="header-account">
+                    <div class="header-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="header-account-info">
+                        <strong id="headerLecturerName">Lecturer</strong>
+                        <span id="headerDepartment">Department</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="page-content">
+
+            <!-- Welcome -->
+            <div class="page-intro">
+                <div>
+                    <h2>Assigned Courses</h2>
+                    <p>
+                        Welcome, <span id="lecturerName">Lecturer</span>.
+                        Here are the courses currently assigned to you.
+                    </p>
+                </div>
+
+                <button class="refresh-button" id="refreshCourses">
+                    <i class="fa-solid fa-rotate"></i>
+                    Refresh
+                </button>
+            </div>
+
+
+            <!-- Summary Cards -->
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <div class="summary-icon blue">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Courses</span>
+                        <h3 id="courseCount">0</h3>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon green">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Units</span>
+                        <h3 id="totalUnits">0</h3>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon orange">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <h3 id="studentCount">0</h3>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="summary-icon purple">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Active Courses</span>
+                        <h3 id="activeCourseCount">0</h3>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Search and Filters -->
+            <div class="course-controls">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input
+                        type="text"
+                        id="courseSearch"
+                        placeholder="Search by course code or course title..."
+                    >
+                </div>
+
+                <select id="semesterFilter">
+                    <option value="all">All Semesters</option>
+                    <option value="First Semester">First Semester</option>
+                    <option value="Second Semester">Second Semester</option>
+                </select>
+
+                <select id="levelFilter">
+                    <option value="all">All Levels</option>
+                    <option value="100">100 Level</option>
+                    <option value="200">200 Level</option>
+                    <option value="300">300 Level</option>
+                    <option value="400">400 Level</option>
+                    <option value="500">500 Level</option>
+                </select>
+
+            </div>
+
+
+            <!-- Courses Table -->
+            <div class="content-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>My Courses</h3>
+                        <p>Courses assigned to your lecturer account</p>
+                    </div>
+
+                    <span class="course-total" id="courseTotalLabel">
+                        0 Courses
+                    </span>
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Course Code</th>
+                                <th>Course Title</th>
+                                <th>Department</th>
+                                <th>Level</th>
+                                <th>Units</th>
+                                <th>Semester</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="coursesTableBody">
+                            <!-- Courses will be loaded here -->
+                        </tbody>
+
+                    </table>
+
+                    <div class="empty-state" id="emptyCourses">
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+
+                        <h3>No Courses Found</h3>
+
+                        <p>
+                            No courses have been assigned to your account yet.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Course Details -->
+            <div class="content-card course-details-card" id="courseDetails">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Course Information</h3>
+                        <p>Select a course from the table to view its details.</p>
+                    </div>
+                </div>
+
+                <div class="course-detail-content" id="courseDetailContent">
+
+                    <div class="detail-placeholder">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>
+                            Click the View button on any course to see more information.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Academic Notice -->
+            <div class="notice-card">
+
+                <div class="notice-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div>
+                    <h3>Course Management</h3>
+                    <p>
+                        Course assignments are managed by the administrator.
+                        If a course is missing or contains incorrect information,
+                        contact your department administrator.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                &copy; <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ===============================
+// Lecturer Courses Management
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const courseCount = document.getElementById("courseCount");
+    const totalUnits = document.getElementById("totalUnits");
+    const studentCount = document.getElementById("studentCount");
+    const activeCourseCount = document.getElementById("activeCourseCount");
+
+    const coursesTableBody = document.getElementById("coursesTableBody");
+    const emptyCourses = document.getElementById("emptyCourses");
+
+    const courseSearch = document.getElementById("courseSearch");
+    const semesterFilter = document.getElementById("semesterFilter");
+    const levelFilter = document.getElementById("levelFilter");
+
+    const courseTotalLabel = document.getElementById("courseTotalLabel");
+    const courseDetailContent = document.getElementById("courseDetailContent");
+
+    const lecturerName = document.getElementById("lecturerName");
+    const headerLecturerName = document.getElementById("headerLecturerName");
+    const headerDepartment = document.getElementById("headerDepartment");
+
+    const notificationButton = document.getElementById("notificationButton");
+    const notificationCount = document.getElementById("notificationCount");
+
+    const refreshCourses = document.getElementById("refreshCourses");
+    const currentYear = document.getElementById("currentYear");
+
+
+    // ===============================
+    // Helper Functions
+    // ===============================
+
+    function getData(key, defaultValue = []) {
+        try {
+            const data = JSON.parse(localStorage.getItem(key));
+            return data !== null ? data : defaultValue;
+        } catch (error) {
+            return defaultValue;
+        }
+    }
+
+
+    function escapeHTML(value) {
+        if (value === null || value === undefined) {
+            return "";
+        }
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+    function getLecturer() {
+        const lecturerData = getData("lecturerData", null);
+
+        if (lecturerData && typeof lecturerData === "object") {
+            return lecturerData;
+        }
+
+        const loggedInLecturer = getData("loggedInLecturer", null);
+
+        if (loggedInLecturer && typeof loggedInLecturer === "object") {
+            return loggedInLecturer;
+        }
+
+        return {};
+    }
+
+
+    function getValue(object, ...keys) {
+        for (const key of keys) {
+            if (
+                object &&
+                object[key] !== undefined &&
+                object[key] !== null &&
+                object[key] !== ""
+            ) {
+                return object[key];
+            }
+        }
+
+        return "";
+    }
+
+
+    // ===============================
+    // Lecturer Information
+    // ===============================
+
+    const lecturer = getLecturer();
+
+    const currentLecturerName =
+        getValue(
+            lecturer,
+            "fullName",
+            "name",
+            "lecturerName"
+        ) || "Lecturer";
+
+    const currentLecturerId =
+        getValue(
+            lecturer,
+            "id",
+            "lecturerId",
+            "staffId",
+            "staffID"
+        );
+
+    const currentDepartment =
+        getValue(
+            lecturer,
+            "department",
+            "departmentName"
+        ) || "Department";
+
+
+    lecturerName.textContent = currentLecturerName;
+    headerLecturerName.textContent = currentLecturerName;
+    headerDepartment.textContent = currentDepartment;
+
+
+    // ===============================
+    // Load Courses
+    // ===============================
+
+    function loadAllCourses() {
+        return getData("courses", []);
+    }
+
+
+    function getLecturerCourses() {
+
+        const allCourses = loadAllCourses();
+
+        if (!Array.isArray(allCourses)) {
+            return [];
+        }
+
+        return allCourses.filter(course => {
+
+            const courseLecturerId = getValue(
+                course,
+                "lecturerId",
+                "lecturerID",
+                "assignedLecturerId",
+                "assignedLecturerID",
+                "staffId",
+                "staffID"
+            );
+
+            const courseLecturerName = getValue(
+                course,
+                "lecturer",
+                "lecturerName",
+                "assignedLecturer",
+                "assignedLecturerName"
+            );
+
+
+            if (currentLecturerId && courseLecturerId) {
+                return String(courseLecturerId) === String(currentLecturerId);
+            }
+
+
+            if (courseLecturerName) {
+                return (
+                    String(courseLecturerName).toLowerCase() ===
+                    String(currentLecturerName).toLowerCase()
+                );
+            }
+
+
+            return false;
+        });
+    }
+
+
+    // ===============================
+    // Course Information
+    // ===============================
+
+    function getCourseCode(course) {
+        return getValue(
+            course,
+            "courseCode",
+            "code",
+            "course_code"
+        ) || "N/A";
+    }
+
+
+    function getCourseTitle(course) {
+        return getValue(
+            course,
+            "courseTitle",
+            "title",
+            "courseName",
+            "name"
+        ) || "Untitled Course";
+    }
+
+
+    function getCourseDepartment(course) {
+        return getValue(
+            course,
+            "department",
+            "departmentName"
+        ) || currentDepartment;
+    }
+
+
+    function getCourseLevel(course) {
+        return getValue(
+            course,
+            "level",
+            "year",
+            "classLevel"
+        ) || "N/A";
+    }
+
+
+    function getCourseUnits(course) {
+        const units = getValue(
+            course,
+            "units",
+            "creditUnit",
+            "creditUnits",
+            "unit"
+        );
+
+        const number = Number(units);
+
+        return Number.isFinite(number) ? number : 0;
+    }
+
+
+    function getCourseSemester(course) {
+        return getValue(
+            course,
+            "semester",
+            "term"
+        ) || "N/A";
+    }
+
+
+    function getCourseStatus(course) {
+        return getValue(
+            course,
+            "status"
+        ) || "Active";
+    }
+
+
+    // ===============================
+    // Student Data
+    // ===============================
+
+    function getCourseStudents(course) {
+
+        const students = getData("students", []);
+        const registeredCourses = getData("registeredCourses", []);
+
+        const courseCode = getCourseCode(course).toLowerCase();
+
+        let count = 0;
+
+
+        if (Array.isArray(students)) {
+
+            students.forEach(student => {
+
+                const studentCourses =
+                    student.registeredCourses ||
+                    student.courses ||
+                    [];
+
+                if (!Array.isArray(studentCourses)) {
+                    return;
+                }
+
+                const registered = studentCourses.some(item => {
+
+                    if (typeof item === "string") {
+                        return item.toLowerCase() === courseCode;
+                    }
+
+                    const code = getValue(
+                        item,
+                        "courseCode",
+                        "code"
+                    );
+
+                    return String(code).toLowerCase() === courseCode;
+                });
+
+                if (registered) {
+                    count++;
+                }
+            });
+        }
+
+
+        if (count === 0 && Array.isArray(registeredCourses)) {
+
+            registeredCourses.forEach(item => {
+
+                if (typeof item === "string") {
+
+                    if (item.toLowerCase() === courseCode) {
+                        count++;
+                    }
+
+                    return;
+                }
+
+
+                const code = getValue(
+                    item,
+                    "courseCode",
+                    "code"
+                );
+
+                if (String(code).toLowerCase() === courseCode) {
+                    count++;
+                }
+            });
+        }
+
+
+        return count;
+    }
+
+
+    function getTotalStudents(courses) {
+
+        const students = getData("students", []);
+
+        if (Array.isArray(students) && students.length > 0) {
+
+            const courseCodes = courses.map(course =>
+                getCourseCode(course).toLowerCase()
+            );
+
+            let count = 0;
+
+            students.forEach(student => {
+
+                const studentCourses =
+                    student.registeredCourses ||
+                    student.courses ||
+                    [];
+
+                if (!Array.isArray(studentCourses)) {
+                    return;
+                }
+
+                const hasCourse = studentCourses.some(item => {
+
+                    const code =
+                        typeof item === "string"
+                            ? item
+                            : getValue(item, "courseCode", "code");
+
+                    return courseCodes.includes(
+                        String(code).toLowerCase()
+                    );
+                });
+
+                if (hasCourse) {
+                    count++;
+                }
+            });
+
+            return count;
+        }
+
+
+        let total = 0;
+
+        courses.forEach(course => {
+            total += getCourseStudents(course);
+        });
+
+        return total;
+    }
+
+
+    // ===============================
+    // Render Courses
+    // ===============================
+
+    let lecturerCourses = [];
+    let filteredCourses = [];
+
+
+    function renderCourses(courses) {
+
+        coursesTableBody.innerHTML = "";
+
+        courseTotalLabel.textContent =
+            `${courses.length} ${courses.length === 1 ? "Course" : "Courses"}`;
+
+
+        if (courses.length === 0) {
+
+            emptyCourses.style.display = "block";
+            coursesTableBody.style.display = "none";
+
+            return;
+        }
+
+
+        emptyCourses.style.display = "none";
+        coursesTableBody.style.display = "table-row-group";
+
+
+        courses.forEach((course, index) => {
+
+            const code = getCourseCode(course);
+            const title = getCourseTitle(course);
+            const department = getCourseDepartment(course);
+            const level = getCourseLevel(course);
+            const units = getCourseUnits(course);
+            const semester = getCourseSemester(course);
+            const status = getCourseStatus(course);
+
+            const statusClass =
+                String(status).toLowerCase() === "active"
+                    ? "active"
+                    : "inactive";
+
+
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${index + 1}</td>
+
+                <td>
+                    <span class="course-code">
+                        ${escapeHTML(code)}
+                    </span>
+                </td>
+
+                <td>
+                    <span class="course-title">
+                        ${escapeHTML(title)}
+                    </span>
+                </td>
+
+                <td>${escapeHTML(department)}</td>
+
+                <td>${escapeHTML(level)}</td>
+
+                <td>${units}</td>
+
+                <td>${escapeHTML(semester)}</td>
+
+                <td>
+                    <span class="status ${statusClass}">
+                        ${escapeHTML(status)}
+                    </span>
+                </td>
+
+                <td>
+                    <button
+                        class="view-button"
+                        data-index="${index}"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View
+                    </button>
+                </td>
+            `;
+
+
+            coursesTableBody.appendChild(row);
+        });
+
+
+        const viewButtons =
+            coursesTableBody.querySelectorAll(".view-button");
+
+
+        viewButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const index = Number(button.dataset.index);
+
+                showCourseDetails(courses[index]);
+            });
+
+        });
+    }
+
+
+    // ===============================
+    // Course Details
+    // ===============================
+
+    function showCourseDetails(course) {
+
+        const code = getCourseCode(course);
+        const title = getCourseTitle(course);
+        const department = getCourseDepartment(course);
+        const level = getCourseLevel(course);
+        const units = getCourseUnits(course);
+        const semester = getCourseSemester(course);
+        const status = getCourseStatus(course);
+        const students = getCourseStudents(course);
+
+        const description =
+            getValue(
+                course,
+                "description",
+                "courseDescription"
+            ) || "No course description available.";
+
+
+        courseDetailContent.innerHTML = `
+
+            <div class="course-detail-grid">
+
+                <div class="detail-item">
+                    <span>Course Code</span>
+                    <strong>${escapeHTML(code)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Course Title</span>
+                    <strong>${escapeHTML(title)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Department</span>
+                    <strong>${escapeHTML(department)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Level</span>
+                    <strong>${escapeHTML(level)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Credit Units</span>
+                    <strong>${units}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Semester</span>
+                    <strong>${escapeHTML(semester)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Students</span>
+                    <strong>${students}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Status</span>
+                    <strong>${escapeHTML(status)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Description</span>
+                    <strong>${escapeHTML(description)}</strong>
+                </div>
+
+            </div>
+        `;
+
+
+        const detailsCard =
+            document.getElementById("courseDetails");
+
+        if (detailsCard) {
+            detailsCard.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    }
+
+
+    // ===============================
+    // Filter Courses
+    // ===============================
+
+    function filterCourses() {
+
+        const searchValue =
+            courseSearch.value.trim().toLowerCase();
+
+        const semesterValue =
+            semesterFilter.value;
+
+        const levelValue =
+            levelFilter.value;
+
+
+        filteredCourses = lecturerCourses.filter(course => {
+
+            const code =
+                getCourseCode(course).toLowerCase();
+
+            const title =
+                getCourseTitle(course).toLowerCase();
+
+            const semester =
+                String(getCourseSemester(course));
+
+            const level =
+                String(getCourseLevel(course));
+
+
+            const matchesSearch =
+                code.includes(searchValue) ||
+                title.includes(searchValue);
+
+
+            const matchesSemester =
+                semesterValue === "all" ||
+                semester.toLowerCase() ===
+                semesterValue.toLowerCase();
+
+
+            const matchesLevel =
+                levelValue === "all" ||
+                level.replace(" Level", "") === levelValue ||
+                level === `${levelValue} Level`;
+
+
+            return (
+                matchesSearch &&
+                matchesSemester &&
+                matchesLevel
+            );
+        });
+
+
+        renderCourses(filteredCourses);
+    }
+
+
+    // ===============================
+    // Dashboard Statistics
+    // ===============================
+
+    function updateStatistics(courses) {
+
+        const units = courses.reduce(
+            (total, course) =>
+                total + getCourseUnits(course),
+            0
+        );
+
+
+        const activeCourses = courses.filter(course => {
+
+            const status =
+                getCourseStatus(course).toLowerCase();
+
+            return status === "active";
+        });
+
+
+        courseCount.textContent = courses.length;
+        totalUnits.textContent = units;
+        studentCount.textContent =
+            getTotalStudents(courses);
+        activeCourseCount.textContent =
+            activeCourses.length;
+    }
+
+
+    // ===============================
+    // Notifications
+    // ===============================
+
+    function loadNotifications() {
+
+        const notifications =
+            getData("lecturerNotifications", []);
+
+        if (!Array.isArray(notifications)) {
+            notificationCount.textContent = "0";
+            return;
+        }
+
+
+        const unread = notifications.filter(notification => {
+
+            return (
+                notification.read === false ||
+                notification.status === "Unread" ||
+                notification.unread === true
+            );
+        });
+
+
+        notificationCount.textContent = unread.length;
+    }
+
+
+    notificationButton.addEventListener("click", () => {
+        window.location.href =
+            "lecturer-notifications.html";
+    });
+
+
+    // ===============================
+    // Refresh
+    // ===============================
+
+    refreshCourses.addEventListener("click", () => {
+
+        lecturerCourses = getLecturerCourses();
+
+        filteredCourses = [...lecturerCourses];
+
+        updateStatistics(lecturerCourses);
+
+        renderCourses(filteredCourses);
+
+        loadNotifications();
+    });
+
+
+    // ===============================
+    // Search & Filters
+    // ===============================
+
+    courseSearch.addEventListener(
+        "input",
+        filterCourses
+    );
+
+    semesterFilter.addEventListener(
+        "change",
+        filterCourses
+    );
+
+    levelFilter.addEventListener(
+        "change",
+        filterCourses
+    );
+
+
+    // ===============================
+    // Initialize Page
+    // ===============================
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+
+    lecturerCourses = getLecturerCourses();
+
+    filteredCourses = [...lecturerCourses];
+
+    updateStatistics(lecturerCourses);
+
+    renderCourses(filteredCourses);
+
+    loadNotifications();
+
+});
+    </script>
+
+</body>
+</html>

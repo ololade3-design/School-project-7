@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings</title>
+
+<link rel="stylesheet" href="settings.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li>
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecture-room.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>System Settings</h1>
+
+<p>
+
+Configure the Smart Timetable Generation and Course Scheduling System.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Settings Cards -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="usersCount">1</h2>
+
+<p>System Users</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="backupCount">0</h2>
+
+<p>Backups</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="storageCount">100%</h2>
+
+<p>Storage</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="statusCount">Online</h2>
+
+<p>System Status</p>
+
+</div>
+
+</div>
+
+<!-- Settings Form -->
+
+<div class="form-box">
+
+<h2>General Settings</h2>
+
+<div class="row">
+
+<input
+type="text"
+id="schoolName"
+placeholder="University Name">
+
+<input
+type="text"
+id="facultyName"
+placeholder="Faculty Name">
+
+</div>
+
+<div class="row">
+
+<input
+type="text"
+id="departmentName"
+placeholder="Department Name">
+
+<input
+type="text"
+id="adminName"
+placeholder="Administrator Name">
+
+</div>
+
+<div class="row">
+
+<select id="semester">
+
+<option value="">Select Semester</option>
+
+<option>First Semester</option>
+
+<option>Second Semester</option>
+
+</select>
+
+<select id="session">
+
+<option value="">Academic Session</option>
+
+<option>2025/2026</option>
+
+<option>2026/2027</option>
+
+<option>2027/2028</option>
+
+</select>
+
+</div>
+
+<div class="row">
+
+<button id="saveSettings">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Settings
+
+</button>
+
+<button id="backupData">
+
+<i class="fa-solid fa-database"></i>
+
+Backup Data
+
+</button>
+
+<button id="resetSystem">
+
+<i class="fa-solid fa-rotate-left"></i>
+
+Reset System
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Settings Information -->
+
+<div class="table-box">
+
+<h2>
+
+System Information
+
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Setting</th>
+
+<th>Current Value</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="settingsTable"><tr>
+
+<td>University Name</td>
+
+<td id="schoolValue">Not Set</td>
+
+<td>Active</td>
+
+</tr>
+
+<tr>
+
+<td>Faculty Name</td>
+
+<td id="facultyValue">Not Set</td>
+
+<td>Active</td>
+
+</tr>
+
+<tr>
+
+<td>Department Name</td>
+
+<td id="departmentValue">Not Set</td>
+
+<td>Active</td>
+
+</tr>
+
+<tr>
+
+<td>Administrator</td>
+
+<td id="adminValue">Not Set</td>
+
+<td>Active</td>
+
+</tr>
+
+<tr>
+
+<td>Semester</td>
+
+<td id="semesterValue">Not Set</td>
+
+<td>Active</td>
+
+</tr>
+
+<tr>
+
+<td>Academic Session</td>
+
+<td id="sessionValue">Not Set</td>
+
+<td>Active</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Activity Log -->
+
+<div class="activity">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<ul id="activityList">
+
+<li>Settings Module Loaded Successfully.</li>
+
+<li>System Ready...</li>
+
+</ul>
+
+</div>
+
+<!-- System Summary -->
+
+<div class="summary">
+
+<h2>
+
+System Settings Information
+
+</h2>
+
+<p>
+
+This module allows the administrator to configure important information required for the Smart Timetable Generation and Course Scheduling System.
+
+</p>
+
+<p>
+
+The settings include the university name, faculty, department, administrator details, academic session and current semester.
+
+</p>
+
+<p>
+
+The administrator can also back up all saved records or reset the system when necessary. All information is stored using Local Storage for demonstration purposes.
+
+</p>
+
+<p>
+
+These settings are used throughout the system and can be modified at any time without affecting the overall application structure.
+
+</p>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ========================================
+// Smart Timetable Generation System
+// Settings Module
+// settings.js
+// ========================================
+
+// Elements
+
+const schoolName=document.getElementById("schoolName");
+
+const facultyName=document.getElementById("facultyName");
+
+const departmentName=document.getElementById("departmentName");
+
+const adminName=document.getElementById("adminName");
+
+const semester=document.getElementById("semester");
+
+const session=document.getElementById("session");
+
+const saveSettings=document.getElementById("saveSettings");
+
+const backupData=document.getElementById("backupData");
+
+const resetSystem=document.getElementById("resetSystem");
+
+const activityList=document.getElementById("activityList");
+
+// Table Values
+
+const schoolValue=document.getElementById("schoolValue");
+
+const facultyValue=document.getElementById("facultyValue");
+
+const departmentValue=document.getElementById("departmentValue");
+
+const adminValue=document.getElementById("adminValue");
+
+const semesterValue=document.getElementById("semesterValue");
+
+const sessionValue=document.getElementById("sessionValue");
+
+// Statistics
+
+const usersCount=document.getElementById("usersCount");
+
+const backupCount=document.getElementById("backupCount");
+
+const storageCount=document.getElementById("storageCount");
+
+const statusCount=document.getElementById("statusCount");
+
+// Default Values
+
+usersCount.innerHTML="1";
+
+storageCount.innerHTML="100%";
+
+statusCount.innerHTML="Online";
+
+// Load Saved Settings
+
+loadSettings();
+
+function loadSettings(){
+
+let settings=JSON.parse(localStorage.getItem("settings"));
+
+if(settings){
+
+schoolName.value=settings.school;
+
+facultyName.value=settings.faculty;
+
+departmentName.value=settings.department;
+
+adminName.value=settings.admin;
+
+semester.value=settings.semester;
+
+session.value=settings.session;
+
+schoolValue.innerHTML=settings.school;
+
+facultyValue.innerHTML=settings.faculty;
+
+departmentValue.innerHTML=settings.department;
+
+adminValue.innerHTML=settings.admin;
+
+semesterValue.innerHTML=settings.semester;
+
+sessionValue.innerHTML=settings.session;
+
+}
+
+}
+
+// Save Settings
+
+saveSettings.onclick=function(){
+
+const settings={
+
+school:schoolName.value,
+
+faculty:facultyName.value,
+
+department:departmentName.value,
+
+admin:adminName.value,
+
+semester:semester.value,
+
+session:session.value
+
+};
+
+localStorage.setItem(
+
+"settings",
+
+JSON.stringify(settings)
+
+);
+
+schoolValue.innerHTML=settings.school;
+
+facultyValue.innerHTML=settings.faculty;
+
+departmentValue.innerHTML=settings.department;
+
+adminValue.innerHTML=settings.admin;
+
+semesterValue.innerHTML=settings.semester;
+
+sessionValue.innerHTML=settings.session;
+
+addActivity("Settings saved successfully.");
+
+alert("Settings Saved Successfully.");
+
+};// ========================================
+// Backup Data
+// ========================================
+
+backupData.onclick=function(){
+
+const backup={
+
+settings:JSON.parse(localStorage.getItem("settings")),
+
+courses:JSON.parse(localStorage.getItem("courses"))||[],
+
+lecturers:JSON.parse(localStorage.getItem("lecturers"))||[],
+
+students:JSON.parse(localStorage.getItem("students"))||[],
+
+departments:JSON.parse(localStorage.getItem("departments"))||[],
+
+lectureRooms:JSON.parse(localStorage.getItem("lectureRooms"))||[],
+
+timetable:JSON.parse(localStorage.getItem("timetable"))||[],
+
+reportHistory:JSON.parse(localStorage.getItem("reportHistory"))||[],
+
+backupDate:new Date().toLocaleString()
+
+};
+
+const blob=new Blob(
+
+[JSON.stringify(backup,null,2)],
+
+{type:"application/json"}
+
+);
+
+const link=document.createElement("a");
+
+link.href=URL.createObjectURL(blob);
+
+link.download="SmartTimetableBackup.json";
+
+link.click();
+
+let count=parseInt(localStorage.getItem("backupCount"))||0;
+
+count++;
+
+localStorage.setItem("backupCount",count);
+
+backupCount.innerHTML=count;
+
+addActivity("System backup created.");
+
+alert("Backup Completed Successfully.");
+
+};
+
+// ========================================
+// Reset System
+// ========================================
+
+resetSystem.onclick=function(){
+
+let confirmReset=confirm(
+
+"Are you sure you want to reset the system?\n\nThis will remove all saved records."
+
+);
+
+if(!confirmReset){
+
+return;
+
+}
+
+localStorage.removeItem("courses");
+
+localStorage.removeItem("lecturers");
+
+localStorage.removeItem("students");
+
+localStorage.removeItem("departments");
+
+localStorage.removeItem("lectureRooms");
+
+localStorage.removeItem("timetable");
+
+localStorage.removeItem("reportHistory");
+
+localStorage.removeItem("settings");
+
+localStorage.removeItem("backupCount");
+
+schoolName.value="";
+
+facultyName.value="";
+
+departmentName.value="";
+
+adminName.value="";
+
+semester.value="";
+
+session.value="";
+
+schoolValue.innerHTML="Not Set";
+
+facultyValue.innerHTML="Not Set";
+
+departmentValue.innerHTML="Not Set";
+
+adminValue.innerHTML="Not Set";
+
+semesterValue.innerHTML="Not Set";
+
+sessionValue.innerHTML="Not Set";
+
+backupCount.innerHTML="0";
+
+addActivity("System reset completed.");
+
+alert("System Reset Successfully.");
+
+};
+
+// ========================================
+// Activity Log
+// ========================================
+
+function addActivity(message){
+
+const item=document.createElement("li");
+
+const time=new Date().toLocaleTimeString();
+
+item.innerHTML=time+" - "+message;
+
+activityList.prepend(item);
+
+}
+
+// ========================================
+// Update Statistics
+// ========================================
+
+function updateStatistics(){
+
+usersCount.innerHTML="1";
+
+storageCount.innerHTML="100%";
+
+statusCount.innerHTML="Online";
+
+backupCount.innerHTML=
+
+localStorage.getItem("backupCount")||0;
+
+}
+
+// ========================================
+// Auto Refresh
+// ========================================
+
+setInterval(function(){
+
+updateStatistics();
+
+},3000);
+
+// ========================================
+// Page Load
+// ========================================
+
+window.onload=function(){
+
+loadSettings();
+
+updateStatistics();
+
+addActivity("Settings module ready.");
+
+};
+
+// ========================================
+// Keyboard Shortcut (Ctrl + S)
+// ========================================
+
+document.addEventListener("keydown",function(e){
+
+if(e.ctrlKey&&e.key==="s"){
+
+e.preventDefault();
+
+saveSettings.click();
+
+}
+
+});
+
+// ========================================
+// End of Settings Module
+// ========================================
+</script>
+
+</body>
+
+</html>

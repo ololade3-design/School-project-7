@@ -1,0 +1,1161 @@
+/* ===================================
+   Student Department Page
+   student-department.css
+=================================== */
+
+
+/* ===================================
+   General
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fc;
+    color: #1f2937;
+}
+
+
+.container {
+    min-height: 100vh;
+}
+
+
+/* ===================================
+   Sidebar
+=================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: #1e3a8a;
+    color: white;
+
+    padding: 20px 15px;
+
+    overflow-y: auto;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 5px 10px 25px;
+}
+
+
+.logo i {
+    font-size: 27px;
+    color: #facc15;
+}
+
+
+.logo h2 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+
+.sidebar ul {
+    list-style: none;
+}
+
+
+.sidebar ul li {
+    margin-bottom: 5px;
+}
+
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 12px 13px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+.sidebar ul li a i {
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+
+.sidebar ul li a:hover {
+    background: #2563eb;
+}
+
+
+.sidebar ul li.active a {
+    background: #2563eb;
+}
+
+
+/* ===================================
+   Main Content
+=================================== */
+
+.main {
+    margin-left: 250px;
+
+    padding: 25px;
+}
+
+
+/* ===================================
+   Topbar
+=================================== */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+
+.topbar h1 {
+    color: #1e3a8a;
+
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+
+.topbar p {
+    margin-top: 3px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+.student-top {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    background: white;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+
+    font-size: 13px;
+}
+
+
+.student-top i {
+    color: #2563eb;
+
+    font-size: 18px;
+}
+
+
+/* ===================================
+   Department Banner
+=================================== */
+
+.department-banner {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.department-banner-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 12px;
+
+    flex-shrink: 0;
+}
+
+
+.department-banner-icon i {
+    font-size: 28px;
+}
+
+
+.department-banner-text h2 {
+    color: #1e3a8a;
+
+    font-size: 20px;
+
+    margin-bottom: 4px;
+}
+
+
+.department-banner-text p {
+    color: #6b7280;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ===================================
+   Department Information
+=================================== */
+
+.department-information {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.information-card {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    background: white;
+
+    padding: 17px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.card-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    flex-shrink: 0;
+}
+
+
+.card-icon i {
+    font-size: 17px;
+}
+
+
+.information-card span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    margin-bottom: 2px;
+}
+
+
+.information-card h3 {
+    color: #1f2937;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* ===================================
+   Content Grid
+=================================== */
+
+.content-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ===================================
+   Department Details
+=================================== */
+
+.department-details,
+.academic-structure {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.section-header {
+    margin-bottom: 15px;
+}
+
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #1e3a8a;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.section-header h2 i {
+    color: #2563eb;
+
+    font-size: 16px;
+}
+
+
+.section-header p {
+    color: #6b7280;
+
+    font-size: 11px;
+
+    margin-top: 3px;
+}
+
+
+/* ===================================
+   Details List
+=================================== */
+
+.details-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eef2f7;
+}
+
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+
+.detail-row span {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+}
+
+
+.detail-row span i {
+    width: 17px;
+
+    color: #2563eb;
+}
+
+
+.detail-row strong {
+    color: #1f2937;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    text-align: right;
+}
+
+
+/* ===================================
+   Academic Structure
+=================================== */
+
+.structure-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #eef2f7;
+
+    border-radius: 8px;
+}
+
+
+.structure-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    flex-shrink: 0;
+}
+
+
+.structure-icon i {
+    font-size: 15px;
+}
+
+
+.structure-item span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+    margin-bottom: 2px;
+}
+
+
+.structure-item h3 {
+    color: #1f2937;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.structure-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 25px;
+
+    color: #2563eb;
+
+    font-size: 12px;
+}/* ===================================
+   Department Courses
+=================================== */
+
+.department-courses {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.course-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.course-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px;
+
+    background: #f8fafc;
+
+    border: 1px solid #eef2f7;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+.course-item:hover {
+    background: #eff6ff;
+
+    border-color: #bfdbfe;
+}
+
+
+.course-code {
+    min-width: 75px;
+
+    padding: 7px 8px;
+
+    text-align: center;
+
+    background: #1e3a8a;
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.course-info {
+    flex: 1;
+}
+
+
+.course-info h3 {
+    color: #1f2937;
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+
+.course-info p {
+    color: #6b7280;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.course-unit {
+    padding: 6px 9px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 500;
+}
+
+
+/* ===================================
+   Department Activities
+=================================== */
+
+.activities-section {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.activities-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+.activity-card {
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #eef2f7;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+.activity-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #bfdbfe;
+}
+
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+}
+
+
+.activity-icon i {
+    font-size: 15px;
+}
+
+
+.activity-card h3 {
+    color: #1f2937;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+.activity-card p {
+    color: #6b7280;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* ===================================
+   Useful Academic Links
+=================================== */
+
+.department-links {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.links-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.department-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    background: #f8fafc;
+
+    border: 1px solid #eef2f7;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.department-link:hover {
+    background: #eff6ff;
+
+    border-color: #bfdbfe;
+}
+
+
+.link-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    flex-shrink: 0;
+}
+
+
+.link-icon i {
+    font-size: 15px;
+}
+
+
+.department-link h3 {
+    color: #1f2937;
+
+    font-size: 12px;
+
+    margin-bottom: 2px;
+}
+
+
+.department-link p {
+    color: #6b7280;
+
+    font-size: 10px;
+}
+
+
+.department-link > i {
+    margin-left: auto;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+/* ===================================
+   Department Notice
+=================================== */
+
+.department-notice {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    background: #fffbeb;
+
+    border: 1px solid #fde68a;
+
+    padding: 16px;
+
+    border-radius: 9px;
+
+    margin-bottom: 20px;
+}
+
+
+.notice-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fef3c7;
+
+    color: #d97706;
+
+    border-radius: 8px;
+
+    flex-shrink: 0;
+}
+
+
+.notice-icon i {
+    font-size: 15px;
+}
+
+
+.department-notice h3 {
+    color: #92400e;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+
+.department-notice p {
+    color: #78350f;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* ===================================
+   Footer
+=================================== */
+
+footer {
+    text-align: center;
+
+    padding: 10px 0 5px;
+
+    color: #9ca3af;
+
+    font-size: 10px;
+}
+
+
+/* ===================================
+   Tablet
+=================================== */
+
+@media (max-width: 1100px) {
+
+    .department-information {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ===================================
+   Smaller Tablet
+=================================== */
+
+@media (max-width: 900px) {
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ===================================
+   Mobile
+=================================== */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+
+    .main {
+        margin-left: 210px;
+
+        padding: 18px;
+    }
+
+
+    .logo h2 {
+        font-size: 16px;
+    }
+
+
+    .sidebar ul li a {
+        font-size: 11px;
+
+        padding: 10px;
+    }
+
+
+    .topbar {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .topbar h1 {
+        font-size: 21px;
+    }
+
+
+    .student-top {
+        padding: 8px 10px;
+
+        font-size: 11px;
+    }
+
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .course-item {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ===================================
+   Small Mobile
+=================================== */
+
+@media (max-width: 550px) {
+
+    .sidebar {
+        width: 65px;
+
+        padding: 15px 8px;
+    }
+
+
+    .logo {
+        justify-content: center;
+
+        padding: 5px 0 20px;
+    }
+
+
+    .logo h2 {
+        display: none;
+    }
+
+
+    .sidebar ul li a {
+        justify-content: center;
+
+        padding: 11px 5px;
+
+        font-size: 0;
+    }
+
+
+    .sidebar ul li a i {
+        font-size: 16px;
+    }
+
+
+    .main {
+        margin-left: 65px;
+
+        padding: 14px;
+    }
+
+
+    .topbar {
+        flex-direction: column;
+    }
+
+
+    .student-top {
+        align-self: flex-start;
+    }
+
+
+    .department-banner {
+        padding: 16px;
+
+        gap: 12px;
+    }
+
+
+    .department-banner-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .department-banner-icon i {
+        font-size: 21px;
+    }
+
+
+    .department-banner-text h2 {
+        font-size: 16px;
+    }
+
+
+    .department-information {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .department-details,
+    .academic-structure,
+    .department-courses,
+    .activities-section,
+    .department-links {
+        padding: 15px;
+    }
+
+
+    .detail-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+
+    .detail-row strong {
+        text-align: left;
+    }
+
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .course-item {
+        gap: 10px;
+    }
+
+
+    .course-code {
+        min-width: 65px;
+    }
+
+
+    .department-notice {
+        padding: 13px;
+    }
+
+}
+
+
+/* ===================================
+   Very Small Screens
+=================================== */
+
+@media (max-width: 380px) {
+
+    .main {
+        padding: 10px;
+    }
+
+
+    .topbar h1 {
+        font-size: 18px;
+    }
+
+
+    .department-banner-text h2 {
+        font-size: 14px;
+    }
+
+
+    .department-banner-text p {
+        font-size: 9px;
+    }
+
+
+    .section-header h2 {
+        font-size: 14px;
+    }
+
+
+    .course-info h3 {
+        font-size: 11px;
+    }
+
+}

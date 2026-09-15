@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Settings</title>
+
+    <link rel="stylesheet" href="settings.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ===================================
+         Sidebar
+    =================================== -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h2>Student Portal</h2>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="student dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Student Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="my profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="course registration.html">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Course Registration
+                </a>
+            </li>
+
+            <li>
+                <a href="faculty.html">
+                    <i class="fa-solid fa-building-columns"></i>
+                    Faculty
+                </a>
+            </li>
+
+            <li>
+                <a href="department.html">
+                    <i class="fa-solid fa-building"></i>
+                    Department
+                </a>
+            </li>
+
+            <li>
+                <a href="my courses.html">
+                    <i class="fa-solid fa-book"></i>
+                    My Courses
+                </a>
+            </li>
+
+            <li>
+                <a href="my timetable.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    My Timetable
+                </a>
+            </li>
+
+            <li>
+                <a href="academic info.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Academic Information
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- ===================================
+         Main
+    =================================== -->
+
+    <div class="main">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <div>
+                <h1>Settings</h1>
+                <p>Manage your student portal preferences.</p>
+            </div>
+
+            <div class="student-top">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <span id="studentName">
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================================
+             Settings Container
+        =================================== -->
+
+        <div class="settings-container">
+
+
+            <!-- ===================================
+                 Account Settings
+            =================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-header">
+
+                    <div class="settings-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <h2>Account Settings</h2>
+                        <p>Manage your basic student account information.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="studentFullName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentFullName"
+                            placeholder="Enter your full name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            placeholder="Enter your email address"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentPhone"
+                            placeholder="Enter your phone number"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="studentMatric">
+                            Matriculation Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentMatric"
+                            placeholder="Matriculation number"
+                            readonly
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================
+                 Academic Settings
+            =================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-header">
+
+                    <div class="settings-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <h2>Academic Settings</h2>
+                        <p>Set your current academic information.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="faculty">
+                            Faculty
+                        </label>
+
+                        <input
+                            type="text"
+                            id="faculty"
+                            placeholder="Enter your faculty"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department
+                        </label>
+
+                        <input
+                            type="text"
+                            id="department"
+                            placeholder="Enter your department"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="level">
+                            Current Level
+                        </label>
+
+                        <select id="level">
+
+                            <option value="100">
+                                100 Level
+                            </option>
+
+                            <option value="200">
+                                200 Level
+                            </option>
+
+                            <option value="300">
+                                300 Level
+                            </option>
+
+                            <option value="400">
+                                400 Level
+                            </option>
+
+                            <option value="500">
+                                500 Level
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="semester">
+                            Current Semester
+                        </label>
+
+                        <select id="semester">
+
+                            <option value="First Semester">
+                                First Semester
+                            </option>
+
+                            <option value="Second Semester">
+                                Second Semester
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="academicSession">
+                            Academic Session
+                        </label>
+
+                        <input
+                            type="text"
+                            id="academicSession"
+                            placeholder="2025/2026"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="programme">
+                            Programme
+                        </label>
+
+                        <input
+                            type="text"
+                            id="programme"
+                            placeholder="Software Engineering"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================
+                 Notification Settings
+            =================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-header">
+
+                    <div class="settings-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <h2>Notification Settings</h2>
+                        <p>Choose the notifications you want to receive.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="setting-option">
+
+                    <div>
+                        <h3>Course Registration Alerts</h3>
+
+                        <p>
+                            Receive reminders about course registration.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="registrationNotifications"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="setting-option">
+
+                    <div>
+                        <h3>Timetable Updates</h3>
+
+                        <p>
+                            Receive notifications when your timetable changes.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="timetableNotifications"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="setting-option">
+
+                    <div>
+                        <h3>Academic Notifications</h3>
+
+                        <p>
+                            Receive important academic announcements.
+                        </p>
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="academicNotifications"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================
+                 Appearance
+            =================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-header">
+
+                    <div class="settings-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+
+                    <div>
+                        <h2>Appearance</h2>
+                        <p>Choose how the student portal should look.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="appearance-options">
+
+                    <label class="appearance-option">
+
+                        <input
+                            type="radio"
+                            name="appearance"
+                            value="light"
+                            checked
+                        >
+
+                        <div>
+
+                            <i class="fa-solid fa-sun"></i>
+
+                            <strong>Light Mode</strong>
+
+                            <span>
+                                Use the standard light interface.
+                            </span>
+
+                        </div>
+
+                    </label>
+
+
+                    <label class="appearance-option">
+
+                        <input
+                            type="radio"
+                            name="appearance"
+                            value="dark"
+                        >
+
+                        <div>
+
+                            <i class="fa-solid fa-moon"></i>
+
+                            <strong>Dark Mode</strong>
+
+                            <span>
+                                Use a darker interface.
+                            </span>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================
+                 Change Password
+            =================================== -->
+
+            <div class="settings-card">
+
+                <div class="settings-header">
+
+                    <div class="settings-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <div>
+                        <h2>Change Password</h2>
+                        <p>Update your student portal password.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="currentPassword">
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            placeholder="Enter current password"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="newPassword">
+                            New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Enter new password"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm new password"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================
+                 Academic Notice
+            =================================== -->
+
+            <div class="academic-notice">
+
+                <div class="notice-icon">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+
+                <div>
+
+                    <h3>Important</h3>
+
+                    <p>
+                        Make sure the academic information in your settings
+                        is correct. Your settings are saved locally in this
+                        student portal.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================
+                 Buttons
+            =================================== -->
+
+            <div class="settings-actions">
+
+                <button
+                    type="button"
+                    class="reset-button"
+                    id="resetSettings"
+                >
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Reset
+                </button>
+
+
+                <button
+                    type="button"
+                    class="save-button"
+                    id="saveSettings"
+                >
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Save Settings
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ===================================
+             Footer
+        =================================== -->
+
+        <footer>
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System
+            </p>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<script src="../js/api.js"></script>
+<script>
+    // ===================================
+// Student Settings
+// student-settings.js
+// ===================================
+
+
+// ===================================
+// Load Saved Data
+// ===================================
+
+let studentData = JSON.parse(
+    localStorage.getItem("studentData")
+) || {};
+
+let settings = JSON.parse(
+    localStorage.getItem("settings")
+) || {};
+
+
+// ===================================
+// Elements
+// ===================================
+
+const studentName =
+    document.getElementById("studentName");
+
+const studentFullName =
+    document.getElementById("studentFullName");
+
+const studentEmail =
+    document.getElementById("studentEmail");
+
+const studentPhone =
+    document.getElementById("studentPhone");
+
+const studentMatric =
+    document.getElementById("studentMatric");
+
+const faculty =
+    document.getElementById("faculty");
+
+const department =
+    document.getElementById("department");
+
+const level =
+    document.getElementById("level");
+
+const semester =
+    document.getElementById("semester");
+
+const academicSession =
+    document.getElementById("academicSession");
+
+const programme =
+    document.getElementById("programme");
+
+const registrationNotifications =
+    document.getElementById(
+        "registrationNotifications"
+    );
+
+const timetableNotifications =
+    document.getElementById(
+        "timetableNotifications"
+    );
+
+const academicNotifications =
+    document.getElementById(
+        "academicNotifications"
+    );
+
+const saveSettings =
+    document.getElementById("saveSettings");
+
+const resetSettings =
+    document.getElementById("resetSettings");
+
+const currentYear =
+    document.getElementById("currentYear");
+
+
+// ===================================
+// Helper Functions
+// ===================================
+
+function getStudentName() {
+
+    return (
+        studentData.name ||
+        studentData.fullName ||
+        studentData.studentName ||
+        "Student"
+    );
+}
+
+
+function getMatricNumber() {
+
+    return (
+        studentData.matricNumber ||
+        studentData.matricNo ||
+        studentData.matric ||
+        ""
+    );
+}
+
+
+// ===================================
+// Load Student Information
+// ===================================
+
+studentName.textContent =
+    getStudentName();
+
+studentFullName.value =
+    studentData.name ||
+    studentData.fullName ||
+    studentData.studentName ||
+    "";
+
+studentEmail.value =
+    studentData.email ||
+    "";
+
+studentPhone.value =
+    studentData.phone ||
+    studentData.phoneNumber ||
+    "";
+
+studentMatric.value =
+    getMatricNumber();
+
+
+// ===================================
+// Load Academic Information
+// ===================================
+
+faculty.value =
+    studentData.faculty ||
+    settings.faculty ||
+    "";
+
+department.value =
+    studentData.department ||
+    settings.department ||
+    "";
+
+level.value =
+    String(
+        studentData.level ||
+        settings.level ||
+        "100"
+    );
+
+semester.value =
+    studentData.semester ||
+    settings.semester ||
+    "First Semester";
+
+academicSession.value =
+    studentData.academicSession ||
+    settings.academicSession ||
+    "2025/2026";
+
+programme.value =
+    studentData.programme ||
+    studentData.program ||
+    settings.programme ||
+    "Software Engineering";
+
+
+// ===================================
+// Load Notification Settings
+// ===================================
+
+registrationNotifications.checked =
+    settings.registrationNotifications !== false;
+
+timetableNotifications.checked =
+    settings.timetableNotifications !== false;
+
+academicNotifications.checked =
+    settings.academicNotifications !== false;
+
+
+// ===================================
+// Load Appearance
+// ===================================
+
+const savedAppearance =
+    settings.appearance || "light";
+
+const appearanceOption =
+    document.querySelector(
+        `input[name="appearance"][value="${savedAppearance}"]`
+    );
+
+if (appearanceOption) {
+    appearanceOption.checked = true;
+}
+
+
+// ===================================
+// Save Settings
+// ===================================
+
+saveSettings.addEventListener(
+    "click",
+    function () {
+
+        // -------------------------------
+        // Update Student Data
+        // -------------------------------
+
+        studentData.name =
+            studentFullName.value.trim();
+
+        studentData.fullName =
+            studentFullName.value.trim();
+
+        studentData.email =
+            studentEmail.value.trim();
+
+        studentData.phone =
+            studentPhone.value.trim();
+
+        studentData.faculty =
+            faculty.value.trim();
+
+        studentData.department =
+            department.value.trim();
+
+        studentData.level =
+            level.value;
+
+        studentData.semester =
+            semester.value;
+
+        studentData.academicSession =
+            academicSession.value.trim();
+
+        studentData.programme =
+            programme.value.trim();
+
+
+        // -------------------------------
+        // Update Settings
+        // -------------------------------
+
+        settings.faculty =
+            faculty.value.trim();
+
+        settings.department =
+            department.value.trim();
+
+        settings.level =
+            level.value;
+
+        settings.semester =
+            semester.value;
+
+        settings.academicSession =
+            academicSession.value.trim();
+
+        settings.programme =
+            programme.value.trim();
+
+        settings.registrationNotifications =
+            registrationNotifications.checked;
+
+        settings.timetableNotifications =
+            timetableNotifications.checked;
+
+        settings.academicNotifications =
+            academicNotifications.checked;
+
+
+        // -------------------------------
+        // Appearance
+        // -------------------------------
+
+        const selectedAppearance =
+            document.querySelector(
+                'input[name="appearance"]:checked'
+            );
+
+        if (selectedAppearance) {
+
+            settings.appearance =
+                selectedAppearance.value;
+
+        }
+
+
+        // -------------------------------
+        // Save to LocalStorage
+        // -------------------------------
+
+        localStorage.setItem(
+            "studentData",
+            JSON.stringify(studentData)
+        );
+
+        localStorage.setItem(
+            "settings",
+            JSON.stringify(settings)
+        );
+
+
+        // -------------------------------
+        // Update Name
+        // -------------------------------
+
+        studentName.textContent =
+            getStudentName();
+
+
+        // -------------------------------
+        // Confirmation
+        // -------------------------------
+
+        alert(
+            "Settings saved successfully."
+        );
+
+    }
+);
+
+
+// ===================================
+// Reset Settings
+// ===================================
+
+resetSettings.addEventListener(
+    "click",
+    function () {
+
+        const confirmReset =
+            confirm(
+                "Are you sure you want to reset your settings?"
+            );
+
+        if (!confirmReset) {
+            return;
+        }
+
+
+        // Restore student information
+        studentFullName.value =
+            studentData.name ||
+            studentData.fullName ||
+            studentData.studentName ||
+            "";
+
+        studentEmail.value =
+            studentData.email ||
+            "";
+
+        studentPhone.value =
+            studentData.phone ||
+            studentData.phoneNumber ||
+            "";
+
+        studentMatric.value =
+            getMatricNumber();
+
+
+        // Restore academic information
+        faculty.value =
+            studentData.faculty ||
+            "";
+
+        department.value =
+            studentData.department ||
+            "";
+
+        level.value =
+            String(
+                studentData.level ||
+                "100"
+            );
+
+        semester.value =
+            studentData.semester ||
+            "First Semester";
+
+        academicSession.value =
+            studentData.academicSession ||
+            "2025/2026";
+
+        programme.value =
+            studentData.programme ||
+            studentData.program ||
+            "Software Engineering";
+
+
+        // Restore notifications
+        registrationNotifications.checked =
+            true;
+
+        timetableNotifications.checked =
+            true;
+
+        academicNotifications.checked =
+            true;
+
+
+        // Restore appearance
+        const lightMode =
+            document.querySelector(
+                'input[name="appearance"][value="light"]'
+            );
+
+        if (lightMode) {
+            lightMode.checked = true;
+        }
+
+
+        alert(
+            "Settings have been reset."
+        );
+
+    }
+);
+
+
+// ===================================
+// Current Year
+// ===================================
+
+currentYear.textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+
+</html>

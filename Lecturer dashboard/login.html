@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Smart Timetable Generation System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="login-box">
+
+        <div class="logo">
+            <i class="fa-solid fa-calendar-days"></i>
+            <h2>Smart Timetable</h2>
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="subtitle">
+            Sign in to continue to your account
+        </p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    required>
+            </div>
+
+            <div class="input-group">
+
+                <i class="fa-solid fa-user"></i>
+
+                <select id="role" required>
+
+                    <option value="">Select Role</option>
+
+                    <option value="Student">Student</option>
+
+                    <option value="Lecturer">Lecturer</option>
+
+                    <option value="Administrator">Administrator</option>
+
+                </select>
+
+            </div>
+
+            <div class="options">
+
+                <a href="#">Forgot Password?</a>
+
+            </div>
+
+            <button type="submit">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </button>
+
+        </form>
+
+        <div class="bottom-links">
+
+            <p>
+                Don't have an account?
+                <a href="register.html">Register</a>
+            </p>
+
+            <p>
+                <a href="index.html">
+                    ← Back to Home
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/api.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Students - Smart Timetable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="my students.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+                <h2>Smart Timetable</h2>
+                <span>Lecturer Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="lecturer dashboard.html" class="menu-item">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html" class="menu-item">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html" class="menu-item active">
+                <i class="fa-solid fa-users"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html" class="menu-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html" class="menu-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html" class="menu-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" class="menu-item login-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="header-title">
+                <h1>My Students</h1>
+                <p>View students enrolled in your assigned courses</p>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification-button" id="notificationButton">
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount">0</span>
+                </button>
+
+                <div class="header-account">
+
+                    <div class="header-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="header-account-info">
+                        <strong id="headerLecturerName">Lecturer</strong>
+                        <span id="headerDepartment">Department</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="page-content">
+
+            <!-- Page Intro -->
+            <div class="page-intro">
+
+                <div>
+                    <h2>Student Management</h2>
+
+                    <p>
+                        View students registered for the courses assigned to
+                        <span id="lecturerName">Lecturer</span>.
+                    </p>
+                </div>
+
+                <button class="refresh-button" id="refreshStudents">
+                    <i class="fa-solid fa-rotate"></i>
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <!-- Summary Cards -->
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon blue">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <h3 id="studentCount">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon green">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <span>My Courses</span>
+                        <h3 id="courseCount">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon orange">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Active Students</span>
+                        <h3 id="activeStudentCount">0</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon purple">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div>
+                        <span>Levels</span>
+                        <h3 id="levelCount">0</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Search and Filter -->
+            <div class="student-controls">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="studentSearch"
+                        placeholder="Search by name, matric number or email..."
+                    >
+
+                </div>
+
+
+                <select id="courseFilter">
+                    <option value="all">All Courses</option>
+                </select>
+
+
+                <select id="levelFilter">
+
+                    <option value="all">All Levels</option>
+                    <option value="100">100 Level</option>
+                    <option value="200">200 Level</option>
+                    <option value="300">300 Level</option>
+                    <option value="400">400 Level</option>
+                    <option value="500">500 Level</option>
+
+                </select>
+
+
+                <select id="statusFilter">
+
+                    <option value="all">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Students Table -->
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>My Students</h3>
+                        <p>
+                            Students enrolled in your assigned courses
+                        </p>
+                    </div>
+
+                    <span class="student-total" id="studentTotalLabel">
+                        0 Students
+                    </span>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>S/N</th>
+                                <th>Student Name</th>
+                                <th>Matriculation Number</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Level</th>
+                                <th>Courses</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="studentsTableBody">
+                            <!-- Students will be loaded here -->
+                        </tbody>
+
+                    </table>
+
+
+                    <div class="empty-state" id="emptyStudents">
+
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <h3>No Students Found</h3>
+
+                        <p>
+                            No students matching your courses were found.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Student Details -->
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Student Information</h3>
+                        <p>
+                            Select a student from the table to view details.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="student-detail-content" id="studentDetailContent">
+
+                    <div class="detail-placeholder">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <p>
+                            Click the View button on a student to see more information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Information Notice -->
+            <div class="notice-card">
+
+                <div class="notice-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div>
+
+                    <h3>Student Information</h3>
+
+                    <p>
+                        This page displays students enrolled in the courses
+                        assigned to you. Student registration and academic
+                        records are managed by the appropriate administrator.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                &copy; <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ===============================
+// Lecturer Students Management
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const studentCount = document.getElementById("studentCount");
+    const courseCount = document.getElementById("courseCount");
+    const activeStudentCount = document.getElementById("activeStudentCount");
+    const levelCount = document.getElementById("levelCount");
+
+    const studentsTableBody = document.getElementById("studentsTableBody");
+    const emptyStudents = document.getElementById("emptyStudents");
+
+    const studentSearch = document.getElementById("studentSearch");
+    const courseFilter = document.getElementById("courseFilter");
+    const levelFilter = document.getElementById("levelFilter");
+    const statusFilter = document.getElementById("statusFilter");
+
+    const studentTotalLabel =
+        document.getElementById("studentTotalLabel");
+
+    const studentDetailContent =
+        document.getElementById("studentDetailContent");
+
+    const lecturerName =
+        document.getElementById("lecturerName");
+
+    const headerLecturerName =
+        document.getElementById("headerLecturerName");
+
+    const headerDepartment =
+        document.getElementById("headerDepartment");
+
+    const notificationButton =
+        document.getElementById("notificationButton");
+
+    const notificationCount =
+        document.getElementById("notificationCount");
+
+    const refreshStudents =
+        document.getElementById("refreshStudents");
+
+    const currentYear =
+        document.getElementById("currentYear");
+
+
+    // ===============================
+    // Helper Functions
+    // ===============================
+
+    function getData(key, defaultValue = []) {
+
+        try {
+            const data = JSON.parse(localStorage.getItem(key));
+
+            return data !== null ? data : defaultValue;
+
+        } catch (error) {
+            return defaultValue;
+        }
+    }
+
+
+    function escapeHTML(value) {
+
+        if (value === null || value === undefined) {
+            return "";
+        }
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+    function getValue(object, ...keys) {
+
+        for (const key of keys) {
+
+            if (
+                object &&
+                object[key] !== undefined &&
+                object[key] !== null &&
+                object[key] !== ""
+            ) {
+                return object[key];
+            }
+        }
+
+        return "";
+    }
+
+
+    // ===============================
+    // Lecturer Information
+    // ===============================
+
+    function getLecturer() {
+
+        const lecturerData =
+            getData("lecturerData", null);
+
+        if (
+            lecturerData &&
+            typeof lecturerData === "object"
+        ) {
+            return lecturerData;
+        }
+
+
+        const loggedInLecturer =
+            getData("loggedInLecturer", null);
+
+        if (
+            loggedInLecturer &&
+            typeof loggedInLecturer === "object"
+        ) {
+            return loggedInLecturer;
+        }
+
+
+        return {};
+    }
+
+
+    const lecturer = getLecturer();
+
+
+    const currentLecturerName =
+        getValue(
+            lecturer,
+            "fullName",
+            "name",
+            "lecturerName"
+        ) || "Lecturer";
+
+
+    const currentLecturerId =
+        getValue(
+            lecturer,
+            "id",
+            "lecturerId",
+            "lecturerID",
+            "staffId",
+            "staffID"
+        );
+
+
+    const currentDepartment =
+        getValue(
+            lecturer,
+            "department",
+            "departmentName"
+        ) || "Department";
+
+
+    lecturerName.textContent =
+        currentLecturerName;
+
+    headerLecturerName.textContent =
+        currentLecturerName;
+
+    headerDepartment.textContent =
+        currentDepartment;
+
+
+    // ===============================
+    // Courses
+    // ===============================
+
+    function getAllCourses() {
+
+        const courses =
+            getData("courses", []);
+
+        return Array.isArray(courses)
+            ? courses
+            : [];
+    }
+
+
+    function getCourseCode(course) {
+
+        return getValue(
+            course,
+            "courseCode",
+            "code",
+            "course_code"
+        ) || "";
+    }
+
+
+    function getCourseTitle(course) {
+
+        return getValue(
+            course,
+            "courseTitle",
+            "title",
+            "courseName",
+            "name"
+        ) || "Untitled Course";
+    }
+
+
+    function getLecturerCourses() {
+
+        const courses = getAllCourses();
+
+        return courses.filter(course => {
+
+            const lecturerId =
+                getValue(
+                    course,
+                    "lecturerId",
+                    "lecturerID",
+                    "assignedLecturerId",
+                    "assignedLecturerID",
+                    "staffId",
+                    "staffID"
+                );
+
+
+            const lecturerNameValue =
+                getValue(
+                    course,
+                    "lecturer",
+                    "lecturerName",
+                    "assignedLecturer",
+                    "assignedLecturerName"
+                );
+
+
+            if (
+                currentLecturerId &&
+                lecturerId
+            ) {
+                return String(lecturerId) ===
+                    String(currentLecturerId);
+            }
+
+
+            if (lecturerNameValue) {
+
+                return String(lecturerNameValue)
+                    .toLowerCase() ===
+                    String(currentLecturerName)
+                        .toLowerCase();
+            }
+
+
+            return false;
+        });
+    }
+
+
+    // ===============================
+    // Student Course Helpers
+    // ===============================
+
+    function getStudentCourses(student) {
+
+        const courses =
+            student.registeredCourses ||
+            student.courses ||
+            student.enrolledCourses ||
+            [];
+
+
+        if (!Array.isArray(courses)) {
+            return [];
+        }
+
+
+        return courses;
+    }
+
+
+    function getRegisteredCourseCode(course) {
+
+        if (typeof course === "string") {
+            return course;
+        }
+
+
+        return getValue(
+            course,
+            "courseCode",
+            "code",
+            "course_code"
+        );
+    }
+
+
+    function getStudentCourseCodes(student) {
+
+        return getStudentCourses(student)
+            .map(course =>
+                String(
+                    getRegisteredCourseCode(course)
+                ).toLowerCase()
+            )
+            .filter(Boolean);
+    }
+
+
+    // ===============================
+    // Find Lecturer Students
+    // ===============================
+
+    function getLecturerStudents() {
+
+        const students =
+            getData("students", []);
+
+        const lecturerCourses =
+            getLecturerCourses();
+
+
+        if (!Array.isArray(students)) {
+            return [];
+        }
+
+
+        const lecturerCourseCodes =
+            lecturerCourses.map(course =>
+                getCourseCode(course).toLowerCase()
+            );
+
+
+        if (lecturerCourseCodes.length === 0) {
+            return [];
+        }
+
+
+        return students.filter(student => {
+
+            const studentCourses =
+                getStudentCourseCodes(student);
+
+
+            return studentCourses.some(courseCode =>
+                lecturerCourseCodes.includes(courseCode)
+            );
+        });
+    }
+
+
+    // ===============================
+    // Student Information
+    // ===============================
+
+    function getStudentName(student) {
+
+        return getValue(
+            student,
+            "fullName",
+            "name",
+            "studentName"
+        ) || "Unknown Student";
+    }
+
+
+    function getMatricNumber(student) {
+
+        return getValue(
+            student,
+            "matricNumber",
+            "matricNo",
+            "matric",
+            "registrationNumber"
+        ) || "N/A";
+    }
+
+
+    function getEmail(student) {
+
+        return getValue(
+            student,
+            "email",
+            "emailAddress"
+        ) || "N/A";
+    }
+
+
+    function getDepartment(student) {
+
+        return getValue(
+            student,
+            "department",
+            "departmentName"
+        ) || "N/A";
+    }
+
+
+    function getLevel(student) {
+
+        return getValue(
+            student,
+            "level",
+            "currentLevel",
+            "year"
+        ) || "N/A";
+    }
+
+
+    function getStatus(student) {
+
+        return getValue(
+            student,
+            "status",
+            "accountStatus"
+        ) || "Active";
+    }
+
+
+    function getStudentId(student) {
+
+        return getValue(
+            student,
+            "id",
+            "studentId",
+            "studentID"
+        );
+    }
+
+
+    // ===============================
+    // Course Names For Student
+    // ===============================
+
+    function getStudentLecturerCourses(student) {
+
+        const studentCourseCodes =
+            getStudentCourseCodes(student);
+
+        const lecturerCourses =
+            getLecturerCourses();
+
+
+        return lecturerCourses.filter(course => {
+
+            const code =
+                getCourseCode(course).toLowerCase();
+
+            return studentCourseCodes.includes(code);
+        });
+    }
+
+
+    // ===============================
+    // Populate Course Filter
+    // ===============================
+
+    function populateCourseFilter() {
+
+        const courses =
+            getLecturerCourses();
+
+
+        courseFilter.innerHTML =
+            `<option value="all">All Courses</option>`;
+
+
+        courses.forEach(course => {
+
+            const code =
+                getCourseCode(course);
+
+            const title =
+                getCourseTitle(course);
+
+
+            if (!code) {
+                return;
+            }
+
+
+            const option =
+                document.createElement("option");
+
+            option.value = code;
+
+            option.textContent =
+                `${code} - ${title}`;
+
+            courseFilter.appendChild(option);
+        });
+    }
+
+
+    // ===============================
+    // Render Students
+    // ===============================
+
+    let lecturerStudents = [];
+    let filteredStudents = [];
+
+
+    function renderStudents(students) {
+
+        studentsTableBody.innerHTML = "";
+
+
+        studentTotalLabel.textContent =
+            `${students.length} ${
+                students.length === 1
+                    ? "Student"
+                    : "Students"
+            }`;
+
+
+        if (students.length === 0) {
+
+            emptyStudents.style.display =
+                "block";
+
+            studentsTableBody.style.display =
+                "none";
+
+            return;
+        }
+
+
+        emptyStudents.style.display =
+            "none";
+
+        studentsTableBody.style.display =
+            "table-row-group";
+
+
+        students.forEach((student, index) => {
+
+            const name =
+                getStudentName(student);
+
+            const matric =
+                getMatricNumber(student);
+
+            const email =
+                getEmail(student);
+
+            const department =
+                getDepartment(student);
+
+            const level =
+                getLevel(student);
+
+            const status =
+                getStatus(student);
+
+
+            const studentCourses =
+                getStudentLecturerCourses(student);
+
+
+            const courseCount =
+                studentCourses.length;
+
+
+            const statusClass =
+                String(status).toLowerCase() ===
+                "active"
+                    ? "active"
+                    : "inactive";
+
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td>${index + 1}</td>
+
+                <td>
+                    <span class="student-name">
+                        ${escapeHTML(name)}
+                    </span>
+                </td>
+
+                <td>
+                    <span class="matric-number">
+                        ${escapeHTML(matric)}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(email)}
+                </td>
+
+                <td>
+                    ${escapeHTML(department)}
+                </td>
+
+                <td>
+                    ${escapeHTML(level)}
+                </td>
+
+                <td>
+                    <span class="course-badge">
+                        ${courseCount}
+                        ${
+                            courseCount === 1
+                                ? "Course"
+                                : "Courses"
+                        }
+                    </span>
+                </td>
+
+                <td>
+                    <span class="status ${statusClass}">
+                        ${escapeHTML(status)}
+                    </span>
+                </td>
+
+                <td>
+
+                    <button
+                        class="view-button"
+                        data-index="${index}"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View
+                    </button>
+
+                </td>
+            `;
+
+
+            studentsTableBody.appendChild(row);
+        });
+
+
+        const viewButtons =
+            studentsTableBody
+                .querySelectorAll(".view-button");
+
+
+        viewButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const index =
+                        Number(button.dataset.index);
+
+                    showStudentDetails(
+                        students[index]
+                    );
+                }
+            );
+        });
+    }
+
+
+    // ===============================
+    // Student Details
+    // ===============================
+
+    function showStudentDetails(student) {
+
+        const name =
+            getStudentName(student);
+
+        const matric =
+            getMatricNumber(student);
+
+        const email =
+            getEmail(student);
+
+        const department =
+            getDepartment(student);
+
+        const level =
+            getLevel(student);
+
+        const status =
+            getStatus(student);
+
+        const phone =
+            getValue(
+                student,
+                "phone",
+                "phoneNumber",
+                "telephone"
+            ) || "N/A";
+
+        const faculty =
+            getValue(
+                student,
+                "faculty",
+                "facultyName"
+            ) || "N/A";
+
+        const programme =
+            getValue(
+                student,
+                "programme",
+                "program",
+                "courseOfStudy"
+            ) || "N/A";
+
+
+        const studentCourses =
+            getStudentLecturerCourses(student);
+
+
+        const courseNames =
+            studentCourses.length > 0
+                ? studentCourses
+                    .map(course =>
+                        getCourseCode(course)
+                    )
+                    .join(", ")
+                : "No courses";
+
+
+        studentDetailContent.innerHTML = `
+
+            <div class="student-detail-grid">
+
+                <div class="detail-item">
+                    <span>Full Name</span>
+                    <strong>
+                        ${escapeHTML(name)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Matriculation Number</span>
+                    <strong>
+                        ${escapeHTML(matric)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Email Address</span>
+                    <strong>
+                        ${escapeHTML(email)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Phone Number</span>
+                    <strong>
+                        ${escapeHTML(phone)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Faculty</span>
+                    <strong>
+                        ${escapeHTML(faculty)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Department</span>
+                    <strong>
+                        ${escapeHTML(department)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Programme</span>
+                    <strong>
+                        ${escapeHTML(programme)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Level</span>
+                    <strong>
+                        ${escapeHTML(level)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>Status</span>
+                    <strong>
+                        ${escapeHTML(status)}
+                    </strong>
+                </div>
+
+                <div class="detail-item">
+                    <span>My Courses</span>
+                    <strong>
+                        ${escapeHTML(courseNames)}
+                    </strong>
+                </div>
+
+            </div>
+        `;
+
+
+        const detailsCard =
+            studentDetailContent.closest(
+                ".content-card"
+            );
+
+
+        if (detailsCard) {
+
+            detailsCard.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    }
+
+
+    // ===============================
+    // Filter Students
+    // ===============================
+
+    function filterStudents() {
+
+        const searchValue =
+            studentSearch.value
+                .trim()
+                .toLowerCase();
+
+
+        const selectedCourse =
+            courseFilter.value;
+
+
+        const selectedLevel =
+            levelFilter.value;
+
+
+        const selectedStatus =
+            statusFilter.value;
+
+
+        filteredStudents =
+            lecturerStudents.filter(student => {
+
+                const name =
+                    getStudentName(student)
+                        .toLowerCase();
+
+                const matric =
+                    getMatricNumber(student)
+                        .toLowerCase();
+
+                const email =
+                    getEmail(student)
+                        .toLowerCase();
+
+                const level =
+                    String(
+                        getLevel(student)
+                    );
+
+                const status =
+                    String(
+                        getStatus(student)
+                    );
+
+
+                const matchesSearch =
+                    name.includes(searchValue) ||
+                    matric.includes(searchValue) ||
+                    email.includes(searchValue);
+
+
+                const studentCourses =
+                    getStudentLecturerCourses(student);
+
+
+                const matchesCourse =
+                    selectedCourse === "all" ||
+                    studentCourses.some(course =>
+                        getCourseCode(course)
+                            .toLowerCase() ===
+                        selectedCourse.toLowerCase()
+                    );
+
+
+                const matchesLevel =
+                    selectedLevel === "all" ||
+                    level.replace(
+                        " Level",
+                        ""
+                    ) === selectedLevel ||
+                    level ===
+                    `${selectedLevel} Level`;
+
+
+                const matchesStatus =
+                    selectedStatus === "all" ||
+                    status.toLowerCase() ===
+                    selectedStatus.toLowerCase();
+
+
+                return (
+                    matchesSearch &&
+                    matchesCourse &&
+                    matchesLevel &&
+                    matchesStatus
+                );
+            });
+
+
+        renderStudents(filteredStudents);
+    }
+
+
+    // ===============================
+    // Statistics
+    // ===============================
+
+    function updateStatistics() {
+
+        const courses =
+            getLecturerCourses();
+
+
+        const students =
+            getLecturerStudents();
+
+
+        const activeStudents =
+            students.filter(student =>
+                getStatus(student)
+                    .toLowerCase() ===
+                "active"
+            );
+
+
+        const levels =
+            new Set(
+                students.map(student =>
+                    String(
+                        getLevel(student)
+                    )
+                ).filter(level =>
+                    level !== "N/A"
+                )
+            );
+
+
+        studentCount.textContent =
+            students.length;
+
+        courseCount.textContent =
+            courses.length;
+
+        activeStudentCount.textContent =
+            activeStudents.length;
+
+        levelCount.textContent =
+            levels.size;
+    }
+
+
+    // ===============================
+    // Notifications
+    // ===============================
+
+    function loadNotifications() {
+
+        const notifications =
+            getData(
+                "lecturerNotifications",
+                []
+            );
+
+
+        if (!Array.isArray(notifications)) {
+
+            notificationCount.textContent =
+                "0";
+
+            return;
+        }
+
+
+        const unread =
+            notifications.filter(notification => {
+
+                return (
+                    notification.read === false ||
+                    notification.unread === true ||
+                    notification.status === "Unread"
+                );
+            });
+
+
+        notificationCount.textContent =
+            unread.length;
+    }
+
+
+    notificationButton.addEventListener(
+        "click",
+        () => {
+
+            window.location.href =
+                "lecturer-notifications.html";
+        }
+    );
+
+
+    // ===============================
+    // Refresh
+    // ===============================
+
+    refreshStudents.addEventListener(
+        "click",
+        () => {
+
+            lecturerStudents =
+                getLecturerStudents();
+
+            filteredStudents =
+                [...lecturerStudents];
+
+
+            populateCourseFilter();
+
+            updateStatistics();
+
+            renderStudents(
+                filteredStudents
+            );
+
+            loadNotifications();
+        }
+    );
+
+
+    // ===============================
+    // Filters
+    // ===============================
+
+    studentSearch.addEventListener(
+        "input",
+        filterStudents
+    );
+
+    courseFilter.addEventListener(
+        "change",
+        filterStudents
+    );
+
+    levelFilter.addEventListener(
+        "change",
+        filterStudents
+    );
+
+    statusFilter.addEventListener(
+        "change",
+        filterStudents
+    );
+
+
+    // ===============================
+    // Initialize
+    // ===============================
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+
+    lecturerStudents =
+        getLecturerStudents();
+
+    filteredStudents =
+        [...lecturerStudents];
+
+
+    populateCourseFilter();
+
+    updateStatistics();
+
+    renderStudents(
+        filteredStudents
+    );
+
+    loadNotifications();
+
+});
+    </script>
+
+</body>
+</html>

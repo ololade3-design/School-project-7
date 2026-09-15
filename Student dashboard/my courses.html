@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Courses</title>
+
+<link rel="stylesheet" href="my courses.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- ===================================
+     Sidebar
+=================================== -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>Student Portal</h2>
+
+</div>
+
+
+<ul>
+
+<li>
+
+<a href="student dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Student Dashboard
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="my profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="course registration.html">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Course Registration
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="faculty.html">
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="department.html">
+
+<i class="fa-solid fa-building"></i>
+
+Department
+
+</a>
+
+</li>
+
+
+<li class="active">
+
+<a href="my courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+My Courses
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="my timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+My Timetable
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="academic info.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Academic Information
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- ===================================
+     Main Content
+=================================== -->
+
+<div class="main">
+
+
+<!-- ===================================
+     Topbar
+=================================== -->
+
+<div class="topbar">
+
+<div>
+
+<h1>My Courses</h1>
+
+<p>
+
+View your registered courses and academic units.
+
+</p>
+
+</div>
+
+
+<div class="student-top">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span id="studentName">
+
+Student
+
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Course Summary
+=================================== -->
+
+<div class="course-summary">
+
+
+<div class="summary-card">
+
+<div class="summary-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<span>Total Courses</span>
+
+<h3 id="totalCourses">0</h3>
+
+</div>
+
+</div>
+
+
+<div class="summary-card">
+
+<div class="summary-icon">
+
+<i class="fa-solid fa-calculator"></i>
+
+</div>
+
+<div>
+
+<span>Total Units</span>
+
+<h3 id="totalUnits">0</h3>
+
+</div>
+
+</div>
+
+
+<div class="summary-card">
+
+<div class="summary-icon">
+
+<i class="fa-solid fa-calendar"></i>
+
+</div>
+
+<div>
+
+<span>Current Semester</span>
+
+<h3 id="currentSemester">
+
+First Semester
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="summary-card">
+
+<div class="summary-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div>
+
+<span>Registration Status</span>
+
+<h3 id="registrationStatus">
+
+Not Submitted
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Course Controls
+=================================== -->
+
+<div class="course-controls">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="courseSearch"
+placeholder="Search courses..."
+>
+
+</div>
+
+
+<div class="semester-filter">
+
+<select id="semesterFilter">
+
+<option value="all">
+
+All Semesters
+
+</option>
+
+<option value="First Semester">
+
+First Semester
+
+</option>
+
+<option value="Second Semester">
+
+Second Semester
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Registered Courses
+=================================== -->
+
+<div class="courses-container">
+
+<div class="section-header">
+
+<div>
+
+<h2>
+
+<i class="fa-solid fa-book-open"></i>
+
+Registered Courses
+
+</h2>
+
+<p>
+
+Courses currently registered by you.
+
+</p>
+
+</div>
+
+
+<a href="course-registration.html"
+class="register-button">
+
+<i class="fa-solid fa-plus"></i>
+
+Register Courses
+
+</a>
+
+</div>
+
+
+<!-- Course Table -->
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>Course Code</th>
+
+<th>Course Title</th>
+
+<th>Units</th>
+
+<th>Semester</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="courseTableBody">
+
+<!-- Courses will be added by JavaScript -->
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- Empty State -->
+
+<div class="empty-state" id="emptyState">
+
+<div class="empty-icon">
+
+<i class="fa-solid fa-book-open"></i>
+
+</div>
+
+<h3>No Courses Found</h3>
+
+<p>
+
+You have not registered any courses yet.
+
+</p>
+
+<a href="course-registration.html">
+
+Register Courses
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Course Information
+=================================== -->
+
+<div class="course-information">
+
+<div class="information-header">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+Course Information
+
+</h2>
+
+</div>
+
+
+<div class="information-grid">
+
+
+<div class="information-item">
+
+<i class="fa-solid fa-check"></i>
+
+<div>
+
+<h3>Registered Courses</h3>
+
+<p>
+
+These are the courses currently saved
+to your student account.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="information-item">
+
+<i class="fa-solid fa-calculator"></i>
+
+<div>
+
+<h3>Course Units</h3>
+
+<p>
+
+Course units are automatically calculated
+from your registered courses.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="information-item">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<div>
+
+<h3>Semester</h3>
+
+<p>
+
+Use the semester filter to view courses
+for a specific semester.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="information-item">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+<div>
+
+<h3>Course Registration</h3>
+
+<p>
+
+You can add or change courses from
+the Course Registration page.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div><!-- ===================================
+     Academic Notice
+=================================== -->
+
+<div class="academic-notice">
+
+<div class="notice-icon">
+
+<i class="fa-solid fa-circle-exclamation"></i>
+
+</div>
+
+
+<div>
+
+<h3>Academic Notice</h3>
+
+<p id="academicNotice">
+
+Always confirm your course registration before
+the registration deadline. Make sure your selected
+courses and units are correct.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Footer
+=================================== -->
+
+<footer>
+
+<p>
+
+&copy;
+
+<span id="currentYear"></span>
+
+Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     JavaScript
+=================================== -->
+
+<script src="../js/api.js"></script>
+<script>
+    // ===================================
+// My Courses
+// my-courses.js
+// ===================================
+
+// Get saved student information
+let studentData = JSON.parse(localStorage.getItem("studentData")) || {};
+
+// Get registered courses
+let registeredCourses = JSON.parse(
+    localStorage.getItem("registeredCourses")
+) || [];
+
+// Get settings
+let settings = JSON.parse(localStorage.getItem("settings")) || {};
+
+// Get registration status
+let registrationStatus =
+    localStorage.getItem("registrationStatus") || "Not Submitted";
+
+
+// ===================================
+// Elements
+// ===================================
+
+const studentName = document.getElementById("studentName");
+
+const totalCourses = document.getElementById("totalCourses");
+const totalUnits = document.getElementById("totalUnits");
+const currentSemester = document.getElementById("currentSemester");
+const registrationStatusElement =
+    document.getElementById("registrationStatus");
+
+const courseSearch = document.getElementById("courseSearch");
+const semesterFilter = document.getElementById("semesterFilter");
+
+const courseTableBody = document.getElementById("courseTableBody");
+const emptyState = document.getElementById("emptyState");
+
+const academicNotice = document.getElementById("academicNotice");
+const currentYear = document.getElementById("currentYear");
+
+
+// ===================================
+// Student Name
+// ===================================
+
+if (studentData.name) {
+    studentName.textContent = studentData.name;
+} else if (studentData.fullName) {
+    studentName.textContent = studentData.fullName;
+} else {
+    studentName.textContent = "Student";
+}
+
+
+// ===================================
+// Current Semester
+// ===================================
+
+const semester =
+    settings.semester ||
+    studentData.semester ||
+    "First Semester";
+
+currentSemester.textContent = semester;
+
+
+// ===================================
+// Registration Status
+// ===================================
+
+registrationStatusElement.textContent = registrationStatus;
+
+
+// ===================================
+// Calculate Course Summary
+// ===================================
+
+function updateSummary() {
+
+    totalCourses.textContent = registeredCourses.length;
+
+    const units = registeredCourses.reduce((total, course) => {
+
+        return total + Number(course.unit || course.units || 0);
+
+    }, 0);
+
+    totalUnits.textContent = units;
+}
+
+
+// ===================================
+// Escape HTML
+// ===================================
+
+function escapeHTML(value) {
+
+    const div = document.createElement("div");
+
+    div.textContent = value ?? "";
+
+    return div.innerHTML;
+}
+
+
+// ===================================
+// Display Courses
+// ===================================
+
+function displayCourses() {
+
+    const searchValue =
+        courseSearch.value.trim().toLowerCase();
+
+    const selectedSemester =
+        semesterFilter.value;
+
+
+    const filteredCourses = registeredCourses.filter(course => {
+
+        const code =
+            String(course.courseCode || "").toLowerCase();
+
+        const title =
+            String(course.courseTitle || "").toLowerCase();
+
+        const courseSemester =
+            course.semester || "First Semester";
+
+
+        const matchesSearch =
+            code.includes(searchValue) ||
+            title.includes(searchValue);
+
+
+        const matchesSemester =
+            selectedSemester === "all" ||
+            courseSemester === selectedSemester;
+
+
+        return matchesSearch && matchesSemester;
+    });
+
+
+    // Clear table
+    courseTableBody.innerHTML = "";
+
+
+    // Show empty state
+    if (filteredCourses.length === 0) {
+
+        emptyState.style.display = "flex";
+
+        return;
+    }
+
+
+    // Hide empty state
+    emptyState.style.display = "none";
+
+
+    // Add courses to table
+    filteredCourses.forEach((course, index) => {
+
+        const row = document.createElement("tr");
+
+        const courseCode =
+            escapeHTML(course.courseCode || "N/A");
+
+        const courseTitle =
+            escapeHTML(course.courseTitle || "Untitled Course");
+
+        const unit =
+            Number(course.unit || course.units || 0);
+
+        const semester =
+            escapeHTML(
+                course.semester || "First Semester"
+            );
+
+
+        row.innerHTML = `
+            <td>${index + 1}</td>
+
+            <td>
+                <strong>${courseCode}</strong>
+            </td>
+
+            <td>${courseTitle}</td>
+
+            <td>${unit}</td>
+
+            <td>${semester}</td>
+
+            <td>
+                <span class="status-badge">
+                    Registered
+                </span>
+            </td>
+        `;
+
+
+        courseTableBody.appendChild(row);
+    });
+}
+
+
+// ===================================
+// Search Courses
+// ===================================
+
+courseSearch.addEventListener("input", displayCourses);
+
+
+// ===================================
+// Semester Filter
+// ===================================
+
+semesterFilter.addEventListener(
+    "change",
+    displayCourses
+);
+
+
+// ===================================
+// Academic Notice
+// ===================================
+
+if (settings.academicNotice) {
+
+    academicNotice.textContent =
+        settings.academicNotice;
+}
+
+
+// ===================================
+// Current Year
+// ===================================
+
+currentYear.textContent =
+    new Date().getFullYear();
+
+
+// ===================================
+// Update Page
+// ===================================
+
+updateSummary();
+displayCourses();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Lecturer Management</title>
+
+<link rel="stylesheet" href="lecturers.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li>
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecture rooms.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>Lecturer Management</h1>
+
+<p>
+
+Manage all lecturers in the university.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="totalLecturers">0</h2>
+
+<p>Total Lecturers</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="maleLecturers">0</h2>
+
+<p>Male Lecturers</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="femaleLecturers">0</h2>
+
+<p>Female Lecturers</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="departmentTotal">0</h2>
+
+<p>Departments</p>
+
+</div>
+
+</div>
+
+<!-- Toolbar -->
+
+<div class="toolbar">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Lecturer...">
+
+<button id="showForm">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Lecturer
+
+</button>
+
+</div>
+
+<!-- Lecturer Form -->
+
+<div class="form-box" id="formBox">
+
+<h2>Add Lecturer</h2>
+
+<div class="row">
+
+<input
+
+type="text"
+
+id="staffId"
+
+placeholder="Staff ID">
+
+<input
+
+type="text"
+
+id="name"
+
+placeholder="Full Name">
+
+</div>
+
+<div class="row">
+
+<select id="gender">
+
+<option value="">Gender</option>
+
+<option>Male</option>
+
+<option>Female</option>
+
+</select>
+
+<select id="department">
+
+<option value="">Department</option>
+
+<option>Software Engineering</option>
+
+<option>Computer Science</option>
+
+<option>Cyber Security</option>
+
+<option>Information Technology</option>
+
+</select>
+
+</div>
+
+<div class="row">
+
+<input
+
+type="email"
+
+id="email"
+
+placeholder="Email Address">
+
+<input
+
+type="text"
+
+id="phone"
+
+placeholder="Phone Number">
+
+</div>
+
+<div class="row">
+
+<button id="saveLecturer">
+
+Save Lecturer
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Lecturer Table -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S/N</th>
+
+<th>Staff ID</th>
+
+<th>Name</th>
+
+<th>Gender</th>
+
+<th>Department</th>
+
+<th>Email</th>
+
+<th>Phone</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="lecturerTable"><tr>
+
+<td colspan="8" style="text-align:center;color:gray;">
+
+No lecturers available.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Recent Activities -->
+
+<div class="activity">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<ul id="activityList">
+
+<li>Lecturer Module Loaded</li>
+
+<li>System Ready...</li>
+
+</ul>
+
+</div>
+
+<!-- Lecturer Summary -->
+
+<div class="summary">
+
+<h2>
+
+Module Information
+
+</h2>
+
+<p>
+
+This module allows the administrator to register, edit, search and delete lecturers.
+
+</p>
+
+<p>
+
+Every lecturer can later be assigned courses during timetable generation.
+
+</p>
+
+<p>
+
+All records are automatically saved in Local Storage for demonstration purposes.
+
+</p>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ===============================
+// Lecturer Management System
+// lecturers.js
+// ===============================
+
+let lecturers = JSON.parse(localStorage.getItem("lecturers")) || [];
+
+let editIndex = -1;
+
+// Elements
+
+const table = document.getElementById("lecturerTable");
+
+const saveBtn = document.getElementById("saveLecturer");
+
+const search = document.getElementById("search");
+
+const showForm = document.getElementById("showForm");
+
+const formBox = document.getElementById("formBox");
+
+const totalLecturers = document.getElementById("totalLecturers");
+
+const maleLecturers = document.getElementById("maleLecturers");
+
+const femaleLecturers = document.getElementById("femaleLecturers");
+
+const departmentTotal = document.getElementById("departmentTotal");
+
+// Show Form
+
+showForm.onclick = function(){
+
+if(formBox.style.display=="block"){
+
+formBox.style.display="none";
+
+}else{
+
+formBox.style.display="block";
+
+}
+
+};
+
+// Display Lecturers
+
+displayLecturers();
+
+function displayLecturers(){
+
+table.innerHTML="";
+
+if(lecturers.length==0){
+
+table.innerHTML=`
+
+<tr>
+
+<td colspan="8">
+
+No lecturers available.
+
+</td>
+
+</tr>
+
+`;
+
+updateCards();
+
+return;
+
+}
+
+lecturers.forEach((lecturer,index)=>{
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${lecturer.staffId}</td>
+
+<td>${lecturer.name}</td>
+
+<td>${lecturer.gender}</td>
+
+<td>${lecturer.department}</td>
+
+<td>${lecturer.email}</td>
+
+<td>${lecturer.phone}</td>
+
+<td>
+
+<button onclick="editLecturer(${index})">
+
+Edit
+
+</button>
+
+<button onclick="deleteLecturer(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+localStorage.setItem("lecturers",JSON.stringify(lecturers));
+
+updateCards();
+
+}
+
+// Save Lecturer
+
+saveBtn.onclick=function(){
+
+const staffId=document.getElementById("staffId").value.trim();
+
+const name=document.getElementById("name").value.trim();
+
+const gender=document.getElementById("gender").value;
+
+const department=document.getElementById("department").value;
+
+const email=document.getElementById("email").value.trim();
+
+const phone=document.getElementById("phone").value.trim();
+
+if(
+
+staffId==""||
+
+name==""||
+
+gender==""||
+
+department==""||
+
+email==""||
+
+phone==""
+
+){
+
+alert("Please fill all fields.");
+
+return;
+
+}
+
+const lecturer={
+
+staffId,
+
+name,
+
+gender,
+
+department,
+
+email,
+
+phone
+
+};
+
+if(editIndex==-1){
+
+lecturers.push(lecturer);
+
+}else{
+
+lecturers[editIndex]=lecturer;
+
+editIndex=-1;
+
+}
+
+displayLecturers();
+
+clearForm();
+
+formBox.style.display="none";
+
+addActivity("Lecturer saved successfully.");
+
+};// ===============================
+// Edit Lecturer
+// ===============================
+
+function editLecturer(index){
+
+const l=lecturers[index];
+
+document.getElementById("staffId").value=l.staffId;
+
+document.getElementById("name").value=l.name;
+
+document.getElementById("gender").value=l.gender;
+
+document.getElementById("department").value=l.department;
+
+document.getElementById("email").value=l.email;
+
+document.getElementById("phone").value=l.phone;
+
+editIndex=index;
+
+formBox.style.display="block";
+
+addActivity("Editing "+l.staffId);
+
+}
+
+// ===============================
+// Delete Lecturer
+// ===============================
+
+function deleteLecturer(index){
+
+if(confirm("Delete this lecturer?")){
+
+addActivity(lecturers[index].name+" deleted");
+
+lecturers.splice(index,1);
+
+displayLecturers();
+
+}
+
+}
+
+// ===============================
+// Clear Form
+// ===============================
+
+function clearForm(){
+
+document.getElementById("staffId").value="";
+
+document.getElementById("name").value="";
+
+document.getElementById("gender").value="";
+
+document.getElementById("department").value="";
+
+document.getElementById("email").value="";
+
+document.getElementById("phone").value="";
+
+}
+
+// ===============================
+// Search Lecturer
+// ===============================
+
+search.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+const rows=document.querySelectorAll("#lecturerTable tr");
+
+rows.forEach(row=>{
+
+row.style.display=row.innerText.toLowerCase().includes(value)
+
+?"":"none";
+
+});
+
+});
+
+// ===============================
+// Update Statistics
+// ===============================
+
+function updateCards(){
+
+totalLecturers.innerHTML=lecturers.length;
+
+let male=0;
+
+let female=0;
+
+let departments=[];
+
+lecturers.forEach(l=>{
+
+if(l.gender=="Male"){
+
+male++;
+
+}
+
+if(l.gender=="Female"){
+
+female++;
+
+}
+
+if(!departments.includes(l.department)){
+
+departments.push(l.department);
+
+}
+
+});
+
+maleLecturers.innerHTML=male;
+
+femaleLecturers.innerHTML=female;
+
+departmentTotal.innerHTML=departments.length;
+
+}
+
+// ===============================
+// Activity Log
+// ===============================
+
+function addActivity(message){
+
+const list=document.getElementById("activityList");
+
+const item=document.createElement("li");
+
+const time=new Date().toLocaleTimeString();
+
+item.innerHTML=time+" - "+message;
+
+list.prepend(item);
+
+}
+
+// ===============================
+// On Load
+// ===============================
+
+window.onload=function(){
+
+displayLecturers();
+
+addActivity("Lecturer Management Ready");
+
+}
+
+// ===============================
+// Close Form with ESC
+// ===============================
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+formBox.style.display="none";
+
+clearForm();
+
+}
+
+});
+
+// ===============================
+// Auto Uppercase Staff ID
+// ===============================
+
+document.getElementById("staffId").addEventListener("input",function(){
+
+this.value=this.value.toUpperCase();
+
+});
+
+// ===============================
+// Save to Local Storage
+// ===============================
+
+localStorage.setItem("lecturers",JSON.stringify(lecturers));
+</script>
+
+</body>
+
+</html>

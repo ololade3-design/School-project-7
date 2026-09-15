@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lecturer Dashboard | Smart Timetable</title>
+
+    <link rel="stylesheet" href="lecturer dashboard.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Smart Timetable</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="lecturer dashboard.html" class="menu-item active">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html" class="menu-item">
+                <i class="fa-solid fa-book"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html" class="menu-item">
+                <i class="fa-solid fa-users"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html" class="menu-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html" class="menu-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html" class="menu-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" class="menu-item login-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-title">
+
+                <h1>Lecturer Dashboard</h1>
+
+                <p>
+                    Welcome back,
+                    <span id="lecturerName">Lecturer</span>
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                >
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span id="notificationCount">0</span>
+
+                </button>
+
+
+                <div class="lecturer-account">
+
+                    <div class="lecturer-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="lecturer-details">
+
+                        <strong id="headerLecturerName">
+                            Lecturer
+                        </strong>
+
+                        <span id="headerDepartment">
+                            Department
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME CARD -->
+
+        <section class="welcome-card">
+
+            <div class="welcome-content">
+
+                <h2>
+                    Welcome,
+                    <span id="welcomeName">Lecturer</span>
+                </h2>
+
+                <p>
+                    Manage your courses, students, timetable and
+                    academic activities from your lecturer portal.
+                </p>
+
+            </div>
+
+            <div class="welcome-icon">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div class="summary-info">
+
+                    <span>My Courses</span>
+
+                    <h3 id="courseCount">0</h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="summary-info">
+
+                    <span>My Students</span>
+
+                    <h3 id="studentCount">0</h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </div>
+
+                <div class="summary-info">
+
+                    <span>Today's Classes</span>
+
+                    <h3 id="todayClassCount">0</h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-door-open"></i>
+                </div>
+
+                <div class="summary-info">
+
+                    <span>Lecture Rooms</span>
+
+                    <h3 id="roomCount">0</h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TWO COLUMN SECTION -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- TODAY'S CLASSES -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>Today's Classes</h2>
+
+                        <p>
+                            Your scheduled classes for today
+                        </p>
+
+                    </div>
+
+                    <a href="class-schedule.html">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="class-list"
+                    id="todayClasses"
+                >
+
+                    <div class="empty-state">
+
+                        <i class="fa-solid fa-calendar-xmark"></i>
+
+                        <p>
+                            No classes scheduled for today.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MY COURSES -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>My Courses</h2>
+
+                        <p>
+                            Courses assigned to you
+                        </p>
+
+                    </div>
+
+                    <a href="lecturer-courses.html">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="course-list"
+                    id="myCourses"
+                >
+
+                    <div class="empty-state">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        <p>
+                            No courses assigned yet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Quick Actions</h2>
+
+                    <p>
+                        Quickly access common lecturer activities
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <a
+                    href="lecturer-timetable.html"
+                    class="quick-action"
+                >
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <div>
+
+                        <strong>My Timetable</strong>
+
+                        <span>
+                            View your weekly timetable
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="lecturer-courses.html"
+                    class="quick-action"
+                >
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <div>
+
+                        <strong>My Courses</strong>
+
+                        <span>
+                            Manage your assigned courses
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="lecturer-students.html"
+                    class="quick-action"
+                >
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <div>
+
+                        <strong>My Students</strong>
+
+                        <span>
+                            View students in your courses
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="course-materials.html"
+                    class="quick-action"
+                >
+
+                    <i class="fa-solid fa-folder-open"></i>
+
+                    <div>
+
+                        <strong>Course Materials</strong>
+
+                        <span>
+                            Manage learning materials
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <section class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2>Recent Notifications</h2>
+
+                    <p>
+                        Your latest lecturer notifications
+                    </p>
+
+                </div>
+
+                <a href="lecturer-notifications.html">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div
+                class="notification-list"
+                id="recentNotifications"
+            >
+
+                <div class="empty-state">
+
+                    <i class="fa-solid fa-bell-slash"></i>
+
+                    <p>
+                        No recent notifications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Smart Timetable Generation System.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ======================================
+// Lecturer Dashboard
+// lecturer-dashboard.js
+// ======================================
+
+
+// ======================================
+// PAGE ELEMENTS
+// ======================================
+
+const lecturerName = document.getElementById("lecturerName");
+const welcomeName = document.getElementById("welcomeName");
+const headerLecturerName = document.getElementById("headerLecturerName");
+const headerDepartment = document.getElementById("headerDepartment");
+
+const courseCount = document.getElementById("courseCount");
+const studentCount = document.getElementById("studentCount");
+const todayClassCount = document.getElementById("todayClassCount");
+const roomCount = document.getElementById("roomCount");
+
+const todayClasses = document.getElementById("todayClasses");
+const myCourses = document.getElementById("myCourses");
+const recentNotifications = document.getElementById("recentNotifications");
+
+const notificationButton = document.getElementById("notificationButton");
+const notificationCount = document.getElementById("notificationCount");
+
+const currentYear = document.getElementById("currentYear");
+
+
+// ======================================
+// CURRENT YEAR
+// ======================================
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+
+// ======================================
+// GET DATA FROM LOCAL STORAGE
+// ======================================
+
+function getData(key, defaultValue = []) {
+
+    try {
+
+        const data = localStorage.getItem(key);
+
+        if (!data) {
+            return defaultValue;
+        }
+
+        return JSON.parse(data);
+
+    } catch (error) {
+
+        console.error(`Error loading ${key}:`, error);
+
+        return defaultValue;
+    }
+}
+
+
+// ======================================
+// GET CURRENT LECTURER
+// ======================================
+
+function getLecturer() {
+
+    const lecturerData = getData("lecturerData", null);
+
+    if (lecturerData && typeof lecturerData === "object") {
+        return lecturerData;
+    }
+
+    const loggedInLecturer = getData("loggedInLecturer", null);
+
+    if (loggedInLecturer && typeof loggedInLecturer === "object") {
+        return loggedInLecturer;
+    }
+
+    return {
+        fullName: "Lecturer",
+        department: "Department"
+    };
+}
+
+
+// ======================================
+// ESCAPE HTML
+// ======================================
+
+function escapeHTML(value) {
+
+    if (value === null || value === undefined) {
+        return "";
+    }
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+// ======================================
+// LECTURER INFORMATION
+// ======================================
+
+const lecturer = getLecturer();
+
+const lecturerFullName =
+    lecturer.fullName ||
+    lecturer.name ||
+    lecturer.lecturerName ||
+    "Lecturer";
+
+const lecturerDepartment =
+    lecturer.department ||
+    lecturer.dept ||
+    "Department";
+
+
+// Display lecturer information
+
+if (lecturerName) {
+    lecturerName.textContent = lecturerFullName;
+}
+
+if (welcomeName) {
+    welcomeName.textContent = lecturerFullName;
+}
+
+if (headerLecturerName) {
+    headerLecturerName.textContent = lecturerFullName;
+}
+
+if (headerDepartment) {
+    headerDepartment.textContent = lecturerDepartment;
+}
+
+
+// ======================================
+// LOAD MAIN DATA
+// ======================================
+
+const courses = getData("courses");
+const students = getData("students");
+const timetable = getData("timetableData");
+
+const timetableData =
+    timetable.length > 0
+        ? timetable
+        : getData("timetable");
+
+const notifications = getData("lecturerNotifications");
+
+
+// ======================================
+// GET LECTURER COURSES
+// ======================================
+
+function getLecturerCourses() {
+
+    const lecturerId =
+        lecturer.id ||
+        lecturer.lecturerId ||
+        lecturer.staffId ||
+        lecturer.staffNumber;
+
+    const lecturerNameValue =
+        lecturer.fullName ||
+        lecturer.name ||
+        lecturer.lecturerName;
+
+
+    return courses.filter(course => {
+
+        const courseLecturerId =
+            course.lecturerId ||
+            course.staffId ||
+            course.lecturerID ||
+            course.teacherId;
+
+        const courseLecturer =
+            course.lecturer ||
+            course.lecturerName ||
+            course.instructor ||
+            course.teacher;
+
+
+        // Match by lecturer ID
+
+        if (
+            lecturerId &&
+            courseLecturerId &&
+            String(courseLecturerId) === String(lecturerId)
+        ) {
+            return true;
+        }
+
+
+        // Match by lecturer name
+
+        if (
+            lecturerNameValue &&
+            courseLecturer &&
+            String(courseLecturer).toLowerCase() ===
+            String(lecturerNameValue).toLowerCase()
+        ) {
+            return true;
+        }
+
+
+        return false;
+
+    });
+
+}
+
+
+// ======================================
+// LECTURER COURSES
+// ======================================
+
+const lecturerCourses = getLecturerCourses();
+
+
+// ======================================
+// DISPLAY COURSE COUNT
+// ======================================
+
+if (courseCount) {
+    courseCount.textContent = lecturerCourses.length;
+}
+
+
+// ======================================
+// DISPLAY MY COURSES
+// ======================================
+
+function displayMyCourses() {
+
+    if (!myCourses) {
+        return;
+    }
+
+
+    if (lecturerCourses.length === 0) {
+
+        myCourses.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-solid fa-book-open"></i>
+                <p>No courses assigned yet.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    myCourses.innerHTML = "";
+
+
+    lecturerCourses.slice(0, 5).forEach(course => {
+
+        const courseCode =
+            course.code ||
+            course.courseCode ||
+            course.course_code ||
+            "N/A";
+
+        const courseTitle =
+            course.title ||
+            course.courseTitle ||
+            course.name ||
+            course.courseName ||
+            "Course";
+
+
+        const units =
+            course.units ||
+            course.creditUnit ||
+            course.creditUnits ||
+            0;
+
+
+        const courseItem = document.createElement("div");
+
+        courseItem.className = "course-item";
+
+        courseItem.innerHTML = `
+            <div class="course-icon">
+                <i class="fa-solid fa-book"></i>
+            </div>
+
+            <div class="course-info">
+                <strong>
+                    ${escapeHTML(courseCode)}
+                </strong>
+
+                <span>
+                    ${escapeHTML(courseTitle)}
+                    • ${escapeHTML(units)} Units
+                </span>
+            </div>
+        `;
+
+
+        myCourses.appendChild(courseItem);
+
+    });
+
+}
+
+
+// ======================================
+// GET STUDENTS FOR LECTURER
+// ======================================
+
+function getLecturerStudents() {
+
+    if (lecturerCourses.length === 0) {
+        return [];
+    }
+
+
+    const courseCodes = lecturerCourses.map(course => {
+
+        return String(
+            course.code ||
+            course.courseCode ||
+            course.course_code ||
+            ""
+        ).toLowerCase();
+
+    });
+
+
+    return students.filter(student => {
+
+        const studentCourses =
+            student.courses ||
+            student.registeredCourses ||
+            student.registeredCourse ||
+            [];
+
+
+        if (!Array.isArray(studentCourses)) {
+            return false;
+        }
+
+
+        return studentCourses.some(course => {
+
+            const code =
+                typeof course === "object"
+                    ? (
+                        course.code ||
+                        course.courseCode ||
+                        course.course_code ||
+                        ""
+                    )
+                    : course;
+
+
+            return courseCodes.includes(
+                String(code).toLowerCase()
+            );
+
+        });
+
+    });
+
+}
+
+
+// ======================================
+// DISPLAY STUDENT COUNT
+// ======================================
+
+const lecturerStudents = getLecturerStudents();
+
+if (studentCount) {
+    studentCount.textContent = lecturerStudents.length;
+}
+
+
+// ======================================
+// GET TODAY
+// ======================================
+
+function getTodayName() {
+
+    const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    return days[new Date().getDay()];
+}
+
+
+const today = getTodayName();
+
+
+// ======================================
+// GET TODAY'S CLASSES
+// ======================================
+
+function getTodayClasses() {
+
+    const courseCodes = lecturerCourses.map(course => {
+
+        return String(
+            course.code ||
+            course.courseCode ||
+            course.course_code ||
+            ""
+        ).toLowerCase();
+
+    });
+
+
+    return timetableData.filter(item => {
+
+        const day =
+            item.day ||
+            item.dayName ||
+            item.weekDay ||
+            item.weekday ||
+            "";
+
+
+        const itemCourseCode =
+            item.courseCode ||
+            item.course_code ||
+            item.code ||
+            "";
+
+
+        const itemLecturer =
+            item.lecturer ||
+            item.lecturerName ||
+            item.instructor ||
+            item.teacher ||
+            "";
+
+
+        const correctDay =
+            String(day).toLowerCase() ===
+            String(today).toLowerCase();
+
+
+        const correctCourse =
+            courseCodes.includes(
+                String(itemCourseCode).toLowerCase()
+            );
+
+
+        const correctLecturer =
+            lecturerFullName &&
+            String(itemLecturer).toLowerCase() ===
+            String(lecturerFullName).toLowerCase();
+
+
+        return correctDay && (correctCourse || correctLecturer);
+
+    });
+
+}
+
+
+// ======================================
+// DISPLAY TODAY'S CLASSES
+// ======================================
+
+function displayTodayClasses() {
+
+    if (!todayClasses) {
+        return;
+    }
+
+
+    const classes = getTodayClasses();
+
+
+    if (todayClassCount) {
+        todayClassCount.textContent = classes.length;
+    }
+
+
+    if (classes.length === 0) {
+
+        todayClasses.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-solid fa-calendar-xmark"></i>
+                <p>No classes scheduled for today.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    todayClasses.innerHTML = "";
+
+
+    classes.slice(0, 5).forEach(item => {
+
+        const courseCode =
+            item.courseCode ||
+            item.course_code ||
+            item.code ||
+            "Course";
+
+
+        const courseTitle =
+            item.courseTitle ||
+            item.title ||
+            item.courseName ||
+            "";
+
+
+        const time =
+            item.time ||
+            item.startTime ||
+            "Time not set";
+
+
+        const room =
+            item.room ||
+            item.roomName ||
+            item.lectureRoom ||
+            item.classroom ||
+            "Room not set";
+
+
+        const classItem = document.createElement("div");
+
+        classItem.className = "class-item";
+
+        classItem.innerHTML = `
+            <div class="class-icon">
+                <i class="fa-solid fa-chalkboard"></i>
+            </div>
+
+            <div class="class-info">
+                <strong>
+                    ${escapeHTML(courseCode)}
+                </strong>
+
+                <span>
+                    ${escapeHTML(courseTitle)}
+                    • ${escapeHTML(time)}
+                    • ${escapeHTML(room)}
+                </span>
+            </div>
+        `;
+
+
+        todayClasses.appendChild(classItem);
+
+    });
+
+}
+
+
+// ======================================
+// GET LECTURE ROOMS
+// ======================================
+
+function getLectureRooms() {
+
+    const rooms = new Set();
+
+
+    timetableData.forEach(item => {
+
+        const itemLecturer =
+            item.lecturer ||
+            item.lecturerName ||
+            item.instructor ||
+            item.teacher ||
+            "";
+
+
+        const courseCode =
+            item.courseCode ||
+            item.course_code ||
+            item.code ||
+            "";
+
+
+        const lecturerMatch =
+            String(itemLecturer).toLowerCase() ===
+            String(lecturerFullName).toLowerCase();
+
+
+        const courseMatch =
+            lecturerCourses.some(course => {
+
+                const code =
+                    course.code ||
+                    course.courseCode ||
+                    course.course_code ||
+                    "";
+
+                return String(code).toLowerCase() ===
+                    String(courseCode).toLowerCase();
+
+            });
+
+
+        if (lecturerMatch || courseMatch) {
+
+            const room =
+                item.room ||
+                item.roomName ||
+                item.lectureRoom ||
+                item.classroom;
+
+
+            if (room) {
+                rooms.add(String(room));
+            }
+
+        }
+
+    });
+
+
+    return rooms;
+
+}
+
+
+const lecturerRooms = getLectureRooms();
+
+if (roomCount) {
+    roomCount.textContent = lecturerRooms.size;
+}
+
+
+// ======================================
+// NOTIFICATIONS
+// ======================================
+
+function displayNotifications() {
+
+    if (!recentNotifications) {
+        return;
+    }
+
+
+    if (!Array.isArray(notifications) || notifications.length === 0) {
+
+        recentNotifications.innerHTML = `
+            <div class="empty-state">
+                <i class="fa-solid fa-bell-slash"></i>
+                <p>No recent notifications.</p>
+            </div>
+        `;
+
+        if (notificationCount) {
+            notificationCount.textContent = "0";
+        }
+
+        return;
+    }
+
+
+    const unreadNotifications = notifications.filter(
+        notification =>
+            notification.read === false ||
+            notification.status === "Unread"
+    );
+
+
+    if (notificationCount) {
+        notificationCount.textContent =
+            unreadNotifications.length;
+    }
+
+
+    recentNotifications.innerHTML = "";
+
+
+    notifications.slice(0, 5).forEach(notification => {
+
+        const title =
+            notification.title ||
+            notification.subject ||
+            "Notification";
+
+
+        const message =
+            notification.message ||
+            notification.description ||
+            "";
+
+
+        const notificationItem =
+            document.createElement("div");
+
+
+        notificationItem.className =
+            "notification-item";
+
+
+        notificationItem.innerHTML = `
+            <div class="notification-icon">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div class="notification-info">
+                <strong>
+                    ${escapeHTML(title)}
+                </strong>
+
+                <span>
+                    ${escapeHTML(message)}
+                </span>
+            </div>
+        `;
+
+
+        recentNotifications.appendChild(
+            notificationItem
+        );
+
+    });
+
+}
+
+
+// ======================================
+// NOTIFICATION BUTTON
+// ======================================
+
+if (notificationButton) {
+
+    notificationButton.addEventListener(
+        "click",
+        function () {
+
+            window.location.href =
+                "lecturer-notifications.html";
+
+        }
+    );
+
+}
+
+
+// ======================================
+// START DASHBOARD
+// ======================================
+
+displayMyCourses();
+
+displayTodayClasses();
+
+displayNotifications();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Smart Timetable</title>
+
+    <link rel="stylesheet" href="my profile.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Smart Timetable</span>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="lecturer dashboard.html" class="menu-item">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html" class="menu-item active">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html" class="menu-item">
+                <i class="fa-solid fa-book"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html" class="menu-item">
+                <i class="fa-solid fa-users"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html" class="menu-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html" class="menu-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html" class="menu-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" class="menu-item login-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-title">
+
+                <h1>My Profile</h1>
+
+                <p>
+                    View and manage your lecturer profile
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount">0</span>
+                </button>
+
+
+                <div class="lecturer-account">
+
+                    <div class="lecturer-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="lecturer-details">
+
+                        <strong id="headerLecturerName">
+                            Lecturer
+                        </strong>
+
+                        <span id="headerDepartment">
+                            Department
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PROFILE HEADER -->
+
+        <section class="profile-header">
+
+            <div class="profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+
+            <div class="profile-main-info">
+
+                <h2 id="profileName">
+                    Lecturer
+                </h2>
+
+                <p id="profilePosition">
+                    Lecturer
+                </p>
+
+                <span id="profileDepartment">
+                    Department
+                </span>
+
+            </div>
+
+
+            <div class="profile-status">
+
+                <span class="status-badge">
+                    <i class="fa-solid fa-circle"></i>
+                    Active
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAL INFORMATION -->
+
+        <section class="profile-card">
+
+            <div class="card-title">
+
+                <div class="title-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Your basic personal information</p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-grid">
+
+                <div class="profile-field">
+
+                    <label>Full Name</label>
+
+                    <div
+                        class="field-value"
+                        id="fullName"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Staff ID</label>
+
+                    <div
+                        class="field-value"
+                        id="staffId"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Email Address</label>
+
+                    <div
+                        class="field-value"
+                        id="email"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Phone Number</label>
+
+                    <div
+                        class="field-value"
+                        id="phone"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACADEMIC INFORMATION -->
+
+        <section class="profile-card">
+
+            <div class="card-title">
+
+                <div class="title-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>Academic Information</h2>
+                    <p>Your academic and departmental information</p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-grid">
+
+                <div class="profile-field">
+
+                    <label>Department</label>
+
+                    <div
+                        class="field-value"
+                        id="department"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Faculty</label>
+
+                    <div
+                        class="field-value"
+                        id="faculty"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Qualification</label>
+
+                    <div
+                        class="field-value"
+                        id="qualification"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Specialization</label>
+
+                    <div
+                        class="field-value"
+                        id="specialization"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROFESSIONAL INFORMATION -->
+
+        <section class="profile-card">
+
+            <div class="card-title">
+
+                <div class="title-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <div>
+                    <h2>Professional Information</h2>
+                    <p>Your current professional details</p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-grid">
+
+                <div class="profile-field">
+
+                    <label>Position</label>
+
+                    <div
+                        class="field-value"
+                        id="position"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Employment Type</label>
+
+                    <div
+                        class="field-value"
+                        id="employmentType"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Years of Experience</label>
+
+                    <div
+                        class="field-value"
+                        id="experience"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+
+                <div class="profile-field">
+
+                    <label>Date Joined</label>
+
+                    <div
+                        class="field-value"
+                        id="dateJoined"
+                    >
+                        Not provided
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE STATISTICS -->
+
+        <section class="profile-stats">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div>
+                    <span>Assigned Courses</span>
+                    <strong id="courseCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <span>My Students</span>
+                    <strong id="studentCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                    <span>Scheduled Classes</span>
+                    <strong id="classCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-door-open"></i>
+                </div>
+
+                <div>
+                    <span>Lecture Rooms</span>
+                    <strong id="roomCount">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Smart Timetable Generation System.
+                All rights reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ======================================
+// Lecturer Profile
+// lecturer-profile.js
+// ======================================
+
+
+// ======================================
+// GET ELEMENTS
+// ======================================
+
+const profileName = document.getElementById("profileName");
+const profilePosition = document.getElementById("profilePosition");
+const profileDepartment = document.getElementById("profileDepartment");
+
+const headerLecturerName = document.getElementById("headerLecturerName");
+const headerDepartment = document.getElementById("headerDepartment");
+
+const fullName = document.getElementById("fullName");
+const staffId = document.getElementById("staffId");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+
+const department = document.getElementById("department");
+const faculty = document.getElementById("faculty");
+const qualification = document.getElementById("qualification");
+const specialization = document.getElementById("specialization");
+
+const position = document.getElementById("position");
+const employmentType = document.getElementById("employmentType");
+const experience = document.getElementById("experience");
+const dateJoined = document.getElementById("dateJoined");
+
+const courseCount = document.getElementById("courseCount");
+const studentCount = document.getElementById("studentCount");
+const classCount = document.getElementById("classCount");
+const roomCount = document.getElementById("roomCount");
+
+const notificationButton = document.getElementById("notificationButton");
+const notificationCount = document.getElementById("notificationCount");
+const currentYear = document.getElementById("currentYear");
+
+
+// ======================================
+// CURRENT YEAR
+// ======================================
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+
+// ======================================
+// LOAD LOCAL STORAGE DATA
+// ======================================
+
+function getData(key, defaultValue = []) {
+
+    try {
+
+        const data = localStorage.getItem(key);
+
+        if (!data) {
+            return defaultValue;
+        }
+
+        return JSON.parse(data);
+
+    } catch (error) {
+
+        console.error(`Unable to load ${key}:`, error);
+
+        return defaultValue;
+    }
+}
+
+
+// ======================================
+// GET LECTURER INFORMATION
+// ======================================
+
+function getLecturer() {
+
+    const lecturerData = getData("lecturerData", null);
+
+    if (
+        lecturerData &&
+        typeof lecturerData === "object"
+    ) {
+        return lecturerData;
+    }
+
+
+    const loggedInLecturer =
+        getData("loggedInLecturer", null);
+
+
+    if (
+        loggedInLecturer &&
+        typeof loggedInLecturer === "object"
+    ) {
+        return loggedInLecturer;
+    }
+
+
+    return {};
+}
+
+
+const lecturer = getLecturer();
+
+
+// ======================================
+// HELPER FUNCTION
+// ======================================
+
+function getValue(...values) {
+
+    for (const value of values) {
+
+        if (
+            value !== undefined &&
+            value !== null &&
+            String(value).trim() !== ""
+        ) {
+            return value;
+        }
+
+    }
+
+    return "Not provided";
+}
+
+
+// ======================================
+// LECTURER DETAILS
+// ======================================
+
+const lecturerFullName = getValue(
+    lecturer.fullName,
+    lecturer.name,
+    lecturer.lecturerName
+);
+
+const lecturerStaffId = getValue(
+    lecturer.staffId,
+    lecturer.staffNumber,
+    lecturer.lecturerId,
+    lecturer.id
+);
+
+const lecturerEmail = getValue(
+    lecturer.email,
+    lecturer.emailAddress
+);
+
+const lecturerPhone = getValue(
+    lecturer.phone,
+    lecturer.phoneNumber,
+    lecturer.mobile
+);
+
+const lecturerDepartment = getValue(
+    lecturer.department,
+    lecturer.dept
+);
+
+const lecturerFaculty = getValue(
+    lecturer.faculty,
+    lecturer.facultyName
+);
+
+const lecturerQualification = getValue(
+    lecturer.qualification,
+    lecturer.degree,
+    lecturer.academicQualification
+);
+
+const lecturerSpecialization = getValue(
+    lecturer.specialization,
+    lecturer.specialisation,
+    lecturer.areaOfSpecialization
+);
+
+const lecturerPosition = getValue(
+    lecturer.position,
+    lecturer.role,
+    lecturer.designation
+);
+
+const lecturerEmploymentType = getValue(
+    lecturer.employmentType,
+    lecturer.employment,
+    lecturer.staffType
+);
+
+const lecturerExperience = getValue(
+    lecturer.experience,
+    lecturer.yearsOfExperience
+);
+
+const lecturerDateJoined = getValue(
+    lecturer.dateJoined,
+    lecturer.joinDate,
+    lecturer.registrationDate
+);
+
+
+// ======================================
+// DISPLAY PROFILE INFORMATION
+// ======================================
+
+if (profileName) {
+    profileName.textContent = lecturerFullName;
+}
+
+if (profilePosition) {
+    profilePosition.textContent = lecturerPosition;
+}
+
+if (profileDepartment) {
+    profileDepartment.textContent =
+        lecturerDepartment;
+}
+
+if (headerLecturerName) {
+    headerLecturerName.textContent =
+        lecturerFullName;
+}
+
+if (headerDepartment) {
+    headerDepartment.textContent =
+        lecturerDepartment;
+}
+
+
+// ======================================
+// PERSONAL INFORMATION
+// ======================================
+
+if (fullName) {
+    fullName.textContent = lecturerFullName;
+}
+
+if (staffId) {
+    staffId.textContent = lecturerStaffId;
+}
+
+if (email) {
+    email.textContent = lecturerEmail;
+}
+
+if (phone) {
+    phone.textContent = lecturerPhone;
+}
+
+
+// ======================================
+// ACADEMIC INFORMATION
+// ======================================
+
+if (department) {
+    department.textContent =
+        lecturerDepartment;
+}
+
+if (faculty) {
+    faculty.textContent =
+        lecturerFaculty;
+}
+
+if (qualification) {
+    qualification.textContent =
+        lecturerQualification;
+}
+
+if (specialization) {
+    specialization.textContent =
+        lecturerSpecialization;
+}
+
+
+// ======================================
+// PROFESSIONAL INFORMATION
+// ======================================
+
+if (position) {
+    position.textContent =
+        lecturerPosition;
+}
+
+if (employmentType) {
+    employmentType.textContent =
+        lecturerEmploymentType;
+}
+
+if (experience) {
+
+    if (lecturerExperience === "Not provided") {
+
+        experience.textContent =
+            "Not provided";
+
+    } else {
+
+        experience.textContent =
+            `${lecturerExperience} years`;
+
+    }
+}
+
+
+if (dateJoined) {
+
+    if (
+        lecturerDateJoined !== "Not provided"
+    ) {
+
+        const date = new Date(
+            lecturerDateJoined
+        );
+
+        if (!isNaN(date.getTime())) {
+
+            dateJoined.textContent =
+                date.toLocaleDateString(
+                    "en-GB",
+                    {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                    }
+                );
+
+        } else {
+
+            dateJoined.textContent =
+                lecturerDateJoined;
+        }
+
+    } else {
+
+        dateJoined.textContent =
+            "Not provided";
+    }
+}
+
+
+// ======================================
+// LOAD COURSES
+// ======================================
+
+const courses = getData("courses");
+
+
+// ======================================
+// FIND LECTURER COURSES
+// ======================================
+
+function getLecturerCourses() {
+
+    const lecturerId =
+        lecturer.id ||
+        lecturer.staffId ||
+        lecturer.staffNumber ||
+        lecturer.lecturerId;
+
+    const lecturerName =
+        lecturer.fullName ||
+        lecturer.name ||
+        lecturer.lecturerName;
+
+
+    return courses.filter(course => {
+
+        const courseLecturerId =
+            course.lecturerId ||
+            course.staffId ||
+            course.staffNumber ||
+            course.teacherId;
+
+
+        const courseLecturer =
+            course.lecturer ||
+            course.lecturerName ||
+            course.instructor ||
+            course.teacher;
+
+
+        if (
+            lecturerId &&
+            courseLecturerId &&
+            String(courseLecturerId) ===
+            String(lecturerId)
+        ) {
+            return true;
+        }
+
+
+        if (
+            lecturerName &&
+            courseLecturer &&
+            String(courseLecturer).toLowerCase() ===
+            String(lecturerName).toLowerCase()
+        ) {
+            return true;
+        }
+
+
+        return false;
+
+    });
+
+}
+
+
+const lecturerCourses =
+    getLecturerCourses();
+
+
+// ======================================
+// COURSE COUNT
+// ======================================
+
+if (courseCount) {
+    courseCount.textContent =
+        lecturerCourses.length;
+}
+
+
+// ======================================
+// LOAD STUDENTS
+// ======================================
+
+const students = getData("students");
+
+
+// ======================================
+// GET LECTURER STUDENTS
+// ======================================
+
+function getLecturerStudents() {
+
+    if (lecturerCourses.length === 0) {
+        return [];
+    }
+
+
+    const courseCodes =
+        lecturerCourses.map(course => {
+
+            return String(
+                course.code ||
+                course.courseCode ||
+                course.course_code ||
+                ""
+            ).toLowerCase();
+
+        });
+
+
+    return students.filter(student => {
+
+        const studentCourses =
+            student.courses ||
+            student.registeredCourses ||
+            student.registeredCourse ||
+            [];
+
+
+        if (!Array.isArray(studentCourses)) {
+            return false;
+        }
+
+
+        return studentCourses.some(course => {
+
+            const code =
+                typeof course === "object"
+                    ? (
+                        course.code ||
+                        course.courseCode ||
+                        course.course_code ||
+                        ""
+                    )
+                    : course;
+
+
+            return courseCodes.includes(
+                String(code).toLowerCase()
+            );
+
+        });
+
+    });
+
+}
+
+
+if (studentCount) {
+
+    studentCount.textContent =
+        getLecturerStudents().length;
+
+}
+
+
+// ======================================
+// LOAD TIMETABLE
+// ======================================
+
+const timetableData =
+    getData("timetableData").length > 0
+        ? getData("timetableData")
+        : getData("timetable");
+
+
+// ======================================
+// GET LECTURER CLASSES
+// ======================================
+
+function getLecturerClasses() {
+
+    const lecturerId =
+        lecturer.id ||
+        lecturer.staffId ||
+        lecturer.staffNumber ||
+        lecturer.lecturerId;
+
+    const lecturerName =
+        lecturer.fullName ||
+        lecturer.name ||
+        lecturer.lecturerName;
+
+
+    return timetableData.filter(item => {
+
+        const itemLecturerId =
+            item.lecturerId ||
+            item.staffId ||
+            item.teacherId;
+
+
+        const itemLecturer =
+            item.lecturer ||
+            item.lecturerName ||
+            item.instructor ||
+            item.teacher;
+
+
+        const idMatch =
+            lecturerId &&
+            itemLecturerId &&
+            String(itemLecturerId) ===
+            String(lecturerId);
+
+
+        const nameMatch =
+            lecturerName &&
+            itemLecturer &&
+            String(itemLecturer).toLowerCase() ===
+            String(lecturerName).toLowerCase();
+
+
+        return idMatch || nameMatch;
+
+    });
+
+}
+
+
+const lecturerClasses =
+    getLecturerClasses();
+
+
+// ======================================
+// CLASS COUNT
+// ======================================
+
+if (classCount) {
+
+    classCount.textContent =
+        lecturerClasses.length;
+
+}
+
+
+// ======================================
+// LECTURE ROOMS
+// ======================================
+
+function getLectureRooms() {
+
+    const rooms = new Set();
+
+
+    lecturerClasses.forEach(item => {
+
+        const room =
+            item.room ||
+            item.roomName ||
+            item.lectureRoom ||
+            item.classroom;
+
+
+        if (room) {
+            rooms.add(String(room));
+        }
+
+    });
+
+
+    return rooms;
+
+}
+
+
+if (roomCount) {
+
+    roomCount.textContent =
+        getLectureRooms().size;
+
+}
+
+
+// ======================================
+// NOTIFICATIONS
+// ======================================
+
+const notifications =
+    getData("lecturerNotifications");
+
+
+if (notificationCount) {
+
+    const unread =
+        notifications.filter(notification => {
+
+            return (
+                notification.read === false ||
+                notification.status === "Unread"
+            );
+
+        });
+
+
+    notificationCount.textContent =
+        unread.length;
+
+}
+
+
+// ======================================
+// NOTIFICATION BUTTON
+// ======================================
+
+if (notificationButton) {
+
+    notificationButton.addEventListener(
+        "click",
+        function () {
+
+            window.location.href =
+                "lecturer-notifications.html";
+
+        }
+    );
+
+}
+    </script>
+
+</body>
+</html>

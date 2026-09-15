@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Timetable Generation</title>
+
+<link rel="stylesheet" href="timetable.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li>
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecture-room.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>Smart Timetable Generation</h1>
+
+<p>
+
+Automatically generate lecture schedules without clashes.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="courseCount">0</h2>
+
+<p>Courses</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="lecturerCount">0</h2>
+
+<p>Lecturers</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="roomCount">0</h2>
+
+<p>Lecture Rooms</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="generatedCount">0</h2>
+
+<p>Schedules</p>
+
+</div>
+
+</div>
+
+<!-- Timetable Controls -->
+
+<div class="generator">
+
+<h2>
+
+Generate Timetable
+
+</h2>
+
+<div class="controls">
+
+<select id="department">
+
+<option value="">Select Department</option>
+
+<option>Software Engineering</option>
+
+<option>Computer Science</option>
+
+<option>Cyber Security</option>
+
+<option>Information Technology</option>
+
+</select>
+
+<select id="level">
+
+<option value="">Select Level</option>
+
+<option>100</option>
+
+<option>200</option>
+
+<option>300</option>
+
+<option>400</option>
+
+</select>
+
+<select id="semester">
+
+<option value="">Semester</option>
+
+<option>First Semester</option>
+
+<option>Second Semester</option>
+
+</select>
+
+<select id="academicSession">
+
+<option value="">Academic Session</option>
+
+<option>2026/2027</option>
+
+<option>2027/2028</option>
+
+</select>
+
+<button id="generateBtn">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Generate Timetable
+
+</button>
+
+<button id="confirmBtn">
+
+<i class="fa-solid fa-check"></i>
+
+Confirm
+
+</button>
+
+<button id="printBtn">
+
+<i class="fa-solid fa-print"></i>
+
+Print
+
+</button>
+
+<button id="clearBtn">
+
+<i class="fa-solid fa-trash"></i>
+
+Clear
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Generated Timetable -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Day</th>
+
+<th>8-10 AM</th>
+
+<th>10-12 PM</th>
+
+<th>12-2 PM</th>
+
+<th>2-4 PM</th>
+
+<th>4-6 PM</th>
+
+</tr>
+
+</thead>
+
+<tbody id="timetableBody"><tr>
+
+<td>Monday</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>Tuesday</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>Wednesday</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>Thursday</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>Friday</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Generation Status -->
+
+<div class="activity">
+
+<h2>
+
+Generation Status
+
+</h2>
+
+<ul id="activityList">
+
+<li>Timetable Module Loaded Successfully.</li>
+
+<li>Waiting for timetable generation...</li>
+
+</ul>
+
+</div>
+
+<!-- Timetable Summary -->
+
+<div class="summary">
+
+<h2>
+
+Timetable Summary
+
+</h2>
+
+<p>
+
+The Smart Timetable Generation module automatically creates lecture schedules using the available courses, lecturers and lecture rooms.
+
+</p>
+
+<p>
+
+The generated timetable minimizes lecturer clashes, lecture room conflicts and overlapping course schedules while ensuring an organized weekly timetable.
+
+</p>
+
+<p>
+
+The timetable can be printed after generation and can also be regenerated whenever new courses, lecturers or lecture rooms are added to the system.
+
+</p>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="summary">
+
+<h2>
+
+Generation Statistics
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="conflicts">0</h2>
+
+<p>Conflicts</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="allocatedCourses">0</h2>
+
+<p>Allocated Courses</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="allocatedRooms">0</h2>
+
+<p>Allocated Rooms</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="allocatedLecturers">0</h2>
+
+<p>Allocated Lecturers</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ========================================
+// Smart Timetable Generation System
+// timetable.js
+// ========================================
+
+// Local Storage Data
+
+let courses = JSON.parse(localStorage.getItem("courses")) || [];
+
+let lecturers = JSON.parse(localStorage.getItem("lecturers")) || [];
+
+let rooms = JSON.parse(localStorage.getItem("lectureRooms")) || [];
+
+let timetable = JSON.parse(localStorage.getItem("timetable")) || [];
+
+// Elements
+
+const body = document.getElementById("timetableBody");
+
+const generateBtn = document.getElementById("generateBtn");
+
+const clearBtn = document.getElementById("clearBtn");
+
+const printBtn = document.getElementById("printBtn");
+
+const activityList = document.getElementById("activityList");
+
+const courseCount = document.getElementById("courseCount");
+
+const lecturerCount = document.getElementById("lecturerCount");
+
+const roomCount = document.getElementById("roomCount");
+
+const generatedCount = document.getElementById("generatedCount");
+
+const conflictCount = document.getElementById("conflicts");
+
+const allocatedCourses = document.getElementById("allocatedCourses");
+
+const allocatedRooms = document.getElementById("allocatedRooms");
+
+const allocatedLecturers = document.getElementById("allocatedLecturers");
+
+// Days and Time Slots
+
+const days=[
+
+"Monday",
+
+"Tuesday",
+
+"Wednesday",
+
+"Thursday",
+
+"Friday"
+
+];
+
+const slots=[
+
+"8-10 AM",
+
+"10-12 PM",
+
+"12-2 PM",
+
+"2-4 PM",
+
+"4-6 PM"
+
+];
+
+// Load Statistics
+
+updateStatistics();
+
+// Generate Timetable
+
+generateBtn.onclick=function(){
+
+generateTimetable();
+
+};
+
+// Generate Function
+
+function generateTimetable(){
+
+if(courses.length==0){
+
+alert("No courses found.");
+
+return;
+
+}
+
+if(lecturers.length==0){
+
+alert("No lecturers found.");
+
+return;
+
+}
+
+if(rooms.length==0){
+
+alert("No lecture rooms found.");
+
+return;
+
+}
+
+timetable=[];
+
+let courseIndex=0;
+
+days.forEach(day=>{
+
+slots.forEach(slot=>{
+
+if(courseIndex<courses.length){
+
+let course=courses[courseIndex];
+
+let lecturer=
+
+lecturers[courseIndex%lecturers.length];
+
+let room=
+
+rooms[courseIndex%rooms.length];
+
+timetable.push({
+
+day:day,
+
+time:slot,
+
+course:course.courseCode,
+
+title:course.courseTitle,
+
+lecturer:lecturer.name,
+
+room:room.name
+
+});
+
+courseIndex++;
+
+}
+
+});
+
+});
+
+localStorage.setItem(
+
+"timetable",
+
+JSON.stringify(timetable)
+
+);
+
+displayTimetable();
+
+updateStatistics();
+
+addActivity(
+
+"Timetable generated successfully."
+
+);
+
+}// ========================================
+// Display Timetable
+// ========================================
+
+function displayTimetable(){
+
+body.innerHTML="";
+
+days.forEach(day=>{
+
+let row="<tr>";
+
+row+="<td>"+day+"</td>";
+
+slots.forEach(slot=>{
+
+let schedule=timetable.find(item=>
+
+item.day==day&&item.time==slot
+
+);
+
+if(schedule){
+
+row+=`
+
+<td>
+
+<b>${schedule.course}</b><br>
+
+${schedule.lecturer}<br>
+
+${schedule.room}
+
+</td>
+
+`;
+
+}else{
+
+row+="<td></td>";
+
+}
+
+});
+
+row+="</tr>";
+
+body.innerHTML+=row;
+
+});
+
+}
+
+// ========================================
+// Clear Timetable
+// ========================================
+
+clearBtn.onclick=function(){
+
+if(confirm("Clear generated timetable?")){
+
+timetable=[];
+
+localStorage.removeItem("timetable");
+
+displayTimetable();
+
+updateStatistics();
+
+addActivity("Timetable cleared.");
+
+}
+
+};
+
+// ========================================
+// Print Timetable
+// ========================================
+
+printBtn.onclick=function(){
+
+window.print();
+
+};
+
+// ========================================
+// Update Statistics
+// ========================================
+
+function updateStatistics(){
+
+courseCount.innerHTML=courses.length;
+
+lecturerCount.innerHTML=lecturers.length;
+
+roomCount.innerHTML=rooms.length;
+
+generatedCount.innerHTML=timetable.length;
+
+allocatedCourses.innerHTML=timetable.length;
+
+allocatedLecturers.innerHTML=timetable.length;
+
+allocatedRooms.innerHTML=timetable.length;
+
+conflictCount.innerHTML=0;
+
+}
+
+// ========================================
+// Activity Log
+// ========================================
+
+function addActivity(message){
+
+const item=document.createElement("li");
+
+const time=new Date().toLocaleTimeString();
+
+item.innerHTML=time+" - "+message;
+
+activityList.prepend(item);
+
+}
+
+// ========================================
+// Load Saved Timetable
+// ========================================
+
+window.onload=function(){
+
+displayTimetable();
+
+updateStatistics();
+
+addActivity("Timetable module ready.");
+
+};
+
+// ========================================
+// Basic Clash Detection
+// ========================================
+
+function checkConflicts(){
+
+let conflicts=0;
+
+let used=[];
+
+timetable.forEach(schedule=>{
+
+let key=
+
+schedule.day+
+
+schedule.time+
+
+schedule.room;
+
+if(used.includes(key)){
+
+conflicts++;
+
+}else{
+
+used.push(key);
+
+}
+
+});
+
+conflictCount.innerHTML=conflicts;
+
+}
+
+// ========================================
+// Refresh Statistics
+// ========================================
+
+setInterval(function(){
+
+updateStatistics();
+
+checkConflicts();
+
+},3000);
+
+// ========================================
+// Export Functions
+// ========================================
+
+function saveTimetable(){
+
+localStorage.setItem(
+
+"timetable",
+
+JSON.stringify(timetable)
+
+);
+
+}
+
+function loadTimetable(){
+
+timetable=
+
+JSON.parse(localStorage.getItem("timetable"))
+
+||[];
+
+displayTimetable();
+
+}
+
+loadTimetable();
+</script>
+
+</body>
+
+</html>

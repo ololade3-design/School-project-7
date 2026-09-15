@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course Management</title>
+
+<link rel="stylesheet" href="courses.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li>
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecture rooms.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>Course Management</h1>
+
+<p>Manage all university courses.</p>
+
+</div>
+
+<div class="admin">
+
+<i class="fa-solid fa-user-circle"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="totalCourses">0</h2>
+
+<p>Total Courses</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="firstCourses">0</h2>
+
+<p>First Semester</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="secondCourses">0</h2>
+
+<p>Second Semester</p>
+
+</div>
+
+<div class="card">
+
+<h2>4</h2>
+
+<p>Levels</p>
+
+</div>
+
+</div>
+
+<!-- Toolbar -->
+
+<div class="toolbar">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Course...">
+
+<button id="showForm">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Course
+
+</button>
+
+</div>
+
+<!-- Add Course Form -->
+
+<div class="form-box" id="formBox">
+
+<h2>Add New Course</h2>
+
+<div class="row">
+
+<input
+
+type="text"
+
+id="code"
+
+placeholder="Course Code">
+
+<input
+
+type="text"
+
+id="title"
+
+placeholder="Course Title">
+
+</div>
+
+<div class="row">
+
+<input
+
+type="number"
+
+id="unit"
+
+placeholder="Course Unit">
+
+<select id="level">
+
+<option value="">Level</option>
+
+<option>100</option>
+
+<option>200</option>
+
+<option>300</option>
+
+<option>400</option>
+
+</select>
+
+</div>
+
+<div class="row">
+
+<select id="semester">
+
+<option value="">Semester</option>
+
+<option>First</option>
+
+<option>Second</option>
+
+</select>
+
+<button id="saveCourse">
+
+Save Course
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Course Table -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S/N</th>
+
+<th>Course Code</th>
+
+<th>Course Title</th>
+
+<th>Unit</th>
+
+<th>Level</th>
+
+<th>Semester</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="courseTable"><tr>
+
+<td colspan="7" style="text-align:center;color:gray;">
+
+No courses available.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Recent Activities -->
+
+<div class="activity">
+
+<h2>Recent Activities</h2>
+
+<ul id="activityList">
+
+<li>System Ready...</li>
+
+<li>Course Module Loaded</li>
+
+</ul>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation System |
+
+University Course Management
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // Smart Timetable Course Management
+
+let courses = JSON.parse(localStorage.getItem("courses")) || [];
+
+let editIndex = -1;
+
+// Elements
+const table = document.getElementById("courseTable");
+const saveBtn = document.getElementById("saveCourse");
+const search = document.getElementById("search");
+const showForm = document.getElementById("showForm");
+const formBox = document.getElementById("formBox");
+
+const totalCourses = document.getElementById("totalCourses");
+const firstCourses = document.getElementById("firstCourses");
+const secondCourses = document.getElementById("secondCourses");
+
+showForm.onclick = function () {
+
+    if (formBox.style.display == "block") {
+
+        formBox.style.display = "none";
+
+    } else {
+
+        formBox.style.display = "block";
+
+    }
+
+};
+
+displayCourses();
+
+function displayCourses() {
+
+    table.innerHTML = "";
+
+    if (courses.length == 0) {
+
+        table.innerHTML = `
+
+<tr>
+
+<td colspan="7">
+
+No courses available.
+
+</td>
+
+</tr>
+
+`;
+
+        updateCards();
+
+        return;
+
+    }
+
+    courses.forEach((course, index) => {
+
+        table.innerHTML += `
+
+<tr>
+
+<td>${index + 1}</td>
+
+<td>${course.code}</td>
+
+<td>${course.title}</td>
+
+<td>${course.unit}</td>
+
+<td>${course.level}</td>
+
+<td>${course.semester}</td>
+
+<td>
+
+<button onclick="editCourse(${index})">
+
+Edit
+
+</button>
+
+<button onclick="deleteCourse(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+    });
+
+    localStorage.setItem("courses", JSON.stringify(courses));
+
+    updateCards();
+
+}
+
+saveBtn.onclick = function () {
+
+    const code = document.getElementById("code").value.trim();
+
+    const title = document.getElementById("title").value.trim();
+
+    const unit = document.getElementById("unit").value;
+
+    const level = document.getElementById("level").value;
+
+    const semester = document.getElementById("semester").value;
+
+    if (
+        code == "" ||
+        title == "" ||
+        unit == "" ||
+        level == "" ||
+        semester == ""
+    ) {
+
+        alert("Please complete all fields.");
+
+        return;
+
+    }
+
+    const course = {
+
+        code,
+
+        title,
+
+        unit,
+
+        level,
+
+        semester
+
+    };
+
+    if (editIndex == -1) {
+
+        courses.push(course);
+
+    } else {
+
+        courses[editIndex] = course;
+
+        editIndex = -1;
+
+    }
+
+    displayCourses();
+
+    clearForm();
+
+    formBox.style.display = "none";
+
+    addActivity("Course saved successfully.");
+
+};function editCourse(index) {
+
+    const c = courses[index];
+
+    document.getElementById("code").value = c.code;
+
+    document.getElementById("title").value = c.title;
+
+    document.getElementById("unit").value = c.unit;
+
+    document.getElementById("level").value = c.level;
+
+    document.getElementById("semester").value = c.semester;
+
+    editIndex = index;
+
+    formBox.style.display = "block";
+
+    addActivity("Editing " + c.code);
+
+}
+
+function deleteCourse(index) {
+
+    if (confirm("Delete this course?")) {
+
+        addActivity(courses[index].code + " deleted");
+
+        courses.splice(index,1);
+
+        displayCourses();
+
+    }
+
+}
+
+function clearForm(){
+
+    document.getElementById("code").value="";
+
+    document.getElementById("title").value="";
+
+    document.getElementById("unit").value="";
+
+    document.getElementById("level").value="";
+
+    document.getElementById("semester").value="";
+
+}
+
+search.addEventListener("keyup",function(){
+
+    const value=this.value.toLowerCase();
+
+    const rows=document.querySelectorAll("#courseTable tr");
+
+    rows.forEach(row=>{
+
+        row.style.display=row.innerText.toLowerCase().includes(value)
+
+        ?"":"none";
+
+    });
+
+});
+
+function updateCards(){
+
+    totalCourses.innerHTML=courses.length;
+
+    let first=0;
+
+    let second=0;
+
+    courses.forEach(course=>{
+
+        if(course.semester=="First"){
+
+            first++;
+
+        }else if(course.semester=="Second"){
+
+            second++;
+
+        }
+
+    });
+
+    firstCourses.innerHTML=first;
+
+    secondCourses.innerHTML=second;
+
+}
+
+function addActivity(message){
+
+    const list=document.getElementById("activityList");
+
+    const item=document.createElement("li");
+
+    const time=new Date().toLocaleTimeString();
+
+    item.innerHTML=time+" - "+message;
+
+    list.prepend(item);
+
+}
+
+window.onload=function(){
+
+    displayCourses();
+
+    addActivity("Course Management Ready");
+
+};
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        formBox.style.display="none";
+
+        clearForm();
+
+    }
+
+});
+
+document.getElementById("code").addEventListener("input",function(){
+
+    this.value=this.value.toUpperCase();
+
+});
+
+localStorage.setItem("courses",JSON.stringify(courses));
+</script>
+
+</body>
+
+</html>

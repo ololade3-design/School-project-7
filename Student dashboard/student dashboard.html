@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Dashboard</title>
+
+<link rel="stylesheet" href="student dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>Student Portal</h2>
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="student dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Student Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="course registration.html">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Course Registration
+
+</a>
+
+</li>
+
+<li>
+
+<a href="faculty.html">
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty
+
+</a>
+
+</li>
+
+<li>
+
+<a href="department.html">
+
+<i class="fa-solid fa-building"></i>
+
+Department
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+My Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+My Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="academic info.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Academic Information
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<!-- Topbar -->
+
+<div class="topbar">
+
+<div>
+
+<h1>Student Dashboard</h1>
+
+<p>
+
+Welcome back! Manage your academic activities from your student portal.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span id="studentName">Student</span>
+
+</div>
+
+</div>
+
+<!-- Welcome Section -->
+
+<div class="welcome-section">
+
+<div class="welcome-text">
+
+<h2>
+
+Welcome Back, <span id="welcomeName">Student</span> 👋
+
+</h2>
+
+<p>
+
+Stay updated with your courses, registration and class timetable.
+
+</p>
+
+<button id="viewTimetable">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+View My Timetable
+
+</button>
+
+</div>
+
+<div class="welcome-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+</div>
+
+<!-- Student Information -->
+
+<div class="student-info">
+
+<div class="info-box">
+
+<i class="fa-solid fa-id-card"></i>
+
+<div>
+
+<span>Matric Number</span>
+
+<h3 id="matricNumber">Not Available</h3>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<div>
+
+<span>Faculty</span>
+
+<h3 id="studentFaculty">Not Available</h3>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-building"></i>
+
+<div>
+
+<span>Department</span>
+
+<h3 id="studentDepartment">Not Available</h3>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<div>
+
+<span>Level</span>
+
+<h3 id="studentLevel">Not Available</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Statistics Cards -->
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<h2 id="courseCount">0</h2>
+
+<p>Registered Courses</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<div>
+
+<h2 id="classCount">0</h2>
+
+<p>Scheduled Classes</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-clock"></i>
+
+</div>
+
+<div>
+
+<h2 id="upcomingCount">0</h2>
+
+<p>Upcoming Classes</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<div>
+
+<h2 id="semesterName">---</h2>
+
+<p>Current Semester</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Today's Classes -->
+
+<div class="content-grid">
+
+<div class="today-classes">
+
+<div class="section-header">
+
+<h2>
+
+Today's Classes
+
+</h2>
+
+<a href="my timetable.html">
+
+View Timetable
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+</div>
+
+<div id="todayClasses">
+
+<div class="empty-class">
+
+<i class="fa-solid fa-calendar-xmark"></i>
+
+<p>No classes available for today.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="quick-actions">
+
+<h2>Quick Actions</h2>
+
+<div class="action-list">
+
+<a href="course registration.html">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+<span>
+
+<b>Course Registration</b>
+
+<small>Register your courses</small>
+
+</span>
+
+</a>
+
+<a href="my courses.html">
+
+<i class="fa-solid fa-book-open"></i>
+
+<span>
+
+<b>My Courses</b>
+
+<small>View registered courses</small>
+
+</span>
+
+</a>
+
+<a href="academic info.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>
+
+<b>Academic Information</b>
+
+<small>View your academic details</small>
+
+</span>
+
+</a>
+
+<a href="my profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+
+<b>My Profile</b>
+
+<small>Manage your profile</small>
+
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Academic Overview -->
+
+<div class="academic-overview">
+
+<div class="section-header">
+
+<h2>Academic Overview</h2>
+
+</div>
+
+<div class="overview-grid">
+
+<div class="overview-item">
+
+<i class="fa-solid fa-calendar"></i>
+
+<span>Academic Session</span>
+
+<h3 id="academicSession">Not Set</h3>
+
+</div>
+
+<div class="overview-item">
+
+<i class="fa-solid fa-book"></i>
+
+<span>Semester</span>
+
+<h3 id="currentSemester">Not Set</h3>
+
+</div>
+
+<div class="overview-item">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<span>Faculty</span>
+
+<h3 id="overviewFaculty">Not Set</h3>
+
+</div>
+
+<div class="overview-item">
+
+<i class="fa-solid fa-building"></i>
+
+<span>Department</span>
+
+<h3 id="overviewDepartment">Not Set</h3>
+
+</div>
+
+</div>
+
+</div><!-- Recent Activities and Announcements -->
+
+<div class="bottom-grid">
+
+<!-- Recent Activities -->
+
+<div class="recent-activities">
+
+<div class="section-header">
+
+<h2>Recent Activities</h2>
+
+</div>
+
+<ul id="activityList">
+
+<li>
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div>
+
+<h4>Student Dashboard Loaded</h4>
+
+<p>Your academic information is ready.</p>
+
+</div>
+
+</li>
+
+<li>
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<h4>Course Information</h4>
+
+<p>Check your registered courses regularly.</p>
+
+</div>
+
+</li>
+
+<li>
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<div>
+
+<h4>Timetable Available</h4>
+
+<p>View your class schedule from My Timetable.</p>
+
+</div>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Announcements -->
+
+<div class="announcements">
+
+<div class="section-header">
+
+<h2>Announcements</h2>
+
+</div>
+
+<div id="announcementList">
+
+<div class="announcement-item">
+
+<div class="announcement-icon">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+</div>
+
+<div>
+
+<h3>Welcome to the Student Portal</h3>
+
+<p>
+
+Use this dashboard to manage your courses and view your timetable.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="announcement-item">
+
+<div class="announcement-icon">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<div>
+
+<h3>Check Your Timetable</h3>
+
+<p>
+
+Make sure you regularly check your timetable for your scheduled classes.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="announcement-item">
+
+<div class="announcement-icon">
+
+<i class="fa-solid fa-book-open"></i>
+
+</div>
+
+<div>
+
+<h3>Course Registration</h3>
+
+<p>
+
+Register your available courses before the registration deadline.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System | Student Portal
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ========================================
+// Smart Timetable Generation System
+// Student Dashboard
+// student-dashboard.js
+// ========================================
+
+// Student Information Elements
+
+const studentName=document.getElementById("studentName");
+
+const welcomeName=document.getElementById("welcomeName");
+
+const matricNumber=document.getElementById("matricNumber");
+
+const studentFaculty=document.getElementById("studentFaculty");
+
+const studentDepartment=document.getElementById("studentDepartment");
+
+const studentLevel=document.getElementById("studentLevel");
+
+// Statistics Elements
+
+const courseCount=document.getElementById("courseCount");
+
+const classCount=document.getElementById("classCount");
+
+const upcomingCount=document.getElementById("upcomingCount");
+
+const semesterName=document.getElementById("semesterName");
+
+// Academic Overview Elements
+
+const academicSession=document.getElementById("academicSession");
+
+const currentSemester=document.getElementById("currentSemester");
+
+const overviewFaculty=document.getElementById("overviewFaculty");
+
+const overviewDepartment=document.getElementById("overviewDepartment");
+
+// Other Elements
+
+const todayClasses=document.getElementById("todayClasses");
+
+const activityList=document.getElementById("activityList");
+
+const viewTimetable=document.getElementById("viewTimetable");
+
+
+// ========================================
+// Load Student Information
+// ========================================
+
+function loadStudentInformation(){
+
+const student=JSON.parse(
+localStorage.getItem("studentData")
+);
+
+if(student){
+
+studentName.innerHTML=student.name||"Student";
+
+welcomeName.innerHTML=student.name||"Student";
+
+matricNumber.innerHTML=
+student.matricNumber||"Not Available";
+
+studentFaculty.innerHTML=
+student.faculty||"Not Available";
+
+studentDepartment.innerHTML=
+student.department||"Not Available";
+
+studentLevel.innerHTML=
+student.level||"Not Available";
+
+overviewFaculty.innerHTML=
+student.faculty||"Not Set";
+
+overviewDepartment.innerHTML=
+student.department||"Not Set";
+
+}
+
+}
+
+
+// ========================================
+// Load Academic Settings
+// ========================================
+
+function loadAcademicInformation(){
+
+const settings=JSON.parse(
+localStorage.getItem("settings")
+);
+
+if(settings){
+
+academicSession.innerHTML=
+settings.session||"Not Set";
+
+currentSemester.innerHTML=
+settings.semester||"Not Set";
+
+semesterName.innerHTML=
+settings.semester||"---";
+
+}
+
+}
+
+
+// ========================================
+// Load Registered Courses
+// ========================================
+
+function loadRegisteredCourses(){
+
+const courses=JSON.parse(
+localStorage.getItem("registeredCourses")
+)||[];
+
+courseCount.innerHTML=courses.length;
+
+}
+
+
+// ========================================
+// Load Timetable
+// ========================================
+
+function loadTimetable(){
+
+const timetable=JSON.parse(
+localStorage.getItem("timetable")
+)||[];
+
+classCount.innerHTML=timetable.length;
+
+displayTodayClasses(timetable);
+
+}
+
+
+// ========================================
+// Get Current Day
+// ========================================
+
+function getCurrentDay(){
+
+const days=[
+
+"Sunday",
+
+"Monday",
+
+"Tuesday",
+
+"Wednesday",
+
+"Thursday",
+
+"Friday",
+
+"Saturday"
+
+];
+
+const today=new Date();
+
+return days[today.getDay()];
+
+}
+
+
+// ========================================
+// Display Today's Classes
+// ========================================
+
+function displayTodayClasses(timetable){
+
+const today=getCurrentDay();
+
+const classes=timetable.filter(function(item){
+
+return item.day===today;
+
+});
+
+todayClasses.innerHTML="";
+
+if(classes.length===0){
+
+todayClasses.innerHTML=`
+
+<div class="empty-class">
+
+<i class="fa-solid fa-calendar-xmark"></i>
+
+<p>No classes available for today.</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+classes.forEach(function(item){
+
+const classItem=document.createElement("div");
+
+classItem.className="class-item";
+
+classItem.innerHTML=`
+
+<div class="class-time">
+
+<i class="fa-solid fa-clock"></i>
+
+${item.time||"Time Not Set"}
+
+</div>
+
+<div class="class-details">
+
+<h3>${item.courseCode||"Course"}</h3>
+
+<p>${item.courseTitle||"Course Title"}</p>
+
+<span>
+
+<i class="fa-solid fa-door-open"></i>
+
+${item.room||"Room Not Set"}
+
+</span>
+
+</div>
+
+`;
+
+todayClasses.appendChild(classItem);
+
+});
+
+}
+
+
+// ========================================
+// Upcoming Classes
+// ========================================
+
+function updateUpcomingClasses(){
+
+const timetable=JSON.parse(
+localStorage.getItem("timetable")
+)||[];
+
+const today=getCurrentDay();
+
+let upcoming=0;
+
+timetable.forEach(function(item){
+
+if(item.day!==today){
+
+upcoming++;
+
+}
+
+});
+
+upcomingCount.innerHTML=upcoming;
+
+}
+
+
+// ========================================
+// View Timetable Button
+// ========================================
+
+if(viewTimetable){
+
+viewTimetable.onclick=function(){
+
+window.location.href="my-timetable.html";
+
+};
+
+}
+
+
+// ========================================
+// Add Activity
+// ========================================
+
+function addActivity(title,message){
+
+if(!activityList){
+
+return;
+
+}
+
+const item=document.createElement("li");
+
+item.innerHTML=`
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div>
+
+<h4>${title}</h4>
+
+<p>${message}</p>
+
+</div>
+
+`;
+
+activityList.prepend(item);
+
+}
+
+
+// ========================================
+// Refresh Dashboard Data
+// ========================================
+
+function refreshDashboard(){
+
+loadStudentInformation();
+
+loadAcademicInformation();
+
+loadRegisteredCourses();
+
+loadTimetable();
+
+updateUpcomingClasses();
+
+}
+
+
+// ========================================
+// Page Load
+// ========================================
+
+window.onload=function(){
+
+refreshDashboard();
+
+};
+
+
+// ========================================
+// Auto Refresh Dashboard
+// ========================================
+
+setInterval(function(){
+
+refreshDashboard();
+
+},5000);
+
+
+// ========================================
+// Dashboard Ready
+// ========================================
+
+console.log(
+"Student Dashboard Loaded Successfully"
+);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Timetable - Smart Timetable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="my timetable.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+                <h2>Smart Timetable</h2>
+                <span>Lecturer Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="lecturer dashboard.html" class="menu-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html" class="menu-item">
+                <i class="fa-solid fa-book"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html" class="menu-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html" class="menu-item active">
+                <i class="fa-solid fa-calendar-week"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html" class="menu-item">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html" class="menu-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" class="menu-item login-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="header-title">
+                <h1>My Timetable</h1>
+                <p>View your scheduled classes and teaching activities.</p>
+            </div>
+
+            <div class="header-actions">
+
+                <button class="notification-button" id="notificationButton">
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount">0</span>
+                </button>
+
+                <div class="header-profile">
+
+                    <div class="header-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="header-profile-info">
+                        <strong id="headerLecturerName">Lecturer</strong>
+                        <span id="headerDepartment">Department</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="page-content">
+
+            <!-- Intro -->
+            <div class="page-intro">
+
+                <div>
+                    <h2>Weekly Timetable</h2>
+                    <p>
+                        Your assigned lectures are displayed below.
+                    </p>
+                </div>
+
+                <button class="primary-button" id="printTimetable">
+                    <i class="fa-solid fa-print"></i>
+                    Print Timetable
+                </button>
+
+            </div>
+
+
+            <!-- Filters -->
+            <div class="filter-card">
+
+                <div class="filter-group">
+
+                    <label for="semesterFilter">
+                        Semester
+                    </label>
+
+                    <select id="semesterFilter">
+                        <option value="all">All Semesters</option>
+                        <option value="First Semester">First Semester</option>
+                        <option value="Second Semester">Second Semester</option>
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="dayFilter">
+                        Day
+                    </label>
+
+                    <select id="dayFilter">
+                        <option value="all">All Days</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group search-group">
+
+                    <label for="timetableSearch">
+                        Search
+                    </label>
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="timetableSearch"
+                            placeholder="Search course or room..."
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Summary Cards -->
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon blue">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <div>
+                        <span>Courses</span>
+                        <strong id="courseCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon green">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+
+                    <div>
+                        <span>Classes</span>
+                        <strong id="classCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon orange">
+                        <i class="fa-solid fa-door-open"></i>
+                    </div>
+
+                    <div>
+                        <span>Lecture Rooms</span>
+                        <strong id="roomCount">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon purple">
+                        <i class="fa-solid fa-calendar"></i>
+                    </div>
+
+                    <div>
+                        <span>Academic Session</span>
+                        <strong id="academicSession">2025/2026</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Timetable -->
+            <div class="timetable-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Class Timetable</h3>
+                        <p id="timetableSubtitle">
+                            Your weekly teaching schedule
+                        </p>
+                    </div>
+
+                    <button class="secondary-button" id="refreshTimetable">
+                        <i class="fa-solid fa-rotate"></i>
+                        Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table class="timetable-table">
+
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="timetableBody">
+
+                            <tr>
+                                <td colspan="7" class="loading-cell">
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+                                    Loading timetable...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyTimetable">
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                    </div>
+
+                    <h3>No Timetable Found</h3>
+
+                    <p>
+                        You currently have no scheduled classes matching the selected filters.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Today's Classes -->
+            <div class="today-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>Today's Classes</h3>
+                        <p>Your teaching activities for today.</p>
+                    </div>
+
+                    <a href="class-schedule.html" class="view-link">
+                        View Schedule
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+                <div id="todayClasses" class="today-class-list">
+
+                    <div class="empty-small">
+                        <i class="fa-solid fa-calendar-day"></i>
+                        <span>No classes scheduled for today.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Information Notice -->
+            <div class="notice-card">
+
+                <div class="notice-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div>
+                    <h3>Timetable Information</h3>
+
+                    <p>
+                        Your timetable is generated from the classes assigned to you
+                        by the timetable administrator. If you notice an incorrect
+                        course, time or lecture room, please contact the administrator.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                &copy; <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System.
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        /* =========================================
+   Lecturer Timetable
+   lecturer-timetable.js
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // =========================================
+    // Elements
+    // =========================================
+
+    const headerLecturerName =
+        document.getElementById("headerLecturerName");
+
+    const headerDepartment =
+        document.getElementById("headerDepartment");
+
+    const notificationButton =
+        document.getElementById("notificationButton");
+
+    const notificationCount =
+        document.getElementById("notificationCount");
+
+    const semesterFilter =
+        document.getElementById("semesterFilter");
+
+    const dayFilter =
+        document.getElementById("dayFilter");
+
+    const timetableSearch =
+        document.getElementById("timetableSearch");
+
+    const timetableBody =
+        document.getElementById("timetableBody");
+
+    const emptyTimetable =
+        document.getElementById("emptyTimetable");
+
+    const todayClasses =
+        document.getElementById("todayClasses");
+
+    const courseCount =
+        document.getElementById("courseCount");
+
+    const classCount =
+        document.getElementById("classCount");
+
+    const roomCount =
+        document.getElementById("roomCount");
+
+    const academicSession =
+        document.getElementById("academicSession");
+
+    const timetableSubtitle =
+        document.getElementById("timetableSubtitle");
+
+    const refreshTimetable =
+        document.getElementById("refreshTimetable");
+
+    const printTimetable =
+        document.getElementById("printTimetable");
+
+    const currentYear =
+        document.getElementById("currentYear");
+
+
+    // =========================================
+    // Current Year
+    // =========================================
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
+
+    // =========================================
+    // Local Storage Helper
+    // =========================================
+
+    function getData(key, defaultValue) {
+
+        try {
+
+            const data = localStorage.getItem(key);
+
+            if (!data) {
+                return defaultValue;
+            }
+
+            return JSON.parse(data);
+
+        } catch (error) {
+
+            console.error(`Error reading ${key}:`, error);
+
+            return defaultValue;
+        }
+    }
+
+
+    // =========================================
+    // Get Current Lecturer
+    // =========================================
+
+    function getLecturer() {
+
+        const lecturerData =
+            getData("lecturerData", null);
+
+        if (lecturerData) {
+            return lecturerData;
+        }
+
+        const loggedInLecturer =
+            getData("loggedInLecturer", null);
+
+        if (loggedInLecturer) {
+            return loggedInLecturer;
+        }
+
+        return {
+            fullName: "Lecturer",
+            department: "Department"
+        };
+    }
+
+
+    const lecturer = getLecturer();
+
+
+    // =========================================
+    // Helper Functions
+    // =========================================
+
+    function getValue(object, ...keys) {
+
+        for (const key of keys) {
+
+            if (
+                object &&
+                object[key] !== undefined &&
+                object[key] !== null &&
+                object[key] !== ""
+            ) {
+                return object[key];
+            }
+        }
+
+        return "";
+    }
+
+
+    function normalize(value) {
+
+        return String(value || "")
+            .trim()
+            .toLowerCase();
+    }
+
+
+    function escapeHTML(value) {
+
+        return String(value || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+    function getCourseCode(course) {
+
+        return getValue(
+            course,
+            "courseCode",
+            "code",
+            "course_code",
+            "courseID",
+            "courseId"
+        );
+    }
+
+
+    function getCourseTitle(course) {
+
+        return getValue(
+            course,
+            "courseTitle",
+            "title",
+            "courseName",
+            "name"
+        );
+    }
+
+
+    function getDay(item) {
+
+        return getValue(
+            item,
+            "day",
+            "dayOfWeek",
+            "weekday",
+            "weekDay"
+        );
+    }
+
+
+    function getRoom(item) {
+
+        return getValue(
+            item,
+            "room",
+            "lectureRoom",
+            "lecture_room",
+            "roomName",
+            "venue",
+            "classroom"
+        );
+    }
+
+
+    function getStartTime(item) {
+
+        return getValue(
+            item,
+            "startTime",
+            "start",
+            "timeStart",
+            "from"
+        );
+    }
+
+
+    function getEndTime(item) {
+
+        return getValue(
+            item,
+            "endTime",
+            "end",
+            "timeEnd",
+            "to"
+        );
+    }
+
+
+    function getTime(item) {
+
+        const start = getStartTime(item);
+        const end = getEndTime(item);
+
+        if (start && end) {
+            return `${start} - ${end}`;
+        }
+
+        return getValue(
+            item,
+            "time",
+            "lectureTime",
+            "period"
+        ) || "Time not specified";
+    }
+
+
+    function getSemester(item) {
+
+        return getValue(
+            item,
+            "semester",
+            "term"
+        );
+    }
+
+
+    // =========================================
+    // Lecturer Information
+    // =========================================
+
+    const lecturerName =
+        getValue(
+            lecturer,
+            "fullName",
+            "name",
+            "lecturerName",
+            "staffName"
+        ) || "Lecturer";
+
+
+    const lecturerDepartment =
+        getValue(
+            lecturer,
+            "department",
+            "dept"
+        ) || "Department";
+
+
+    const lecturerId =
+        getValue(
+            lecturer,
+            "id",
+            "lecturerId",
+            "lecturerID",
+            "staffId",
+            "staffID"
+        );
+
+
+    if (headerLecturerName) {
+        headerLecturerName.textContent = lecturerName;
+    }
+
+    if (headerDepartment) {
+        headerDepartment.textContent = lecturerDepartment;
+    }
+
+
+    // =========================================
+    // Load Data
+    // =========================================
+
+    const courses =
+        getData("courses", []);
+
+    const timetableData =
+        getData(
+            "timetableData",
+            getData("timetable", [])
+        );
+
+    const notifications =
+        getData("lecturerNotifications", []);
+
+
+    // =========================================
+    // Find Lecturer Courses
+    // =========================================
+
+    function getLecturerCourses() {
+
+        return courses.filter(course => {
+
+            const assignedLecturerId =
+                getValue(
+                    course,
+                    "lecturerId",
+                    "lecturerID",
+                    "assignedLecturerId",
+                    "assignedLecturerID",
+                    "staffId",
+                    "staffID"
+                );
+
+            const assignedLecturerName =
+                getValue(
+                    course,
+                    "lecturerName",
+                    "lecturer",
+                    "assignedLecturer",
+                    "instructor",
+                    "instructorName"
+                );
+
+
+            if (
+                lecturerId &&
+                assignedLecturerId &&
+                normalize(lecturerId) ===
+                normalize(assignedLecturerId)
+            ) {
+                return true;
+            }
+
+
+            if (
+                assignedLecturerName &&
+                normalize(assignedLecturerName) ===
+                normalize(lecturerName)
+            ) {
+                return true;
+            }
+
+
+            return false;
+        });
+    }
+
+
+    const lecturerCourses =
+        getLecturerCourses();
+
+
+    // =========================================
+    // Course Codes
+    // =========================================
+
+    const lecturerCourseCodes =
+        new Set(
+            lecturerCourses
+                .map(course => normalize(getCourseCode(course)))
+                .filter(Boolean)
+        );
+
+
+    // =========================================
+    // Check Timetable Ownership
+    // =========================================
+
+    function belongsToLecturer(item) {
+
+        const itemLecturerId =
+            getValue(
+                item,
+                "lecturerId",
+                "lecturerID",
+                "staffId",
+                "staffID"
+            );
+
+
+        const itemLecturerName =
+            getValue(
+                item,
+                "lecturerName",
+                "lecturer",
+                "instructor",
+                "instructorName"
+            );
+
+
+        const itemCourseCode =
+            normalize(
+                getValue(
+                    item,
+                    "courseCode",
+                    "course_code",
+                    "code",
+                    "courseID",
+                    "courseId"
+                )
+            );
+
+
+        if (
+            lecturerId &&
+            itemLecturerId &&
+            normalize(lecturerId) ===
+            normalize(itemLecturerId)
+        ) {
+            return true;
+        }
+
+
+        if (
+            itemLecturerName &&
+            normalize(itemLecturerName) ===
+            normalize(lecturerName)
+        ) {
+            return true;
+        }
+
+
+        if (
+            itemCourseCode &&
+            lecturerCourseCodes.has(itemCourseCode)
+        ) {
+            return true;
+        }
+
+
+        return false;
+    }
+
+
+    // =========================================
+    // Lecturer Timetable
+    // =========================================
+
+    function getLecturerTimetable() {
+
+        return timetableData.filter(item =>
+            belongsToLecturer(item)
+        );
+    }
+
+
+    // =========================================
+    // Academic Session
+    // =========================================
+
+    function loadAcademicSession() {
+
+        const settings =
+            getData("settings", {});
+
+        const session =
+            getValue(
+                settings,
+                "academicSession",
+                "session"
+            ) ||
+            getValue(
+                lecturer,
+                "academicSession",
+                "session"
+            ) ||
+            "2025/2026";
+
+
+        if (academicSession) {
+            academicSession.textContent = session;
+        }
+    }
+
+
+    // =========================================
+    // Summary
+    // =========================================
+
+    function updateSummary(data) {
+
+        const uniqueCourses = new Set();
+
+        const uniqueRooms = new Set();
+
+
+        data.forEach(item => {
+
+            const code =
+                normalize(
+                    getValue(
+                        item,
+                        "courseCode",
+                        "course_code",
+                        "code",
+                        "courseID",
+                        "courseId"
+                    )
+                );
+
+            const room =
+                normalize(getRoom(item));
+
+
+            if (code) {
+                uniqueCourses.add(code);
+            }
+
+            if (room) {
+                uniqueRooms.add(room);
+            }
+
+        });
+
+
+        if (courseCount) {
+            courseCount.textContent =
+                uniqueCourses.size || lecturerCourses.length;
+        }
+
+
+        if (classCount) {
+            classCount.textContent = data.length;
+        }
+
+
+        if (roomCount) {
+            roomCount.textContent =
+                uniqueRooms.size;
+        }
+
+    }
+
+
+    // =========================================
+    // Time Slots
+    // =========================================
+
+    const timeSlots = [
+        "8:00 AM - 10:00 AM",
+        "10:00 AM - 12:00 PM",
+        "12:00 PM - 2:00 PM",
+        "2:00 PM - 4:00 PM",
+        "4:00 PM - 6:00 PM"
+    ];
+
+
+    // =========================================
+    // Find Time Slot
+    // =========================================
+
+    function getTimeSlot(item) {
+
+        const time =
+            normalize(getTime(item));
+
+        if (!time) {
+            return "";
+        }
+
+
+        for (const slot of timeSlots) {
+
+            if (
+                normalize(slot) === time
+            ) {
+                return slot;
+            }
+
+        }
+
+
+        return getTime(item);
+    }
+
+
+    // =========================================
+    // Create Timetable Entry
+    // =========================================
+
+    function createEntry(item) {
+
+        const courseCode =
+            getValue(
+                item,
+                "courseCode",
+                "course_code",
+                "code",
+                "courseID",
+                "courseId"
+            ) || "Course";
+
+
+        let courseTitle =
+            getValue(
+                item,
+                "courseTitle",
+                "courseName",
+                "title",
+                "name"
+            );
+
+
+        if (!courseTitle) {
+
+            const matchingCourse =
+                lecturerCourses.find(course =>
+                    normalize(getCourseCode(course)) ===
+                    normalize(courseCode)
+                );
+
+
+            if (matchingCourse) {
+                courseTitle =
+                    getCourseTitle(matchingCourse);
+            }
+
+        }
+
+
+        const room =
+            getRoom(item) ||
+            "Room not assigned";
+
+
+        const time =
+            getTime(item);
+
+
+        return `
+            <div class="timetable-entry">
+
+                <div class="course-code">
+                    ${escapeHTML(courseCode)}
+                </div>
+
+                <div class="course-title">
+                    ${escapeHTML(courseTitle || "Class")}
+                </div>
+
+                <div class="class-info">
+                    <i class="fa-solid fa-clock"></i>
+                    ${escapeHTML(time)}
+                </div>
+
+                <div class="class-info">
+                    <i class="fa-solid fa-door-open"></i>
+                    ${escapeHTML(room)}
+                </div>
+
+            </div>
+        `;
+    }
+
+
+    // =========================================
+    // Render Timetable
+    // =========================================
+
+    function renderTimetable() {
+
+        const lecturerTimetable =
+            getLecturerTimetable();
+
+
+        const selectedSemester =
+            normalize(
+                semesterFilter
+                    ? semesterFilter.value
+                    : "all"
+            );
+
+
+        const selectedDay =
+            normalize(
+                dayFilter
+                    ? dayFilter.value
+                    : "all"
+            );
+
+
+        const searchTerm =
+            normalize(
+                timetableSearch
+                    ? timetableSearch.value
+                    : ""
+            );
+
+
+        const filtered =
+            lecturerTimetable.filter(item => {
+
+                const itemSemester =
+                    normalize(getSemester(item));
+
+                const itemDay =
+                    normalize(getDay(item));
+
+                const itemCourse =
+                    normalize(
+                        getValue(
+                            item,
+                            "courseCode",
+                            "course_code",
+                            "code",
+                            "courseID",
+                            "courseId"
+                        )
+                    );
+
+                const itemTitle =
+                    normalize(
+                        getValue(
+                            item,
+                            "courseTitle",
+                            "courseName",
+                            "title",
+                            "name"
+                        )
+                    );
+
+                const itemRoom =
+                    normalize(getRoom(item));
+
+
+                const semesterMatch =
+                    selectedSemester === "all" ||
+                    !itemSemester ||
+                    itemSemester === selectedSemester;
+
+
+                const dayMatch =
+                    selectedDay === "all" ||
+                    !itemDay ||
+                    itemDay === selectedDay;
+
+
+                const searchMatch =
+                    !searchTerm ||
+                    itemCourse.includes(searchTerm) ||
+                    itemTitle.includes(searchTerm) ||
+                    itemRoom.includes(searchTerm);
+
+
+                return (
+                    semesterMatch &&
+                    dayMatch &&
+                    searchMatch
+                );
+            });
+
+
+        updateSummary(filtered);
+
+
+        if (!timetableBody) {
+            return;
+        }
+
+
+        timetableBody.innerHTML = "";
+
+
+        if (filtered.length === 0) {
+
+            timetableBody.innerHTML = `
+                <tr>
+                    <td colspan="7" class="loading-cell">
+                        No scheduled classes found.
+                    </td>
+                </tr>
+            `;
+
+            if (emptyTimetable) {
+                emptyTimetable.style.display = "block";
+            }
+
+            return;
+        }
+
+
+        if (emptyTimetable) {
+            emptyTimetable.style.display = "none";
+        }
+
+
+        const days = [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ];
+
+
+        const usedTimes = [];
+
+
+        filtered.forEach(item => {
+
+            const time =
+                getTimeSlot(item);
+
+            if (
+                time &&
+                !usedTimes.includes(time)
+            ) {
+                usedTimes.push(time);
+            }
+
+        });
+
+
+        const finalTimeSlots =
+            usedTimes.length
+                ? usedTimes
+                : timeSlots;
+
+
+        finalTimeSlots.forEach(time => {
+
+            const row =
+                document.createElement("tr");
+
+
+            const timeCell =
+                document.createElement("td");
+
+
+            timeCell.textContent = time;
+
+
+            row.appendChild(timeCell);
+
+
+            days.forEach(day => {
+
+                const cell =
+                    document.createElement("td");
+
+
+                const entries =
+                    filtered.filter(item => {
+
+                        const itemDay =
+                            normalize(getDay(item));
+
+                        const itemTime =
+                            normalize(getTimeSlot(item));
+
+                        return (
+                            itemDay ===
+                            normalize(day) &&
+                            itemTime ===
+                            normalize(time)
+                        );
+
+                    });
+
+
+                entries.forEach(item => {
+
+                    cell.innerHTML +=
+                        createEntry(item);
+
+                });
+
+
+                row.appendChild(cell);
+
+            });
+
+
+            timetableBody.appendChild(row);
+
+        });
+
+
+        if (timetableSubtitle) {
+
+            timetableSubtitle.textContent =
+                `${filtered.length} scheduled class${filtered.length === 1 ? "" : "es"}`;
+
+        }
+
+    }
+
+
+    // =========================================
+    // Today's Classes
+    // =========================================
+
+    function renderTodayClasses() {
+
+        if (!todayClasses) {
+            return;
+        }
+
+
+        const lecturerTimetable =
+            getLecturerTimetable();
+
+
+        const today =
+            new Date().toLocaleDateString(
+                "en-US",
+                {
+                    weekday: "long"
+                }
+            );
+
+
+        const todayData =
+            lecturerTimetable.filter(item =>
+                normalize(getDay(item)) ===
+                normalize(today)
+            );
+
+
+        if (todayData.length === 0) {
+
+            todayClasses.innerHTML = `
+                <div class="empty-small">
+                    <i class="fa-solid fa-calendar-day"></i>
+                    <span>No classes scheduled for today.</span>
+                </div>
+            `;
+
+            return;
+        }
+
+
+        todayClasses.innerHTML = "";
+
+
+        todayData
+            .sort((a, b) =>
+                getTime(a).localeCompare(getTime(b))
+            )
+            .forEach(item => {
+
+                const courseCode =
+                    getValue(
+                        item,
+                        "courseCode",
+                        "course_code",
+                        "code",
+                        "courseID",
+                        "courseId"
+                    ) || "Course";
+
+
+                let courseTitle =
+                    getValue(
+                        item,
+                        "courseTitle",
+                        "courseName",
+                        "title",
+                        "name"
+                    );
+
+
+                if (!courseTitle) {
+
+                    const matchingCourse =
+                        lecturerCourses.find(course =>
+                            normalize(getCourseCode(course)) ===
+                            normalize(courseCode)
+                        );
+
+
+                    if (matchingCourse) {
+                        courseTitle =
+                            getCourseTitle(matchingCourse);
+                    }
+
+                }
+
+
+                const classElement =
+                    document.createElement("div");
+
+
+                classElement.className =
+                    "today-class";
+
+
+                classElement.innerHTML = `
+                    <div class="class-time">
+                        ${escapeHTML(getTime(item))}
+                    </div>
+
+                    <div class="class-main">
+                        <strong>
+                            ${escapeHTML(courseCode)}
+                        </strong>
+
+                        <span>
+                            ${escapeHTML(courseTitle || "Class")}
+                        </span>
+                    </div>
+
+                    <div class="class-room">
+                        <i class="fa-solid fa-door-open"></i>
+                        ${escapeHTML(getRoom(item) || "Room not assigned")}
+                    </div>
+                `;
+
+
+                todayClasses.appendChild(classElement);
+
+            });
+
+    }
+
+
+    // =========================================
+    // Notifications
+    // =========================================
+
+    function loadNotifications() {
+
+        const unread =
+            notifications.filter(notification =>
+                notification.read === false ||
+                notification.status === "unread" ||
+                notification.isRead === false
+            ).length;
+
+
+        if (notificationCount) {
+            notificationCount.textContent = unread;
+            notificationCount.style.display =
+                unread > 0 ? "flex" : "none";
+        }
+
+    }
+
+
+    // =========================================
+    // Filter Events
+    // =========================================
+
+    if (semesterFilter) {
+
+        semesterFilter.addEventListener(
+            "change",
+            renderTimetable
+        );
+
+    }
+
+
+    if (dayFilter) {
+
+        dayFilter.addEventListener(
+            "change",
+            renderTimetable
+        );
+
+    }
+
+
+    if (timetableSearch) {
+
+        timetableSearch.addEventListener(
+            "input",
+            renderTimetable
+        );
+
+    }
+
+
+    // =========================================
+    // Refresh
+    // =========================================
+
+    if (refreshTimetable) {
+
+        refreshTimetable.addEventListener(
+            "click",
+            () => {
+
+                window.location.reload();
+
+            }
+        );
+
+    }
+
+
+    // =========================================
+    // Print Timetable
+    // =========================================
+
+    if (printTimetable) {
+
+        printTimetable.addEventListener(
+            "click",
+            () => {
+
+                window.print();
+
+            }
+        );
+
+    }
+
+
+    // =========================================
+    // Notifications Button
+    // =========================================
+
+    if (notificationButton) {
+
+        notificationButton.addEventListener(
+            "click",
+            () => {
+
+                window.location.href =
+                    "lecturer-notifications.html";
+
+            }
+        );
+
+    }
+
+
+    // =========================================
+    // Initial Load
+    // =========================================
+
+    loadAcademicSession();
+
+    loadNotifications();
+
+    renderTimetable();
+
+    renderTodayClasses();
+
+});
+    </script>
+
+</body>
+</html>

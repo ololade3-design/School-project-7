@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Timetable</title>
+
+    <link rel="stylesheet" href="my timetable.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- ===================================
+         Sidebar
+    =================================== -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h2>Student Portal</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="student dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Student Dashboard
+                </a>
+            </li>
+
+
+            <li>
+                <a href="my profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+
+            <li>
+                <a href="course registration.html">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Course Registration
+                </a>
+            </li>
+
+
+            <li>
+                <a href="faculty.html">
+                    <i class="fa-solid fa-building-columns"></i>
+                    Faculty
+                </a>
+            </li>
+
+
+            <li>
+                <a href="department.html">
+                    <i class="fa-solid fa-building"></i>
+                    Department
+                </a>
+            </li>
+
+
+            <li>
+                <a href="my courses.html">
+                    <i class="fa-solid fa-book"></i>
+                    My Courses
+                </a>
+            </li>
+
+
+            <li class="active">
+                <a href="my timetable.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    My Timetable
+                </a>
+            </li>
+
+
+            <li>
+                <a href="academic info.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Academic Information
+                </a>
+            </li>
+
+
+            <li>
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+
+            <li>
+                <a href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- ===================================
+         Main Content
+    =================================== -->
+
+    <div class="main">
+
+
+        <!-- ===================================
+             Topbar
+        =================================== -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>My Timetable</h1>
+
+                <p>
+                    View your weekly class timetable and lecture schedule.
+                </p>
+
+            </div>
+
+
+            <div class="student-top">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <span id="studentName">
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Timetable Summary
+        =================================== -->
+
+        <div class="timetable-summary">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <div>
+
+                    <span>Courses</span>
+
+                    <h3 id="totalCourses">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+
+                    <span>Classes</span>
+
+                    <h3 id="totalClasses">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-door-open"></i>
+                </div>
+
+                <div>
+
+                    <span>Lecture Rooms</span>
+
+                    <h3 id="totalRooms">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-calendar-week"></i>
+                </div>
+
+                <div>
+
+                    <span>Academic Session</span>
+
+                    <h3 id="academicSession">
+                        2025/2026
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Timetable Controls
+        =================================== -->
+
+        <div class="timetable-controls">
+
+
+            <div class="semester-select">
+
+                <label for="semesterFilter">
+                    Semester
+                </label>
+
+                <select id="semesterFilter">
+
+                    <option value="all">
+                        All Semesters
+                    </option>
+
+                    <option value="First Semester">
+                        First Semester
+                    </option>
+
+                    <option value="Second Semester">
+                        Second Semester
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="day-select">
+
+                <label for="dayFilter">
+                    Day
+                </label>
+
+                <select id="dayFilter">
+
+                    <option value="all">
+                        All Days
+                    </option>
+
+                    <option value="Monday">
+                        Monday
+                    </option>
+
+                    <option value="Tuesday">
+                        Tuesday
+                    </option>
+
+                    <option value="Wednesday">
+                        Wednesday
+                    </option>
+
+                    <option value="Thursday">
+                        Thursday
+                    </option>
+
+                    <option value="Friday">
+                        Friday
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <button
+                type="button"
+                class="print-button"
+                onclick="window.print()">
+
+                <i class="fa-solid fa-print"></i>
+
+                Print Timetable
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Timetable
+        =================================== -->
+
+        <div class="timetable-container">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        Weekly Timetable
+                    </h2>
+
+                    <p>
+                        Your scheduled lectures for the current semester.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Day
+                            </th>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Course Code
+                            </th>
+
+                            <th>
+                                Course Title
+                            </th>
+
+                            <th>
+                                Lecturer
+                            </th>
+
+                            <th>
+                                Lecture Room
+                            </th>
+
+                            <th>
+                                Semester
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="timetableBody">
+
+                        <!-- Timetable will be loaded by JavaScript -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- ===================================
+                 Empty State
+            =================================== -->
+
+            <div
+                class="empty-state"
+                id="emptyState">
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-calendar-xmark"></i>
+
+                </div>
+
+
+                <h3>
+                    No Timetable Available
+                </h3>
+
+
+                <p>
+                    Your timetable has not been generated or published yet.
+                </p>
+
+
+                <a href="my-courses.html">
+                    View My Courses
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Timetable Information
+        =================================== -->
+
+        <div class="timetable-information">
+
+
+            <div class="information-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Timetable Information
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="information-grid">
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <div>
+
+                        <h3>
+                            Lecture Time
+                        </h3>
+
+                        <p>
+                            Check the scheduled time carefully and arrive before your lecture begins.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-door-open"></i>
+
+                    <div>
+
+                        <h3>
+                            Lecture Room
+                        </h3>
+
+                        <p>
+                            Always confirm the lecture room before attending your class.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <div>
+
+                        <h3>
+                            Weekly Schedule
+                        </h3>
+
+                        <p>
+                            Your timetable contains the lectures assigned to your registered courses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-print"></i>
+
+                    <div>
+
+                        <h3>
+                            Print Timetable
+                        </h3>
+
+                        <p>
+                            Use the print button to print or save your timetable for future reference.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Academic Notice
+        =================================== -->
+
+        <div class="academic-notice">
+
+
+            <div class="notice-icon">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Academic Notice
+                </h3>
+
+
+                <p id="academicNotice">
+
+                    Always check your timetable regularly for changes
+                    to lecture times, rooms, or course schedules.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Footer
+        =================================== -->
+
+        <footer>
+
+            <p>
+
+                &copy;
+
+                <span id="currentYear"></span>
+
+                Smart Timetable Generation and Course Scheduling System
+
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+<script src="../js/api.js"></script>
+<script>
+    // ===================================
+// My Timetable
+// my-timetable.js
+// ===================================
+
+
+// ===================================
+// Load Data From Local Storage
+// ===================================
+
+let studentData = JSON.parse(
+    localStorage.getItem("studentData")
+) || {};
+
+let registeredCourses = JSON.parse(
+    localStorage.getItem("registeredCourses")
+) || [];
+
+let timetableData = JSON.parse(
+    localStorage.getItem("timetableData")
+) || [];
+
+let settings = JSON.parse(
+    localStorage.getItem("settings")
+) || {};
+
+
+// ===================================
+// Elements
+// ===================================
+
+const studentName =
+    document.getElementById("studentName");
+
+const totalCourses =
+    document.getElementById("totalCourses");
+
+const totalClasses =
+    document.getElementById("totalClasses");
+
+const totalRooms =
+    document.getElementById("totalRooms");
+
+const academicSession =
+    document.getElementById("academicSession");
+
+const semesterFilter =
+    document.getElementById("semesterFilter");
+
+const dayFilter =
+    document.getElementById("dayFilter");
+
+const timetableBody =
+    document.getElementById("timetableBody");
+
+const emptyState =
+    document.getElementById("emptyState");
+
+const academicNotice =
+    document.getElementById("academicNotice");
+
+const currentYear =
+    document.getElementById("currentYear");
+
+
+// ===================================
+// Student Name
+// ===================================
+
+if (studentData.name) {
+
+    studentName.textContent =
+        studentData.name;
+
+} else if (studentData.fullName) {
+
+    studentName.textContent =
+        studentData.fullName;
+
+} else {
+
+    studentName.textContent =
+        "Student";
+}
+
+
+// ===================================
+// Academic Session
+// ===================================
+
+academicSession.textContent =
+    settings.academicSession ||
+    studentData.academicSession ||
+    "2025/2026";
+
+
+// ===================================
+// Escape HTML
+// ===================================
+
+function escapeHTML(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        value ?? "";
+
+    return div.innerHTML;
+}
+
+
+// ===================================
+// Get Course Code
+// ===================================
+
+function getCourseCode(course) {
+
+    return (
+        course.courseCode ||
+        course.code ||
+        ""
+    );
+}
+
+
+// ===================================
+// Get Course Title
+// ===================================
+
+function getCourseTitle(course) {
+
+    return (
+        course.courseTitle ||
+        course.title ||
+        course.courseName ||
+        ""
+    );
+}
+
+
+// ===================================
+// Get Semester
+// ===================================
+
+function getSemester(course) {
+
+    return (
+        course.semester ||
+        "First Semester"
+    );
+}
+
+
+// ===================================
+// Check Registered Course
+// ===================================
+
+function isRegistered(course) {
+
+    const courseCode =
+        getCourseCode(course).toLowerCase();
+
+    return registeredCourses.some(
+        registeredCourse => {
+
+            const registeredCode =
+                getCourseCode(
+                    registeredCourse
+                ).toLowerCase();
+
+            return registeredCode === courseCode;
+        }
+    );
+}
+
+
+// ===================================
+// Filter Timetable
+// ===================================
+
+function getFilteredTimetable() {
+
+    const selectedSemester =
+        semesterFilter.value;
+
+    const selectedDay =
+        dayFilter.value;
+
+
+    return timetableData.filter(item => {
+
+        const itemSemester =
+            getSemester(item);
+
+        const itemDay =
+            item.day ||
+            item.dayOfWeek ||
+            "";
+
+
+        const semesterMatch =
+            selectedSemester === "all" ||
+            itemSemester === selectedSemester;
+
+
+        const dayMatch =
+            selectedDay === "all" ||
+            itemDay === selectedDay;
+
+
+        return semesterMatch && dayMatch;
+    });
+}
+
+
+// ===================================
+// Display Timetable
+// ===================================
+
+function displayTimetable() {
+
+    const filteredTimetable =
+        getFilteredTimetable();
+
+
+    timetableBody.innerHTML = "";
+
+
+    // No timetable
+    if (filteredTimetable.length === 0) {
+
+        emptyState.style.display = "flex";
+
+        return;
+    }
+
+
+    emptyState.style.display = "none";
+
+
+    filteredTimetable.forEach(item => {
+
+        const row =
+            document.createElement("tr");
+
+
+        const day =
+            item.day ||
+            item.dayOfWeek ||
+            "Not Assigned";
+
+
+        const startTime =
+            item.startTime ||
+            item.start ||
+            "";
+
+
+        const endTime =
+            item.endTime ||
+            item.end ||
+            "";
+
+
+        let time = "";
+
+
+        if (startTime && endTime) {
+
+            time =
+                `${startTime} - ${endTime}`;
+
+        } else {
+
+            time =
+                item.time ||
+                "Not Assigned";
+        }
+
+
+        const courseCode =
+            getCourseCode(item) ||
+            "N/A";
+
+
+        const courseTitle =
+            getCourseTitle(item) ||
+            "Untitled Course";
+
+
+        const lecturer =
+            item.lecturer ||
+            item.lecturerName ||
+            "Not Assigned";
+
+
+        const room =
+            item.room ||
+            item.lectureRoom ||
+            item.roomName ||
+            "Not Assigned";
+
+
+        const semester =
+            getSemester(item);
+
+
+        row.innerHTML = `
+
+            <td>
+                <span class="day-badge">
+                    ${escapeHTML(day)}
+                </span>
+            </td>
+
+            <td>
+                <span class="time-value">
+                    ${escapeHTML(time)}
+                </span>
+            </td>
+
+            <td>
+                <strong>
+                    ${escapeHTML(courseCode)}
+                </strong>
+            </td>
+
+            <td>
+                ${escapeHTML(courseTitle)}
+            </td>
+
+            <td>
+                ${escapeHTML(lecturer)}
+            </td>
+
+            <td>
+                <span class="room-badge">
+                    ${escapeHTML(room)}
+                </span>
+            </td>
+
+            <td>
+                ${escapeHTML(semester)}
+            </td>
+
+        `;
+
+
+        timetableBody.appendChild(row);
+
+    });
+}
+
+
+// ===================================
+// Update Summary
+// ===================================
+
+function updateSummary() {
+
+    // Number of unique registered courses
+    const courseCodes =
+        new Set();
+
+
+    registeredCourses.forEach(course => {
+
+        const code =
+            getCourseCode(course)
+                .trim()
+                .toLowerCase();
+
+        if (code) {
+
+            courseCodes.add(code);
+
+        }
+
+    });
+
+
+    // Count classes belonging to registered courses
+    const studentTimetable =
+        timetableData.filter(item =>
+            isRegistered(item)
+        );
+
+
+    totalCourses.textContent =
+        courseCodes.size ||
+        registeredCourses.length;
+
+
+    totalClasses.textContent =
+        studentTimetable.length;
+
+
+    // Count unique lecture rooms
+    const rooms =
+        new Set();
+
+
+    studentTimetable.forEach(item => {
+
+        const room =
+            item.room ||
+            item.lectureRoom ||
+            item.roomName ||
+            "";
+
+
+        if (room.trim()) {
+
+            rooms.add(
+                room.trim().toLowerCase()
+            );
+
+        }
+
+    });
+
+
+    totalRooms.textContent =
+        rooms.size;
+}
+
+
+// ===================================
+// Semester Filter
+// ===================================
+
+semesterFilter.addEventListener(
+    "change",
+    displayTimetable
+);
+
+
+// ===================================
+// Day Filter
+// ===================================
+
+dayFilter.addEventListener(
+    "change",
+    displayTimetable
+);
+
+
+// ===================================
+// Academic Notice
+// ===================================
+
+if (settings.academicNotice) {
+
+    academicNotice.textContent =
+        settings.academicNotice;
+}
+
+
+// ===================================
+// Current Year
+// ===================================
+
+currentYear.textContent =
+    new Date().getFullYear();
+
+
+// ===================================
+// Initial Page Load
+// ===================================
+
+updateSummary();
+
+displayTimetable();
+</script>
+
+</body>
+
+</html>

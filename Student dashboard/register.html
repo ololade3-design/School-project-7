@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Register - Smart Timetable System</title>
+
+    <link rel="stylesheet" href="register.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="register-container">
+
+
+    <!-- ===================================
+         Left Section
+    =================================== -->
+
+    <div class="register-info">
+
+        <div class="info-content">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <h1>
+                    Smart Timetable
+                </h1>
+
+            </div>
+
+
+            <h2>
+                Create Your Account
+            </h2>
+
+
+            <p>
+                Register to access the Smart Timetable
+                Generation and Course Scheduling System.
+            </p>
+
+
+            <div class="feature-list">
+
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <div>
+
+                        <h3>
+                            Smart Timetable
+                        </h3>
+
+                        <p>
+                            View and manage your academic timetable.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <div>
+
+                        <h3>
+                            Course Management
+                        </h3>
+
+                        <p>
+                            Register and manage your courses easily.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <div>
+
+                        <h3>
+                            Academic Information
+                        </h3>
+
+                        <p>
+                            Keep track of your academic information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===================================
+         Registration Section
+    =================================== -->
+
+    <div class="register-section">
+
+
+        <div class="register-card">
+
+
+            <!-- ===================================
+                 Header
+            =================================== -->
+
+            <div class="register-header">
+
+                <div class="register-icon">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                </div>
+
+
+                <h2>
+                    Register
+                </h2>
+
+
+                <p>
+                    Select an account type to continue.
+                </p>
+
+            </div>
+
+
+
+            <!-- ===================================
+                 Account Type
+            =================================== -->
+
+            <div class="account-types">
+
+
+                <a
+                    href="student-register.html"
+                    class="account-type"
+                >
+
+                    <div class="type-icon">
+
+                        <i class="fa-solid fa-user-graduate"></i>
+
+                    </div>
+
+
+                    <div class="type-content">
+
+                        <h3>
+                            Student
+                        </h3>
+
+                        <p>
+                            Create a student account to access
+                            courses, timetable and academic information.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                </a>
+
+
+
+                <a
+                    href="admin-register.html"
+                    class="account-type"
+                >
+
+                    <div class="type-icon admin-icon">
+
+                        <i class="fa-solid fa-user-tie"></i>
+
+                    </div>
+
+
+                    <div class="type-content">
+
+                        <h3>
+                            Administrator
+                        </h3>
+
+                        <p>
+                            Create an administrator account to manage
+                            courses, lecturers, students and timetables.
+                        </p>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ===================================
+                 Login Link
+            =================================== -->
+
+            <div class="login-link">
+
+                <p>
+                    Already have an account?
+                </p>
+
+
+                <a href="student-login.html">
+                    Student Login
+                </a>
+
+            </div>
+
+
+
+            <!-- ===================================
+                 Back Link
+            =================================== -->
+
+            <div class="back-link">
+
+                <a href="index.html">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ===================================
+             Footer
+        =================================== -->
+
+        <footer>
+
+            <p>
+
+                &copy;
+
+                <span id="currentYear"></span>
+
+                Smart Timetable Generation and
+                Course Scheduling System
+
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+// ===================================
+// Register Page
+// register.js
+// ===================================
+
+// Current Year
+const currentYear = document.getElementById("currentYear");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+
+// ===================================
+// Account Type Selection
+// ===================================
+
+const accountTypes = document.querySelectorAll(".account-type");
+
+accountTypes.forEach(account => {
+
+    account.addEventListener("click", function () {
+
+        // Small visual feedback before navigation
+        this.classList.add("selected");
+
+    });
+
+});
+</script>
+
+
+</body>
+
+</html>

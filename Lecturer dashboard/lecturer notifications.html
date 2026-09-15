@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | Smart Timetable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="lecturer notifications.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <div class="logo-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+                <h2>Smart Timetable</h2>
+                <span>Lecturer Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="lecturer dashboard.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html">
+                <i class="fa-solid fa-book"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html">
+                <i class="fa-solid fa-users"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="active">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+                <small id="sidebarNotificationCount"></small>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="top-header">
+
+            <div class="header-title">
+                <h1>Notifications</h1>
+                <p>Stay updated with your academic activities.</p>
+            </div>
+
+            <div class="header-actions">
+
+                <button class="notification-button" id="notificationButton" type="button">
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount"></span>
+                </button>
+
+                <div class="account-area">
+                    <div class="account-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="account-info">
+                        <strong id="headerLecturerName">Lecturer</strong>
+                        <span id="headerDepartment">Department</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="page-intro">
+
+            <div>
+                <span class="intro-label">LECTURER PORTAL</span>
+                <h2>Your Notifications</h2>
+                <p>
+                    View important updates, timetable changes,
+                    course announcements and other academic information.
+                </p>
+            </div>
+
+            <div class="intro-actions">
+                <button class="btn secondary-btn" id="markAllRead" type="button">
+                    <i class="fa-solid fa-check-double"></i>
+                    Mark All as Read
+                </button>
+
+                <button class="btn primary-btn" id="refreshNotifications" type="button">
+                    <i class="fa-solid fa-rotate"></i>
+                    Refresh
+                </button>
+            </div>
+
+        </section>
+
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <div class="summary-icon blue">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div>
+                    <span>Total Notifications</span>
+                    <strong id="totalNotifications">0</strong>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon yellow">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <span>Unread</span>
+                    <strong id="unreadNotifications">0</strong>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon green">
+                    <i class="fa-solid fa-envelope-open"></i>
+                </div>
+
+                <div>
+                    <span>Read</span>
+                    <strong id="readNotifications">0</strong>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon purple">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </div>
+
+                <div>
+                    <span>Today</span>
+                    <strong id="todayNotifications">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="notification-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h3>Recent Notifications</h3>
+                    <p>Important messages and updates for your account.</p>
+                </div>
+
+                <select id="notificationFilter">
+                    <option value="all">All Notifications</option>
+                    <option value="unread">Unread</option>
+                    <option value="read">Read</option>
+                </select>
+
+            </div>
+
+
+            <div class="notification-list" id="notificationList">
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">
+                        <i class="fa-regular fa-bell-slash"></i>
+                    </div>
+
+                    <h3>No Notifications</h3>
+
+                    <p>
+                        You currently have no notifications to display.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="notification-tip">
+
+            <div class="tip-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Stay Updated</h3>
+                <p>
+                    Check your notifications regularly for timetable changes,
+                    course updates, announcements and important academic information.
+                </p>
+            </div>
+
+        </section>
+
+
+        <footer class="page-footer">
+            <p>
+                &copy; <span id="currentYear"></span> Smart Timetable Generation and Course Scheduling System.
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ==========================================
+// Lecturer Notifications
+// lecturer-notifications.js
+// ==========================================
+
+const headerLecturerName = document.getElementById("headerLecturerName");
+const headerDepartment = document.getElementById("headerDepartment");
+
+const notificationButton = document.getElementById("notificationButton");
+const notificationCount = document.getElementById("notificationCount");
+const sidebarNotificationCount = document.getElementById("sidebarNotificationCount");
+
+const totalNotifications = document.getElementById("totalNotifications");
+const unreadNotifications = document.getElementById("unreadNotifications");
+const readNotifications = document.getElementById("readNotifications");
+const todayNotifications = document.getElementById("todayNotifications");
+
+const notificationList = document.getElementById("notificationList");
+const emptyState = document.getElementById("emptyState");
+
+const notificationFilter = document.getElementById("notificationFilter");
+const markAllRead = document.getElementById("markAllRead");
+const refreshNotifications = document.getElementById("refreshNotifications");
+
+const currentYear = document.getElementById("currentYear");
+
+
+// ==========================================
+// Local Storage Helpers
+// ==========================================
+
+function getData(key, defaultValue = []) {
+    try {
+        const data = localStorage.getItem(key);
+
+        if (!data) {
+            return defaultValue;
+        }
+
+        return JSON.parse(data);
+    } catch (error) {
+        console.error(`Error loading ${key}:`, error);
+        return defaultValue;
+    }
+}
+
+
+function saveData(key, data) {
+    try {
+        localStorage.setItem(key, JSON.stringify(data));
+    } catch (error) {
+        console.error(`Error saving ${key}:`, error);
+    }
+}
+
+
+// ==========================================
+// General Helpers
+// ==========================================
+
+function getValue(object, keys, fallback = "") {
+    if (!object || typeof object !== "object") {
+        return fallback;
+    }
+
+    for (const key of keys) {
+        if (
+            object[key] !== undefined &&
+            object[key] !== null &&
+            String(object[key]).trim() !== ""
+        ) {
+            return object[key];
+        }
+    }
+
+    return fallback;
+}
+
+
+function normalize(value) {
+    return String(value || "")
+        .trim()
+        .toLowerCase();
+}
+
+
+function escapeHTML(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+// ==========================================
+// Lecturer
+// ==========================================
+
+function getLecturer() {
+    const lecturerData = getData("lecturerData", null);
+
+    if (lecturerData && typeof lecturerData === "object") {
+        return lecturerData;
+    }
+
+    const loggedInLecturer = getData("loggedInLecturer", null);
+
+    if (loggedInLecturer && typeof loggedInLecturer === "object") {
+        return loggedInLecturer;
+    }
+
+    return {
+        name: "Lecturer",
+        department: "Department"
+    };
+}
+
+
+const lecturer = getLecturer();
+
+const lecturerName = getValue(
+    lecturer,
+    ["name", "fullName", "lecturerName"],
+    "Lecturer"
+);
+
+const lecturerDepartment = getValue(
+    lecturer,
+    ["department", "dept"],
+    "Department"
+);
+
+
+// ==========================================
+// Notifications
+// ==========================================
+
+let notifications = getData("lecturerNotifications", []);
+
+if (!Array.isArray(notifications)) {
+    notifications = [];
+}
+
+
+// ==========================================
+// Date Helpers
+// ==========================================
+
+function getNotificationDate(notification) {
+    return getValue(
+        notification,
+        [
+            "date",
+            "createdAt",
+            "createdDate",
+            "timestamp",
+            "time"
+        ],
+        ""
+    );
+}
+
+
+function isToday(notification) {
+    const dateValue = getNotificationDate(notification);
+
+    if (!dateValue) {
+        return false;
+    }
+
+    const date = new Date(dateValue);
+
+    if (Number.isNaN(date.getTime())) {
+        return false;
+    }
+
+    const today = new Date();
+
+    return (
+        date.getDate() === today.getDate() &&
+        date.getMonth() === today.getMonth() &&
+        date.getFullYear() === today.getFullYear()
+    );
+}
+
+
+function formatNotificationTime(notification) {
+    const dateValue = getNotificationDate(notification);
+
+    if (!dateValue) {
+        return "Recently";
+    }
+
+    const date = new Date(dateValue);
+
+    if (Number.isNaN(date.getTime())) {
+        return String(dateValue);
+    }
+
+    const today = new Date();
+
+    if (
+        date.getDate() === today.getDate() &&
+        date.getMonth() === today.getMonth() &&
+        date.getFullYear() === today.getFullYear()
+    ) {
+        return date.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+    }
+
+    return date.toLocaleDateString([], {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+    });
+}
+
+
+// ==========================================
+// Notification Status
+// ==========================================
+
+function isNotificationRead(notification) {
+    if (notification.read === true) {
+        return true;
+    }
+
+    if (notification.isRead === true) {
+        return true;
+    }
+
+    if (normalize(notification.status) === "read") {
+        return true;
+    }
+
+    return false;
+}
+
+
+function markNotificationAsRead(index) {
+    if (!notifications[index]) {
+        return;
+    }
+
+    notifications[index].read = true;
+    notifications[index].isRead = true;
+    notifications[index].status = "read";
+
+    saveData("lecturerNotifications", notifications);
+
+    renderNotifications();
+}
+
+
+// ==========================================
+// Notification Type
+// ==========================================
+
+function getNotificationType(notification) {
+    const type = normalize(
+        getValue(
+            notification,
+            ["type", "category", "notificationType"],
+            "info"
+        )
+    );
+
+    if (
+        type.includes("warning") ||
+        type.includes("timetable") ||
+        type.includes("schedule")
+    ) {
+        return "warning";
+    }
+
+    if (
+        type.includes("success") ||
+        type.includes("approved") ||
+        type.includes("completed")
+    ) {
+        return "success";
+    }
+
+    if (
+        type.includes("danger") ||
+        type.includes("urgent") ||
+        type.includes("cancel")
+    ) {
+        return "danger";
+    }
+
+    return "info";
+}
+
+
+function getNotificationIcon(type) {
+    if (type === "warning") {
+        return "fa-solid fa-triangle-exclamation";
+    }
+
+    if (type === "success") {
+        return "fa-solid fa-circle-check";
+    }
+
+    if (type === "danger") {
+        return "fa-solid fa-circle-exclamation";
+    }
+
+    return "fa-solid fa-bell";
+}
+
+
+// ==========================================
+// Filtering
+// ==========================================
+
+function getFilteredNotifications() {
+    const filter = notificationFilter.value;
+
+    return notifications.filter(notification => {
+        const read = isNotificationRead(notification);
+
+        if (filter === "unread") {
+            return !read;
+        }
+
+        if (filter === "read") {
+            return read;
+        }
+
+        return true;
+    });
+}
+
+
+// ==========================================
+// Summary
+// ==========================================
+
+function renderSummary() {
+    const total = notifications.length;
+
+    const unread = notifications.filter(notification =>
+        !isNotificationRead(notification)
+    ).length;
+
+    const read = total - unread;
+
+    const today = notifications.filter(notification =>
+        isToday(notification)
+    ).length;
+
+    totalNotifications.textContent = total;
+    unreadNotifications.textContent = unread;
+    readNotifications.textContent = read;
+    todayNotifications.textContent = today;
+
+    if (unread > 0) {
+        notificationCount.textContent = unread;
+        sidebarNotificationCount.textContent = unread;
+
+        notificationCount.classList.remove("hidden");
+        sidebarNotificationCount.classList.remove("hidden");
+    } else {
+        notificationCount.textContent = "";
+        sidebarNotificationCount.textContent = "";
+
+        notificationCount.classList.add("hidden");
+        sidebarNotificationCount.classList.add("hidden");
+    }
+}
+
+
+// ==========================================
+// Render Notifications
+// ==========================================
+
+function renderNotifications() {
+    const filteredNotifications = getFilteredNotifications();
+
+    notificationList.innerHTML = "";
+
+    if (filteredNotifications.length === 0) {
+        notificationList.appendChild(emptyState);
+        emptyState.style.display = "block";
+        renderSummary();
+        return;
+    }
+
+    emptyState.style.display = "none";
+
+    filteredNotifications.forEach(notification => {
+        const originalIndex = notifications.indexOf(notification);
+
+        const title = getValue(
+            notification,
+            [
+                "title",
+                "subject",
+                "heading",
+                "name"
+            ],
+            "Notification"
+        );
+
+        const message = getValue(
+            notification,
+            [
+                "message",
+                "description",
+                "content",
+                "body",
+                "text"
+            ],
+            "You have a new notification."
+        );
+
+        const read = isNotificationRead(notification);
+        const type = getNotificationType(notification);
+        const icon = getNotificationIcon(type);
+        const time = formatNotificationTime(notification);
+
+        const item = document.createElement("div");
+
+        item.className = `notification-item ${type}`;
+
+        if (!read) {
+            item.classList.add("unread");
+        }
+
+        item.innerHTML = `
+            <div class="notification-icon">
+                <i class="${icon}"></i>
+            </div>
+
+            <div class="notification-content">
+
+                <div class="notification-top">
+                    <h4>${escapeHTML(title)}</h4>
+                    <span class="notification-time">
+                        ${escapeHTML(time)}
+                    </span>
+                </div>
+
+                <p>${escapeHTML(message)}</p>
+
+            </div>
+
+            ${
+                !read
+                    ? '<span class="unread-dot"></span>'
+                    : ""
+            }
+        `;
+
+        item.addEventListener("click", () => {
+            markNotificationAsRead(originalIndex);
+        });
+
+        notificationList.appendChild(item);
+    });
+
+    renderSummary();
+}
+
+
+// ==========================================
+// Mark All as Read
+// ==========================================
+
+markAllRead.addEventListener("click", () => {
+    notifications = notifications.map(notification => ({
+        ...notification,
+        read: true,
+        isRead: true,
+        status: "read"
+    }));
+
+    saveData("lecturerNotifications", notifications);
+
+    renderNotifications();
+});
+
+
+// ==========================================
+// Filter
+// ==========================================
+
+notificationFilter.addEventListener("change", () => {
+    renderNotifications();
+});
+
+
+// ==========================================
+// Refresh
+// ==========================================
+
+refreshNotifications.addEventListener("click", () => {
+    notifications = getData("lecturerNotifications", []);
+
+    if (!Array.isArray(notifications)) {
+        notifications = [];
+    }
+
+    renderNotifications();
+});
+
+
+// ==========================================
+// Notification Button
+// ==========================================
+
+notificationButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: document.querySelector(".notification-card").offsetTop - 20,
+        behavior: "smooth"
+    });
+});
+
+
+// ==========================================
+// Lecturer Header
+// ==========================================
+
+headerLecturerName.textContent = lecturerName;
+headerDepartment.textContent = lecturerDepartment;
+
+
+// ==========================================
+// Current Year
+// ==========================================
+
+currentYear.textContent = new Date().getFullYear();
+
+
+// ==========================================
+// Initialize
+// ==========================================
+
+renderNotifications();
+    </script>
+
+</body>
+</html>

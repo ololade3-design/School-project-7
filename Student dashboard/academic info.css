@@ -1,0 +1,641 @@
+/* ===================================
+   Academic Information
+   academic-info.css
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fc;
+    color: #1f2937;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===================================
+   Sidebar
+=================================== */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #1e3a8a;
+    color: white;
+    overflow-y: auto;
+}
+
+.logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo i {
+    font-size: 26px;
+    color: #facc15;
+}
+
+.logo h2 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 18px 12px;
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 14px;
+    color: #e5e7eb;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a i {
+    width: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a {
+    background: #2563eb;
+    color: white;
+}
+
+.sidebar ul li.active a {
+    box-shadow: inset 3px 0 #facc15;
+}
+
+/* ===================================
+   Main
+=================================== */
+
+.main {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 25px;
+}
+
+/* ===================================
+   Topbar
+=================================== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.topbar h1 {
+    font-size: 27px;
+    color: #1e3a8a;
+    margin-bottom: 4px;
+}
+
+.topbar p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.student-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+}
+
+.student-top i {
+    color: #2563eb;
+    font-size: 18px;
+}
+
+/* ===================================
+   Summary Cards
+=================================== */
+
+.academic-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    background: white;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.summary-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e8efff;
+    color: #2563eb;
+    font-size: 18px;
+}
+
+.summary-card span {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 3px;
+}
+
+.summary-card h3 {
+    font-size: 20px;
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+/* ===================================
+   General Section
+=================================== */
+
+.academic-section,
+.performance-section,
+.records-section,
+.information-section {
+    background: white;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.section-header {
+    margin-bottom: 18px;
+}
+
+.section-header h2 {
+    color: #1e3a8a;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.section-header h2 i {
+    color: #2563eb;
+}
+
+.section-header p {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ===================================
+   Student Academic Details
+=================================== */
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.detail-item {
+    background: #f8faff;
+    border: 1px solid #e5eaf5;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.detail-item span {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.detail-item strong {
+    display: block;
+    color: #1f2937;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===================================
+   Academic Performance
+=================================== */
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.performance-card {
+    border: 1px solid #e5eaf5;
+    border-radius: 9px;
+    padding: 18px;
+    text-align: center;
+}
+
+.performance-card i {
+    font-size: 23px;
+    color: #2563eb;
+    margin-bottom: 9px;
+}
+
+.performance-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.performance-card h3 {
+    color: #1e3a8a;
+    font-size: 20px;
+}
+
+/* ===================================
+   Academic Records Table
+=================================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+thead {
+    background: #1e3a8a;
+    color: white;
+}
+
+th {
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 12px;
+    color: #374151;
+}
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+td strong {
+    color: #1e3a8a;
+}
+
+.grade-badge {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #e8f7ee;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ===================================
+   Empty State
+=================================== */
+
+.empty-state {
+    min-height: 180px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.empty-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #eef3ff;
+    color: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    color: #1e3a8a;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.empty-state p {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+/* ===================================
+   Important Information
+=================================== */
+
+.information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.information-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: #f8faff;
+    border: 1px solid #e5eaf5;
+    border-radius: 8px;
+}
+
+.information-item > i {
+    color: #2563eb;
+    font-size: 17px;
+    margin-top: 2px;
+}
+
+.information-item h3 {
+    color: #1e3a8a;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.information-item p {
+    color: #6b7280;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   Academic Notice
+=================================== */
+
+.academic-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fffbea;
+    border: 1px solid #fde68a;
+    border-radius: 9px;
+    padding: 16px;
+    margin-bottom: 22px;
+}
+
+.notice-icon {
+    color: #d97706;
+    font-size: 19px;
+    margin-top: 2px;
+}
+
+.academic-notice h3 {
+    color: #92400e;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.academic-notice p {
+    color: #78350f;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   Footer
+=================================== */
+
+footer {
+    text-align: center;
+    padding: 15px 0 5px;
+}
+
+footer p {
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+/* ===================================
+   Responsive
+=================================== */
+
+@media (max-width: 1100px) {
+
+    .academic-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .main {
+        width: calc(100% - 220px);
+        margin-left: 220px;
+    }
+
+    .performance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .logo {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logo h2 {
+        display: none;
+    }
+
+    .sidebar ul li a {
+        justify-content: center;
+        padding: 13px 5px;
+    }
+
+    .sidebar ul li a span {
+        display: none;
+    }
+
+    .sidebar ul li a {
+        font-size: 0;
+    }
+
+    .sidebar ul li a i {
+        font-size: 17px;
+    }
+
+    .main {
+        width: calc(100% - 70px);
+        margin-left: 70px;
+        padding: 18px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .student-top {
+        padding: 8px 10px;
+    }
+
+    .student-top span {
+        display: none;
+    }
+
+    .information-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .academic-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-section,
+    .performance-section,
+    .records-section,
+    .information-section {
+        padding: 16px;
+    }
+
+    .section-header h2 {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .main {
+        padding: 14px;
+    }
+
+    .topbar {
+        flex-direction: column;
+    }
+
+    .topbar h1 {
+        font-size: 20px;
+    }
+
+    .summary-card {
+        padding: 15px;
+    }
+
+    .summary-card h3 {
+        font-size: 18px;
+    }
+
+    .academic-notice {
+        padding: 13px;
+    }
+
+    .academic-notice p {
+        font-size: 10px;
+    }
+}
+
+/* ===================================
+   Print
+=================================== */
+
+@media print {
+
+    .sidebar,
+    .student-top,
+    .academic-notice,
+    footer {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    body {
+        background: white;
+    }
+
+    .academic-section,
+    .performance-section,
+    .records-section,
+    .information-section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+    }
+}

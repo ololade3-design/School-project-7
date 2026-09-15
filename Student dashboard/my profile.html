@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile - Student Portal</title>
+
+<link rel="stylesheet" href="my profile.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>Student Portal</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="student dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Student Dashboard
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="my profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="course registration.html">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Course Registration
+
+</a>
+
+</li>
+
+<li>
+
+<a href="faculty.html">
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty
+
+</a>
+
+</li>
+
+<li>
+
+<a href="department.html">
+
+<i class="fa-solid fa-building"></i>
+
+Department
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+My Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+My Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="academic info.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Academic Information
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<!-- Topbar -->
+
+<div class="topbar">
+
+<div>
+
+<h1>My Profile</h1>
+
+<p>
+
+View and manage your personal and academic information.
+
+</p>
+
+</div>
+
+<div class="profile-top">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span id="topStudentName">Student</span>
+
+</div>
+
+</div>
+
+<!-- Profile Header -->
+
+<div class="profile-header">
+
+<div class="profile-image">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<div class="profile-details">
+
+<h2 id="studentFullName">
+
+Student Name
+
+</h2>
+
+<p id="studentMatric">
+
+Matric Number: Not Available
+
+</p>
+
+<span>
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Student
+
+</span>
+
+</div>
+
+<button id="editProfile">
+
+<i class="fa-solid fa-pen"></i>
+
+Edit Profile
+
+</button>
+
+</div>
+
+<!-- Profile Statistics -->
+
+<div class="profile-cards">
+
+<div class="profile-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<h2 id="profileCourseCount">0</h2>
+
+<p>Registered Courses</p>
+
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<div>
+
+<h2 id="profileLevel">---</h2>
+
+<p>Current Level</p>
+
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<div>
+
+<h2 id="profileSemester">---</h2>
+
+<p>Semester</p>
+
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-calendar"></i>
+
+</div>
+
+<div>
+
+<h2 id="profileSession">---</h2>
+
+<p>Academic Session</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Personal Information -->
+
+<div class="content-grid">
+
+<div class="information-box">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-user"></i>
+
+Personal Information
+
+</h2>
+
+</div>
+
+<div class="information-list">
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-user"></i>
+
+Full Name
+
+</span>
+
+<strong id="fullNameValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-id-card"></i>
+
+Matric Number
+
+</span>
+
+<strong id="matricValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-envelope"></i>
+
+Email Address
+
+</span>
+
+<strong id="emailValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-phone"></i>
+
+Phone Number
+
+</span>
+
+<strong id="phoneValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-venus-mars"></i>
+
+Gender
+
+</span>
+
+<strong id="genderValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Academic Information -->
+
+<div class="information-box">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Academic Information
+
+</h2>
+
+</div>
+
+<div class="information-list">
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty
+
+</span>
+
+<strong id="facultyValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-building"></i>
+
+Department
+
+</span>
+
+<strong id="departmentValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-layer-group"></i>
+
+Level
+
+</span>
+
+<strong id="levelValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-book-open"></i>
+
+Semester
+
+</span>
+
+<strong id="semesterValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+<div class="info-row">
+
+<span>
+
+<i class="fa-solid fa-calendar"></i>
+
+Academic Session
+
+</span>
+
+<strong id="sessionValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Edit Profile Form -->
+
+<div class="edit-form" id="editForm">
+
+<div class="form-header">
+
+<h2>
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Edit Profile
+
+</h2>
+
+<button id="closeForm">
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input type="text" id="editName"
+placeholder="Enter your full name">
+
+</div>
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input type="email" id="editEmail"
+placeholder="Enter your email">
+
+</div>
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input type="text" id="editPhone"
+placeholder="Enter your phone number">
+
+</div>
+
+<div class="form-group">
+
+<label>Gender</label>
+
+<select id="editGender">
+
+<option value="">Select Gender</option>
+
+<option value="Male">Male</option>
+
+<option value="Female">Female</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="form-buttons">
+
+<button id="saveProfile">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Changes
+
+</button>
+
+<button id="cancelEdit">
+
+Cancel
+
+</button>
+
+</div>
+
+</div><!-- Recent Activities -->
+
+<div class="bottom-grid">
+
+<div class="recent-activities">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Recent Activities
+
+</h2>
+
+</div>
+
+<ul id="profileActivityList">
+
+<li>
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<div>
+
+<h4>Profile Loaded</h4>
+
+<p>Your profile information has been loaded successfully.</p>
+
+</div>
+
+</li>
+
+<li>
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<h4>Course Information</h4>
+
+<p>You can view your registered courses from My Courses.</p>
+
+</div>
+
+</li>
+
+<li>
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<div>
+
+<h4>Academic Information</h4>
+
+<p>Your academic details are available on this page.</p>
+
+</div>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Quick Links -->
+
+<div class="quick-links">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-link"></i>
+
+Quick Links
+
+</h2>
+
+</div>
+
+<div class="link-list">
+
+<a href="registration.html">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+</div>
+
+<div>
+
+<h3>Course Registration</h3>
+
+<p>Register your available courses.</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right arrow"></i>
+
+</a>
+
+<a href="my-courses.html">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-book-open"></i>
+
+</div>
+
+<div>
+
+<h3>My Courses</h3>
+
+<p>View your registered courses.</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right arrow"></i>
+
+</a>
+
+<a href="my-timetable.html">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<div>
+
+<h3>My Timetable</h3>
+
+<p>View your class schedule.</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right arrow"></i>
+
+</a>
+
+<a href="academic-info.html">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<div>
+
+<h3>Academic Information</h3>
+
+<p>View your academic details.</p>
+
+</div>
+
+<i class="fa-solid fa-arrow-right arrow"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Profile Notice -->
+
+<div class="profile-notice">
+
+<div class="notice-icon">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</div>
+
+<div>
+
+<h3>Important Information</h3>
+
+<p>
+
+You can update your personal information such as your name, email address,
+phone number and gender. Your academic information is managed by the
+school administration.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System | Student Portal
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ========================================
+// Smart Timetable Generation System
+// My Profile Module
+// my-profile.js
+// ========================================
+
+
+// ========================================
+// Get Page Elements
+// ========================================
+
+// Top Profile
+
+const topStudentName=document.getElementById("topStudentName");
+
+const studentFullName=document.getElementById("studentFullName");
+
+const studentMatric=document.getElementById("studentMatric");
+
+
+// Personal Information
+
+const fullNameValue=document.getElementById("fullNameValue");
+
+const matricValue=document.getElementById("matricValue");
+
+const emailValue=document.getElementById("emailValue");
+
+const phoneValue=document.getElementById("phoneValue");
+
+const genderValue=document.getElementById("genderValue");
+
+
+// Academic Information
+
+const facultyValue=document.getElementById("facultyValue");
+
+const departmentValue=document.getElementById("departmentValue");
+
+const levelValue=document.getElementById("levelValue");
+
+const semesterValue=document.getElementById("semesterValue");
+
+const sessionValue=document.getElementById("sessionValue");
+
+
+// Profile Statistics
+
+const profileCourseCount=document.getElementById("profileCourseCount");
+
+const profileLevel=document.getElementById("profileLevel");
+
+const profileSemester=document.getElementById("profileSemester");
+
+const profileSession=document.getElementById("profileSession");
+
+
+// Edit Form
+
+const editProfile=document.getElementById("editProfile");
+
+const editForm=document.getElementById("editForm");
+
+const closeForm=document.getElementById("closeForm");
+
+const cancelEdit=document.getElementById("cancelEdit");
+
+const saveProfile=document.getElementById("saveProfile");
+
+
+// Form Inputs
+
+const editName=document.getElementById("editName");
+
+const editEmail=document.getElementById("editEmail");
+
+const editPhone=document.getElementById("editPhone");
+
+const editGender=document.getElementById("editGender");
+
+
+// Activity List
+
+const profileActivityList=document.getElementById(
+"profileActivityList"
+);
+
+
+// ========================================
+// Load Student Information
+// ========================================
+
+function loadProfile(){
+
+const student=JSON.parse(
+localStorage.getItem("studentData")
+);
+
+const settings=JSON.parse(
+localStorage.getItem("settings")
+);
+
+
+// Check Student Data
+
+if(student){
+
+// Student Name
+
+topStudentName.innerHTML=
+
+student.name||"Student";
+
+studentFullName.innerHTML=
+
+student.name||"Student";
+
+
+// Matric Number
+
+studentMatric.innerHTML=
+
+"Matric Number: "+
+
+(student.matricNumber||"Not Available");
+
+
+// Personal Information
+
+fullNameValue.innerHTML=
+
+student.name||"Not Available";
+
+matricValue.innerHTML=
+
+student.matricNumber||"Not Available";
+
+emailValue.innerHTML=
+
+student.email||"Not Available";
+
+phoneValue.innerHTML=
+
+student.phone||"Not Available";
+
+genderValue.innerHTML=
+
+student.gender||"Not Available";
+
+
+// Academic Information
+
+facultyValue.innerHTML=
+
+student.faculty||"Not Available";
+
+departmentValue.innerHTML=
+
+student.department||"Not Available";
+
+levelValue.innerHTML=
+
+student.level||"Not Available";
+
+
+// Profile Statistics
+
+profileLevel.innerHTML=
+
+student.level||"---";
+
+}
+
+
+// ========================================
+// Load Academic Settings
+// ========================================
+
+if(settings){
+
+semesterValue.innerHTML=
+
+settings.semester||"Not Available";
+
+sessionValue.innerHTML=
+
+settings.session||"Not Available";
+
+profileSemester.innerHTML=
+
+settings.semester||"---";
+
+profileSession.innerHTML=
+
+settings.session||"---";
+
+}
+
+
+// ========================================
+// Load Registered Courses
+// ========================================
+
+const registeredCourses=JSON.parse(
+localStorage.getItem("registeredCourses")
+)||[];
+
+profileCourseCount.innerHTML=
+
+registeredCourses.length;
+
+}
+
+
+// ========================================
+// Open Edit Profile Form
+// ========================================
+
+if(editProfile){
+
+editProfile.onclick=function(){
+
+openEditForm();
+
+};
+
+}
+
+
+// ========================================
+// Open Form Function
+// ========================================
+
+function openEditForm(){
+
+const student=JSON.parse(
+localStorage.getItem("studentData")
+)||{};
+
+
+// Fill Form Inputs
+
+editName.value=
+
+student.name||"";
+
+editEmail.value=
+
+student.email||"";
+
+editPhone.value=
+
+student.phone||"";
+
+editGender.value=
+
+student.gender||"";
+
+
+// Show Form
+
+editForm.style.display="block";
+
+
+// Scroll To Form
+
+editForm.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+
+// ========================================
+// Close Edit Form
+// ========================================
+
+if(closeForm){
+
+closeForm.onclick=function(){
+
+editForm.style.display="none";
+
+};
+
+}
+
+
+// ========================================
+// Cancel Edit
+// ========================================
+
+if(cancelEdit){
+
+cancelEdit.onclick=function(){
+
+editForm.style.display="none";
+
+};
+
+}
+
+
+// ========================================
+// Save Profile
+// ========================================
+
+if(saveProfile){
+
+saveProfile.onclick=function(){
+
+// Get Existing Data
+
+const student=JSON.parse(
+localStorage.getItem("studentData")
+)||{};
+
+
+// Validate Name
+
+if(editName.value.trim()===""){
+
+alert("Please enter your full name.");
+
+return;
+
+}
+
+
+// Update Personal Information
+
+student.name=
+
+editName.value.trim();
+
+student.email=
+
+editEmail.value.trim();
+
+student.phone=
+
+editPhone.value.trim();
+
+student.gender=
+
+editGender.value;
+
+
+// Save Updated Student Data
+
+localStorage.setItem(
+
+"studentData",
+
+JSON.stringify(student)
+
+);
+
+
+// Reload Profile
+
+loadProfile();
+
+
+// Hide Form
+
+editForm.style.display="none";
+
+
+// Add Activity
+
+addProfileActivity(
+
+"Profile Updated",
+
+"Your personal information was updated successfully."
+
+);
+
+
+// Success Message
+
+alert("Profile Updated Successfully.");
+
+};
+
+}
+
+
+// ========================================
+// Add Profile Activity
+// ========================================
+
+function addProfileActivity(title,message){
+
+if(!profileActivityList){
+
+return;
+
+}
+
+const activity=document.createElement("li");
+
+activity.innerHTML=`
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div>
+
+<h4>${title}</h4>
+
+<p>${message}</p>
+
+</div>
+
+`;
+
+profileActivityList.prepend(activity);
+
+}
+
+
+// ========================================
+// Refresh Profile
+// ========================================
+
+function refreshProfile(){
+
+loadProfile();
+
+}
+
+
+// ========================================
+// Page Load
+// ========================================
+
+window.onload=function(){
+
+loadProfile();
+
+};
+
+
+// ========================================
+// Auto Refresh
+// ========================================
+
+setInterval(function(){
+
+refreshProfile();
+
+},5000);
+
+
+// ========================================
+// Profile Module Ready
+// ========================================
+
+console.log(
+
+"My Profile Module Loaded Successfully"
+
+);
+</script>
+
+</body>
+
+</html>

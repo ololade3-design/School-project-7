@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Management</title>
+
+<link rel="stylesheet" href="students.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li>
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecture room.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>Student Management</h1>
+
+<p>
+
+Manage all registered students.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="totalStudents">0</h2>
+
+<p>Total Students</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="maleStudents">0</h2>
+
+<p>Male Students</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="femaleStudents">0</h2>
+
+<p>Female Students</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="levelTotal">0</h2>
+
+<p>Levels</p>
+
+</div>
+
+</div>
+
+<!-- Toolbar -->
+
+<div class="toolbar">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Student...">
+
+<button id="showForm">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Student
+
+</button>
+
+</div>
+
+<!-- Student Form -->
+
+<div class="form-box" id="formBox">
+
+<h2>Add Student</h2>
+
+<div class="row">
+
+<input
+
+type="text"
+
+id="matric"
+
+placeholder="Matric Number">
+
+<input
+
+type="text"
+
+id="fullname"
+
+placeholder="Full Name">
+
+</div>
+
+<div class="row">
+
+<select id="gender">
+
+<option value="">Gender</option>
+
+<option>Male</option>
+
+<option>Female</option>
+
+</select>
+
+<select id="level">
+
+<option value="">Level</option>
+
+<option>100</option>
+
+<option>200</option>
+
+<option>300</option>
+
+<option>400</option>
+
+</select>
+
+</div>
+
+<div class="row">
+
+<select id="department">
+
+<option value="">Department</option>
+
+<option>Software Engineering</option>
+
+<option>Computer Science</option>
+
+<option>Cyber Security</option>
+
+<option>Information Technology</option>
+
+</select>
+
+<input
+
+type="email"
+
+id="email"
+
+placeholder="Email Address">
+
+</div>
+
+<div class="row">
+
+<input
+
+type="text"
+
+id="phone"
+
+placeholder="Phone Number">
+
+<button id="saveStudent">
+
+Save Student
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Student Table -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S/N</th>
+
+<th>Matric No.</th>
+
+<th>Name</th>
+
+<th>Gender</th>
+
+<th>Level</th>
+
+<th>Department</th>
+
+<th>Email</th>
+
+<th>Phone</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="studentTable"><tr>
+
+<td colspan="9" style="text-align:center;color:gray;">
+
+No students available.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Recent Activities -->
+
+<div class="activity">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<ul id="activityList">
+
+<li>Student Module Loaded</li>
+
+<li>System Ready...</li>
+
+</ul>
+
+</div>
+
+<!-- Student Summary -->
+
+<div class="summary">
+
+<h2>
+
+Module Information
+
+</h2>
+
+<p>
+
+This module allows the administrator to register, edit, search and delete student records.
+
+</p>
+
+<p>
+
+Student information will be used during automatic timetable generation and course allocation.
+
+</p>
+
+<p>
+
+All student records are stored in the browser using Local Storage for demonstration purposes.
+
+</p>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ===============================
+// Student Management System
+// students.js
+// ===============================
+
+let students = JSON.parse(localStorage.getItem("students")) || [];
+
+let editIndex = -1;
+
+// Elements
+
+const table = document.getElementById("studentTable");
+
+const saveBtn = document.getElementById("saveStudent");
+
+const search = document.getElementById("search");
+
+const showForm = document.getElementById("showForm");
+
+const formBox = document.getElementById("formBox");
+
+const totalStudents = document.getElementById("totalStudents");
+
+const maleStudents = document.getElementById("maleStudents");
+
+const femaleStudents = document.getElementById("femaleStudents");
+
+const levelTotal = document.getElementById("levelTotal");
+
+// Show Form
+
+showForm.onclick = function(){
+
+if(formBox.style.display=="block"){
+
+formBox.style.display="none";
+
+}else{
+
+formBox.style.display="block";
+
+}
+
+};
+
+// Display Students
+
+displayStudents();
+
+function displayStudents(){
+
+table.innerHTML="";
+
+if(students.length==0){
+
+table.innerHTML=`
+
+<tr>
+
+<td colspan="9">
+
+No students available.
+
+</td>
+
+</tr>
+
+`;
+
+updateCards();
+
+return;
+
+}
+
+students.forEach((student,index)=>{
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${student.matric}</td>
+
+<td>${student.fullname}</td>
+
+<td>${student.gender}</td>
+
+<td>${student.level}</td>
+
+<td>${student.department}</td>
+
+<td>${student.email}</td>
+
+<td>${student.phone}</td>
+
+<td>
+
+<button onclick="editStudent(${index})">
+
+Edit
+
+</button>
+
+<button onclick="deleteStudent(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+localStorage.setItem("students",JSON.stringify(students));
+
+updateCards();
+
+}
+
+// Save Student
+
+saveBtn.onclick=function(){
+
+const matric=document.getElementById("matric").value.trim();
+
+const fullname=document.getElementById("fullname").value.trim();
+
+const gender=document.getElementById("gender").value;
+
+const level=document.getElementById("level").value;
+
+const department=document.getElementById("department").value;
+
+const email=document.getElementById("email").value.trim();
+
+const phone=document.getElementById("phone").value.trim();
+
+if(
+
+matric==""||
+
+fullname==""||
+
+gender==""||
+
+level==""||
+
+department==""||
+
+email==""||
+
+phone==""
+
+){
+
+alert("Please complete all fields.");
+
+return;
+
+}
+
+const student={
+
+matric,
+
+fullname,
+
+gender,
+
+level,
+
+department,
+
+email,
+
+phone
+
+};
+
+if(editIndex==-1){
+
+students.push(student);
+
+}else{
+
+students[editIndex]=student;
+
+editIndex=-1;
+
+}
+
+displayStudents();
+
+clearForm();
+
+formBox.style.display="none";
+
+addActivity("Student saved successfully.");
+
+};// ===============================
+// Edit Student
+// ===============================
+
+function editStudent(index){
+
+const s=students[index];
+
+document.getElementById("matric").value=s.matric;
+
+document.getElementById("fullname").value=s.fullname;
+
+document.getElementById("gender").value=s.gender;
+
+document.getElementById("level").value=s.level;
+
+document.getElementById("department").value=s.department;
+
+document.getElementById("email").value=s.email;
+
+document.getElementById("phone").value=s.phone;
+
+editIndex=index;
+
+formBox.style.display="block";
+
+addActivity("Editing "+s.matric);
+
+}
+
+// ===============================
+// Delete Student
+// ===============================
+
+function deleteStudent(index){
+
+if(confirm("Delete this student?")){
+
+addActivity(students[index].fullname+" deleted");
+
+students.splice(index,1);
+
+displayStudents();
+
+}
+
+}
+
+// ===============================
+// Clear Form
+// ===============================
+
+function clearForm(){
+
+document.getElementById("matric").value="";
+
+document.getElementById("fullname").value="";
+
+document.getElementById("gender").value="";
+
+document.getElementById("level").value="";
+
+document.getElementById("department").value="";
+
+document.getElementById("email").value="";
+
+document.getElementById("phone").value="";
+
+}
+
+// ===============================
+// Search Student
+// ===============================
+
+search.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+const rows=document.querySelectorAll("#studentTable tr");
+
+rows.forEach(row=>{
+
+row.style.display=row.innerText.toLowerCase().includes(value)
+
+?"":"none";
+
+});
+
+});
+
+// ===============================
+// Update Statistics
+// ===============================
+
+function updateCards(){
+
+totalStudents.innerHTML=students.length;
+
+let male=0;
+
+let female=0;
+
+let levels=[];
+
+students.forEach(student=>{
+
+if(student.gender=="Male"){
+
+male++;
+
+}
+
+if(student.gender=="Female"){
+
+female++;
+
+}
+
+if(!levels.includes(student.level)){
+
+levels.push(student.level);
+
+}
+
+});
+
+maleStudents.innerHTML=male;
+
+femaleStudents.innerHTML=female;
+
+levelTotal.innerHTML=levels.length;
+
+}
+
+// ===============================
+// Activity Log
+// ===============================
+
+function addActivity(message){
+
+const list=document.getElementById("activityList");
+
+const item=document.createElement("li");
+
+const time=new Date().toLocaleTimeString();
+
+item.innerHTML=time+" - "+message;
+
+list.prepend(item);
+
+}
+
+// ===============================
+// Page Load
+// ===============================
+
+window.onload=function(){
+
+displayStudents();
+
+addActivity("Student Management Ready");
+
+}
+
+// ===============================
+// Close Form with ESC
+// ===============================
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+formBox.style.display="none";
+
+clearForm();
+
+}
+
+});
+
+// ===============================
+// Auto Uppercase Matric Number
+// ===============================
+
+document.getElementById("matric").addEventListener("input",function(){
+
+this.value=this.value.toUpperCase();
+
+});
+
+// ===============================
+// Save to Local Storage
+// ===============================
+
+localStorage.setItem("students",JSON.stringify(students));
+</script>
+
+</body>
+
+</html>

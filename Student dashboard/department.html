@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Department</title>
+
+<link rel="stylesheet" href="department.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<!-- ===================================
+     Sidebar
+=================================== -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>Student Portal</h2>
+
+</div>
+
+
+<ul>
+
+<li>
+
+<a href="student dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Student Dashboard
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="my profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="course registration.html">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Course Registration
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="faculty.html">
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty
+
+</a>
+
+</li>
+
+
+<li class="active">
+
+<a href="student department.html">
+
+<i class="fa-solid fa-building"></i>
+
+Department
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="my courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+My Courses
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="my timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+My Timetable
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="academic info.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Academic Information
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- ===================================
+     Main Content
+=================================== -->
+
+<div class="main">
+
+
+<!-- ===================================
+     Topbar
+=================================== -->
+
+<div class="topbar">
+
+<div>
+
+<h1>Department</h1>
+
+<p>
+
+View your department information and academic details.
+
+</p>
+
+</div>
+
+
+<div class="student-top">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span id="studentName">
+
+Student
+
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Department Banner
+=================================== -->
+
+<div class="department-banner">
+
+<div class="department-banner-icon">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+
+<div class="department-banner-text">
+
+<h2 id="departmentName">
+
+Software Engineering
+
+</h2>
+
+<p>
+
+Your department manages your programme,
+courses and academic activities.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Department Information Cards
+=================================== -->
+
+<div class="department-information">
+
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-building-columns"></i>
+
+</div>
+
+<div>
+
+<span>Faculty</span>
+
+<h3 id="facultyName">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<div>
+
+<span>Department</span>
+
+<h3 id="departmentTitle">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<div>
+
+<span>Programme</span>
+
+<h3 id="programmeName">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<div>
+
+<span>Level</span>
+
+<h3 id="studentLevel">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Main Department Content
+=================================== -->
+
+<div class="content-grid">
+
+
+<!-- ===================================
+     Department Details
+=================================== -->
+
+<div class="department-details">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+Department Information
+
+</h2>
+
+</div>
+
+
+<div class="details-list">
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-building"></i>
+
+Department Name
+
+</span>
+
+<strong id="departmentNameValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-user-tie"></i>
+
+Head of Department
+
+</span>
+
+<strong id="hodName">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-envelope"></i>
+
+Department Email
+
+</span>
+
+<strong id="departmentEmail">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-phone"></i>
+
+Department Phone
+
+</span>
+
+<strong id="departmentPhone">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Department Location
+
+</span>
+
+<strong id="departmentLocation">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Academic Structure
+=================================== -->
+
+<div class="academic-structure">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-sitemap"></i>
+
+Academic Structure
+
+</h2>
+
+</div>
+
+
+<div class="structure-item">
+
+<div class="structure-icon">
+
+<i class="fa-solid fa-building-columns"></i>
+
+</div>
+
+<div>
+
+<span>Faculty</span>
+
+<h3 id="structureFaculty">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="structure-arrow">
+
+<i class="fa-solid fa-arrow-down"></i>
+
+</div>
+
+
+<div class="structure-item">
+
+<div class="structure-icon">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<div>
+
+<span>Department</span>
+
+<h3 id="structureDepartment">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="structure-arrow">
+
+<i class="fa-solid fa-arrow-down"></i>
+
+</div>
+
+
+<div class="structure-item">
+
+<div class="structure-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<div>
+
+<span>Programme</span>
+
+<h3 id="structureProgramme">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="structure-arrow">
+
+<i class="fa-solid fa-arrow-down"></i>
+
+</div>
+
+
+<div class="structure-item">
+
+<div class="structure-icon">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<div>
+
+<span>Level</span>
+
+<h3 id="structureLevel">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div><!-- ===================================
+     Department Courses
+=================================== -->
+
+<div class="department-courses">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-book-open"></i>
+
+Department Courses
+
+</h2>
+
+<p>
+
+Courses offered by your department.
+
+</p>
+
+</div>
+
+
+<div class="course-list">
+
+
+<div class="course-item">
+
+<div class="course-code">
+
+COS 201
+
+</div>
+
+<div class="course-info">
+
+<h3>Object Oriented Programming</h3>
+
+<p>
+
+Computer programming and object oriented
+programming concepts.
+
+</p>
+
+</div>
+
+<div class="course-unit">
+
+3 Units
+
+</div>
+
+</div>
+
+
+<div class="course-item">
+
+<div class="course-code">
+
+SEN 201
+
+</div>
+
+<div class="course-info">
+
+<h3>Software Engineering</h3>
+
+<p>
+
+Fundamentals of software engineering,
+development processes and methodologies.
+
+</p>
+
+</div>
+
+<div class="course-unit">
+
+3 Units
+
+</div>
+
+</div>
+
+
+<div class="course-item">
+
+<div class="course-code">
+
+COS 292
+
+</div>
+
+<div class="course-info">
+
+<h3>Algorithms and Problem Solving</h3>
+
+<p>
+
+Algorithms, problem solving techniques
+and computational methods.
+
+</p>
+
+</div>
+
+<div class="course-unit">
+
+3 Units
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Department Activities
+=================================== -->
+
+<div class="activities-section">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-calendar-check"></i>
+
+Department Activities
+
+</h2>
+
+</div>
+
+
+<div class="activities-grid">
+
+
+<div class="activity-card">
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-chalkboard-user"></i>
+
+</div>
+
+<div>
+
+<h3>Lectures</h3>
+
+<p>
+
+Attend scheduled lectures and academic classes.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+</div>
+
+<div>
+
+<h3>Practical Sessions</h3>
+
+<p>
+
+Participate in practical and laboratory activities.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<div>
+
+<h3>Academic Meetings</h3>
+
+<p>
+
+Stay informed about departmental meetings
+and academic announcements.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-card">
+
+<div class="activity-icon">
+
+<i class="fa-solid fa-clipboard-check"></i>
+
+</div>
+
+<div>
+
+<h3>Assessments</h3>
+
+<p>
+
+Keep track of tests, assignments and examinations.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Useful Links
+=================================== -->
+
+<div class="department-links">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-link"></i>
+
+Useful Academic Links
+
+</h2>
+
+</div>
+
+
+<div class="links-grid">
+
+
+<a href="faculty.html" class="department-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-building-columns"></i>
+
+</div>
+
+<div>
+
+<h3>Faculty</h3>
+
+<p>
+
+View faculty information.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+<a href="course-registration.html" class="department-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+</div>
+
+<div>
+
+<h3>Course Registration</h3>
+
+<p>
+
+Register your departmental courses.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+<a href="my-courses.html" class="department-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<h3>My Courses</h3>
+
+<p>
+
+View your registered courses.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+<a href="my-timetable.html" class="department-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<div>
+
+<h3>My Timetable</h3>
+
+<p>
+
+View your class timetable.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Department Notice
+=================================== -->
+
+<div class="department-notice">
+
+<div class="notice-icon">
+
+<i class="fa-solid fa-circle-exclamation"></i>
+
+</div>
+
+
+<div>
+
+<h3>Department Notice</h3>
+
+<p id="departmentNotice">
+
+Students should regularly check their department
+information for important academic announcements,
+course updates and departmental activities.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Footer
+=================================== -->
+
+<footer>
+
+<p>
+
+&copy;
+
+<span id="currentYear"></span>
+
+Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+
+</div>
+
+</div>
+
+
+<script src="../js/api.js"></script>
+<script>
+    // ===================================
+// Student Department Page
+// student-department.js
+// ===================================
+
+
+// ===================================
+// Get Saved Data
+// ===================================
+
+let studentData =
+    JSON.parse(localStorage.getItem("studentData")) || {};
+
+let settings =
+    JSON.parse(localStorage.getItem("settings")) || {};
+
+let departmentData =
+    JSON.parse(localStorage.getItem("departmentData")) || {};
+
+
+// ===================================
+// Default Department Information
+// ===================================
+
+const defaultDepartment = {
+
+    name: "Software Engineering",
+
+    hod: "Not Available",
+
+    email: "Not Available",
+
+    phone: "Not Available",
+
+    location: "Not Available",
+
+    notice:
+        "Students should regularly check their department information for important academic announcements, course updates and departmental activities."
+
+};
+
+
+// ===================================
+// Department Information
+// ===================================
+
+const department = {
+
+    name:
+        departmentData.name ||
+        studentData.department ||
+        settings.department ||
+        defaultDepartment.name,
+
+    hod:
+        departmentData.hod ||
+        departmentData.headOfDepartment ||
+        defaultDepartment.hod,
+
+    email:
+        departmentData.email ||
+        defaultDepartment.email,
+
+    phone:
+        departmentData.phone ||
+        defaultDepartment.phone,
+
+    location:
+        departmentData.location ||
+        defaultDepartment.location,
+
+    notice:
+        departmentData.notice ||
+        defaultDepartment.notice
+
+};
+
+
+// ===================================
+// Student Information
+// ===================================
+
+const studentName =
+    studentData.name ||
+    studentData.fullName ||
+    settings.studentName ||
+    "Student";
+
+
+const faculty =
+    studentData.faculty ||
+    settings.faculty ||
+    "Faculty of Computing";
+
+
+const programme =
+    studentData.programme ||
+    studentData.program ||
+    studentData.course ||
+    settings.programme ||
+    "Software Engineering";
+
+
+const level =
+    studentData.level ||
+    settings.level ||
+    "Not Available";
+
+
+// ===================================
+// Helper Function
+// ===================================
+
+function setText(id, value) {
+
+    const element = document.getElementById(id);
+
+    if (element) {
+
+        element.textContent = value;
+
+    }
+
+}
+
+
+// ===================================
+// Student Name
+// ===================================
+
+setText(
+    "studentName",
+    studentName
+);
+
+
+// ===================================
+// Department Name
+// ===================================
+
+setText(
+    "departmentName",
+    department.name
+);
+
+setText(
+    "departmentTitle",
+    department.name
+);
+
+setText(
+    "departmentNameValue",
+    department.name
+);
+
+
+// ===================================
+// Faculty
+// ===================================
+
+setText(
+    "facultyName",
+    faculty
+);
+
+setText(
+    "structureFaculty",
+    faculty
+);
+
+
+// ===================================
+// Programme
+// ===================================
+
+setText(
+    "programmeName",
+    programme
+);
+
+setText(
+    "structureProgramme",
+    programme
+);
+
+
+// ===================================
+// Level
+// ===================================
+
+setText(
+    "studentLevel",
+    level
+);
+
+setText(
+    "structureLevel",
+    level
+);
+
+
+// ===================================
+// Head of Department
+// ===================================
+
+setText(
+    "hodName",
+    department.hod
+);
+
+
+// ===================================
+// Department Contact
+// ===================================
+
+setText(
+    "departmentEmail",
+    department.email
+);
+
+setText(
+    "departmentPhone",
+    department.phone
+);
+
+setText(
+    "departmentLocation",
+    department.location
+);
+
+
+// ===================================
+// Department Notice
+// ===================================
+
+setText(
+    "departmentNotice",
+    department.notice
+);
+
+
+// ===================================
+// Save Department Information
+// ===================================
+
+if (!localStorage.getItem("departmentData")) {
+
+    localStorage.setItem(
+        "departmentData",
+        JSON.stringify(department)
+    );
+
+}
+
+
+// ===================================
+// Current Year
+// ===================================
+
+const currentYear =
+    document.getElementById("currentYear");
+
+if (currentYear) {
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
+
+
+// ===================================
+// Console Message
+// ===================================
+
+console.log(
+    "Student Department page loaded successfully."
+);
+</script>
+
+</body>
+
+</html>

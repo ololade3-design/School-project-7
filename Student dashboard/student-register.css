@@ -1,0 +1,504 @@
+/* ===================================
+   Student Registration
+   student-register.css
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fc;
+    color: #1e3a8a;
+}
+
+
+/* ===================================
+   Main Container
+   =================================== */
+
+.registration-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* ===================================
+   Left Information Section
+   =================================== */
+
+.registration-info {
+    width: 50%;
+    min-height: 100vh;
+    background: #1e3a8a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.info-content {
+    width: 100%;
+    max-width: 550px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 70px;
+}
+
+.logo i {
+    color: #facc15;
+    font-size: 34px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.info-content h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.info-content > p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #dbe5ff;
+    max-width: 500px;
+    margin-bottom: 45px;
+}
+
+
+/* ===================================
+   Feature List
+   =================================== */
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.feature > i {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #facc15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.feature h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.feature p {
+    color: #dbe5ff;
+    font-size: 11px;
+}
+
+
+/* ===================================
+   Right Registration Section
+   =================================== */
+
+.registration-section {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+}
+
+.registration-card {
+    width: 100%;
+    max-width: 850px;
+    background: white;
+    border-radius: 14px;
+    padding: 35px 40px;
+    box-shadow: 0 10px 35px rgba(30, 58, 138, 0.10);
+}
+
+
+/* ===================================
+   Header
+   =================================== */
+
+.registration-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.registration-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #e8efff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.registration-header h2 {
+    font-size: 23px;
+    margin-bottom: 5px;
+    color: #1e3a8a;
+}
+
+.registration-header p {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* ===================================
+   Form
+   =================================== */
+
+#studentRegistrationForm {
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 17px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    color: #1e3a8a;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.input-box {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #d8dfeb;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: white;
+    transition: 0.3s;
+}
+
+.input-box:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.input-box > i {
+    color: #8a94a6;
+    font-size: 13px;
+    margin-right: 9px;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    color: #333;
+}
+
+.input-box input::placeholder {
+    color: #a5aab4;
+}
+
+.input-box select {
+    cursor: pointer;
+}
+
+.password-toggle {
+    border: none;
+    background: transparent;
+    color: #8a94a6;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 5px;
+}
+
+.password-toggle:hover {
+    color: #2563eb;
+}
+
+
+/* ===================================
+   Message
+   =================================== */
+
+#registrationMessage {
+    display: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    margin: 5px 0 15px;
+}
+
+#registrationMessage.success {
+    display: block;
+    background: #eaf8ef;
+    color: #16803c;
+    border: 1px solid #bce5c9;
+}
+
+#registrationMessage.error {
+    display: block;
+    background: #fff0f0;
+    color: #d93030;
+    border: 1px solid #f0c2c2;
+}
+
+
+/* ===================================
+   Register Button
+   =================================== */
+
+.register-button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 2px;
+}
+
+.register-button i {
+    margin-right: 7px;
+}
+
+.register-button:hover {
+    background: #1e3a8a;
+    transform: translateY(-1px);
+}
+
+
+/* ===================================
+   Login Link
+   =================================== */
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #edf0f5;
+}
+
+.login-link p {
+    display: inline;
+    color: #777;
+    font-size: 11px;
+}
+
+.login-link a {
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===================================
+   Back Link
+   =================================== */
+
+.back-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.back-link a {
+    color: #777;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.back-link i {
+    margin-right: 6px;
+}
+
+.back-link a:hover {
+    color: #2563eb;
+}
+
+
+/* ===================================
+   Footer
+   =================================== */
+
+footer {
+    margin-top: 18px;
+    text-align: center;
+}
+
+footer p {
+    color: #9aa4b5;
+    font-size: 9px;
+}
+
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 1100px) {
+
+    .registration-info {
+        padding: 35px;
+    }
+
+    .info-content h2 {
+        font-size: 32px;
+    }
+
+    .registration-card {
+        padding: 30px;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .registration-container {
+        flex-direction: column;
+    }
+
+    .registration-info {
+        width: 100%;
+        min-height: auto;
+        padding: 35px;
+    }
+
+    .info-content {
+        max-width: 700px;
+    }
+
+    .logo {
+        margin-bottom: 35px;
+    }
+
+    .info-content h2 {
+        font-size: 30px;
+    }
+
+    .info-content > p {
+        margin-bottom: 30px;
+    }
+
+    .registration-section {
+        width: 100%;
+        min-height: auto;
+        padding: 35px 20px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .registration-info {
+        padding: 30px 20px;
+    }
+
+    .registration-card {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .registration-header h2 {
+        font-size: 21px;
+    }
+
+    .info-content h2 {
+        font-size: 27px;
+    }
+
+    .feature-list {
+        gap: 17px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .registration-info {
+        padding: 25px 16px;
+    }
+
+    .registration-section {
+        padding: 25px 12px;
+    }
+
+    .registration-card {
+        padding: 22px 16px;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .logo i {
+        font-size: 28px;
+    }
+
+    .info-content h2 {
+        font-size: 24px;
+    }
+
+}

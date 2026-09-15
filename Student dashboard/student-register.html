@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration - Smart Timetable System</title>
+
+    <link rel="stylesheet" href="student-register.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="registration-container">
+
+    <!-- Left Information Section -->
+    <div class="registration-info">
+
+        <div class="info-content">
+
+            <div class="logo">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h1>Smart Timetable</h1>
+            </div>
+
+            <h2>Student Registration</h2>
+
+            <p>
+                Create your student account to access your courses,
+                timetable and academic information.
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature">
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <div>
+                        <h3>View Timetable</h3>
+                        <p>Access your weekly academic timetable easily.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-book"></i>
+
+                    <div>
+                        <h3>Course Registration</h3>
+                        <p>Register and manage your academic courses.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <div>
+                        <h3>Academic Information</h3>
+                        <p>Keep track of your academic progress.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Registration Section -->
+    <div class="registration-section">
+
+        <div class="registration-card">
+
+            <div class="registration-header">
+
+                <div class="registration-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <h2>Create Student Account</h2>
+
+                <p>Enter your information to create an account.</p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+            <form id="studentRegistrationForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="matricNumber">
+                            Matriculation Number
+                        </label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-id-card"></i>
+
+                            <input
+                                type="text"
+                                id="matricNumber"
+                                placeholder="e.g. 2024/2721"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <div class="input-box">
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="faculty">
+                            Faculty
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-building-columns"></i>
+
+                            <select id="faculty" required>
+
+                                <option value="">
+                                    Select Faculty
+                                </option>
+
+                                <option value="Faculty of Computing">
+                                    Faculty of Computing
+                                </option>
+
+                                <option value="Faculty of Science">
+                                    Faculty of Science
+                                </option>
+
+                                <option value="Faculty of Engineering">
+                                    Faculty of Engineering
+                                </option>
+
+                                <option value="Faculty of Social Sciences">
+                                    Faculty of Social Sciences
+                                </option>
+
+                                <option value="Faculty of Arts">
+                                    Faculty of Arts
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-sitemap"></i>
+
+                            <select id="department" required>
+
+                                <option value="">
+                                    Select Department
+                                </option>
+
+                                <option value="Software Engineering">
+                                    Software Engineering
+                                </option>
+
+                                <option value="Computer Science">
+                                    Computer Science
+                                </option>
+
+                                <option value="Information Technology">
+                                    Information Technology
+                                </option>
+
+                                <option value="Cyber Security">
+                                    Cyber Security
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="level">
+                            Current Level
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            <select id="level" required>
+
+                                <option value="">
+                                    Select Level
+                                </option>
+
+                                <option value="100 Level">
+                                    100 Level
+                                </option>
+
+                                <option value="200 Level">
+                                    200 Level
+                                </option>
+
+                                <option value="300 Level">
+                                    300 Level
+                                </option>
+
+                                <option value="400 Level">
+                                    400 Level
+                                </option>
+
+                                <option value="500 Level">
+                                    500 Level
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="programme">
+                            Programme
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                            <select id="programme" required>
+
+                                <option value="">
+                                    Select Programme
+                                </option>
+
+                                <option value="B.Sc.">
+                                    B.Sc.
+                                </option>
+
+                                <option value="B.Eng.">
+                                    B.Eng.
+                                </option>
+
+                                <option value="B.Tech.">
+                                    B.Tech.
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create a password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="toggleConfirmPassword"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Message -->
+                <div id="registrationMessage"></div>
+
+
+                <!-- Register Button -->
+                <button
+                    type="submit"
+                    class="register-button"
+                >
+                    <i class="fa-solid fa-user-plus"></i>
+                    Create Student Account
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+            <div class="login-link">
+
+                <p>
+                    Already have a student account?
+                </p>
+
+                <a href="student-login.html">
+                    Student Login
+                </a>
+
+            </div>
+
+
+            <!-- Back Link -->
+            <div class="back-link">
+
+                <a href="register.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Registration
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System
+            </p>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<script src="../js/api.js"></script>
+<script>
+    // ===================================
+// Student Registration
+// student-register.js
+// ===================================
+
+
+// ===================================
+// Elements
+// ===================================
+
+const registrationForm =
+    document.getElementById("studentRegistrationForm");
+
+const fullName =
+    document.getElementById("fullName");
+
+const matricNumber =
+    document.getElementById("matricNumber");
+
+const email =
+    document.getElementById("email");
+
+const phone =
+    document.getElementById("phone");
+
+const faculty =
+    document.getElementById("faculty");
+
+const department =
+    document.getElementById("department");
+
+const level =
+    document.getElementById("level");
+
+const programme =
+    document.getElementById("programme");
+
+const password =
+    document.getElementById("password");
+
+const confirmPassword =
+    document.getElementById("confirmPassword");
+
+const message =
+    document.getElementById("registrationMessage");
+
+const togglePassword =
+    document.getElementById("togglePassword");
+
+const toggleConfirmPassword =
+    document.getElementById("toggleConfirmPassword");
+
+const currentYear =
+    document.getElementById("currentYear");
+
+
+// ===================================
+// Current Year
+// ===================================
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+
+// ===================================
+// Show / Hide Password
+// ===================================
+
+if (togglePassword) {
+
+    togglePassword.addEventListener("click", function () {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i>';
+
+        } else {
+
+            password.type = "password";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye"></i>';
+
+        }
+
+    });
+
+}
+
+
+if (toggleConfirmPassword) {
+
+    toggleConfirmPassword.addEventListener("click", function () {
+
+        if (confirmPassword.type === "password") {
+
+            confirmPassword.type = "text";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i>';
+
+        } else {
+
+            confirmPassword.type = "password";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye"></i>';
+
+        }
+
+    });
+
+}
+
+
+// ===================================
+// Display Message
+// ===================================
+
+function showMessage(text, type) {
+
+    message.textContent = text;
+
+    message.className = type;
+
+}
+
+
+// ===================================
+// Registration
+// ===================================
+
+registrationForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+
+    // Get values
+    const studentName =
+        fullName.value.trim();
+
+    const studentMatric =
+        matricNumber.value.trim();
+
+    const studentEmail =
+        email.value.trim();
+
+    const studentPhone =
+        phone.value.trim();
+
+    const studentFaculty =
+        faculty.value;
+
+    const studentDepartment =
+        department.value;
+
+    const studentLevel =
+        level.value;
+
+    const studentProgramme =
+        programme.value;
+
+    const studentPassword =
+        password.value;
+
+    const studentConfirmPassword =
+        confirmPassword.value;
+
+
+    // ===================================
+    // Basic Validation
+    // ===================================
+
+    if (
+        !studentName ||
+        !studentMatric ||
+        !studentEmail ||
+        !studentPhone ||
+        !studentFaculty ||
+        !studentDepartment ||
+        !studentLevel ||
+        !studentProgramme ||
+        !studentPassword ||
+        !studentConfirmPassword
+    ) {
+
+        showMessage(
+            "Please fill in all the required fields.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Password Length
+    // ===================================
+
+    if (studentPassword.length < 6) {
+
+        showMessage(
+            "Password must contain at least 6 characters.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Password Confirmation
+    // ===================================
+
+    if (studentPassword !== studentConfirmPassword) {
+
+        showMessage(
+            "Passwords do not match.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Get Existing Students
+    // ===================================
+
+    let studentAccounts =
+        JSON.parse(localStorage.getItem("studentAccounts")) || [];
+
+
+    // ===================================
+    // Check Duplicate Matric Number
+    // ===================================
+
+    const matricExists = studentAccounts.some(function (student) {
+
+        const existingMatric =
+            student.matricNumber ||
+            student.matricNo ||
+            student.matric ||
+            "";
+
+        return existingMatric.toLowerCase() ===
+            studentMatric.toLowerCase();
+
+    });
+
+
+    if (matricExists) {
+
+        showMessage(
+            "This matriculation number is already registered.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Check Duplicate Email
+    // ===================================
+
+    const emailExists = studentAccounts.some(function (student) {
+
+        return String(student.email || "").toLowerCase() ===
+            studentEmail.toLowerCase();
+
+    });
+
+
+    if (emailExists) {
+
+        showMessage(
+            "This email address is already registered.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Create Student Account
+    // ===================================
+
+    const newStudent = {
+
+        id: Date.now(),
+
+        fullName: studentName,
+
+        matricNumber: studentMatric,
+
+        email: studentEmail,
+
+        phone: studentPhone,
+
+        faculty: studentFaculty,
+
+        department: studentDepartment,
+
+        level: studentLevel,
+
+        programme: studentProgramme,
+
+        password: studentPassword,
+
+        registrationDate:
+            new Date().toISOString(),
+
+        status: "Active"
+
+    };
+
+
+    // ===================================
+    // Save Account
+    // ===================================
+
+    studentAccounts.push(newStudent);
+
+    localStorage.setItem(
+        "studentAccounts",
+        JSON.stringify(studentAccounts)
+    );
+
+
+    // ===================================
+    // Success Message
+    // ===================================
+
+    showMessage(
+        "Student account created successfully!",
+        "success"
+    );
+
+
+    // ===================================
+    // Clear Form
+    // ===================================
+
+    registrationForm.reset();
+
+
+    // ===================================
+    // Go to Student Login
+    // ===================================
+
+    setTimeout(function () {
+
+        window.location.href =
+            "student-login.html";
+
+    }, 1500);
+
+});
+</script>
+
+</body>
+</html>

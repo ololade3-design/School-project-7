@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Department Management</title>
+
+<link rel="stylesheet" href="departments.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecture rooms.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>Department Management</h1>
+
+<p>
+
+Manage all university departments.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="totalDepartments">0</h2>
+
+<p>Total Departments</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="scienceDepartments">0</h2>
+
+<p>Science Faculties</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="technologyDepartments">0</h2>
+
+<p>Technology Faculties</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="hodCount">0</h2>
+
+<p>Heads of Department</p>
+
+</div>
+
+</div>
+
+<!-- Toolbar -->
+
+<div class="toolbar">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Department...">
+
+<button id="showForm">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Department
+
+</button>
+
+</div>
+
+<!-- Department Form -->
+
+<div class="form-box" id="formBox">
+
+<h2>Add Department</h2>
+
+<div class="row">
+
+<input
+
+type="text"
+
+id="departmentCode"
+
+placeholder="Department Code">
+
+<input
+
+type="text"
+
+id="departmentName"
+
+placeholder="Department Name">
+
+</div>
+
+<div class="row">
+
+<input
+
+type="text"
+
+id="faculty"
+
+placeholder="Faculty">
+
+<input
+
+type="text"
+
+id="hod"
+
+placeholder="Head of Department">
+
+</div>
+
+<div class="row">
+
+<button id="saveDepartment">
+
+Save Department
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Department Table -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S/N</th>
+
+<th>Code</th>
+
+<th>Department</th>
+
+<th>Faculty</th>
+
+<th>Head of Department</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="departmentTable"><tr>
+
+<td colspan="6" style="text-align:center;color:gray;">
+
+No departments available.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Recent Activities -->
+
+<div class="activity">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<ul id="activityList">
+
+<li>Department Module Loaded</li>
+
+<li>System Ready...</li>
+
+</ul>
+
+</div>
+
+<!-- Department Summary -->
+
+<div class="summary">
+
+<h2>
+
+Module Information
+
+</h2>
+
+<p>
+
+This module allows the administrator to create, edit, search and delete university departments.
+
+</p>
+
+<p>
+
+Each department can later be linked to lecturers, students and courses for timetable generation.
+
+</p>
+
+<p>
+
+All department records are automatically stored in Local Storage for presentation purposes.
+
+</p>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ===============================
+// Department Management System
+// departments.js
+// ===============================
+
+let departments = JSON.parse(localStorage.getItem("departments")) || [];
+
+let editIndex = -1;
+
+// Elements
+
+const table = document.getElementById("departmentTable");
+
+const saveBtn = document.getElementById("saveDepartment");
+
+const search = document.getElementById("search");
+
+const showForm = document.getElementById("showForm");
+
+const formBox = document.getElementById("formBox");
+
+const totalDepartments = document.getElementById("totalDepartments");
+
+const scienceDepartments = document.getElementById("scienceDepartments");
+
+const technologyDepartments = document.getElementById("technologyDepartments");
+
+const hodCount = document.getElementById("hodCount");
+
+// Show Form
+
+showForm.onclick = function(){
+
+if(formBox.style.display=="block"){
+
+formBox.style.display="none";
+
+}else{
+
+formBox.style.display="block";
+
+}
+
+};
+
+// Display Departments
+
+displayDepartments();
+
+function displayDepartments(){
+
+table.innerHTML="";
+
+if(departments.length==0){
+
+table.innerHTML=`
+
+<tr>
+
+<td colspan="6">
+
+No departments available.
+
+</td>
+
+</tr>
+
+`;
+
+updateCards();
+
+return;
+
+}
+
+departments.forEach((department,index)=>{
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${department.code}</td>
+
+<td>${department.name}</td>
+
+<td>${department.faculty}</td>
+
+<td>${department.hod}</td>
+
+<td>
+
+<button onclick="editDepartment(${index})">
+
+Edit
+
+</button>
+
+<button onclick="deleteDepartment(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+localStorage.setItem("departments",JSON.stringify(departments));
+
+updateCards();
+
+}
+
+// Save Department
+
+saveBtn.onclick=function(){
+
+const code=document.getElementById("departmentCode").value.trim();
+
+const name=document.getElementById("departmentName").value.trim();
+
+const faculty=document.getElementById("faculty").value.trim();
+
+const hod=document.getElementById("hod").value.trim();
+
+if(
+
+code==""||
+
+name==""||
+
+faculty==""||
+
+hod==""
+
+){
+
+alert("Please fill all fields.");
+
+return;
+
+}
+
+const department={
+
+code,
+
+name,
+
+faculty,
+
+hod
+
+};
+
+if(editIndex==-1){
+
+departments.push(department);
+
+}else{
+
+departments[editIndex]=department;
+
+editIndex=-1;
+
+}
+
+displayDepartments();
+
+clearForm();
+
+formBox.style.display="none";
+
+addActivity("Department saved successfully.");
+
+};// ===============================
+// Edit Department
+// ===============================
+
+function editDepartment(index){
+
+const d=departments[index];
+
+document.getElementById("departmentCode").value=d.code;
+
+document.getElementById("departmentName").value=d.name;
+
+document.getElementById("faculty").value=d.faculty;
+
+document.getElementById("hod").value=d.hod;
+
+editIndex=index;
+
+formBox.style.display="block";
+
+addActivity("Editing "+d.code);
+
+}
+
+// ===============================
+// Delete Department
+// ===============================
+
+function deleteDepartment(index){
+
+if(confirm("Delete this department?")){
+
+addActivity(departments[index].name+" deleted");
+
+departments.splice(index,1);
+
+displayDepartments();
+
+}
+
+}
+
+// ===============================
+// Clear Form
+// ===============================
+
+function clearForm(){
+
+document.getElementById("departmentCode").value="";
+
+document.getElementById("departmentName").value="";
+
+document.getElementById("faculty").value="";
+
+document.getElementById("hod").value="";
+
+}
+
+// ===============================
+// Search Department
+// ===============================
+
+search.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+const rows=document.querySelectorAll("#departmentTable tr");
+
+rows.forEach(row=>{
+
+row.style.display=row.innerText.toLowerCase().includes(value)
+
+?"":"none";
+
+});
+
+});
+
+// ===============================
+// Update Statistics
+// ===============================
+
+function updateCards(){
+
+totalDepartments.innerHTML=departments.length;
+
+let science=0;
+
+let technology=0;
+
+let hods=0;
+
+departments.forEach(d=>{
+
+const faculty=d.faculty.toLowerCase();
+
+if(faculty.includes("science")){
+
+science++;
+
+}
+
+if(faculty.includes("technology")||
+
+faculty.includes("computing")||
+
+faculty.includes("engineering")){
+
+technology++;
+
+}
+
+if(d.hod.trim()!=""){
+
+hods++;
+
+}
+
+});
+
+scienceDepartments.innerHTML=science;
+
+technologyDepartments.innerHTML=technology;
+
+hodCount.innerHTML=hods;
+
+}
+
+// ===============================
+// Activity Log
+// ===============================
+
+function addActivity(message){
+
+const list=document.getElementById("activityList");
+
+const item=document.createElement("li");
+
+const time=new Date().toLocaleTimeString();
+
+item.innerHTML=time+" - "+message;
+
+list.prepend(item);
+
+}
+
+// ===============================
+// Page Load
+// ===============================
+
+window.onload=function(){
+
+displayDepartments();
+
+addActivity("Department Management Ready");
+
+}
+
+// ===============================
+// Close Form with ESC
+// ===============================
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+formBox.style.display="none";
+
+clearForm();
+
+}
+
+});
+
+// ===============================
+// Auto Uppercase Department Code
+// ===============================
+
+document.getElementById("departmentCode").addEventListener("input",function(){
+
+this.value=this.value.toUpperCase();
+
+});
+
+// ===============================
+// Save to Local Storage
+// ===============================
+
+localStorage.setItem("departments",JSON.stringify(departments));
+</script>
+
+</body>
+
+</html>

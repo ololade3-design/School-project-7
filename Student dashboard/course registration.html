@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Course Registration</title>
+
+<link rel="stylesheet" href="course registration.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>Student Portal</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="student dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Student Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="course registration.html">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Course Registration
+
+</a>
+
+</li>
+
+<li>
+
+<a href="faculty.html">
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty
+
+</a>
+
+</li>
+
+<li>
+
+<a href="department.html">
+
+<i class="fa-solid fa-building"></i>
+
+Department
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+My Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+My Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="academic info.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Academic Information
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<!-- Topbar -->
+
+<div class="topbar">
+
+<div>
+
+<h1>Course Registration</h1>
+
+<p>
+
+Select and register the courses available for your department and level.
+
+</p>
+
+</div>
+
+<div class="student-top">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span id="studentName">Student</span>
+
+</div>
+
+</div>
+
+<!-- Registration Information -->
+
+<div class="registration-banner">
+
+<div class="banner-text">
+
+<h2>
+
+<i class="fa-solid fa-book-open"></i>
+
+Course Registration Portal
+
+</h2>
+
+<p>
+
+Select your courses carefully before submitting your registration.
+
+</p>
+
+</div>
+
+<div class="registration-status">
+
+<span>Registration Status</span>
+
+<h3 id="registrationStatus">
+
+Open
+
+</h3>
+
+</div>
+
+</div>
+
+<!-- Student Academic Information -->
+
+<div class="student-information">
+
+<div class="info-card">
+
+<i class="fa-solid fa-id-card"></i>
+
+<div>
+
+<span>Matric Number</span>
+
+<h3 id="matricNumber">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<div>
+
+<span>Faculty</span>
+
+<h3 id="studentFaculty">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-building"></i>
+
+<div>
+
+<span>Department</span>
+
+<h3 id="studentDepartment">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<div>
+
+<span>Level</span>
+
+<h3 id="studentLevel">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Registration Statistics -->
+
+<div class="registration-cards">
+
+<div class="registration-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<h2 id="availableCourseCount">0</h2>
+
+<p>Available Courses</p>
+
+</div>
+
+</div>
+
+<div class="registration-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div>
+
+<h2 id="selectedCourseCount">0</h2>
+
+<p>Selected Courses</p>
+
+</div>
+
+</div>
+
+<div class="registration-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<div>
+
+<h2 id="totalUnits">0</h2>
+
+<p>Total Units</p>
+
+</div>
+
+</div>
+
+<div class="registration-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-calendar-check"></i>
+
+</div>
+
+<div>
+
+<h2 id="semesterName">
+
+---
+
+</h2>
+
+<p>Current Semester</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Course Registration Section -->
+
+<div class="course-registration-section">
+
+<div class="section-header">
+
+<div>
+
+<h2>
+
+<i class="fa-solid fa-list-check"></i>
+
+Available Courses
+
+</h2>
+
+<p>
+
+Select the courses you want to register.
+
+</p>
+
+</div>
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchCourse"
+placeholder="Search course...">
+
+</div>
+
+</div>
+
+<!-- Course Table -->
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+
+<input type="checkbox" id="selectAll">
+
+</th>
+
+<th>Course Code</th>
+
+<th>Course Title</th>
+
+<th>Unit</th>
+
+<th>Semester</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="courseTableBody">
+
+<!-- Courses will appear here using JavaScript -->
+
+</tbody>
+
+</table>
+
+</div>
+
+</div><!-- Selected Courses Section -->
+
+<div class="selected-courses-section">
+
+<div class="section-header">
+
+<div>
+
+<h2>
+
+<i class="fa-solid fa-circle-check"></i>
+
+Selected Courses
+
+</h2>
+
+<p>
+
+Review the courses you have selected before submitting your registration.
+
+</p>
+
+</div>
+
+<button id="clearCourses">
+
+<i class="fa-solid fa-trash"></i>
+
+Clear Selection
+
+</button>
+
+</div>
+
+<div class="selected-table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Course Code</th>
+
+<th>Course Title</th>
+
+<th>Unit</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="selectedCourseBody">
+
+<tr class="empty-row">
+
+<td colspan="4">
+
+<i class="fa-solid fa-book-open"></i>
+
+<p>No course has been selected yet.</p>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- Registration Summary -->
+
+<div class="registration-summary">
+
+<div class="summary-header">
+
+<h2>
+
+<i class="fa-solid fa-clipboard-check"></i>
+
+Registration Summary
+
+</h2>
+
+<p>
+
+Confirm your selected courses before submitting your registration.
+
+</p>
+
+</div>
+
+<div class="summary-grid">
+
+<div class="summary-item">
+
+<i class="fa-solid fa-book"></i>
+
+<div>
+
+<span>Total Selected Courses</span>
+
+<h3 id="summaryCourseCount">0</h3>
+
+</div>
+
+</div>
+
+<div class="summary-item">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<div>
+
+<span>Total Course Units</span>
+
+<h3 id="summaryTotalUnits">0</h3>
+
+</div>
+
+</div>
+
+<div class="summary-item">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<div>
+
+<span>Academic Semester</span>
+
+<h3 id="summarySemester">---</h3>
+
+</div>
+
+</div>
+
+<div class="summary-item">
+
+<i class="fa-solid fa-calendar"></i>
+
+<div>
+
+<span>Academic Session</span>
+
+<h3 id="summarySession">---</h3>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="submit-area">
+
+<button id="submitRegistration">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Submit Course Registration
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- Registration Notice -->
+
+<div class="registration-notice">
+
+<div class="notice-icon">
+
+<i class="fa-solid fa-circle-info"></i>
+
+</div>
+
+<div>
+
+<h3>Important Notice</h3>
+
+<p>
+
+Please make sure that all the courses selected are correct before submitting your registration. Once your registration is submitted, you should contact your department or administrator if any correction is required.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System | Student Portal
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="../js/api.js"></script>
+<script>
+    // ========================================
+// Smart Timetable Generation System
+// Course Registration JavaScript
+// ========================================
+
+
+// ========================================
+// Get Page Elements
+// ========================================
+
+const studentName = document.getElementById("studentName");
+
+const matricNumber = document.getElementById("matricNumber");
+
+const studentFaculty = document.getElementById("studentFaculty");
+
+const studentDepartment = document.getElementById("studentDepartment");
+
+const studentLevel = document.getElementById("studentLevel");
+
+const availableCourseCount = document.getElementById("availableCourseCount");
+
+const selectedCourseCount = document.getElementById("selectedCourseCount");
+
+const totalUnits = document.getElementById("totalUnits");
+
+const semesterName = document.getElementById("semesterName");
+
+const searchCourse = document.getElementById("searchCourse");
+
+const selectAll = document.getElementById("selectAll");
+
+const courseTableBody = document.getElementById("courseTableBody");
+
+const selectedCourseBody = document.getElementById("selectedCourseBody");
+
+const clearCourses = document.getElementById("clearCourses");
+
+const summaryCourseCount = document.getElementById("summaryCourseCount");
+
+const summaryTotalUnits = document.getElementById("summaryTotalUnits");
+
+const summarySemester = document.getElementById("summarySemester");
+
+const summarySession = document.getElementById("summarySession");
+
+const submitRegistration = document.getElementById("submitRegistration");
+
+
+// ========================================
+// Global Variables
+// ========================================
+
+let availableCourses = [];
+
+let selectedCourses = [];
+
+
+// ========================================
+// Load Student Information
+// ========================================
+
+function loadStudentInformation() {
+
+    const student = JSON.parse(
+        localStorage.getItem("studentData")
+    );
+
+    if (student) {
+
+        studentName.textContent =
+            student.name || "Student";
+
+        matricNumber.textContent =
+            student.matricNumber || "Not Available";
+
+        studentFaculty.textContent =
+            student.faculty || "Not Available";
+
+        studentDepartment.textContent =
+            student.department || "Not Available";
+
+        studentLevel.textContent =
+            student.level || "Not Available";
+
+    }
+
+}
+
+
+// ========================================
+// Load Academic Settings
+// ========================================
+
+function loadAcademicSettings() {
+
+    const settings = JSON.parse(
+        localStorage.getItem("settings")
+    );
+
+    if (settings) {
+
+        semesterName.textContent =
+            settings.semester || "---";
+
+        summarySemester.textContent =
+            settings.semester || "---";
+
+        summarySession.textContent =
+            settings.session || "---";
+
+    }
+
+}
+
+
+// ========================================
+// Load Available Courses
+// ========================================
+
+function loadAvailableCourses() {
+
+    availableCourses = JSON.parse(
+        localStorage.getItem("courses")
+    ) || [];
+
+    availableCourseCount.textContent =
+        availableCourses.length;
+
+}
+
+
+// ========================================
+// Load Previously Selected Courses
+// ========================================
+
+function loadSelectedCourses() {
+
+    selectedCourses = JSON.parse(
+        localStorage.getItem("registeredCourses")
+    ) || [];
+
+}
+
+
+// ========================================
+// Display Available Courses
+// ========================================
+
+function displayCourses(courses = availableCourses) {
+
+    courseTableBody.innerHTML = "";
+
+    if (courses.length === 0) {
+
+        courseTableBody.innerHTML = `
+
+        <tr class="empty-row">
+
+            <td colspan="6">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <p>No courses are available.</p>
+
+            </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    courses.forEach(function (course, index) {
+
+        const isSelected = selectedCourses.some(function (item) {
+
+            return item.courseCode === course.courseCode;
+
+        });
+
+
+        const row = document.createElement("tr");
+
+
+        row.innerHTML = `
+
+        <td>
+
+            <input
+                type="checkbox"
+                class="course-checkbox"
+                data-index="${index}"
+                ${isSelected ? "checked" : ""}
+            >
+
+        </td>
+
+        <td>${course.courseCode || "N/A"}</td>
+
+        <td>${course.courseTitle || "Untitled Course"}</td>
+
+        <td>${course.unit || 0}</td>
+
+        <td>${course.semester || "N/A"}</td>
+
+        <td>
+
+            <button
+                class="select-course-btn"
+                data-index="${index}"
+            >
+
+                ${isSelected ? "Remove" : "Select"}
+
+            </button>
+
+        </td>
+
+        `;
+
+
+        courseTableBody.appendChild(row);
+
+    });
+
+
+    addCourseEvents();
+
+}
+
+
+// ========================================
+// Add Course Events
+// ========================================
+
+function addCourseEvents() {
+
+    const checkboxes = document.querySelectorAll(
+        ".course-checkbox"
+    );
+
+    const buttons = document.querySelectorAll(
+        ".select-course-btn"
+    );
+
+
+    checkboxes.forEach(function (checkbox) {
+
+        checkbox.addEventListener("change", function () {
+
+            const index = Number(
+                checkbox.dataset.index
+            );
+
+            toggleCourse(availableCourses[index]);
+
+        });
+
+    });
+
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const index = Number(
+                button.dataset.index
+            );
+
+            toggleCourse(availableCourses[index]);
+
+        });
+
+    });
+
+}
+
+
+// ========================================
+// Select or Remove Course
+// ========================================
+
+function toggleCourse(course) {
+
+    if (!course) return;
+
+
+    const existingIndex = selectedCourses.findIndex(
+        function (item) {
+
+            return item.courseCode === course.courseCode;
+
+        }
+    );
+
+
+    if (existingIndex !== -1) {
+
+        selectedCourses.splice(existingIndex, 1);
+
+    } else {
+
+        selectedCourses.push(course);
+
+    }
+
+
+    updateRegistration();
+
+}
+
+
+// ========================================
+// Display Selected Courses
+// ========================================
+
+function displaySelectedCourses() {
+
+    selectedCourseBody.innerHTML = "";
+
+
+    if (selectedCourses.length === 0) {
+
+        selectedCourseBody.innerHTML = `
+
+        <tr class="empty-row">
+
+            <td colspan="4">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <p>No course has been selected yet.</p>
+
+            </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    selectedCourses.forEach(function (course, index) {
+
+        const row = document.createElement("tr");
+
+
+        row.innerHTML = `
+
+        <td>${course.courseCode || "N/A"}</td>
+
+        <td>${course.courseTitle || "Untitled Course"}</td>
+
+        <td>${course.unit || 0}</td>
+
+        <td>
+
+            <button
+                class="remove-course-btn"
+                data-index="${index}"
+            >
+
+                <i class="fa-solid fa-trash"></i>
+
+                Remove
+
+            </button>
+
+        </td>
+
+        `;
+
+
+        selectedCourseBody.appendChild(row);
+
+    });
+
+
+    addRemoveEvents();
+
+}
+
+
+// ========================================
+// Remove Course Events
+// ========================================
+
+function addRemoveEvents() {
+
+    const removeButtons = document.querySelectorAll(
+        ".remove-course-btn"
+    );
+
+
+    removeButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const index = Number(
+                button.dataset.index
+            );
+
+            selectedCourses.splice(index, 1);
+
+            updateRegistration();
+
+        });
+
+    });
+
+}
+
+
+// ========================================
+// Update Registration Statistics
+// ========================================
+
+function updateStatistics() {
+
+    const numberOfCourses =
+        selectedCourses.length;
+
+
+    let units = 0;
+
+
+    selectedCourses.forEach(function (course) {
+
+        units += Number(course.unit) || 0;
+
+    });
+
+
+    selectedCourseCount.textContent =
+        numberOfCourses;
+
+    totalUnits.textContent =
+        units;
+
+    summaryCourseCount.textContent =
+        numberOfCourses;
+
+    summaryTotalUnits.textContent =
+        units;
+
+}
+
+
+// ========================================
+// Update Select All Checkbox
+// ========================================
+
+function updateSelectAll() {
+
+    if (availableCourses.length === 0) {
+
+        selectAll.checked = false;
+
+        return;
+
+    }
+
+
+    selectAll.checked =
+        selectedCourses.length === availableCourses.length;
+
+}
+
+
+// ========================================
+// Update Registration
+// ========================================
+
+function updateRegistration() {
+
+    displayCourses();
+
+    displaySelectedCourses();
+
+    updateStatistics();
+
+    updateSelectAll();
+
+}
+
+
+// ========================================
+// Search Courses
+// ========================================
+
+if (searchCourse) {
+
+    searchCourse.addEventListener("input", function () {
+
+        const searchValue =
+            searchCourse.value.toLowerCase().trim();
+
+
+        const filteredCourses =
+            availableCourses.filter(function (course) {
+
+                return (
+
+                    (course.courseCode || "")
+                        .toLowerCase()
+                        .includes(searchValue)
+
+                    ||
+
+                    (course.courseTitle || "")
+                        .toLowerCase()
+                        .includes(searchValue)
+
+                );
+
+            });
+
+
+        displayCourses(filteredCourses);
+
+    });
+
+}
+
+
+// ========================================
+// Select All Courses
+// ========================================
+
+if (selectAll) {
+
+    selectAll.addEventListener("change", function () {
+
+        if (selectAll.checked) {
+
+            selectedCourses = [
+                ...availableCourses
+            ];
+
+        } else {
+
+            selectedCourses = [];
+
+        }
+
+
+        updateRegistration();
+
+    });
+
+}
+
+
+// ========================================
+// Clear Selected Courses
+// ========================================
+
+if (clearCourses) {
+
+    clearCourses.addEventListener("click", function () {
+
+        if (selectedCourses.length === 0) {
+
+            alert("No courses have been selected.");
+
+            return;
+
+        }
+
+
+        const confirmClear = confirm(
+            "Are you sure you want to clear all selected courses?"
+        );
+
+
+        if (confirmClear) {
+
+            selectedCourses = [];
+
+            updateRegistration();
+
+        }
+
+    });
+
+}
+
+
+// ========================================
+// Submit Course Registration
+// ========================================
+
+if (submitRegistration) {
+
+    submitRegistration.addEventListener(
+        "click",
+        function () {
+
+            if (selectedCourses.length === 0) {
+
+                alert(
+                    "Please select at least one course before submitting."
+                );
+
+                return;
+
+            }
+
+
+            const confirmRegistration = confirm(
+                "Are you sure you want to submit your course registration?"
+            );
+
+
+            if (!confirmRegistration) {
+
+                return;
+
+            }
+
+
+            // Save Registered Courses
+
+            localStorage.setItem(
+                "registeredCourses",
+                JSON.stringify(selectedCourses)
+            );
+
+
+            // Save Registration Status
+
+            localStorage.setItem(
+                "registrationStatus",
+                "Submitted"
+            );
+
+
+            alert(
+                "Course Registration Submitted Successfully!"
+            );
+
+
+            // Update Dashboard Data
+
+            updateRegistration();
+
+        }
+
+    );
+
+}
+
+
+// ========================================
+// Load Registration Status
+// ========================================
+
+function loadRegistrationStatus() {
+
+    const registrationStatus =
+        localStorage.getItem("registrationStatus");
+
+    const statusElement =
+        document.getElementById("registrationStatus");
+
+
+    if (statusElement) {
+
+        if (registrationStatus === "Submitted") {
+
+            statusElement.textContent =
+                "Submitted";
+
+        } else {
+
+            statusElement.textContent =
+                "Open";
+
+        }
+
+    }
+
+}
+
+
+// ========================================
+// Initialize Course Registration
+// ========================================
+
+function initializeCourseRegistration() {
+
+    loadStudentInformation();
+
+    loadAcademicSettings();
+
+    loadAvailableCourses();
+
+    loadSelectedCourses();
+
+    displayCourses();
+
+    displaySelectedCourses();
+
+    updateStatistics();
+
+    updateSelectAll();
+
+    loadRegistrationStatus();
+
+}
+
+
+// ========================================
+// Run When Page Loads
+// ========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        initializeCourseRegistration();
+
+    }
+);
+
+
+// ========================================
+// Course Registration Ready
+// ========================================
+
+console.log(
+    "Course Registration Module Loaded Successfully"
+);
+</script>
+
+</body>
+
+</html>

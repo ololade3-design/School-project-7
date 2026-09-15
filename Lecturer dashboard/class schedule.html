@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule - Smart Timetable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="class schedule.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+                <h2>Smart Timetable</h2>
+                <span>Lecturer Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="lecturer dashboard.html" class="menu-item">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html" class="menu-item">
+                <i class="fa-solid fa-book"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html" class="menu-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html" class="menu-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html" class="menu-item active">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html" class="menu-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html" class="menu-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html" class="menu-item login-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <h1>Class Schedule</h1>
+                <p>Manage and view your scheduled classes</p>
+            </div>
+
+            <div class="header-right">
+
+                <button class="notification-button" id="notificationButton">
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount">0</span>
+                </button>
+
+                <div class="header-account">
+                    <div class="header-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong id="headerLecturerName">Lecturer</strong>
+                        <span id="headerDepartment">Department</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Intro -->
+        <section class="page-intro">
+
+            <div>
+                <h2>Class Schedule</h2>
+                <p>
+                    View your upcoming classes, lecture times, courses and venues.
+                </p>
+            </div>
+
+            <div class="intro-actions">
+                <span class="current-date" id="currentDate">
+                    <i class="fa-solid fa-calendar"></i>
+                    Today
+                </span>
+
+                <button class="primary-button" id="printSchedule">
+                    <i class="fa-solid fa-print"></i>
+                    Print Schedule
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Filters -->
+        <section class="filter-card">
+
+            <div class="filter-group">
+                <label for="dayFilter">Day</label>
+
+                <select id="dayFilter">
+                    <option value="all">All Days</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="courseFilter">Course</label>
+
+                <select id="courseFilter">
+                    <option value="all">All Courses</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="statusFilter">Status</label>
+
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="upcoming">Upcoming</option>
+                    <option value="ongoing">Ongoing</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="filter-group search-group">
+                <label for="scheduleSearch">Search</label>
+
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input
+                        type="text"
+                        id="scheduleSearch"
+                        placeholder="Search classes..."
+                    >
+                </div>
+            </div>
+
+            <button class="reset-button" id="resetFilters">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+            </button>
+
+        </section>
+
+
+        <!-- Summary Cards -->
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </div>
+
+                <div>
+                    <span>Today's Classes</span>
+                    <strong id="todayClassCount">0</strong>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-calendar-week"></i>
+                </div>
+
+                <div>
+                    <span>This Week</span>
+                    <strong id="weekClassCount">0</strong>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+                    <span>Next Class</span>
+                    <strong id="nextClassTime">--</strong>
+                </div>
+            </div>
+
+
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <span>Lecture Rooms</span>
+                    <strong id="roomCount">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Schedule -->
+        <section class="content-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Scheduled Classes</h2>
+                    <p>All classes assigned to you</p>
+                </div>
+
+                <button class="refresh-button" id="refreshSchedule">
+                    <i class="fa-solid fa-rotate"></i>
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="schedule-table">
+
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Course</th>
+                            <th>Course Title</th>
+                            <th>Level</th>
+                            <th>Venue</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="scheduleTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+
+                <div class="empty-icon">
+                    <i class="fa-regular fa-calendar-xmark"></i>
+                </div>
+
+                <h3>No Classes Found</h3>
+
+                <p>
+                    There are no classes matching your current filters.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Next Class -->
+        <section class="content-card next-class-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Next Class</h2>
+                    <p>Your upcoming scheduled class</p>
+                </div>
+
+                <span class="status-badge upcoming" id="nextClassStatus">
+                    Upcoming
+                </span>
+
+            </div>
+
+
+            <div class="next-class-content" id="nextClassContent">
+
+                <div class="next-class-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+
+                <div class="next-class-details">
+
+                    <h3 id="nextClassCourse">No upcoming class</h3>
+
+                    <p id="nextClassTitle">
+                        Your next scheduled class will appear here.
+                    </p>
+
+                    <div class="next-class-info">
+
+                        <span>
+                            <i class="fa-solid fa-calendar-day"></i>
+                            <span id="nextClassDay">--</span>
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-clock"></i>
+                            <span id="nextClassFullTime">--</span>
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span id="nextClassRoom">--</span>
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-users"></i>
+                            <span id="nextClassLevel">--</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Today's Schedule -->
+        <section class="content-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Today's Schedule</h2>
+                    <p>Classes scheduled for today</p>
+                </div>
+
+            </div>
+
+            <div class="today-schedule" id="todaySchedule">
+            </div>
+
+        </section>
+
+
+        <!-- Notice -->
+        <section class="notice-card">
+
+            <div class="notice-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Schedule Information</h3>
+
+                <p>
+                    Please arrive at your lecture venue a few minutes before
+                    the scheduled class time. Check your timetable regularly
+                    for any changes or updates.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p>
+                &copy; <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ===============================
+// Class Schedule
+// class-schedule.js
+// ===============================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ===============================
+    // Elements
+    // ===============================
+
+    const headerLecturerName = document.getElementById("headerLecturerName");
+    const headerDepartment = document.getElementById("headerDepartment");
+
+    const currentDate = document.getElementById("currentDate");
+    const currentYear = document.getElementById("currentYear");
+
+    const notificationButton = document.getElementById("notificationButton");
+    const notificationCount = document.getElementById("notificationCount");
+
+    const dayFilter = document.getElementById("dayFilter");
+    const courseFilter = document.getElementById("courseFilter");
+    const statusFilter = document.getElementById("statusFilter");
+    const scheduleSearch = document.getElementById("scheduleSearch");
+    const resetFilters = document.getElementById("resetFilters");
+
+    const todayClassCount = document.getElementById("todayClassCount");
+    const weekClassCount = document.getElementById("weekClassCount");
+    const nextClassTime = document.getElementById("nextClassTime");
+    const roomCount = document.getElementById("roomCount");
+
+    const scheduleTableBody = document.getElementById("scheduleTableBody");
+    const emptyState = document.getElementById("emptyState");
+
+    const nextClassStatus = document.getElementById("nextClassStatus");
+    const nextClassCourse = document.getElementById("nextClassCourse");
+    const nextClassTitle = document.getElementById("nextClassTitle");
+    const nextClassDay = document.getElementById("nextClassDay");
+    const nextClassFullTime = document.getElementById("nextClassFullTime");
+    const nextClassRoom = document.getElementById("nextClassRoom");
+    const nextClassLevel = document.getElementById("nextClassLevel");
+
+    const todaySchedule = document.getElementById("todaySchedule");
+
+    const refreshSchedule = document.getElementById("refreshSchedule");
+    const printSchedule = document.getElementById("printSchedule");
+
+
+    // ===============================
+    // Current Date
+    // ===============================
+
+    const now = new Date();
+
+    if (currentYear) {
+        currentYear.textContent = now.getFullYear();
+    }
+
+    if (currentDate) {
+        currentDate.innerHTML =
+            `<i class="fa-solid fa-calendar"></i> ${formatDate(now)}`;
+    }
+
+
+    // ===============================
+    // Local Storage Helper
+    // ===============================
+
+    function getData(key, defaultValue) {
+
+        try {
+            const data = localStorage.getItem(key);
+
+            if (!data) {
+                return defaultValue;
+            }
+
+            return JSON.parse(data);
+
+        } catch (error) {
+            console.error(`Error reading ${key}:`, error);
+            return defaultValue;
+        }
+    }
+
+
+    // ===============================
+    // Lecturer Information
+    // ===============================
+
+    function getLecturer() {
+
+        const lecturerData = getData("lecturerData", null);
+
+        if (lecturerData && typeof lecturerData === "object") {
+            return lecturerData;
+        }
+
+        const loggedInLecturer = getData("loggedInLecturer", null);
+
+        if (loggedInLecturer && typeof loggedInLecturer === "object") {
+            return loggedInLecturer;
+        }
+
+        return {
+            fullName: "Lecturer",
+            department: "Department"
+        };
+    }
+
+
+    const lecturer = getLecturer();
+
+    const lecturerName =
+        lecturer.fullName ||
+        lecturer.name ||
+        lecturer.lecturerName ||
+        "Lecturer";
+
+    const lecturerDepartment =
+        lecturer.department ||
+        lecturer.dept ||
+        "Department";
+
+
+    if (headerLecturerName) {
+        headerLecturerName.textContent = lecturerName;
+    }
+
+    if (headerDepartment) {
+        headerDepartment.textContent = lecturerDepartment;
+    }
+
+
+    // ===============================
+    // Load Data
+    // ===============================
+
+    const allCourses = getData("courses", []);
+
+    const allTimetable =
+        getData(
+            "timetableData",
+            getData("timetable", [])
+        );
+
+    const notifications = getData("lecturerNotifications", []);
+
+    let lecturerCourses = [];
+    let lecturerClasses = [];
+
+
+    // ===============================
+    // General Helpers
+    // ===============================
+
+    function getValue(object, fields, fallback = "") {
+
+        if (!object) {
+            return fallback;
+        }
+
+        for (const field of fields) {
+
+            if (
+                object[field] !== undefined &&
+                object[field] !== null &&
+                String(object[field]).trim() !== ""
+            ) {
+                return object[field];
+            }
+        }
+
+        return fallback;
+    }
+
+
+    function normalize(value) {
+        return String(value || "").trim().toLowerCase();
+    }
+
+
+    function escapeHTML(value) {
+
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+    function formatDate(date) {
+
+        return date.toLocaleDateString("en-NG", {
+            weekday: "long",
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+        });
+    }
+
+
+    function getDayName(date) {
+
+        return date.toLocaleDateString("en-US", {
+            weekday: "long"
+        });
+    }
+
+
+    function getCourseCode(course) {
+
+        return getValue(course, [
+            "courseCode",
+            "code",
+            "course_code",
+            "course"
+        ]);
+    }
+
+
+    function getCourseTitle(course) {
+
+        return getValue(course, [
+            "courseTitle",
+            "title",
+            "courseName",
+            "name"
+        ], "Untitled Course");
+    }
+
+
+    function getCourseLevel(course) {
+
+        return getValue(course, [
+            "level",
+            "classLevel",
+            "year",
+            "studentLevel"
+        ], "—");
+    }
+
+
+    function getCourseUnits(course) {
+
+        return Number(
+            getValue(course, [
+                "units",
+                "creditUnit",
+                "creditUnits",
+                "unit"
+            ], 0)
+        ) || 0;
+    }
+
+
+    // ===============================
+    // Find Lecturer Courses
+    // ===============================
+
+    function findLecturerCourses() {
+
+        const lecturerId = normalize(
+            lecturer.id ||
+            lecturer.lecturerId ||
+            lecturer.staffId ||
+            lecturer.staffID
+        );
+
+        const lecturerNameNormalized = normalize(lecturerName);
+
+        lecturerCourses = allCourses.filter(course => {
+
+            const courseLecturerId = normalize(
+                getValue(course, [
+                    "lecturerId",
+                    "lecturerID",
+                    "staffId",
+                    "staffID",
+                    "instructorId",
+                    "instructorID"
+                ])
+            );
+
+            const courseLecturerName = normalize(
+                getValue(course, [
+                    "lecturerName",
+                    "lecturer",
+                    "instructor",
+                    "teacher"
+                ])
+            );
+
+            if (
+                lecturerId &&
+                courseLecturerId &&
+                lecturerId === courseLecturerId
+            ) {
+                return true;
+            }
+
+            if (
+                lecturerNameNormalized &&
+                courseLecturerName &&
+                lecturerNameNormalized === courseLecturerName
+            ) {
+                return true;
+            }
+
+            return false;
+        });
+
+
+        /*
+         * If lecturer-specific information is not available
+         * in the course record, allow courses whose department
+         * matches the lecturer's department.
+         */
+        if (lecturerCourses.length === 0 && lecturerDepartment) {
+
+            const departmentCourses = allCourses.filter(course => {
+
+                const courseDepartment = normalize(
+                    getValue(course, [
+                        "department",
+                        "dept",
+                        "courseDepartment"
+                    ])
+                );
+
+                return (
+                    courseDepartment &&
+                    courseDepartment === normalize(lecturerDepartment)
+                );
+            });
+
+            if (departmentCourses.length > 0) {
+                lecturerCourses = departmentCourses;
+            }
+        }
+    }
+
+
+    // ===============================
+    // Get Timetable Value
+    // ===============================
+
+    function getTimetableCourseCode(item) {
+
+        return getValue(item, [
+            "courseCode",
+            "course_code",
+            "code",
+            "course"
+        ]);
+    }
+
+
+    function getTimetableDay(item) {
+
+        return getValue(item, [
+            "day",
+            "dayName",
+            "weekday"
+        ]);
+    }
+
+
+    function getTimetableTime(item) {
+
+        return getValue(item, [
+            "time",
+            "timeSlot",
+            "startTime",
+            "lectureTime"
+        ], "—");
+    }
+
+
+    function getTimetableRoom(item) {
+
+        return getValue(item, [
+            "room",
+            "roomName",
+            "lectureRoom",
+            "venue",
+            "location"
+        ], "—");
+    }
+
+
+    function getTimetableLevel(item) {
+
+        return getValue(item, [
+            "level",
+            "classLevel",
+            "year",
+            "studentLevel"
+        ], "—");
+    }
+
+
+    function getTimetableSemester(item) {
+
+        return getValue(item, [
+            "semester",
+            "term"
+        ], "");
+    }
+
+
+    // ===============================
+    // Find Lecturer Classes
+    // ===============================
+
+    function findLecturerClasses() {
+
+        const lecturerId = normalize(
+            lecturer.id ||
+            lecturer.lecturerId ||
+            lecturer.staffId ||
+            lecturer.staffID
+        );
+
+        const lecturerNameNormalized = normalize(lecturerName);
+
+        const lecturerCourseCodes = lecturerCourses
+            .map(course => normalize(getCourseCode(course)))
+            .filter(Boolean);
+
+
+        lecturerClasses = allTimetable.filter(item => {
+
+            const itemLecturerId = normalize(
+                getValue(item, [
+                    "lecturerId",
+                    "lecturerID",
+                    "staffId",
+                    "staffID",
+                    "instructorId",
+                    "instructorID"
+                ])
+            );
+
+            const itemLecturerName = normalize(
+                getValue(item, [
+                    "lecturerName",
+                    "lecturer",
+                    "instructor",
+                    "teacher"
+                ])
+            );
+
+            const courseCode = normalize(
+                getTimetableCourseCode(item)
+            );
+
+
+            // Match lecturer ID
+            if (
+                lecturerId &&
+                itemLecturerId &&
+                lecturerId === itemLecturerId
+            ) {
+                return true;
+            }
+
+
+            // Match lecturer name
+            if (
+                lecturerNameNormalized &&
+                itemLecturerName &&
+                lecturerNameNormalized === itemLecturerName
+            ) {
+                return true;
+            }
+
+
+            // Match lecturer course
+            if (
+                courseCode &&
+                lecturerCourseCodes.includes(courseCode)
+            ) {
+                return true;
+            }
+
+
+            return false;
+        });
+
+
+        /*
+         * If timetable records do not contain lecturer information
+         * and lecturer courses are empty, use timetable records
+         * from the lecturer's department where available.
+         */
+        if (
+            lecturerClasses.length === 0 &&
+            lecturerCourses.length === 0 &&
+            lecturerDepartment
+        ) {
+
+            lecturerClasses = allTimetable.filter(item => {
+
+                const department = normalize(
+                    getValue(item, [
+                        "department",
+                        "dept"
+                    ])
+                );
+
+                return (
+                    department &&
+                    department === normalize(lecturerDepartment)
+                );
+            });
+        }
+    }
+
+
+    // ===============================
+    // Find Course
+    // ===============================
+
+    function findCourse(courseCode) {
+
+        const normalizedCode = normalize(courseCode);
+
+        return lecturerCourses.find(course =>
+            normalize(getCourseCode(course)) === normalizedCode
+        ) || allCourses.find(course =>
+            normalize(getCourseCode(course)) === normalizedCode
+        );
+    }
+
+
+    // ===============================
+    // Determine Status
+    // ===============================
+
+    function parseTime(timeString) {
+
+        if (!timeString) {
+            return null;
+        }
+
+        const text = String(timeString).trim().toLowerCase();
+
+        let match = text.match(
+            /(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/
+        );
+
+        if (!match) {
+            return null;
+        }
+
+        let hour = parseInt(match[1], 10);
+        let minute = parseInt(match[2] || "0", 10);
+        const period = match[3];
+
+        if (period === "pm" && hour < 12) {
+            hour += 12;
+        }
+
+        if (period === "am" && hour === 12) {
+            hour = 0;
+        }
+
+        return {
+            hour,
+            minute
+        };
+    }
+
+
+    function getClassStatus(item) {
+
+        const explicitStatus = normalize(
+            getValue(item, [
+                "status",
+                "classStatus"
+            ])
+        );
+
+        if (
+            explicitStatus === "completed" ||
+            explicitStatus === "ongoing" ||
+            explicitStatus === "upcoming"
+        ) {
+            return explicitStatus;
+        }
+
+
+        const itemDay = getTimetableDay(item);
+
+        if (
+            normalize(itemDay) !== normalize(getDayName(new Date()))
+        ) {
+            return "upcoming";
+        }
+
+
+        const parsed = parseTime(getTimetableTime(item));
+
+        if (!parsed) {
+            return "upcoming";
+        }
+
+
+        const current = new Date();
+
+        const start = new Date();
+
+        start.setHours(
+            parsed.hour,
+            parsed.minute,
+            0,
+            0
+        );
+
+
+        const end = new Date(start);
+
+        end.setMinutes(
+            end.getMinutes() + 60
+        );
+
+
+        if (current < start) {
+            return "upcoming";
+        }
+
+        if (current >= start && current <= end) {
+            return "ongoing";
+        }
+
+        return "completed";
+    }
+
+
+    // ===============================
+    // Populate Course Filter
+    // ===============================
+
+    function populateCourseFilter() {
+
+        if (!courseFilter) {
+            return;
+        }
+
+        courseFilter.innerHTML =
+            `<option value="all">All Courses</option>`;
+
+
+        const uniqueCourses = [];
+
+
+        lecturerClasses.forEach(item => {
+
+            const code = getTimetableCourseCode(item);
+
+            if (!code) {
+                return;
+            }
+
+            if (
+                !uniqueCourses.some(
+                    existing =>
+                        normalize(existing) === normalize(code)
+                )
+            ) {
+                uniqueCourses.push(code);
+            }
+        });
+
+
+        uniqueCourses.forEach(code => {
+
+            const option = document.createElement("option");
+
+            option.value = code;
+            option.textContent = code;
+
+            courseFilter.appendChild(option);
+        });
+    }
+
+
+    // ===============================
+    // Format Time
+    // ===============================
+
+    function formatTime(time) {
+
+        if (!time) {
+            return "—";
+        }
+
+        return String(time);
+    }
+
+
+    // ===============================
+    // Filter Classes
+    // ===============================
+
+    function getFilteredClasses() {
+
+        const selectedDay =
+            normalize(dayFilter ? dayFilter.value : "all");
+
+        const selectedCourse =
+            normalize(courseFilter ? courseFilter.value : "all");
+
+        const selectedStatus =
+            normalize(statusFilter ? statusFilter.value : "all");
+
+        const searchTerm =
+            normalize(scheduleSearch ? scheduleSearch.value : "");
+
+
+        return lecturerClasses.filter(item => {
+
+            const day = normalize(getTimetableDay(item));
+
+            const courseCode =
+                normalize(getTimetableCourseCode(item));
+
+            const course = findCourse(courseCode);
+
+            const title = normalize(
+                getCourseTitle(course)
+            );
+
+            const room = normalize(
+                getTimetableRoom(item)
+            );
+
+            const level = normalize(
+                getTimetableLevel(item)
+            );
+
+            const status =
+                normalize(getClassStatus(item));
+
+
+            if (
+                selectedDay !== "all" &&
+                day !== selectedDay
+            ) {
+                return false;
+            }
+
+
+            if (
+                selectedCourse !== "all" &&
+                courseCode !== selectedCourse
+            ) {
+                return false;
+            }
+
+
+            if (
+                selectedStatus !== "all" &&
+                status !== selectedStatus
+            ) {
+                return false;
+            }
+
+
+            if (searchTerm) {
+
+                const searchableText = [
+                    day,
+                    courseCode,
+                    title,
+                    room,
+                    level,
+                    status
+                ].join(" ");
+
+                if (!searchableText.includes(searchTerm)) {
+                    return false;
+                }
+            }
+
+
+            return true;
+        });
+    }
+
+
+    // ===============================
+    // Render Schedule
+    // ===============================
+
+    function renderSchedule() {
+
+        const classes = getFilteredClasses();
+
+        scheduleTableBody.innerHTML = "";
+
+
+        if (classes.length === 0) {
+
+            emptyState.style.display = "block";
+
+            return;
+        }
+
+
+        emptyState.style.display = "none";
+
+
+        classes.forEach((item, index) => {
+
+            const courseCode =
+                getTimetableCourseCode(item);
+
+            const course =
+                findCourse(courseCode);
+
+            const courseTitle =
+                getCourseTitle(course);
+
+            const level =
+                getTimetableLevel(item) ||
+                getCourseLevel(course);
+
+            const day =
+                getTimetableDay(item) || "—";
+
+            const time =
+                getTimetableTime(item);
+
+            const room =
+                getTimetableRoom(item);
+
+            const status =
+                getClassStatus(item);
+
+
+            const row = document.createElement("tr");
+
+
+            row.innerHTML = `
+                <td>${index + 1}</td>
+
+                <td>
+                    <strong>${escapeHTML(day)}</strong>
+                </td>
+
+                <td>
+                    ${escapeHTML(formatTime(time))}
+                </td>
+
+                <td>
+                    <span class="course-code">
+                        ${escapeHTML(courseCode || "—")}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(courseTitle)}
+                </td>
+
+                <td>
+                    ${escapeHTML(level)}
+                </td>
+
+                <td>
+                    <i class="fa-solid fa-location-dot"></i>
+                    ${escapeHTML(room)}
+                </td>
+
+                <td>
+                    <span class="status-badge ${status}">
+                        ${capitalize(status)}
+                    </span>
+                </td>
+
+                <td>
+                    <button
+                        class="view-button"
+                        data-index="${index}"
+                    >
+                        View
+                    </button>
+                </td>
+            `;
+
+
+            scheduleTableBody.appendChild(row);
+        });
+
+
+        const buttons =
+            scheduleTableBody.querySelectorAll(".view-button");
+
+
+        buttons.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                const index =
+                    Number(this.dataset.index);
+
+                const selectedClass =
+                    classes[index];
+
+                showClassDetails(selectedClass);
+            });
+        });
+    }
+
+
+    // ===============================
+    // Capitalize
+    // ===============================
+
+    function capitalize(value) {
+
+        if (!value) {
+            return "";
+        }
+
+        return value.charAt(0).toUpperCase() +
+            value.slice(1);
+    }
+
+
+    // ===============================
+    // Class Details
+    // ===============================
+
+    function showClassDetails(item) {
+
+        const courseCode =
+            getTimetableCourseCode(item);
+
+        const course =
+            findCourse(courseCode);
+
+        const title =
+            getCourseTitle(course);
+
+        const day =
+            getTimetableDay(item);
+
+        const time =
+            getTimetableTime(item);
+
+        const room =
+            getTimetableRoom(item);
+
+        const level =
+            getTimetableLevel(item) ||
+            getCourseLevel(course);
+
+        const status =
+            getClassStatus(item);
+
+
+        alert(
+            `Class Details\n\n` +
+            `Course: ${courseCode || "—"}\n` +
+            `Title: ${title}\n` +
+            `Day: ${day || "—"}\n` +
+            `Time: ${time || "—"}\n` +
+            `Level: ${level || "—"}\n` +
+            `Venue: ${room || "—"}\n` +
+            `Status: ${capitalize(status)}`
+        );
+    }
+
+
+    // ===============================
+    // Summary Statistics
+    // ===============================
+
+    function updateStatistics() {
+
+        const todayName =
+            normalize(getDayName(new Date()));
+
+
+        const todayClasses =
+            lecturerClasses.filter(item =>
+                normalize(getTimetableDay(item)) === todayName
+            );
+
+
+        if (todayClassCount) {
+            todayClassCount.textContent =
+                todayClasses.length;
+        }
+
+
+        if (weekClassCount) {
+            weekClassCount.textContent =
+                lecturerClasses.length;
+        }
+
+
+        const rooms = new Set();
+
+
+        lecturerClasses.forEach(item => {
+
+            const room =
+                getTimetableRoom(item);
+
+            if (room && room !== "—") {
+                rooms.add(normalize(room));
+            }
+        });
+
+
+        if (roomCount) {
+            roomCount.textContent =
+                rooms.size;
+        }
+    }
+
+
+    // ===============================
+    // Find Next Class
+    // ===============================
+
+    function getNextClass() {
+
+        const now = new Date();
+
+        const currentDayIndex =
+            now.getDay();
+
+        const dayOrder = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ];
+
+
+        const upcoming = [];
+
+
+        lecturerClasses.forEach(item => {
+
+            const day =
+                getTimetableDay(item);
+
+            const dayIndex =
+                dayOrder.findIndex(
+                    value =>
+                        normalize(value) === normalize(day)
+                );
+
+
+            if (dayIndex === -1) {
+                return;
+            }
+
+
+            const time =
+                parseTime(getTimetableTime(item));
+
+            if (!time) {
+                return;
+            }
+
+
+            let daysUntil =
+                dayIndex - currentDayIndex;
+
+
+            if (daysUntil < 0) {
+                daysUntil += 7;
+            }
+
+
+            const classDate =
+                new Date(now);
+
+            classDate.setDate(
+                now.getDate() + daysUntil
+            );
+
+            classDate.setHours(
+                time.hour,
+                time.minute,
+                0,
+                0
+            );
+
+
+            /*
+             * If today's class has already passed,
+             * move it to next week.
+             */
+            if (
+                classDate.getTime() <= now.getTime() &&
+                daysUntil === 0
+            ) {
+                classDate.setDate(
+                    classDate.getDate() + 7
+                );
+            }
+
+
+            upcoming.push({
+                item,
+                date: classDate
+            });
+        });
+
+
+        upcoming.sort(
+            (a, b) =>
+                a.date.getTime() -
+                b.date.getTime()
+        );
+
+
+        return upcoming.length > 0
+            ? upcoming[0]
+            : null;
+    }
+
+
+    // ===============================
+    // Render Next Class
+    // ===============================
+
+    function renderNextClass() {
+
+        const next =
+            getNextClass();
+
+
+        if (!next) {
+
+            nextClassCourse.textContent =
+                "No upcoming class";
+
+            nextClassTitle.textContent =
+                "Your next scheduled class will appear here.";
+
+            nextClassDay.textContent = "--";
+            nextClassFullTime.textContent = "--";
+            nextClassRoom.textContent = "--";
+            nextClassLevel.textContent = "--";
+
+            nextClassTime.textContent = "--";
+
+            nextClassStatus.textContent =
+                "No Class";
+
+            nextClassStatus.className =
+                "status-badge completed";
+
+            return;
+        }
+
+
+        const item =
+            next.item;
+
+        const courseCode =
+            getTimetableCourseCode(item);
+
+        const course =
+            findCourse(courseCode);
+
+
+        const title =
+            getCourseTitle(course);
+
+        const day =
+            getTimetableDay(item);
+
+        const time =
+            getTimetableTime(item);
+
+        const room =
+            getTimetableRoom(item);
+
+        const level =
+            getTimetableLevel(item) ||
+            getCourseLevel(course);
+
+
+        nextClassCourse.textContent =
+            courseCode || "Class";
+
+        nextClassTitle.textContent =
+            title;
+
+        nextClassDay.textContent =
+            day || "--";
+
+        nextClassFullTime.textContent =
+            time || "--";
+
+        nextClassRoom.textContent =
+            room || "--";
+
+        nextClassLevel.textContent =
+            level || "--";
+
+        nextClassTime.textContent =
+            time || "--";
+
+
+        const status =
+            getClassStatus(item);
+
+        nextClassStatus.textContent =
+            capitalize(status);
+
+        nextClassStatus.className =
+            `status-badge ${status}`;
+    }
+
+
+    // ===============================
+    // Today's Schedule
+    // ===============================
+
+    function renderTodaySchedule() {
+
+        if (!todaySchedule) {
+            return;
+        }
+
+
+        const todayName =
+            normalize(getDayName(new Date()));
+
+
+        const classes =
+            lecturerClasses.filter(item =>
+                normalize(getTimetableDay(item)) === todayName
+            );
+
+
+        todaySchedule.innerHTML = "";
+
+
+        if (classes.length === 0) {
+
+            todaySchedule.innerHTML = `
+                <div class="today-empty">
+                    <i class="fa-regular fa-calendar-xmark"></i>
+                    No classes scheduled for today.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        classes.forEach(item => {
+
+            const courseCode =
+                getTimetableCourseCode(item);
+
+            const course =
+                findCourse(courseCode);
+
+            const title =
+                getCourseTitle(course);
+
+            const time =
+                getTimetableTime(item);
+
+            const room =
+                getTimetableRoom(item);
+
+            const status =
+                getClassStatus(item);
+
+
+            const itemElement =
+                document.createElement("div");
+
+            itemElement.className =
+                "today-item";
+
+
+            itemElement.innerHTML = `
+                <div class="today-time">
+                    ${escapeHTML(time)}
+                </div>
+
+                <div class="today-details">
+
+                    <h4>
+                        ${escapeHTML(courseCode || "Class")}
+                    </h4>
+
+                    <p>
+                        ${escapeHTML(title)}
+                    </p>
+
+                    <span>
+                        ${capitalize(status)}
+                    </span>
+
+                </div>
+
+                <div class="today-room">
+                    <i class="fa-solid fa-location-dot"></i>
+                    ${escapeHTML(room)}
+                </div>
+            `;
+
+
+            todaySchedule.appendChild(itemElement);
+        });
+    }
+
+
+    // ===============================
+    // Notifications
+    // ===============================
+
+    function updateNotifications() {
+
+        const unread =
+            Array.isArray(notifications)
+                ? notifications.filter(notification => {
+
+                    return (
+                        notification.read === false ||
+                        notification.isRead === false ||
+                        notification.status === "unread"
+                    );
+
+                }).length
+                : 0;
+
+
+        if (notificationCount) {
+            notificationCount.textContent =
+                unread;
+        }
+    }
+
+
+    if (notificationButton) {
+
+        notificationButton.addEventListener(
+            "click",
+            function () {
+                window.location.href =
+                    "lecturer-notifications.html";
+            }
+        );
+    }
+
+
+    // ===============================
+    // Filters
+    // ===============================
+
+    function applyFilters() {
+        renderSchedule();
+    }
+
+
+    if (dayFilter) {
+        dayFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+    }
+
+
+    if (courseFilter) {
+        courseFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+    }
+
+
+    if (statusFilter) {
+        statusFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+    }
+
+
+    if (scheduleSearch) {
+        scheduleSearch.addEventListener(
+            "input",
+            applyFilters
+        );
+    }
+
+
+    // ===============================
+    // Reset Filters
+    // ===============================
+
+    if (resetFilters) {
+
+        resetFilters.addEventListener(
+            "click",
+            function () {
+
+                dayFilter.value = "all";
+                courseFilter.value = "all";
+                statusFilter.value = "all";
+                scheduleSearch.value = "";
+
+                renderSchedule();
+            }
+        );
+    }
+
+
+    // ===============================
+    // Refresh
+    // ===============================
+
+    if (refreshSchedule) {
+
+        refreshSchedule.addEventListener(
+            "click",
+            function () {
+                window.location.reload();
+            }
+        );
+    }
+
+
+    // ===============================
+    // Print
+    // ===============================
+
+    if (printSchedule) {
+
+        printSchedule.addEventListener(
+            "click",
+            function () {
+                window.print();
+            }
+        );
+    }
+
+
+    // ===============================
+    // Initialize
+    // ===============================
+
+    findLecturerCourses();
+
+    findLecturerClasses();
+
+    populateCourseFilter();
+
+    updateStatistics();
+
+    renderSchedule();
+
+    renderNextClass();
+
+    renderTodaySchedule();
+
+    updateNotifications();
+
+});
+    </script>
+
+</body>
+</html>

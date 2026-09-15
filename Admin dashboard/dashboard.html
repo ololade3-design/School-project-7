@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li>
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Lecture rooms.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<!-- Topbar -->
+
+<div class="topbar">
+
+<div>
+
+<h1>Dashboard</h1>
+
+<p>
+
+Welcome to the Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-book"></i>
+
+<h2 id="courseCount">0</h2>
+
+<p>Total Courses</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-user-tie"></i>
+
+<h2 id="lecturerCount">0</h2>
+
+<p>Total Lecturers</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<h2 id="studentCount">0</h2>
+
+<p>Total Students</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-building"></i>
+
+<h2 id="departmentCount">0</h2>
+
+<p>Departments</p>
+
+</div>
+
+</div>
+
+<!-- Quick Menu -->
+
+<h2 class="section-title">
+
+Quick Access
+
+</h2>
+
+<div class="quick-menu">
+
+<div class="menu-card"
+onclick="location.href='courses.html'">
+
+<i class="fa-solid fa-book"></i>
+
+<h3>Courses</h3>
+
+<p>
+
+Manage all available courses
+
+</p>
+
+</div>
+
+<div class="menu-card"
+onclick="location.href='lecturers.html'">
+
+<i class="fa-solid fa-user-tie"></i>
+
+<h3>Lecturers</h3>
+
+<p>
+
+Manage lecturers
+
+</p>
+
+</div>
+
+<div class="menu-card"
+onclick="location.href='students.html'">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<h3>Students</h3>
+
+<p>
+
+Manage students
+
+</p>
+
+</div>
+
+<div class="menu-card"
+onclick="location.href='departments.html'">
+
+<i class="fa-solid fa-building"></i>
+
+<h3>Departments</h3>
+
+<p>
+
+Manage departments
+
+</p>
+
+</div><div class="menu-card"
+onclick="location.href='lecture room.html'">
+
+<i class="fa-solid fa-door-open"></i>
+
+<h3>Lecture Rooms</h3>
+
+<p>
+
+Manage lecture halls
+
+</p>
+
+</div>
+
+<div class="menu-card"
+onclick="location.href='timetable.html'">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h3>Timetable</h3>
+
+<p>
+
+Generate course timetable
+
+</p>
+
+</div>
+
+<div class="menu-card"
+onclick="location.href='reports.html'">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<h3>Reports</h3>
+
+<p>
+
+View system reports
+
+</p>
+
+</div>
+
+<div class="menu-card"
+onclick="location.href='settings.html'">
+
+<i class="fa-solid fa-gear"></i>
+
+<h3>Settings</h3>
+
+<p>
+
+Configure system settings
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Dashboard Content -->
+
+<div class="dashboard-content">
+
+<!-- Recent Activities -->
+
+<div class="activities">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<ul id="activityList">
+
+<li>Administrator logged in.</li>
+
+<li>Dashboard loaded successfully.</li>
+
+<li>System ready.</li>
+
+</ul>
+
+</div>
+
+<!-- System Overview -->
+
+<div class="overview">
+
+<h2>
+
+System Overview
+
+</h2>
+
+<table>
+
+<tr>
+
+<td>Total Courses</td>
+
+<td id="courseOverview">
+
+0
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Total Lecturers</td>
+
+<td id="lecturerOverview">
+
+0
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Total Students</td>
+
+<td id="studentOverview">
+
+0
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Total Departments</td>
+
+<td id="departmentOverview">
+
+0
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Available Classrooms</td>
+
+<td id="classroomOverview">
+
+0
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ================================
+// Smart Timetable Dashboard
+// dashboard.js
+// ================================
+
+// Load data from Local Storage
+
+let courses = JSON.parse(localStorage.getItem("courses")) || [];
+
+let lecturers = JSON.parse(localStorage.getItem("lecturers")) || [];
+
+let students = JSON.parse(localStorage.getItem("students")) || [];
+
+let departments = JSON.parse(localStorage.getItem("departments")) || [];
+
+let classrooms = JSON.parse(localStorage.getItem("classrooms")) || [];
+
+// Statistics Cards
+
+const courseCount = document.getElementById("courseCount");
+
+const lecturerCount = document.getElementById("lecturerCount");
+
+const studentCount = document.getElementById("studentCount");
+
+const departmentCount = document.getElementById("departmentCount");
+
+// Overview Table
+
+const courseOverview = document.getElementById("courseOverview");
+
+const lecturerOverview = document.getElementById("lecturerOverview");
+
+const studentOverview = document.getElementById("studentOverview");
+
+const departmentOverview = document.getElementById("departmentOverview");
+
+const classroomOverview = document.getElementById("classroomOverview");
+
+// Activity List
+
+const activityList = document.getElementById("activityList");
+
+// Display Dashboard
+
+function loadDashboard(){
+
+courseCount.innerHTML = courses.length;
+
+lecturerCount.innerHTML = lecturers.length;
+
+studentCount.innerHTML = students.length;
+
+departmentCount.innerHTML = departments.length;
+
+courseOverview.innerHTML = courses.length;
+
+lecturerOverview.innerHTML = lecturers.length;
+
+studentOverview.innerHTML = students.length;
+
+departmentOverview.innerHTML = departments.length;
+
+classroomOverview.innerHTML = classrooms.length;
+
+addActivity("Dashboard Loaded Successfully");
+
+addActivity(courses.length+" Courses Available");
+
+addActivity(lecturers.length+" Lecturers Registered");
+
+addActivity(students.length+" Students Registered");
+
+}
+
+// Activity Function
+
+function addActivity(message){
+
+const li = document.createElement("li");
+
+const time = new Date().toLocaleTimeString();
+
+li.innerHTML = "<strong>"+time+"</strong> - "+message;
+
+activityList.prepend(li);
+
+}
+
+// Load Dashboard
+
+loadDashboard();// ================================
+// Dashboard Functions
+// ================================
+
+// Refresh dashboard every 5 seconds
+
+setInterval(function(){
+
+courses = JSON.parse(localStorage.getItem("courses")) || [];
+
+lecturers = JSON.parse(localStorage.getItem("lecturers")) || [];
+
+students = JSON.parse(localStorage.getItem("students")) || [];
+
+departments = JSON.parse(localStorage.getItem("departments")) || [];
+
+classrooms = JSON.parse(localStorage.getItem("classrooms")) || [];
+
+courseCount.innerHTML = courses.length;
+
+lecturerCount.innerHTML = lecturers.length;
+
+studentCount.innerHTML = students.length;
+
+departmentCount.innerHTML = departments.length;
+
+courseOverview.innerHTML = courses.length;
+
+lecturerOverview.innerHTML = lecturers.length;
+
+studentOverview.innerHTML = students.length;
+
+departmentOverview.innerHTML = departments.length;
+
+classroomOverview.innerHTML = classrooms.length;
+
+},5000);
+
+// Welcome Message
+
+window.onload=function(){
+
+loadDashboard();
+
+alert("Welcome Administrator!");
+
+};
+
+// Highlight Quick Menu
+
+const menuCards=document.querySelectorAll(".menu-card");
+
+menuCards.forEach(card=>{
+
+card.addEventListener("mouseenter",function(){
+
+this.style.transform="translateY(-8px)";
+
+this.style.transition=".3s";
+
+});
+
+card.addEventListener("mouseleave",function(){
+
+this.style.transform="translateY(0px)";
+
+});
+
+});
+
+// Logout Confirmation
+
+const logout=document.querySelector(".sidebar ul li:last-child a");
+
+logout.addEventListener("click",function(e){
+
+if(!confirm("Are you sure you want to logout?")){
+
+e.preventDefault();
+
+}
+
+});
+
+// Live Clock
+
+function updateClock(){
+
+const now=new Date();
+
+const time=now.toLocaleTimeString();
+
+document.title="Dashboard | "+time;
+
+}
+
+setInterval(updateClock,1000);
+
+// Keyboard Shortcuts
+
+document.addEventListener("keydown",function(e){
+
+// CTRL + H = Dashboard
+
+if(e.ctrlKey && e.key=="h"){
+
+window.location.href="dashboard.html";
+
+}
+
+// CTRL + C = Courses
+
+if(e.ctrlKey && e.key=="c"){
+
+window.location.href="courses.html";
+
+}
+
+// CTRL + L = Lecturers
+
+if(e.ctrlKey && e.key=="l"){
+
+window.location.href="lecturers.html";
+
+}
+
+});
+
+// Random System Tips
+
+const tips=[
+
+"Remember to backup your database.",
+
+"Generate the timetable after adding all courses.",
+
+"Check for classroom availability.",
+
+"Assign lecturers before generating timetable.",
+
+"Review reports regularly."
+
+];
+
+setInterval(function(){
+
+let tip=tips[Math.floor(Math.random()*tips.length)];
+
+addActivity("Tip: "+tip);
+
+},15000);
+
+// Save Dashboard State
+
+localStorage.setItem("dashboardLoaded","true");
+
+// End of dashboard.js
+</script>
+
+</body>
+
+</html>

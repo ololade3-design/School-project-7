@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Faculty</title>
+
+<link rel="stylesheet" href="faculty.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ===================================
+     Sidebar
+=================================== -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>Student Portal</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="student dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Student Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+My Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="course registration.html">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+Course Registration
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="faculty.html">
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty
+
+</a>
+
+</li>
+
+<li>
+
+<a href="department.html">
+
+<i class="fa-solid fa-building"></i>
+
+Department
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+My Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="my timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+My Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="academic info.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Academic Information
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- ===================================
+     Main Content
+=================================== -->
+
+<div class="main">
+
+
+<!-- ===================================
+     Topbar
+=================================== -->
+
+<div class="topbar">
+
+<div>
+
+<h1>Faculty</h1>
+
+<p>
+
+View your faculty information and academic structure.
+
+</p>
+
+</div>
+
+<div class="student-top">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span id="studentName">
+
+Student
+
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Faculty Banner
+=================================== -->
+
+<div class="faculty-banner">
+
+<div class="faculty-banner-icon">
+
+<i class="fa-solid fa-building-columns"></i>
+
+</div>
+
+<div class="faculty-banner-text">
+
+<h2 id="facultyName">
+
+Faculty of Computing
+
+</h2>
+
+<p>
+
+Your faculty provides the academic environment
+for your programme and department.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Faculty Information
+=================================== -->
+
+<div class="faculty-information">
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-building-columns"></i>
+
+</div>
+
+<div>
+
+<span>Faculty</span>
+
+<h3 id="facultyTitle">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<div>
+
+<span>Department</span>
+
+<h3 id="departmentName">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<div>
+
+<span>Programme</span>
+
+<h3 id="programmeName">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="information-card">
+
+<div class="card-icon">
+
+<i class="fa-solid fa-layer-group"></i>
+
+</div>
+
+<div>
+
+<span>Level</span>
+
+<h3 id="studentLevel">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Faculty Details
+=================================== -->
+
+<div class="content-grid">
+
+
+<div class="faculty-details">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+Faculty Information
+
+</h2>
+
+</div>
+
+
+<div class="details-list">
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-building-columns"></i>
+
+Faculty Name
+
+</span>
+
+<strong id="facultyNameValue">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-user-tie"></i>
+
+Dean
+
+</span>
+
+<strong id="deanName">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-envelope"></i>
+
+Faculty Email
+
+</span>
+
+<strong id="facultyEmail">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-phone"></i>
+
+Faculty Phone
+
+</span>
+
+<strong id="facultyPhone">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+<div class="detail-row">
+
+<span>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Faculty Location
+
+</span>
+
+<strong id="facultyLocation">
+
+Not Available
+
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Academic Structure
+=================================== -->
+
+<div class="academic-structure">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-sitemap"></i>
+
+Academic Structure
+
+</h2>
+
+</div>
+
+
+<div class="structure-item">
+
+<div class="structure-icon">
+
+<i class="fa-solid fa-building-columns"></i>
+
+</div>
+
+<div>
+
+<span>Faculty</span>
+
+<h3 id="structureFaculty">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="structure-arrow">
+
+<i class="fa-solid fa-arrow-down"></i>
+
+</div>
+
+
+<div class="structure-item">
+
+<div class="structure-icon">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<div>
+
+<span>Department</span>
+
+<h3 id="structureDepartment">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="structure-arrow">
+
+<i class="fa-solid fa-arrow-down"></i>
+
+</div>
+
+
+<div class="structure-item">
+
+<div class="structure-icon">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<div>
+
+<span>Programme</span>
+
+<h3 id="structureProgramme">
+
+Not Available
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div><!-- ===================================
+     Departments and Programmes
+=================================== -->
+
+<div class="departments-section">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-list"></i>
+
+Departments and Programmes
+
+</h2>
+
+<p>
+
+Academic departments and programmes available
+within your faculty.
+
+</p>
+
+</div>
+
+
+<div class="department-cards">
+
+
+<div class="department-card">
+
+<div class="department-card-icon">
+
+<i class="fa-solid fa-code"></i>
+
+</div>
+
+<div>
+
+<h3>Software Engineering</h3>
+
+<p>
+
+Software Engineering programme focuses on
+software development, programming and system design.
+
+</p>
+
+<span>
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Undergraduate Programme
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="department-card">
+
+<div class="department-card-icon">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+</div>
+
+<div>
+
+<h3>Computer Science</h3>
+
+<p>
+
+Computer Science covers computing principles,
+algorithms, programming and information systems.
+
+</p>
+
+<span>
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Undergraduate Programme
+
+</span>
+
+</div>
+
+</div>
+
+
+<div class="department-card">
+
+<div class="department-card-icon">
+
+<i class="fa-solid fa-network-wired"></i>
+
+</div>
+
+<div>
+
+<h3>Information Technology</h3>
+
+<p>
+
+Information Technology focuses on technology,
+networks, databases and digital systems.
+
+</p>
+
+<span>
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Undergraduate Programme
+
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Academic Links
+=================================== -->
+
+<div class="academic-links">
+
+<div class="section-header">
+
+<h2>
+
+<i class="fa-solid fa-link"></i>
+
+Useful Academic Links
+
+</h2>
+
+</div>
+
+
+<div class="links-grid">
+
+
+<a href="course-registration.html" class="academic-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-pen-to-square"></i>
+
+</div>
+
+<div>
+
+<h3>Course Registration</h3>
+
+<p>
+
+Register and manage your courses.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+<a href="student-department.html" class="academic-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-building"></i>
+
+</div>
+
+<div>
+
+<h3>Department</h3>
+
+<p>
+
+View your department information.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+<a href="my-courses.html" class="academic-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-book"></i>
+
+</div>
+
+<div>
+
+<h3>My Courses</h3>
+
+<p>
+
+View your registered courses.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+<a href="my-timetable.html" class="academic-link">
+
+<div class="link-icon">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+</div>
+
+<div>
+
+<h3>My Timetable</h3>
+
+<p>
+
+Check your class timetable.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-chevron-right"></i>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Faculty Notice
+=================================== -->
+
+<div class="faculty-notice">
+
+<div class="notice-icon">
+
+<i class="fa-solid fa-circle-exclamation"></i>
+
+</div>
+
+<div>
+
+<h3>Faculty Notice</h3>
+
+<p id="facultyNotice">
+
+Students should regularly check their faculty
+and department information for academic updates,
+announcements and important notices.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ===================================
+     Footer
+=================================== -->
+
+<footer>
+
+<p>
+
+&copy; <span id="currentYear"></span>
+
+Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+
+</div>
+
+</div>
+
+
+<script src="../js/api.js"></script>
+<script>
+    // ===================================
+// Faculty Page
+// faculty.js
+// ===================================
+
+// Get saved student information
+let studentData = JSON.parse(localStorage.getItem("studentData")) || {};
+
+// Get saved settings
+let settings = JSON.parse(localStorage.getItem("settings")) || {};
+
+
+// ===================================
+// Default Faculty Information
+// ===================================
+
+const defaultFaculty = {
+
+    name: "Faculty of Computing",
+
+    dean: "Not Available",
+
+    email: "Not Available",
+
+    phone: "Not Available",
+
+    location: "Not Available",
+
+    notice:
+        "Students should regularly check their faculty and department information for academic updates, announcements and important notices."
+
+};
+
+
+// ===================================
+// Get Faculty Information
+// ===================================
+
+let facultyData = JSON.parse(
+    localStorage.getItem("facultyData")
+) || {};
+
+
+// Use default values when information
+// is not available
+
+const faculty = {
+
+    name:
+        facultyData.name ||
+        studentData.faculty ||
+        settings.faculty ||
+        defaultFaculty.name,
+
+    dean:
+        facultyData.dean ||
+        defaultFaculty.dean,
+
+    email:
+        facultyData.email ||
+        defaultFaculty.email,
+
+    phone:
+        facultyData.phone ||
+        defaultFaculty.phone,
+
+    location:
+        facultyData.location ||
+        defaultFaculty.location,
+
+    notice:
+        facultyData.notice ||
+        defaultFaculty.notice
+
+};
+
+
+// ===================================
+// Student Information
+// ===================================
+
+const studentName =
+    studentData.name ||
+    studentData.fullName ||
+    settings.studentName ||
+    "Student";
+
+
+const department =
+    studentData.department ||
+    settings.department ||
+    "Not Available";
+
+
+const programme =
+    studentData.programme ||
+    studentData.program ||
+    studentData.course ||
+    settings.programme ||
+    "Not Available";
+
+
+const level =
+    studentData.level ||
+    settings.level ||
+    "Not Available";
+
+
+// ===================================
+// Helper Function
+// ===================================
+
+function setText(id, value) {
+
+    const element = document.getElementById(id);
+
+    if (element) {
+
+        element.textContent = value;
+
+    }
+
+}
+
+
+// ===================================
+// Display Student Name
+// ===================================
+
+setText(
+    "studentName",
+    studentName
+);
+
+
+// ===================================
+// Display Faculty Information
+// ===================================
+
+setText(
+    "facultyName",
+    faculty.name
+);
+
+setText(
+    "facultyTitle",
+    faculty.name
+);
+
+setText(
+    "facultyNameValue",
+    faculty.name
+);
+
+
+// ===================================
+// Display Department
+// ===================================
+
+setText(
+    "departmentName",
+    department
+);
+
+setText(
+    "structureDepartment",
+    department
+);
+
+
+// ===================================
+// Display Programme
+// ===================================
+
+setText(
+    "programmeName",
+    programme
+);
+
+setText(
+    "structureProgramme",
+    programme
+);
+
+
+// ===================================
+// Display Level
+// ===================================
+
+setText(
+    "studentLevel",
+    level
+);
+
+
+// ===================================
+// Display Dean
+// ===================================
+
+setText(
+    "deanName",
+    faculty.dean
+);
+
+
+// ===================================
+// Display Faculty Contact
+// ===================================
+
+setText(
+    "facultyEmail",
+    faculty.email
+);
+
+setText(
+    "facultyPhone",
+    faculty.phone
+);
+
+setText(
+    "facultyLocation",
+    faculty.location
+);
+
+
+// ===================================
+// Display Faculty in Structure
+// ===================================
+
+setText(
+    "structureFaculty",
+    faculty.name
+);
+
+
+// ===================================
+// Display Faculty Notice
+// ===================================
+
+setText(
+    "facultyNotice",
+    faculty.notice
+);
+
+
+// ===================================
+// Current Year
+// ===================================
+
+const currentYear = document.getElementById(
+    "currentYear"
+);
+
+if (currentYear) {
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
+
+
+// ===================================
+// Save Faculty Information
+// ===================================
+
+if (!localStorage.getItem("facultyData")) {
+
+    localStorage.setItem(
+        "facultyData",
+        JSON.stringify(faculty)
+    );
+
+}
+
+
+// ===================================
+// Page Loaded Message
+// ===================================
+
+console.log(
+    "Faculty page loaded successfully."
+);
+</script>
+
+</body>
+
+</html>

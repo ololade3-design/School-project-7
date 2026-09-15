@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Information</title>
+
+    <link rel="stylesheet" href="academic info.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- ===================================
+         Sidebar
+    =================================== -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <h2>Student Portal</h2>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="student dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Student Dashboard
+                </a>
+            </li>
+
+
+            <li>
+                <a href="my profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+
+            <li>
+                <a href="course registration.html">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Course Registration
+                </a>
+            </li>
+
+
+            <li>
+                <a href="faculty.html">
+                    <i class="fa-solid fa-building-columns"></i>
+                    Faculty
+                </a>
+            </li>
+
+
+            <li>
+                <a href="department.html">
+                    <i class="fa-solid fa-building"></i>
+                    Department
+                </a>
+            </li>
+
+
+            <li>
+                <a href="my courses.html">
+                    <i class="fa-solid fa-book"></i>
+                    My Courses
+                </a>
+            </li>
+
+
+            <li>
+                <a href="my timetable.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    My Timetable
+                </a>
+            </li>
+
+
+            <li class="active">
+                <a href="academic info.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Academic Information
+                </a>
+            </li>
+
+
+            <li>
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+
+            <li>
+                <a href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- ===================================
+         Main Content
+    =================================== -->
+
+    <div class="main">
+
+
+        <!-- ===================================
+             Topbar
+        =================================== -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>Academic Information</h1>
+
+                <p>
+                    View your academic progress and student information.
+                </p>
+
+            </div>
+
+
+            <div class="student-top">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <span id="studentName">
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Academic Summary
+        =================================== -->
+
+        <div class="academic-summary">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-book"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Registered Courses</span>
+
+                    <h3 id="totalCourses">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Total Units</span>
+
+                    <h3 id="totalUnits">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Current CGPA</span>
+
+                    <h3 id="currentCGPA">
+                        0.00
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Current Level</span>
+
+                    <h3 id="currentLevel">
+                        100
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Student Academic Details
+        =================================== -->
+
+        <div class="academic-details">
+
+            <div class="section-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    Student Academic Details
+
+                </h2>
+
+            </div>
+
+
+            <div class="details-grid">
+
+
+                <div class="detail-item">
+
+                    <span>Full Name</span>
+
+                    <strong id="fullName">
+                        Not Available
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Matriculation Number</span>
+
+                    <strong id="matricNumber">
+                        Not Available
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Faculty</span>
+
+                    <strong id="facultyName">
+                        Not Available
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Department</span>
+
+                    <strong id="departmentName">
+                        Not Available
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Academic Session</span>
+
+                    <strong id="academicSession">
+                        2025/2026
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Semester</span>
+
+                    <strong id="semester">
+                        First Semester
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Current Level</span>
+
+                    <strong id="level">
+                        100 Level
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>Programme</span>
+
+                    <strong id="programme">
+                        Software Engineering
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Academic Performance
+        =================================== -->
+
+        <div class="performance-container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        Academic Performance
+
+                    </h2>
+
+                    <p>
+                        Overview of your academic performance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="performance-grid">
+
+
+                <div class="performance-card">
+
+                    <div class="performance-icon">
+
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Current CGPA</span>
+
+                        <h3 id="performanceCGPA">
+                            0.00
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <div class="performance-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Academic Standing</span>
+
+                        <h3 id="academicStanding">
+                            Good Standing
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <div class="performance-icon">
+
+                        <i class="fa-solid fa-trophy"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Best Grade</span>
+
+                        <h3 id="bestGrade">
+                            Not Available
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Academic Records
+        =================================== -->
+
+        <div class="records-container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        Academic Records
+
+                    </h2>
+
+                    <p>
+                        Your available academic results and records.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th>Course Code</th>
+
+                            <th>Course Title</th>
+
+                            <th>Units</th>
+
+                            <th>Grade</th>
+
+                            <th>Grade Point</th>
+
+                            <th>Semester</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="academicTableBody">
+
+                        <!-- Academic records will be loaded by JavaScript -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div
+                class="empty-state"
+                id="emptyState">
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-file-circle-xmark"></i>
+
+                </div>
+
+
+                <h3>
+                    No Academic Records
+                </h3>
+
+
+                <p>
+                    Your academic results have not been added yet.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Academic Information
+        =================================== -->
+
+        <div class="information-container">
+
+            <div class="section-header">
+
+                <h2>
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Important Information
+
+                </h2>
+
+            </div>
+
+
+            <div class="information-grid">
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <div>
+
+                        <h3>
+                            CGPA
+                        </h3>
+
+                        <p>
+                            Your CGPA represents your cumulative academic performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <div>
+
+                        <h3>
+                            Course Units
+                        </h3>
+
+                        <p>
+                            Course units determine the weight of each course in your academic calculation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <div>
+
+                        <h3>
+                            Academic Level
+                        </h3>
+
+                        <p>
+                            Your level indicates your current stage in the academic programme.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="information-item">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <div>
+
+                        <h3>
+                            Academic Records
+                        </h3>
+
+                        <p>
+                            Check your academic records regularly to monitor your progress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Academic Notice
+        =================================== -->
+
+        <div class="academic-notice">
+
+            <div class="notice-icon">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Academic Notice
+                </h3>
+
+                <p id="academicNotice">
+
+                    Keep your academic information up to date
+                    and regularly check your results and course records.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================
+             Footer
+        =================================== -->
+
+        <footer>
+
+            <p>
+
+                &copy;
+
+                <span id="currentYear"></span>
+
+                Smart Timetable Generation and Course Scheduling System
+
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+<script src="../js/api.js"></script>
+<script>
+
+// ===================================
+// Academic Information
+// academic-info.js
+// ===================================
+
+
+// ===================================
+// Load Data
+// ===================================
+
+let studentData = JSON.parse(
+    localStorage.getItem("studentData")
+) || {};
+
+let registeredCourses = JSON.parse(
+    localStorage.getItem("registeredCourses")
+) || {};
+
+let academicRecords = JSON.parse(
+    localStorage.getItem("academicRecords")
+) || [];
+
+let settings = JSON.parse(
+    localStorage.getItem("settings")
+) || {};
+
+
+// Make sure registeredCourses is an array
+if (!Array.isArray(registeredCourses)) {
+    registeredCourses = [];
+}
+
+
+// Make sure academicRecords is an array
+if (!Array.isArray(academicRecords)) {
+    academicRecords = [];
+}
+
+
+// ===================================
+// Elements
+// ===================================
+
+const studentName =
+    document.getElementById("studentName");
+
+const totalCourses =
+    document.getElementById("totalCourses");
+
+const totalUnits =
+    document.getElementById("totalUnits");
+
+const currentCGPA =
+    document.getElementById("currentCGPA");
+
+const currentLevel =
+    document.getElementById("currentLevel");
+
+const fullName =
+    document.getElementById("fullName");
+
+const matricNumber =
+    document.getElementById("matricNumber");
+
+const facultyName =
+    document.getElementById("facultyName");
+
+const departmentName =
+    document.getElementById("departmentName");
+
+const academicSession =
+    document.getElementById("academicSession");
+
+const semester =
+    document.getElementById("semester");
+
+const level =
+    document.getElementById("level");
+
+const programme =
+    document.getElementById("programme");
+
+const performanceCGPA =
+    document.getElementById("performanceCGPA");
+
+const academicStanding =
+    document.getElementById("academicStanding");
+
+const bestGrade =
+    document.getElementById("bestGrade");
+
+const academicTableBody =
+    document.getElementById("academicTableBody");
+
+const emptyState =
+    document.getElementById("emptyState");
+
+const academicNotice =
+    document.getElementById("academicNotice");
+
+const currentYear =
+    document.getElementById("currentYear");
+
+
+// ===================================
+// Helper Functions
+// ===================================
+
+function getStudentName() {
+
+    return (
+        studentData.name ||
+        studentData.fullName ||
+        studentData.studentName ||
+        "Student"
+    );
+}
+
+
+function getMatricNumber() {
+
+    return (
+        studentData.matricNumber ||
+        studentData.matricNo ||
+        studentData.matric ||
+        "Not Available"
+    );
+}
+
+
+function getFaculty() {
+
+    return (
+        studentData.faculty ||
+        settings.faculty ||
+        "Not Available"
+    );
+}
+
+
+function getDepartment() {
+
+    return (
+        studentData.department ||
+        settings.department ||
+        "Not Available"
+    );
+}
+
+
+function getLevel() {
+
+    return (
+        studentData.level ||
+        settings.level ||
+        "100"
+    );
+}
+
+
+function getSemester() {
+
+    return (
+        studentData.semester ||
+        settings.semester ||
+        "First Semester"
+    );
+}
+
+
+function getSession() {
+
+    return (
+        studentData.academicSession ||
+        settings.academicSession ||
+        "2025/2026"
+    );
+}
+
+
+function getProgramme() {
+
+    return (
+        studentData.programme ||
+        studentData.program ||
+        settings.programme ||
+        "Software Engineering"
+    );
+}
+
+
+function escapeHTML(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        value ?? "";
+
+    return div.innerHTML;
+}
+
+
+// ===================================
+// Display Student Information
+// ===================================
+
+const name =
+    getStudentName();
+
+studentName.textContent =
+    name;
+
+fullName.textContent =
+    name;
+
+matricNumber.textContent =
+    getMatricNumber();
+
+facultyName.textContent =
+    getFaculty();
+
+departmentName.textContent =
+    getDepartment();
+
+academicSession.textContent =
+    getSession();
+
+semester.textContent =
+    getSemester();
+
+const studentLevel =
+    getLevel();
+
+currentLevel.textContent =
+    studentLevel;
+
+level.textContent =
+    `${studentLevel} Level`;
+
+programme.textContent =
+    getProgramme();
+
+
+// ===================================
+// Course Summary
+// ===================================
+
+totalCourses.textContent =
+    registeredCourses.length;
+
+
+const totalUnitValue =
+    registeredCourses.reduce(
+        (total, course) => {
+
+            return total +
+                Number(
+                    course.unit ||
+                    course.units ||
+                    0
+                );
+
+        },
+        0
+    );
+
+
+totalUnits.textContent =
+    totalUnitValue;
+
+
+// ===================================
+// Calculate CGPA
+// ===================================
+
+function calculateCGPA() {
+
+    if (academicRecords.length === 0) {
+        return 0;
+    }
+
+
+    let totalPoints = 0;
+    let totalUnits = 0;
+
+
+    academicRecords.forEach(record => {
+
+        const units =
+            Number(
+                record.unit ||
+                record.units ||
+                0
+            );
+
+
+        const point =
+            Number(
+                record.gradePoint ||
+                record.point ||
+                0
+            );
+
+
+        if (units > 0) {
+
+            totalPoints +=
+                units * point;
+
+            totalUnits +=
+                units;
+        }
+
+    });
+
+
+    if (totalUnits === 0) {
+        return 0;
+    }
+
+
+    return totalPoints / totalUnits;
+}
+
+
+// ===================================
+// Display CGPA
+// ===================================
+
+let cgpa =
+    Number(
+        studentData.cgpa ||
+        settings.cgpa ||
+        0
+    );
+
+
+// If academic records exist,
+// calculate CGPA from the records.
+
+if (academicRecords.length > 0) {
+
+    cgpa =
+        calculateCGPA();
+
+}
+
+
+currentCGPA.textContent =
+    cgpa.toFixed(2);
+
+performanceCGPA.textContent =
+    cgpa.toFixed(2);
+
+
+// ===================================
+// Academic Standing
+// ===================================
+
+function getAcademicStanding(cgpa) {
+
+    if (cgpa >= 4.50) {
+
+        return "Excellent Standing";
+
+    }
+
+    if (cgpa >= 3.50) {
+
+        return "Very Good Standing";
+
+    }
+
+    if (cgpa >= 2.50) {
+
+        return "Good Standing";
+
+    }
+
+    if (cgpa >= 1.50) {
+
+        return "Satisfactory Standing";
+
+    }
+
+    if (cgpa > 0) {
+
+        return "Academic Warning";
+
+    }
+
+    return "No Record";
+}
+
+
+academicStanding.textContent =
+    getAcademicStanding(cgpa);
+
+
+// ===================================
+// Grade Point Conversion
+// ===================================
+
+function getGradePoint(grade) {
+
+    const gradePoints = {
+
+        "A": 5,
+        "B": 4,
+        "C": 3,
+        "D": 2,
+        "E": 1,
+        "F": 0
+
+    };
+
+
+    return gradePoints[
+        String(grade)
+            .trim()
+            .toUpperCase()
+    ];
+}
+
+
+// ===================================
+// Find Best Grade
+// ===================================
+
+function getBestGrade() {
+
+    if (academicRecords.length === 0) {
+        return "Not Available";
+    }
+
+
+    let bestPoint = -1;
+    let best = "Not Available";
+
+
+    academicRecords.forEach(record => {
+
+        let point =
+            Number(
+                record.gradePoint ||
+                record.point
+            );
+
+
+        if (
+            Number.isNaN(point) &&
+            record.grade
+        ) {
+
+            point =
+                getGradePoint(
+                    record.grade
+                );
+
+        }
+
+
+        if (
+            point > bestPoint
+        ) {
+
+            bestPoint =
+                point;
+
+            best =
+                record.grade ||
+                "Not Available";
+        }
+
+    });
+
+
+    return best;
+}
+
+
+bestGrade.textContent =
+    getBestGrade();
+
+
+// ===================================
+// Display Academic Records
+// ===================================
+
+function displayAcademicRecords() {
+
+    academicTableBody.innerHTML = "";
+
+
+    if (academicRecords.length === 0) {
+
+        emptyState.style.display =
+            "flex";
+
+        return;
+    }
+
+
+    emptyState.style.display =
+        "none";
+
+
+    academicRecords.forEach(
+        (record, index) => {
+
+            const row =
+                document.createElement("tr");
+
+
+            const courseCode =
+                record.courseCode ||
+                record.code ||
+                "N/A";
+
+
+            const courseTitle =
+                record.courseTitle ||
+                record.courseName ||
+                record.title ||
+                "Untitled Course";
+
+
+            const units =
+                Number(
+                    record.unit ||
+                    record.units ||
+                    0
+                );
+
+
+            const grade =
+                record.grade ||
+                "N/A";
+
+
+            let gradePoint =
+                record.gradePoint ||
+                record.point;
+
+
+            if (
+                gradePoint === undefined ||
+                gradePoint === null ||
+                gradePoint === ""
+            ) {
+
+                gradePoint =
+                    getGradePoint(grade);
+
+            }
+
+
+            if (
+                gradePoint === undefined
+            ) {
+
+                gradePoint =
+                    "N/A";
+
+            }
+
+
+            const recordSemester =
+                record.semester ||
+                getSemester();
+
+
+            row.innerHTML = `
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td>
+                    <strong>
+                        ${escapeHTML(courseCode)}
+                    </strong>
+                </td>
+
+                <td>
+                    ${escapeHTML(courseTitle)}
+                </td>
+
+                <td>
+                    ${units}
+                </td>
+
+                <td>
+                    <span class="grade-badge">
+                        ${escapeHTML(grade)}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        String(gradePoint)
+                    )}
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        recordSemester
+                    )}
+                </td>
+            `;
+
+
+            academicTableBody.appendChild(
+                row
+            );
+
+        }
+    );
+}
+
+
+// ===================================
+// Academic Notice
+// ===================================
+
+if (settings.academicNotice) {
+
+    academicNotice.textContent =
+        settings.academicNotice;
+}
+
+
+// ===================================
+// Current Year
+// ===================================
+
+currentYear.textContent =
+    new Date().getFullYear();
+
+
+// ===================================
+// Display Records
+// ===================================
+
+displayAcademicRecords();
+
+
+</script>
+
+</body>
+
+</html>

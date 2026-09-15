@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Smart Timetable</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo-area">
+            <div class="logo-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div>
+                <h2>Smart Timetable</h2>
+                <span>Lecturer Portal</span>
+            </div>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="lecturer dashboard.html">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Lecturer Dashboard</span>
+            </a>
+
+            <a href="my profile.html">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="my courses.html">
+                <i class="fa-solid fa-book"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="my students.html">
+                <i class="fa-solid fa-users"></i>
+                <span>My Students</span>
+            </a>
+
+            <a href="my timetable.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>My Timetable</span>
+            </a>
+
+            <a href="course materials.html">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Course Materials</span>
+            </a>
+
+            <a href="class schedule.html">
+                <i class="fa-solid fa-clock"></i>
+                <span>Class Schedule</span>
+            </a>
+
+            <a href="lecturer academic info.html">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Academic Information</span>
+            </a>
+
+            <a href="lecturer notifications.html">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="settings.html" class="active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="login.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="top-header">
+
+            <div class="header-title">
+                <h1>Settings</h1>
+                <p>Manage your lecturer portal preferences.</p>
+            </div>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                    title="Notifications"
+                >
+                    <i class="fa-solid fa-bell"></i>
+                    <span id="notificationCount"></span>
+                </button>
+
+
+                <div class="account-area">
+
+                    <div class="account-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="account-info">
+                        <strong id="headerLecturerName">Lecturer</strong>
+                        <span id="headerDepartment">Department</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Intro -->
+        <section class="page-intro">
+
+            <div>
+                <span class="intro-label">LECTURER PORTAL</span>
+
+                <h2>Account Settings</h2>
+
+                <p>
+                    Customize your portal preferences, notifications,
+                    security options and account information.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Settings Layout -->
+        <section class="settings-layout">
+
+            <!-- Settings Navigation -->
+            <div class="settings-menu">
+
+                <button
+                    class="settings-tab active"
+                    data-section="account"
+                    type="button"
+                >
+                    <i class="fa-solid fa-user"></i>
+
+                    <div>
+                        <strong>Account</strong>
+                        <span>Basic account information</span>
+                    </div>
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="notifications"
+                    type="button"
+                >
+                    <i class="fa-solid fa-bell"></i>
+
+                    <div>
+                        <strong>Notifications</strong>
+                        <span>Manage notification preferences</span>
+                    </div>
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="security"
+                    type="button"
+                >
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+                        <strong>Security</strong>
+                        <span>Password and login settings</span>
+                    </div>
+                </button>
+
+
+                <button
+                    class="settings-tab"
+                    data-section="appearance"
+                    type="button"
+                >
+                    <i class="fa-solid fa-palette"></i>
+
+                    <div>
+                        <strong>Appearance</strong>
+                        <span>Customize portal appearance</span>
+                    </div>
+                </button>
+
+            </div>
+
+
+            <!-- Settings Content -->
+            <div class="settings-content">
+
+
+                <!-- Account Section -->
+                <section
+                    class="settings-section active"
+                    id="accountSection"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Account Information</h3>
+
+                            <p>
+                                View the information associated with your lecturer account.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                readonly
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="staffId">Staff ID</label>
+
+                            <input
+                                type="text"
+                                id="staffId"
+                                readonly
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                readonly
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="department">Department</label>
+
+                            <input
+                                type="text"
+                                id="department"
+                                readonly
+                            >
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Notifications Section -->
+                <section
+                    class="settings-section"
+                    id="notificationsSection"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Notification Preferences</h3>
+
+                            <p>
+                                Choose the type of updates you want to receive.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="preference-list">
+
+                        <div class="preference-item">
+
+                            <div class="preference-info">
+
+                                <strong>Timetable Updates</strong>
+
+                                <span>
+                                    Receive notifications when your timetable changes.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+                                <input
+                                    type="checkbox"
+                                    id="timetableNotifications"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+                            </label>
+
+                        </div>
+
+
+                        <div class="preference-item">
+
+                            <div class="preference-info">
+
+                                <strong>Course Updates</strong>
+
+                                <span>
+                                    Receive updates about courses assigned to you.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+                                <input
+                                    type="checkbox"
+                                    id="courseNotifications"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+                            </label>
+
+                        </div>
+
+
+                        <div class="preference-item">
+
+                            <div class="preference-info">
+
+                                <strong>Student Updates</strong>
+
+                                <span>
+                                    Receive important updates concerning your students.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+                                <input
+                                    type="checkbox"
+                                    id="studentNotifications"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+                            </label>
+
+                        </div>
+
+
+                        <div class="preference-item">
+
+                            <div class="preference-info">
+
+                                <strong>System Announcements</strong>
+
+                                <span>
+                                    Receive important announcements from the system.
+                                </span>
+
+                            </div>
+
+                            <label class="switch">
+                                <input
+                                    type="checkbox"
+                                    id="systemNotifications"
+                                    checked
+                                >
+
+                                <span class="slider"></span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Security Section -->
+                <section
+                    class="settings-section"
+                    id="securitySection"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Security Settings</h3>
+
+                            <p>
+                                Manage your lecturer account security.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-card">
+
+                        <div class="security-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div class="security-info">
+
+                            <h4>Password</h4>
+
+                            <p>
+                                Change your account password regularly
+                                to keep your account secure.
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="btn secondary-btn"
+                            id="changePassword"
+                            type="button"
+                        >
+                            Change Password
+                        </button>
+
+                    </div>
+
+
+                    <div class="security-card">
+
+                        <div class="security-icon">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </div>
+
+                        <div class="security-info">
+
+                            <h4>Sign Out</h4>
+
+                            <p>
+                                Sign out of your lecturer account on this device.
+                            </p>
+
+                        </div>
+
+                        <a
+                            class="btn danger-btn"
+                            href="logout.html"
+                        >
+                            Logout
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Appearance Section -->
+                <section
+                    class="settings-section"
+                    id="appearanceSection"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+                            <h3>Appearance</h3>
+
+                            <p>
+                                Choose how the lecturer portal should appear.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="appearance-options">
+
+                        <label class="appearance-option active">
+
+                            <input
+                                type="radio"
+                                name="theme"
+                                value="light"
+                                checked
+                            >
+
+                            <div class="theme-preview light-preview">
+                                <div></div>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <strong>Light</strong>
+
+                        </label>
+
+
+                        <label class="appearance-option">
+
+                            <input
+                                type="radio"
+                                name="theme"
+                                value="compact"
+                            >
+
+                            <div class="theme-preview compact-preview">
+                                <div></div>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <strong>Compact</strong>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Save Area -->
+                <div class="settings-actions">
+
+                    <button
+                        class="btn secondary-btn"
+                        id="resetSettings"
+                        type="button"
+                    >
+                        Reset
+                    </button>
+
+                    <button
+                        class="btn primary-btn"
+                        id="saveSettings"
+                        type="button"
+                    >
+                        <i class="fa-solid fa-check"></i>
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Notice -->
+        <section class="settings-notice">
+
+            <div class="notice-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Account Security</h3>
+
+                <p>
+                    Never share your password with another person.
+                    Always log out when using a shared computer.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="page-footer">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="../js/api.js"></script>
+    <script>
+        // ===============================
+// Lecturer Settings System
+// lecturer-settings.js
+// ===============================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // ===============================
+    // Elements
+    // ===============================
+
+    const fullNameInput = document.getElementById("fullName");
+    const staffIdInput = document.getElementById("staffId");
+    const emailInput = document.getElementById("email");
+    const departmentInput = document.getElementById("department");
+
+    const timetableNotifications = document.getElementById("timetableNotifications");
+    const courseNotifications = document.getElementById("courseNotifications");
+    const studentNotifications = document.getElementById("studentNotifications");
+    const systemNotifications = document.getElementById("systemNotifications");
+
+    const lightTheme = document.getElementById("lightTheme");
+    const compactTheme = document.getElementById("compactTheme");
+
+    const saveSettingsBtn = document.getElementById("saveSettings");
+    const resetSettingsBtn = document.getElementById("resetSettings");
+    const changePasswordBtn = document.getElementById("changePassword");
+
+    const notice = document.getElementById("settingsNotice");
+    const currentYear = document.getElementById("currentYear");
+
+    const notificationCount = document.getElementById("notificationCount");
+    const notificationBtn = document.getElementById("notificationBtn");
+
+    const accountName = document.getElementById("accountName");
+    const accountDepartment = document.getElementById("accountDepartment");
+    const accountAvatar = document.getElementById("accountAvatar");
+
+
+    // ===============================
+    // Helper Functions
+    // ===============================
+
+    function getStorage(key, fallback) {
+        try {
+            const data = localStorage.getItem(key);
+
+            if (!data) {
+                return fallback;
+            }
+
+            return JSON.parse(data);
+        } catch (error) {
+            console.error(`Unable to load ${key}:`, error);
+            return fallback;
+        }
+    }
+
+
+    function saveStorage(key, value) {
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+        } catch (error) {
+            console.error(`Unable to save ${key}:`, error);
+        }
+    }
+
+
+    function getValue(object, fields, fallback = "") {
+        if (!object || typeof object !== "object") {
+            return fallback;
+        }
+
+        for (const field of fields) {
+            if (
+                object[field] !== undefined &&
+                object[field] !== null &&
+                String(object[field]).trim() !== ""
+            ) {
+                return object[field];
+            }
+        }
+
+        return fallback;
+    }
+
+
+    function showNotice(message, type = "success") {
+        if (!notice) {
+            return;
+        }
+
+        notice.textContent = message;
+        notice.className = `settings-notice ${type}`;
+        notice.style.display = "block";
+
+        setTimeout(() => {
+            notice.style.display = "none";
+        }, 3500);
+    }
+
+
+    // ===============================
+    // Lecturer Data
+    // ===============================
+
+    const lecturerData = getStorage("lecturerData", null);
+    const loggedInLecturer = getStorage("loggedInLecturer", null);
+
+    const lecturer =
+        lecturerData ||
+        loggedInLecturer ||
+        {
+            name: "Lecturer",
+            staffId: "",
+            email: "",
+            department: ""
+        };
+
+
+    const lecturerName = getValue(
+        lecturer,
+        ["fullName", "name", "lecturerName"],
+        "Lecturer"
+    );
+
+    const staffId = getValue(
+        lecturer,
+        ["staffId", "staffID", "lecturerId", "lecturerID", "id"],
+        ""
+    );
+
+    const email = getValue(
+        lecturer,
+        ["email", "emailAddress"],
+        ""
+    );
+
+    const department = getValue(
+        lecturer,
+        ["department", "dept", "departmentName"],
+        "Department"
+    );
+
+
+    // ===============================
+    // Header Information
+    // ===============================
+
+    if (accountName) {
+        accountName.textContent = lecturerName;
+    }
+
+    if (accountDepartment) {
+        accountDepartment.textContent = department;
+    }
+
+    if (accountAvatar) {
+        const names = lecturerName.trim().split(/\s+/);
+
+        const initials = names
+            .slice(0, 2)
+            .map(name => name.charAt(0).toUpperCase())
+            .join("");
+
+        accountAvatar.textContent = initials || "L";
+    }
+
+
+    // ===============================
+    // Account Information
+    // ===============================
+
+    if (fullNameInput) {
+        fullNameInput.value = lecturerName;
+    }
+
+    if (staffIdInput) {
+        staffIdInput.value = staffId;
+    }
+
+    if (emailInput) {
+        emailInput.value = email;
+    }
+
+    if (departmentInput) {
+        departmentInput.value = department;
+    }
+
+
+    // ===============================
+    // Notifications
+    // ===============================
+
+    const notifications = getStorage("lecturerNotifications", []);
+
+    const unreadNotifications = notifications.filter(notification => {
+        const status = String(
+            getValue(
+                notification,
+                ["status", "readStatus"],
+                "unread"
+            )
+        ).toLowerCase();
+
+        return (
+            status === "unread" ||
+            status === "new" ||
+            notification.read === false
+        );
+    });
+
+    if (notificationCount) {
+        notificationCount.textContent = unreadNotifications.length;
+        notificationCount.style.display =
+            unreadNotifications.length > 0 ? "flex" : "none";
+    }
+
+
+    // ===============================
+    // Lecturer Settings
+    // ===============================
+
+    const defaultSettings = {
+        timetableNotifications: true,
+        courseNotifications: true,
+        studentNotifications: true,
+        systemNotifications: true,
+        theme: "light"
+    };
+
+    const savedSettings = getStorage(
+        "lecturerSettings",
+        defaultSettings
+    );
+
+    const settings = {
+        ...defaultSettings,
+        ...savedSettings
+    };
+
+
+    // ===============================
+    // Load Settings
+    // ===============================
+
+    if (timetableNotifications) {
+        timetableNotifications.checked =
+            settings.timetableNotifications !== false;
+    }
+
+    if (courseNotifications) {
+        courseNotifications.checked =
+            settings.courseNotifications !== false;
+    }
+
+    if (studentNotifications) {
+        studentNotifications.checked =
+            settings.studentNotifications !== false;
+    }
+
+    if (systemNotifications) {
+        systemNotifications.checked =
+            settings.systemNotifications !== false;
+    }
+
+    if (settings.theme === "compact") {
+        if (compactTheme) {
+            compactTheme.checked = true;
+        }
+    } else {
+        if (lightTheme) {
+            lightTheme.checked = true;
+        }
+    }
+
+
+    // ===============================
+    // Settings Tabs
+    // ===============================
+
+    const tabButtons = document.querySelectorAll(".settings-tab");
+    const sections = document.querySelectorAll(".settings-section");
+
+    tabButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const target = button.getAttribute("data-target");
+
+            tabButtons.forEach(tab => {
+                tab.classList.remove("active");
+            });
+
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            const targetSection = document.getElementById(target);
+
+            if (targetSection) {
+                targetSection.classList.add("active");
+            }
+        });
+
+    });
+
+
+    // ===============================
+    // Save Settings
+    // ===============================
+
+    if (saveSettingsBtn) {
+
+        saveSettingsBtn.addEventListener("click", () => {
+
+            const updatedSettings = {
+
+                timetableNotifications:
+                    timetableNotifications
+                        ? timetableNotifications.checked
+                        : true,
+
+                courseNotifications:
+                    courseNotifications
+                        ? courseNotifications.checked
+                        : true,
+
+                studentNotifications:
+                    studentNotifications
+                        ? studentNotifications.checked
+                        : true,
+
+                systemNotifications:
+                    systemNotifications
+                        ? systemNotifications.checked
+                        : true,
+
+                theme:
+                    compactTheme && compactTheme.checked
+                        ? "compact"
+                        : "light"
+            };
+
+            saveStorage("lecturerSettings", updatedSettings);
+
+
+            // Update lecturer account information
+            const updatedLecturer = {
+                ...lecturer,
+                fullName: fullNameInput
+                    ? fullNameInput.value.trim()
+                    : lecturerName,
+
+                name: fullNameInput
+                    ? fullNameInput.value.trim()
+                    : lecturerName,
+
+                email: emailInput
+                    ? emailInput.value.trim()
+                    : email,
+
+                department: departmentInput
+                    ? departmentInput.value.trim()
+                    : department
+            };
+
+            saveStorage("lecturerData", updatedLecturer);
+            saveStorage("loggedInLecturer", updatedLecturer);
+
+
+            // Update header immediately
+            if (accountName) {
+                accountName.textContent =
+                    updatedLecturer.fullName || "Lecturer";
+            }
+
+            if (accountDepartment) {
+                accountDepartment.textContent =
+                    updatedLecturer.department || "Department";
+            }
+
+            if (accountAvatar) {
+                const names =
+                    (updatedLecturer.fullName || "Lecturer")
+                        .trim()
+                        .split(/\s+/);
+
+                accountAvatar.textContent = names
+                    .slice(0, 2)
+                    .map(name => name.charAt(0).toUpperCase())
+                    .join("");
+            }
+
+            showNotice("Settings saved successfully.", "success");
+        });
+
+    }
+
+
+    // ===============================
+    // Reset Settings
+    // ===============================
+
+    if (resetSettingsBtn) {
+
+        resetSettingsBtn.addEventListener("click", () => {
+
+            const confirmReset = confirm(
+                "Are you sure you want to reset your settings?"
+            );
+
+            if (!confirmReset) {
+                return;
+            }
+
+            if (timetableNotifications) {
+                timetableNotifications.checked = true;
+            }
+
+            if (courseNotifications) {
+                courseNotifications.checked = true;
+            }
+
+            if (studentNotifications) {
+                studentNotifications.checked = true;
+            }
+
+            if (systemNotifications) {
+                systemNotifications.checked = true;
+            }
+
+            if (lightTheme) {
+                lightTheme.checked = true;
+            }
+
+            if (compactTheme) {
+                compactTheme.checked = false;
+            }
+
+            saveStorage("lecturerSettings", defaultSettings);
+
+            showNotice(
+                "Settings have been restored to their default values.",
+                "success"
+            );
+        });
+
+    }
+
+
+    // ===============================
+    // Change Password
+    // ===============================
+
+    if (changePasswordBtn) {
+
+        changePasswordBtn.addEventListener("click", () => {
+
+            alert(
+                "Password change is not connected to a backend yet. " +
+                "The password feature can be connected when the authentication system is completed."
+            );
+
+        });
+
+    }
+
+
+    // ===============================
+    // Notification Button
+    // ===============================
+
+    if (notificationBtn) {
+
+        notificationBtn.addEventListener("click", () => {
+            window.location.href = "lecturer-notifications.html";
+        });
+
+    }
+
+
+    // ===============================
+    // Current Year
+    // ===============================
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+
+
+    // ===============================
+    // Prevent Empty Account Fields
+    // ===============================
+
+    [fullNameInput, emailInput, departmentInput].forEach(input => {
+
+        if (!input) {
+            return;
+        }
+
+        input.addEventListener("input", () => {
+            input.classList.remove("error");
+        });
+
+    });
+
+
+    // ===============================
+    // Initial Notification Count
+    // ===============================
+
+    function updateNotificationCount() {
+
+        const latestNotifications =
+            getStorage("lecturerNotifications", []);
+
+        const unreadCount =
+            latestNotifications.filter(notification => {
+
+                const status = String(
+                    getValue(
+                        notification,
+                        ["status", "readStatus"],
+                        "unread"
+                    )
+                ).toLowerCase();
+
+                return (
+                    status === "unread" ||
+                    status === "new" ||
+                    notification.read === false
+                );
+
+            }).length;
+
+
+        if (notificationCount) {
+
+            notificationCount.textContent = unreadCount;
+
+            notificationCount.style.display =
+                unreadCount > 0 ? "flex" : "none";
+
+        }
+
+    }
+
+    updateNotificationCount();
+
+});
+    </script>
+
+</body>
+</html>

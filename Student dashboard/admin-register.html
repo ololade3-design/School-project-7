@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administrator Registration - Smart Timetable System</title>
+
+    <link rel="stylesheet" href="admin-register.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="registration-container">
+
+    <!-- Left Information Section -->
+    <div class="registration-info">
+
+        <div class="info-content">
+
+            <div class="logo">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h1>Smart Timetable</h1>
+            </div>
+
+            <h2>Administrator Registration</h2>
+
+            <p>
+                Create an administrator account to manage students,
+                courses, lecturers, departments, rooms and timetables.
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature">
+                    <i class="fa-solid fa-users"></i>
+
+                    <div>
+                        <h3>Student Management</h3>
+                        <p>Manage student records and academic information.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-book"></i>
+
+                    <div>
+                        <h3>Course Management</h3>
+                        <p>Manage courses, lecturers and course information.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <div>
+                        <h3>Timetable Management</h3>
+                        <p>Create and manage academic timetables.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Registration Section -->
+    <div class="registration-section">
+
+        <div class="registration-card">
+
+            <div class="registration-header">
+
+                <div class="registration-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <h2>Create Administrator Account</h2>
+
+                <p>Enter your information to create an account.</p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+            <form id="adminRegistrationForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="adminId">
+                            Administrator ID
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-id-card"></i>
+
+                            <input
+                                type="text"
+                                id="adminId"
+                                placeholder="e.g. ADM001"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="role">
+                            Administrator Role
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-user-shield"></i>
+
+                            <select id="role" required>
+
+                                <option value="">
+                                    Select Role
+                                </option>
+
+                                <option value="Super Administrator">
+                                    Super Administrator
+                                </option>
+
+                                <option value="Academic Administrator">
+                                    Academic Administrator
+                                </option>
+
+                                <option value="Department Administrator">
+                                    Department Administrator
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-sitemap"></i>
+
+                            <select id="department" required>
+
+                                <option value="">
+                                    Select Department
+                                </option>
+
+                                <option value="Software Engineering">
+                                    Software Engineering
+                                </option>
+
+                                <option value="Computer Science">
+                                    Computer Science
+                                </option>
+
+                                <option value="Information Technology">
+                                    Information Technology
+                                </option>
+
+                                <option value="Cyber Security">
+                                    Cyber Security
+                                </option>
+
+                                <option value="All Departments">
+                                    All Departments
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create a password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="toggleConfirmPassword"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Message -->
+                <div id="registrationMessage"></div>
+
+
+                <!-- Register Button -->
+                <button
+                    type="submit"
+                    class="register-button"
+                >
+                    <i class="fa-solid fa-user-plus"></i>
+                    Create Administrator Account
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+            <div class="login-link">
+
+                <p>
+                    Already have an account?
+                </p>
+
+                <a href="student-login.html">
+                    Login
+                </a>
+
+            </div>
+
+
+            <!-- Back Link -->
+            <div class="back-link">
+
+                <a href="register.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Registration
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Smart Timetable Generation and Course Scheduling System
+            </p>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<script src="../js/api.js"></script>
+<script>
+    // ===================================
+// Administrator Registration
+// admin-register.js
+// ===================================
+
+
+// ===================================
+// Elements
+// ===================================
+
+const registrationForm =
+    document.getElementById("adminRegistrationForm");
+
+const fullName =
+    document.getElementById("fullName");
+
+const adminId =
+    document.getElementById("adminId");
+
+const email =
+    document.getElementById("email");
+
+const phone =
+    document.getElementById("phone");
+
+const role =
+    document.getElementById("role");
+
+const department =
+    document.getElementById("department");
+
+const password =
+    document.getElementById("password");
+
+const confirmPassword =
+    document.getElementById("confirmPassword");
+
+const message =
+    document.getElementById("registrationMessage");
+
+const togglePassword =
+    document.getElementById("togglePassword");
+
+const toggleConfirmPassword =
+    document.getElementById("toggleConfirmPassword");
+
+const currentYear =
+    document.getElementById("currentYear");
+
+
+// ===================================
+// Current Year
+// ===================================
+
+if (currentYear) {
+    currentYear.textContent =
+        new Date().getFullYear();
+}
+
+
+// ===================================
+// Show / Hide Password
+// ===================================
+
+if (togglePassword) {
+
+    togglePassword.addEventListener("click", function () {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i>';
+
+        } else {
+
+            password.type = "password";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye"></i>';
+
+        }
+
+    });
+
+}
+
+
+if (toggleConfirmPassword) {
+
+    toggleConfirmPassword.addEventListener("click", function () {
+
+        if (confirmPassword.type === "password") {
+
+            confirmPassword.type = "text";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i>';
+
+        } else {
+
+            confirmPassword.type = "password";
+
+            this.innerHTML =
+                '<i class="fa-solid fa-eye"></i>';
+
+        }
+
+    });
+
+}
+
+
+// ===================================
+// Display Message
+// ===================================
+
+function showMessage(text, type) {
+
+    message.textContent = text;
+
+    message.className = type;
+
+}
+
+
+// ===================================
+// Administrator Registration
+// ===================================
+
+registrationForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+
+    // ===================================
+    // Get Form Values
+    // ===================================
+
+    const nameValue =
+        fullName.value.trim();
+
+    const adminIdValue =
+        adminId.value.trim();
+
+    const emailValue =
+        email.value.trim();
+
+    const phoneValue =
+        phone.value.trim();
+
+    const roleValue =
+        role.value;
+
+    const departmentValue =
+        department.value;
+
+    const passwordValue =
+        password.value;
+
+    const confirmPasswordValue =
+        confirmPassword.value;
+
+
+    // ===================================
+    // Validate Required Fields
+    // ===================================
+
+    if (
+        !nameValue ||
+        !adminIdValue ||
+        !emailValue ||
+        !phoneValue ||
+        !roleValue ||
+        !departmentValue ||
+        !passwordValue ||
+        !confirmPasswordValue
+    ) {
+
+        showMessage(
+            "Please fill in all the required fields.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Validate Password Length
+    // ===================================
+
+    if (passwordValue.length < 6) {
+
+        showMessage(
+            "Password must contain at least 6 characters.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Confirm Password
+    // ===================================
+
+    if (passwordValue !== confirmPasswordValue) {
+
+        showMessage(
+            "Passwords do not match.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Get Existing Administrators
+    // ===================================
+
+    let adminAccounts =
+        JSON.parse(
+            localStorage.getItem("adminAccounts")
+        ) || [];
+
+
+    // ===================================
+    // Check Duplicate Administrator ID
+    // ===================================
+
+    const adminExists =
+        adminAccounts.some(function (admin) {
+
+            const existingId =
+                admin.adminId ||
+                admin.idNumber ||
+                "";
+
+            return existingId.toLowerCase() ===
+                adminIdValue.toLowerCase();
+
+        });
+
+
+    if (adminExists) {
+
+        showMessage(
+            "This Administrator ID is already registered.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Check Duplicate Email
+    // ===================================
+
+    const emailExists =
+        adminAccounts.some(function (admin) {
+
+            return String(admin.email || "")
+                .toLowerCase() ===
+                emailValue.toLowerCase();
+
+        });
+
+
+    if (emailExists) {
+
+        showMessage(
+            "This email address is already registered.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    // ===================================
+    // Create Administrator Account
+    // ===================================
+
+    const newAdmin = {
+
+        id: Date.now(),
+
+        fullName: nameValue,
+
+        adminId: adminIdValue,
+
+        email: emailValue,
+
+        phone: phoneValue,
+
+        role: roleValue,
+
+        department: departmentValue,
+
+        password: passwordValue,
+
+        registrationDate:
+            new Date().toISOString(),
+
+        status: "Active"
+
+    };
+
+
+    // ===================================
+    // Save Administrator
+    // ===================================
+
+    adminAccounts.push(newAdmin);
+
+    localStorage.setItem(
+        "adminAccounts",
+        JSON.stringify(adminAccounts)
+    );
+
+
+    // ===================================
+    // Success Message
+    // ===================================
+
+    showMessage(
+        "Administrator account created successfully!",
+        "success"
+    );
+
+
+    // ===================================
+    // Clear Form
+    // ===================================
+
+    registrationForm.reset();
+
+
+    // ===================================
+    // Redirect
+    // ===================================
+
+    setTimeout(function () {
+
+        window.location.href =
+            "dashboard.html";
+
+    }, 1500);
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lecture Room Management</title>
+
+<link rel="stylesheet" href="lecture rooms.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<h2>Smart Timetable</h2>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="courses.html">
+
+<i class="fa-solid fa-book"></i>
+
+Courses
+
+</a>
+
+</li>
+
+<li>
+
+<a href="lecturers.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Lecturers
+
+</a>
+
+</li>
+
+<li>
+
+<a href="students.html">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+Students
+
+</a>
+
+</li>
+
+<li>
+
+<a href="departments.html">
+
+<i class="fa-solid fa-building"></i>
+
+Departments
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="lecture-room.html">
+
+<i class="fa-solid fa-door-open"></i>
+
+Lecture Rooms
+
+</a>
+
+</li>
+
+<li>
+
+<a href="timetable.html">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+Timetable
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<div>
+
+<h1>Lecture Room Management</h1>
+
+<p>
+
+Manage all lecture rooms available for timetable scheduling.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Administrator
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="cards">
+
+<div class="card">
+
+<h2 id="totalRooms">0</h2>
+
+<p>Total Rooms</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="availableRooms">0</h2>
+
+<p>Available Rooms</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="largeRooms">0</h2>
+
+<p>Large Capacity</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="buildingCount">0</h2>
+
+<p>Buildings</p>
+
+</div>
+
+</div>
+
+<!-- Toolbar -->
+
+<div class="toolbar">
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="Search Lecture Room...">
+
+<button id="showForm">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Lecture Room
+
+</button>
+
+</div>
+
+<!-- Lecture Room Form -->
+
+<div class="form-box" id="formBox">
+
+<h2>Add Lecture Room</h2>
+
+<div class="row">
+
+<input
+
+type="text"
+
+id="roomCode"
+
+placeholder="Room Code">
+
+<input
+
+type="text"
+
+id="roomName"
+
+placeholder="Room Name">
+
+</div>
+
+<div class="row">
+
+<input
+
+type="number"
+
+id="capacity"
+
+placeholder="Capacity">
+
+<select id="building">
+
+<option value="">Select Building</option>
+
+<option>Main Building</option>
+
+<option>ICT Building</option>
+
+<option>Engineering Block</option>
+
+<option>Science Block</option>
+
+<option>Faculty Complex</option>
+
+</select>
+
+</div>
+
+<div class="row">
+
+<select id="status">
+
+<option value="">Room Status</option>
+
+<option>Available</option>
+
+<option>Occupied</option>
+
+<option>Maintenance</option>
+
+</select>
+
+<button id="saveRoom">
+
+Save Lecture Room
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Lecture Room Table -->
+
+<div class="table-box">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S/N</th>
+
+<th>Room Code</th>
+
+<th>Room Name</th>
+
+<th>Capacity</th>
+
+<th>Building</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="roomTable"><tr>
+
+<td colspan="7" style="text-align:center;color:gray;">
+
+No lecture rooms available.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Recent Activities -->
+
+<div class="activity">
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+<ul id="activityList">
+
+<li>Lecture Room Module Loaded</li>
+
+<li>System Ready...</li>
+
+</ul>
+
+</div>
+
+<!-- Module Summary -->
+
+<div class="summary">
+
+<h2>
+
+Module Information
+
+</h2>
+
+<p>
+
+This module allows the administrator to add, edit, search and delete lecture rooms used for timetable scheduling.
+
+</p>
+
+<p>
+
+Each lecture room contains information such as room code, room name, seating capacity, building and availability status.
+
+</p>
+
+<p>
+
+The timetable generation module will automatically allocate lecture rooms based on their capacity and availability.
+
+</p>
+
+<p>
+
+All lecture room records are stored in the browser using Local Storage for demonstration purposes.
+
+</p>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+© 2026 Smart Timetable Generation and Course Scheduling System
+
+</p>
+
+</footer>
+
+</div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script>
+    // ===============================
+// Lecture Room Management System
+// lecture-room.js
+// ===============================
+
+let rooms = JSON.parse(localStorage.getItem("lectureRooms")) || [];
+
+let editIndex = -1;
+
+// Elements
+
+const table = document.getElementById("roomTable");
+
+const saveBtn = document.getElementById("saveRoom");
+
+const search = document.getElementById("search");
+
+const showForm = document.getElementById("showForm");
+
+const formBox = document.getElementById("formBox");
+
+const totalRooms = document.getElementById("totalRooms");
+
+const availableRooms = document.getElementById("availableRooms");
+
+const largeRooms = document.getElementById("largeRooms");
+
+const buildingCount = document.getElementById("buildingCount");
+
+// Show Form
+
+showForm.onclick=function(){
+
+if(formBox.style.display=="block"){
+
+formBox.style.display="none";
+
+}else{
+
+formBox.style.display="block";
+
+}
+
+};
+
+// Display Lecture Rooms
+
+displayRooms();
+
+function displayRooms(){
+
+table.innerHTML="";
+
+if(rooms.length==0){
+
+table.innerHTML=`
+
+<tr>
+
+<td colspan="7">
+
+No lecture rooms available.
+
+</td>
+
+</tr>
+
+`;
+
+updateCards();
+
+return;
+
+}
+
+rooms.forEach((room,index)=>{
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${index+1}</td>
+
+<td>${room.code}</td>
+
+<td>${room.name}</td>
+
+<td>${room.capacity}</td>
+
+<td>${room.building}</td>
+
+<td>${room.status}</td>
+
+<td>
+
+<button onclick="editRoom(${index})">
+
+Edit
+
+</button>
+
+<button onclick="deleteRoom(${index})">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+localStorage.setItem("lectureRooms",JSON.stringify(rooms));
+
+updateCards();
+
+}
+
+// Save Lecture Room
+
+saveBtn.onclick=function(){
+
+const code=document.getElementById("roomCode").value.trim();
+
+const name=document.getElementById("roomName").value.trim();
+
+const capacity=document.getElementById("capacity").value.trim();
+
+const building=document.getElementById("building").value;
+
+const status=document.getElementById("status").value;
+
+if(
+
+code==""||
+
+name==""||
+
+capacity==""||
+
+building==""||
+
+status==""
+
+){
+
+alert("Please complete all fields.");
+
+return;
+
+}
+
+const room={
+
+code,
+
+name,
+
+capacity,
+
+building,
+
+status
+
+};
+
+if(editIndex==-1){
+
+rooms.push(room);
+
+}else{
+
+rooms[editIndex]=room;
+
+editIndex=-1;
+
+}
+
+displayRooms();
+
+clearForm();
+
+formBox.style.display="none";
+
+addActivity("Lecture Room saved successfully.");
+
+};// ===============================
+// Edit Lecture Room
+// ===============================
+
+function editRoom(index){
+
+const room=rooms[index];
+
+document.getElementById("roomCode").value=room.code;
+
+document.getElementById("roomName").value=room.name;
+
+document.getElementById("capacity").value=room.capacity;
+
+document.getElementById("building").value=room.building;
+
+document.getElementById("status").value=room.status;
+
+editIndex=index;
+
+formBox.style.display="block";
+
+addActivity("Editing "+room.code);
+
+}
+
+// ===============================
+// Delete Lecture Room
+// ===============================
+
+function deleteRoom(index){
+
+if(confirm("Delete this lecture room?")){
+
+addActivity(rooms[index].name+" deleted");
+
+rooms.splice(index,1);
+
+displayRooms();
+
+}
+
+}
+
+// ===============================
+// Clear Form
+// ===============================
+
+function clearForm(){
+
+document.getElementById("roomCode").value="";
+
+document.getElementById("roomName").value="";
+
+document.getElementById("capacity").value="";
+
+document.getElementById("building").value="";
+
+document.getElementById("status").value="";
+
+}
+
+// ===============================
+// Search Lecture Room
+// ===============================
+
+search.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+const rows=document.querySelectorAll("#roomTable tr");
+
+rows.forEach(row=>{
+
+row.style.display=row.innerText.toLowerCase().includes(value)
+
+?"":"none";
+
+});
+
+});
+
+// ===============================
+// Update Statistics
+// ===============================
+
+function updateCards(){
+
+totalRooms.innerHTML=rooms.length;
+
+let available=0;
+
+let large=0;
+
+let buildings=[];
+
+rooms.forEach(room=>{
+
+if(room.status=="Available"){
+
+available++;
+
+}
+
+if(Number(room.capacity)>=100){
+
+large++;
+
+}
+
+if(!buildings.includes(room.building)){
+
+buildings.push(room.building);
+
+}
+
+});
+
+availableRooms.innerHTML=available;
+
+largeRooms.innerHTML=large;
+
+buildingCount.innerHTML=buildings.length;
+
+}
+
+// ===============================
+// Activity Log
+// ===============================
+
+function addActivity(message){
+
+const list=document.getElementById("activityList");
+
+const item=document.createElement("li");
+
+const time=new Date().toLocaleTimeString();
+
+item.innerHTML=time+" - "+message;
+
+list.prepend(item);
+
+}
+
+// ===============================
+// Page Load
+// ===============================
+
+window.onload=function(){
+
+displayRooms();
+
+addActivity("Lecture Room Management Ready");
+
+}
+
+// ===============================
+// Close Form with ESC
+// ===============================
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+formBox.style.display="none";
+
+clearForm();
+
+}
+
+});
+
+// ===============================
+// Auto Uppercase Room Code
+// ===============================
+
+document.getElementById("roomCode").addEventListener("input",function(){
+
+this.value=this.value.toUpperCase();
+
+});
+
+// ===============================
+// Save to Local Storage
+// ===============================
+
+localStorage.setItem("lectureRooms",JSON.stringify(rooms));
+</script>
+
+</body>
+
+</html>

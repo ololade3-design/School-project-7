@@ -1,0 +1,711 @@
+css
+/* ===================================
+   My Timetable
+   my-timetable.css
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fc;
+    color: #1f2937;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+
+/* ===================================
+   Sidebar
+=================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #1e3a8a;
+    color: white;
+    padding: 20px 15px;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px 25px;
+}
+
+.logo i {
+    font-size: 28px;
+    color: #facc15;
+}
+
+.logo h2 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 14px;
+    color: #e5e7eb;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a i {
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a {
+    background: #2563eb;
+    color: white;
+}
+
+.sidebar ul li.active a {
+    border-left: 4px solid #facc15;
+}
+
+
+/* ===================================
+   Main Content
+=================================== */
+
+.main {
+    margin-left: 250px;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+
+/* ===================================
+   Topbar
+=================================== */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.topbar h1 {
+    font-size: 27px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.topbar p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.student-top {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: white;
+    padding: 9px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.student-top i {
+    color: #2563eb;
+}
+
+.student-top span {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* ===================================
+   Timetable Summary
+=================================== */
+
+.timetable-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background: white;
+    padding: 17px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.summary-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.summary-card span {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.summary-card h3 {
+    font-size: 17px;
+    color: #111827;
+    font-weight: 600;
+}
+
+
+/* ===================================
+   Timetable Controls
+=================================== */
+
+.timetable-controls {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.semester-select,
+.day-select {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.semester-select label,
+.day-select label {
+    font-size: 12px;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.semester-select select,
+.day-select select {
+    min-width: 180px;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    background: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: #374151;
+    outline: none;
+    cursor: pointer;
+}
+
+.semester-select select:focus,
+.day-select select:focus {
+    border-color: #2563eb;
+}
+
+.print-button {
+    margin-left: auto;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.print-button i {
+    margin-right: 6px;
+}
+
+.print-button:hover {
+    background: #1e3a8a;
+}
+
+
+/* ===================================
+   Timetable Container
+=================================== */
+
+.timetable-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.section-header {
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 3px;
+}
+
+.section-header h2 i {
+    color: #2563eb;
+    margin-right: 7px;
+}
+
+.section-header p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+
+/* ===================================
+   Timetable Table
+=================================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f3f6fb;
+}
+
+th {
+    padding: 11px 10px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+td {
+    padding: 12px 10px;
+    font-size: 11px;
+    color: #4b5563;
+    border-bottom: 1px solid #eef0f4;
+    white-space: nowrap;
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+td strong {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+
+/* ===================================
+   Day Badge
+=================================== */
+
+.day-badge {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* ===================================
+   Time
+=================================== */
+
+.time-value {
+    color: #374151;
+    font-weight: 500;
+}
+
+
+/* ===================================
+   Room Badge
+=================================== */
+
+.room-badge {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+/* ===================================
+   Empty State
+=================================== */
+
+.empty-state {
+    display: none;
+    min-height: 230px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.empty-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    font-size: 17px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.empty-state p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.empty-state a {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.empty-state a:hover {
+    background: #1e3a8a;
+}
+
+
+/* ===================================
+   Timetable Information
+=================================== */
+
+.timetable-information {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.information-header {
+    margin-bottom: 15px;
+}
+
+.information-header h2 {
+    font-size: 18px;
+    color: #111827;
+}
+
+.information-header h2 i {
+    color: #2563eb;
+    margin-right: 7px;
+}
+
+.information-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.information-item {
+    display: flex;
+    gap: 11px;
+    padding: 13px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.information-item > i {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.information-item h3 {
+    font-size: 13px;
+    color: #111827;
+    margin-bottom: 3px;
+}
+
+.information-item p {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #6b7280;
+}
+
+
+/* ===================================
+   Academic Notice
+=================================== */
+
+.academic-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #fffbea;
+    border: 1px solid #fde68a;
+    padding: 15px;
+    border-radius: 9px;
+    margin-bottom: 18px;
+}
+
+.notice-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fef3c7;
+    color: #d97706;
+    border-radius: 50%;
+}
+
+.academic-notice h3 {
+    font-size: 13px;
+    color: #92400e;
+    margin-bottom: 3px;
+}
+
+.academic-notice p {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #78350f;
+}
+
+
+/* ===================================
+   Footer
+=================================== */
+
+footer {
+    text-align: center;
+    padding: 10px 0 5px;
+}
+
+footer p {
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+
+/* ===================================
+   Print
+=================================== */
+
+@media print {
+
+    .sidebar,
+    .student-top,
+    .timetable-controls,
+    .timetable-information,
+    .academic-notice,
+    footer {
+        display: none !important;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .topbar {
+        margin-bottom: 15px;
+    }
+
+    .timetable-summary {
+        margin-bottom: 15px;
+    }
+
+    .timetable-container {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    table {
+        min-width: 100%;
+    }
+
+    body {
+        background: white;
+    }
+}
+
+
+/* ===================================
+   Responsive Design
+=================================== */
+
+@media (max-width: 1100px) {
+
+    .timetable-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .main {
+        margin-left: 220px;
+    }
+
+    .information-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .logo {
+        padding-bottom: 15px;
+    }
+
+    .sidebar ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .timetable-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .semester-select select,
+    .day-select select {
+        width: 100%;
+    }
+
+    .print-button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .main {
+        padding: 12px;
+    }
+
+    .timetable-summary {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .timetable-container,
+    .timetable-information {
+        padding: 14px;
+    }
+
+    .sidebar ul {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 23px;
+    }
+
+    .summary-card {
+        padding: 14px;
+    }
+
+    .academic-notice {
+        padding: 12px;
+    }
+}
