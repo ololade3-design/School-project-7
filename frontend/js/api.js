@@ -5,9 +5,9 @@
   const TOKEN_KEY = 'authToken';
   const USER_KEY = 'loggedInUser';
   const dashboards = {
-    admin: '../Admin dashboard/dashboard.html',
-    student: '../Student dashboard/student dashboard.html',
-    lecturer: '../Lecturer dashboard/lecturer dashboard.html'
+    admin: '/frontend/Admin%20dashboard/dashboard.html',
+    student: '/frontend/Student%20dashboard/student%20dashboard.html',
+    lecturer: '/frontend/Lecturer%20dashboard/lecturer%20dashboard.html'
   };
 
   const getToken = () => localStorage.getItem(TOKEN_KEY);
@@ -18,8 +18,8 @@
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(USER_KEY);
   };
-  const redirectToLogin = () => { window.location.href = 'login.html'; };
-  const redirectForRole = (role) => { window.location.href = dashboards[role] || 'login.html'; };
+  const redirectToLogin = () => { window.location.href = '/frontend/Student%20dashboard/login.html'; };
+  const redirectForRole = (role) => { window.location.href = dashboards[role] || '/frontend/Student%20dashboard/login.html'; };
 
   const showMessage = (message, type = 'error') => {
     let node = document.getElementById('apiMessage') || document.getElementById('registrationMessage');
@@ -76,7 +76,7 @@
     getToken,
     getUser,
     clearSession,
-    logout: () => { clearSession(); window.location.href = 'register.html'; }
+    logout: () => { clearSession(); window.location.href = '/frontend/Student%20dashboard/login.html'; }
   };
   window.SmartTimetableAPI = api;
 
