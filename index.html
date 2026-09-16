@@ -1,19 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Timetable System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Timetable Generation System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Smart Timetable Generation and Course Scheduling System</h1>
 
-  <p>Select your portal:</p>
+<header>
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Smart Timetable</span>
+        </div>
 
-  <ul>
-    <li><a href="./Admin dashboard/index.html">Administrator Portal</a></li>
-    <li><a href="./Student dashboard/index.html">Student Portal</a></li>
-    <li><a href="./Lecturer dashboard/index.html">Lecturer Portal</a></li>
-  </ul>
+        <ul>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+
+    <div class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Smart Timetable Generation &
+                Course Scheduling System
+            </h1>
+
+            <p>
+                Automatically generate conflict-free class schedules,
+                manage lecturers, classrooms, and students with an
+                intelligent scheduling system.
+            </p>
+
+            <div class="buttons">
+                <a href="register.html" class="btn-primary">
+                    Register Now
+                </a>
+
+                <a href="#" class="btn-secondary">
+                    Learn More
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <div class="card">
+
+                <h3>Today's Schedule</h3>
+
+                <div class="schedule">
+
+                    <div>
+                        <strong>COS301</strong>
+                        <span>8:00 AM</span>
+                    </div>
+
+                    <div>
+                        <strong>COS302</strong>
+                        <span>10:00 AM</span>
+                    </div>
+
+                    <div>
+                        <strong>COS305</strong>
+                        <span>2:00 PM</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section class="features">
+
+    <h2>System Features</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-box">
+            <i class="fa-solid fa-robot"></i>
+            <h3>Automatic Scheduling</h3>
+            <p>
+                Generates conflict-free timetables automatically.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-users"></i>
+            <h3>Manage Users</h3>
+            <p>
+                Manage lecturers, students, departments and courses.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-building"></i>
+            <h3>Classroom Allocation</h3>
+            <p>
+                Assign classrooms intelligently based on capacity.
+            </p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fa-solid fa-file-pdf"></i>
+            <h3>Export Timetable</h3>
+            <p>
+                Download or print generated timetables instantly.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Smart Timetable Generation System.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+// Mobile Menu
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Sticky Navbar
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+        nav.classList.add("sticky");
+    } else {
+        nav.classList.remove("sticky");
+    }
+});
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if(target){
+            target.scrollIntoView({
+                behavior:"smooth"
+            });
+        }
+
+    });
+
+});
+
+// Feature Animation
+const boxes = document.querySelectorAll(".feature-box");
+
+function reveal(){
+
+    boxes.forEach(box=>{
+
+        const top = box.getBoundingClientRect().top;
+
+        if(top < window.innerHeight-100){
+
+            box.classList.add("show");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+// Timetable Card Animation
+const scheduleItems = document.querySelectorAll(".schedule div");
+
+let current = 0;
+
+setInterval(()=>{
+
+    scheduleItems.forEach(item=>{
+        item.style.background="#eef3ff";
+        item.style.transform="scale(1)";
+    });
+
+    scheduleItems[current].style.background="#dbeafe";
+    scheduleItems[current].style.transform="scale(1.05)";
+
+    current++;
+
+    if(current===scheduleItems.length){
+        current=0;
+    }
+
+},1500);
+
+
+
+
+// Get Started Button alert("Welcome to the Smart Timetable Generation System!");
+
+    // Later you can replace this with:
+    // window.location.href = "login.html";
+// });
+</script>
+
 </body>
 </html>
