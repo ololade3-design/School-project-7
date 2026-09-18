@@ -32,7 +32,7 @@
             Sign in to continue to your account
         </p>
 
-        <form id="loginForm">
+        <form id="loginForm" data-role="admin">
 
             <div class="input-group">
                 <i class="fa-solid fa-envelope"></i>
@@ -54,22 +54,9 @@
                     required>
             </div>
 
-            <div class="input-group">
-
-                <i class="fa-solid fa-user"></i>
-
-                <select id="role" required>
-
-                    <option value="">Select Role</option>
-
-                    <option value="Student">Student</option>
-
-                    <option value="Lecturer">Lecturer</option>
-
-                    <option value="Administrator">Administrator</option>
-
-                </select>
-
+            <div class="input-group login-role" aria-label="Account type">
+                <i class="fa-solid fa-user-shield"></i>
+                <span>Academic Administrator</span>
             </div>
 
             <div class="options">

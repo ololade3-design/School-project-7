@@ -98,7 +98,7 @@
     if (!form) return;
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const requestedRole = normalizeRole(field('role'));
+      const requestedRole = normalizeRole(form.dataset.role || field('role'));
       try {
         showMessage('Signing in...', 'success');
         const response = await api.post('/auth/login', { email: field('email'), password: document.getElementById('password')?.value || '' });

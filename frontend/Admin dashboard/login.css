@@ -81,6 +81,34 @@ outline:none;
 
 }
 
+.login-role{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px;
+
+margin-bottom:18px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+color:#374151;
+
+font-size:15px;
+
+}
+
+.login-role i{
+
+color:#2563eb;
+
+}
+
 input:focus,
 
 select:focus{
