@@ -41,7 +41,11 @@ const authenticateToken = async (req, res, next) => {
 };
 
 const authorizeRoles = (...roles) => (req, res, next) => {
-  if (!req.user || !roles.includes(req.user.role)) {
+  const hasRequiredRole = req.user && (
+    roles.includes(req.user.role) ||
+    (req.user.role === 'super_admin' && roles.includes('admin'))
+  );
+  if (!hasRequiredRole) {
     return res.status(403).json({ success: false, message: 'You do not have permission to perform this action.' });
   }
   return next();
