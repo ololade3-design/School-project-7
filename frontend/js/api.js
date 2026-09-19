@@ -6,7 +6,6 @@
   const USER_KEY = 'loggedInUser';
   const dashboards = {
     admin: '/Admin%20dashboard/dashboard.html',
-    super_admin: '/Admin%20dashboard/super%20administrator.html',
     student: '/Student%20dashboard/student%20dashboard.html',
     lecturer: '/Lecturer%20dashboard/lecturer%20dashboard.html'
   };
@@ -81,18 +80,17 @@
   };
   window.SmartTimetableAPI = api;
 
-  const normalizeRole = (role) => ({ administrator: 'admin', admin: 'admin', 'super administrator': 'super_admin', super_admin: 'super_admin', student: 'student', lecturer: 'lecturer' }[String(role || '').trim().toLowerCase()]);
-  const isAdminRole = (role) => role === 'admin' || role === 'super_admin';
+  const normalizeRole = (role) => ({ administrator: 'admin', admin: 'admin', student: 'student', lecturer: 'lecturer' }[String(role || '').trim().toLowerCase()]);
   const field = (id) => document.getElementById(id)?.value.trim() || '';
 
-  const isPublicPage = () => /(?:^|\/)(index|login|register|student-register|admin-register|super administrator register)\.html$/i.test(window.location.pathname);
+  const isPublicPage = () => /(?:^|\/)(index|login|register|student-register|admin-register)\.html$/i.test(window.location.pathname);
   const guardPage = () => {
     if (isPublicPage()) return;
     const user = getUser();
     if (!getToken() || !user?.role) return redirectToLogin();
     const page = decodeURIComponent(window.location.pathname).toLowerCase();
     const expectedRole = page.includes('admin dashboard') ? 'admin' : page.includes('student dashboard') ? 'student' : page.includes('lecturer dashboard') ? 'lecturer' : null;
-    if (expectedRole && (expectedRole === 'admin' ? !isAdminRole(user.role) : user.role !== expectedRole)) redirectForRole(user.role);
+    if (expectedRole && user.role !== expectedRole) redirectForRole(user.role);
   };
 
   const bindLogin = () => {
@@ -105,7 +103,7 @@
         showMessage('Signing in...', 'success');
         const response = await api.post('/auth/login', { email: field('email'), password: document.getElementById('password')?.value || '' });
         const { token, user } = response.data;
-        if (requestedRole && (requestedRole === 'admin' ? !isAdminRole(user.role) : user.role !== requestedRole)) throw new Error(`This account is registered as ${user.role}.`);
+        if (requestedRole && user.role !== requestedRole) throw new Error(`This account is registered as ${user.role}.`);
         localStorage.setItem(TOKEN_KEY, token);
         localStorage.setItem(USER_KEY, JSON.stringify(user));
         redirectForRole(user.role);
@@ -122,7 +120,7 @@
         const confirmation = document.getElementById('confirmPassword')?.value || document.getElementById('confirm')?.value || password;
         if (password !== confirmation) return showMessage('Passwords do not match.');
         const page = decodeURIComponent(window.location.pathname).toLowerCase();
-        const role = page.includes('super administrator register') ? 'super_admin' : page.includes('lecturer dashboard') ? 'lecturer' : 'student';
+        const role = page.includes('lecturer dashboard') ? 'lecturer' : 'student';
         try {
           showMessage('Creating account...', 'success');
           await api.post('/auth/register', {

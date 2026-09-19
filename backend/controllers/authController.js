@@ -27,7 +27,7 @@ const register = async (req, res) => {
     if (!passwordIsValid(password)) {
       return res.status(400).json({ success: false, message: 'Password must be at least 8 characters long.' });
     }
-    if (!['student', 'lecturer', 'admin', 'super_admin'].includes(role)) {
+    if (!['student', 'lecturer', 'admin'].includes(role)) {
       return res.status(400).json({ success: false, message: 'Invalid user role.' });
     }
     if (role === 'admin') {
