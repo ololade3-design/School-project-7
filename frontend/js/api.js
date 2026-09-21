@@ -5,7 +5,7 @@
   const TOKEN_KEY = 'authToken';
   const USER_KEY = 'loggedInUser';
   const dashboards = {
-    admin: '/Admin%20dashboard/super%20admin%20dashboard.html',
+    admin: '/Admin%20dashboard/dashboard.html',
     student: '/Student%20dashboard/student%20dashboard.html',
     lecturer: '/Lecturer%20dashboard/lecturer%20dashboard.html'
   };

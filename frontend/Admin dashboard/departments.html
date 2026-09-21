@@ -421,7 +421,20 @@ All department records are automatically stored in Local Storage for presentatio
 // departments.js
 // ===============================
 
-let departments = JSON.parse(localStorage.getItem("departments")) || [];
+const defaultDepartments = [
+    { code: "SEN", name: "Software Engineering", faculty: "Computing", hod: "" },
+    { code: "CSC", name: "Computer Science", faculty: "Computing", hod: "" },
+    { code: "IFT", name: "Information Technology", faculty: "Computing", hod: "" },
+    { code: "CYS", name: "Cybersecurity", faculty: "Computing", hod: "" },
+    { code: "DSC", name: "Data Science", faculty: "Computing", hod: "" }
+];
+
+let departments = JSON.parse(localStorage.getItem("departments"));
+
+if (!Array.isArray(departments) || departments.length === 0) {
+    departments = defaultDepartments;
+    localStorage.setItem("departments", JSON.stringify(departments));
+}
 
 let editIndex = -1;
 
